@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F1EFE8;
+  --surface: #FFFFFF;
+  --border: #D3D1C7;
+  --emerald: #1D9E75;
+  --emerald-light: #E1F5EE;
+  --emerald-dark: #085041;
+  --text: #2C2C2A;
+  --text-secondary: #6B6B67;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

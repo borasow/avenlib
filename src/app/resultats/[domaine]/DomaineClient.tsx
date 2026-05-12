@@ -5,6 +5,46 @@ import { ArrowLeft, ExternalLink, Lightbulb, Info } from "lucide-react";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
 import { Partenaire } from "@/lib/partenaires";
 
+function PartenaireCard({ p, onTrack }: { p: Partenaire; onTrack: () => void }) {
+  const [imgError, setImgError] = useState(false);
+  return (
+    <div className="bg-white border border-gray-100 rounded-xl p-5 flex items-start justify-between gap-4">
+      <div className="flex-1">
+        <div className="flex items-center gap-2 mb-1 flex-wrap">
+          {p.logo && !imgError ? (
+            <div style={{ width: "180px", height: "72px", backgroundColor: "#fff", border: "1px solid #F0F0F0", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", padding: "8px 16px" }}>
+              <img
+                src={p.logo}
+                alt={p.nom}
+                style={{ maxHeight: "62px", maxWidth: "100%", objectFit: "contain" }}
+                onError={() => setImgError(true)}
+              />
+            </div>
+          ) : (
+            <span className="font-semibold" style={{ color: "#2C2C2A" }}>{p.nom}</span>
+          )}
+          {p.tag && (
+            <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ backgroundColor: "#EFF9F5", color: "#085041" }}>
+              {p.tag}
+            </span>
+          )}
+        </div>
+        <p className="text-sm text-secondary leading-relaxed">{p.description}</p>
+      </div>
+      <a
+        href={p.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onTrack}
+        className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        style={{ backgroundColor: "#1D9E75" }}
+      >
+        Voir l'offre <ExternalLink size={14} />
+      </a>
+    </div>
+  );
+}
+
 interface Props {
   domaine: string;
   partenaires: Partenaire[];
@@ -158,37 +198,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
             <p className="text-sm text-secondary">Partenaires en cours de sélection, revenez bientôt.</p>
           )}
           {partenaires.map((p) => (
-            <div
-              key={p.nom}
-              className="bg-white border border-gray-100 rounded-xl p-5 flex items-start justify-between gap-4"
-            >
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <h3 className="font-semibold" style={{ color: "#2C2C2A" }}>
-                    {p.nom}
-                  </h3>
-                  {p.tag && (
-                    <span
-                      className="text-xs px-2 py-0.5 rounded-full font-medium"
-                      style={{ backgroundColor: "#EFF9F5", color: "#085041" }}
-                    >
-                      {p.tag}
-                    </span>
-                  )}
-                </div>
-                <p className="text-sm text-secondary leading-relaxed">{p.description}</p>
-              </div>
-              <a
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => handlePartenaireClick(p)}
-                className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#1D9E75" }}
-              >
-                Voir l'offre <ExternalLink size={14} />
-              </a>
-            </div>
+            <PartenaireCard key={p.nom} p={p} onTrack={() => handlePartenaireClick(p)} />
           ))}
         </div>
 

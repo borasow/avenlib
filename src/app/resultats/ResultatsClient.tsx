@@ -46,7 +46,8 @@ async function trackClick(domaine: string, partenaire: string) {
   } catch {}
 }
 
-function PartenaireItem({ p, domaine }: { p: { nom: string; description: string; url: string; tag?: string }; domaine: string }) {
+function PartenaireItem({ p, domaine }: { p: { nom: string; description: string; url: string; tag?: string; logo?: string }; domaine: string }) {
+  const [imgError, setImgError] = useState(false);
   return (
     <div
       className="flex items-center justify-between gap-3 rounded-lg px-4 py-3"
@@ -54,7 +55,18 @@ function PartenaireItem({ p, domaine }: { p: { nom: string; description: string;
     >
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-          <span className="text-sm font-semibold" style={{ color: "#2C2C2A" }}>{p.nom}</span>
+          {p.logo && !imgError ? (
+            <div style={{ width: "180px", height: "72px", backgroundColor: "#fff", border: "1px solid #F0F0F0", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", padding: "8px 16px" }}>
+              <img
+                src={p.logo}
+                alt={p.nom}
+                style={{ maxHeight: "62px", maxWidth: "100%", objectFit: "contain" }}
+                onError={() => setImgError(true)}
+              />
+            </div>
+          ) : (
+            <span className="text-sm font-semibold" style={{ color: "#2C2C2A" }}>{p.nom}</span>
+          )}
           {p.tag && (
             <span className="text-xs px-1.5 py-0.5 rounded-full font-medium" style={{ backgroundColor: "#EFF9F5", color: "#085041" }}>
               {p.tag}

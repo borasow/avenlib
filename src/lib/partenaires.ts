@@ -3,6 +3,7 @@ export interface Partenaire {
   description: string;
   url: string;
   tag?: string;
+  logo?: string;
 }
 
 export const PARTENAIRES: Record<string, Partenaire[]> = {
@@ -12,21 +13,25 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       description: "La solution retraite dédiée aux indépendants. PER simple à ouvrir, 100% en ligne, frais réduits.",
       url: "https://www.getcaravel.fr",
       tag: "Recommandé",
+      logo: "/logos/caravel.png",
     },
     {
       nom: "Linxea",
       description: "PER et assurance vie sans frais d'entrée. Large choix de fonds, interface claire.",
       url: "https://www.linxea.com",
+      logo: "/logos/Linxea.png",
     },
     {
       nom: "Yomoni",
       description: "Gestion pilotée de ton PER, performante et accessible dès 1 000€.",
       url: "https://www.yomoni.fr",
+      logo: "/logos/yomini.png",
     },
     {
       nom: "Ramify",
       description: "PER et assurance vie haut de gamme pour optimiser ton épargne retraite.",
       url: "https://www.ramify.fr",
+      logo: "/logos/Ramify.png",
     },
   ],
   prevoyance: [
@@ -35,39 +40,40 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       description: "Prévoyance conçue pour les freelances. Arrêt maladie, invalidité, décès. Devis en 2 minutes.",
       url: "https://www.wemind.io",
       tag: "Recommandé",
-    },
-    {
-      nom: "Mutumutu",
-      description: "Assurance prévoyance sur-mesure pour les travailleurs non-salariés. Souscription 100% en ligne.",
-      url: "https://www.mutumutu.com",
+      logo: "/logos/wemind.png",
     },
     {
       nom: "April",
       description: "Prévoyance et arrêt maladie pour indépendants, devis en ligne.",
       url: "https://www.april.fr",
+      logo: "/logos/april.png",
     },
     {
       nom: "Swiss Life",
       description: "Solutions prévoyance complètes pour TNS et professions libérales.",
       url: "https://www.swisslife.fr",
+      logo: "/logos/swisslife.png",
     },
   ],
   sante: [
     {
       nom: "Alan",
       description: "Mutuelle santé moderne pour indépendants. Application mobile, remboursements rapides.",
-      url: "https://alan.com/fr",
+      url: "https://alan.com/",
       tag: "Recommandé",
+      logo: "/logos/alan.png",
     },
     {
       nom: "Heyme",
       description: "Mutuelle dédiée aux jeunes indépendants. Offres modulables, bon rapport qualité-prix.",
       url: "https://www.heyme.com",
+      logo: "/logos/Heyme.png",
     },
     {
       nom: "Harmonie Mutuelle",
       description: "Mutuelle santé leader en France, offres dédiées aux indépendants et TNS.",
       url: "https://www.harmonie-mutuelle.fr",
+      logo: "/logos/harmoniemutuelle.png",
     },
   ],
   fiscalite: [
@@ -76,40 +82,55 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       description: "Expert-comptable en ligne pour indépendants. Optimisation fiscale, bilan, accompagnement personnalisé.",
       url: "https://www.dougs.fr",
       tag: "Recommandé",
+      logo: "/logos/dougs.png",
     },
     {
       nom: "Indy",
       description: "Comptabilité automatisée pour freelances. Connexion bancaire, déclarations simplifiées.",
       url: "https://www.indy.fr",
+      logo: "/logos/Indy.png",
     },
     {
       nom: "Pennylane",
       description: "Comptabilité et gestion financière tout-en-un pour entrepreneurs.",
       url: "https://www.pennylane.com",
-    },
-    {
-      nom: "Numbr",
-      description: "Expert-comptable en ligne spécialisé freelances et indépendants.",
-      url: "https://www.numbr.fr",
+      logo: "/logos/pennylane.png",
     },
   ],
-  deces: [],
+  deces: [
+    {
+      nom: "Abeille Assurances",
+      description: "Prévoyance TNS, capital décès et rente invalidité adaptés aux auto-entrepreneurs.",
+      url: "https://www.abeille-assurances.fr",
+      tag: "Recommandé",
+      logo: "/logos/Abeilleassurance.png",
+    },
+    {
+      nom: "Malakoff Humanis",
+      description: "Capital décès jusqu'à 1M€, rente invalidité, solution sur mesure pour TNS.",
+      url: "https://www.malakoffhumanis.com",
+      logo: "/logos/malakoffhumanis.png",
+    },
+  ],
   banque_pro: [
     {
       nom: "Qonto",
       description: "Compte pro en ligne pensé pour les freelances et TPE.",
       url: "https://qonto.com/fr",
       tag: "Recommandé",
+      logo: "/logos/qonto.png",
     },
     {
       nom: "Shine",
       description: "Compte bancaire professionnel avec outils de facturation intégrés.",
       url: "https://www.shine.fr",
+      logo: "/logos/Shine.png",
     },
     {
       nom: "Blank",
       description: "Compte pro 100% mobile, sans frais cachés.",
       url: "https://www.blank.app",
+      logo: "/logos/Blank.png",
     },
   ],
   assurance_pro: [
@@ -118,11 +139,13 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       description: "Assurance RC Pro et cyber-risques pour les professions libérales.",
       url: "https://www.hiscox.fr",
       tag: "Recommandé",
+      logo: "/logos/Hiscox.png",
     },
     {
       nom: "Simplis",
       description: "RC Pro pour consultants et freelances, souscription 100% en ligne.",
       url: "https://www.simplis.fr",
+      logo: "/logos/simplis.png",
     },
   ],
   epargne: [
@@ -131,6 +154,13 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       description: "Gestion de patrimoine en ligne personnalisée pour indépendants.",
       url: "https://www.nalo.fr",
       tag: "Recommandé",
+      logo: "/logos/Nalo.png",
+    },
+    {
+      nom: "Ramify",
+      description: "PER et assurance vie haut de gamme pour optimiser ton épargne retraite.",
+      url: "https://www.ramify.fr",
+      logo: "/logos/Ramify.png",
     },
   ],
   immobilier: [
@@ -139,6 +169,7 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       description: "Courtier crédit immo spécialisé dans les dossiers indépendants.",
       url: "https://www.pretto.fr",
       tag: "Recommandé",
+      logo: "/logos/Pretto.png",
     },
   ],
   credit: [
@@ -147,16 +178,13 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       description: "Courtier crédit immo spécialisé dans les dossiers indépendants.",
       url: "https://www.pretto.fr",
       tag: "Recommandé",
-    },
-    {
-      nom: "Mansa",
-      description: "Crédit adapté aux freelances, analyse tes revenus Urssaf.",
-      url: "https://www.getmansa.com",
+      logo: "/logos/Pretto.png",
     },
     {
       nom: "Defacto",
       description: "Financement rapide de ta trésorerie freelance.",
       url: "https://defacto.fr",
+      logo: "/logos/defacto.svg",
     },
   ],
   formation: [],

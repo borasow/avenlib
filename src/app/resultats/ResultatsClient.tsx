@@ -2,7 +2,7 @@
 import { useEffect, useState, ElementType } from "react";
 import Link from "next/link";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
-import { PARTENAIRES, DOMAINE_META } from "@/lib/partenaires";
+import { PARTENAIRES, DOMAINE_META, Partenaire } from "@/lib/partenaires";
 import {
   ArrowRight, TrendingUp, Shield, Heart, Calculator, AlertTriangle,
   ChevronDown, ExternalLink, Smile, Building2, ShieldCheck, PiggyBank,
@@ -46,7 +46,7 @@ async function trackClick(domaine: string, partenaire: string) {
   } catch {}
 }
 
-function PartenaireItem({ p, domaine }: { p: { nom: string; description: string; url: string; tag?: string; logo?: string }; domaine: string }) {
+function PartenaireItem({ p, domaine }: { p: Partenaire; domaine: string }) {
   const [imgError, setImgError] = useState(false);
   return (
     <div
@@ -78,7 +78,7 @@ function PartenaireItem({ p, domaine }: { p: { nom: string; description: string;
         )}
         <p className="text-xs leading-relaxed" style={{ color: "#6B6B67" }}>{p.description}</p>
       </div>
-      <
+      <a
         href={p.url}
         target="_blank"
         rel="noopener noreferrer"

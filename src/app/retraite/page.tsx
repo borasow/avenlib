@@ -23,7 +23,7 @@ export default function PageRetraite() {
             Retraite des indépendants : combien toucherez-vous vraiment ?
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
-            Un freelance, un micro-entrepreneur ou un auto-entrepreneur cotise chaque année à la retraite obligatoire — mais les montants perçus sont souvent deux fois inférieurs à ceux d'un salarié. Voici pourquoi, et surtout comment y remédier.
+            Un freelance, un micro-entrepreneur ou un auto-entrepreneur cotise chaque année à la retraite obligatoire,mais les montants perçus sont souvent deux fois inférieurs à ceux d'un salarié. Voici pourquoi, et surtout comment y remédier.
           </p>
         </section>
 
@@ -54,7 +54,7 @@ export default function PageRetraite() {
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
-                  En France, la retraite des travailleurs indépendants — freelances, micro-entrepreneurs, auto-entrepreneurs, gérants de SASU ou d'EURL — repose sur des régimes obligatoires spécifiques : le SSI (Sécurité sociale des indépendants) pour les artisans et commerçants, la CIPAV pour les professions libérales, ou encore la CARPIMKO pour les auxiliaires médicaux. Ces régimes fonctionnent sur le principe de la répartition, comme celui des salariés, mais avec une différence majeure : les cotisations sont calculées sur des revenus souvent plus volatils et généralement plus faibles en base de calcul.
+                  En France, la retraite des travailleurs indépendants,freelances, micro-entrepreneurs, auto-entrepreneurs, gérants de SASU ou d'EURL,repose sur des régimes obligatoires spécifiques : le SSI (Sécurité sociale des indépendants) pour les artisans et commerçants, la CIPAV pour les professions libérales, ou encore la CARPIMKO pour les auxiliaires médicaux. Ces régimes fonctionnent sur le principe de la répartition, comme celui des salariés, mais avec une différence majeure : les cotisations sont calculées sur des revenus souvent plus volatils et généralement plus faibles en base de calcul.
                 </p>
                 <p>
                   Premier problème : le taux de remplacement. Un salarié peut espérer percevoir environ 50 à 75 % de son dernier salaire à la retraite. Pour un indépendant, ce taux tombe souvent en dessous de 30 à 40 %. Concrètement, un freelance qui gagne 4 000 € nets par mois aujourd'hui peut se retrouver avec moins de 1 200 € de pension, soit une chute brutale de son niveau de vie.
@@ -63,7 +63,7 @@ export default function PageRetraite() {
                   Deuxième problème : les années de faibles revenus pèsent lourd. Un auto-entrepreneur ou un micro-entrepreneur qui débute avec de petits chiffres d'affaires accumule très peu de trimestres validés et de points retraite. Les premières années d'activité, souvent les plus difficiles financièrement, hypothèquent la pension future de façon durable.
                 </p>
                 <p>
-                  Troisième problème : l'absence de retraite complémentaire obligatoire comparable à celle des salariés (AGIRC-ARRCO). Les indépendants doivent, par eux-mêmes, mettre en place une épargne complémentaire — ce que près de 40 % d'entre eux ne font pas, faute d'information ou de temps.
+                  Troisième problème : l'absence de retraite complémentaire obligatoire comparable à celle des salariés (AGIRC-ARRCO). Les indépendants doivent, par eux-mêmes, mettre en place une épargne complémentaire,ce que près de 40 % d'entre eux ne font pas, faute d'information ou de temps.
                 </p>
               </div>
             </div>
@@ -77,10 +77,10 @@ export default function PageRetraite() {
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
-                  Les chiffres varient selon le statut juridique, le secteur d'activité, les revenus déclarés et la durée de carrière — mais les ordres de grandeur sont clairs et souvent décevants.
+                  Les chiffres varient selon le statut juridique, le secteur d'activité, les revenus déclarés et la durée de carrière,mais les ordres de grandeur sont clairs et souvent décevants.
                 </p>
                 <p>
-                  Un <strong>micro-entrepreneur ou auto-entrepreneur</strong> qui déclare 30 000 € de chiffre d'affaires par an (soit environ 24 000 € de revenus nets après abattement) peut espérer, après 40 ans de carrière, une pension d'environ <strong>900 à 1 100 € par mois</strong>. Pour un freelance tech qui facture 80 000 € par an, la pension monte à environ <strong>1 400 à 1 700 €</strong> — toujours bien en dessous de ce que percevrait un cadre salarié équivalent.
+                  Un <strong>micro-entrepreneur ou auto-entrepreneur</strong> qui déclare 30 000 € de chiffre d'affaires par an (soit environ 24 000 € de revenus nets après abattement) peut espérer, après 40 ans de carrière, une pension d'environ <strong>900 à 1 100 € par mois</strong>. Pour un freelance tech qui facture 80 000 € par an, la pension monte à environ <strong>1 400 à 1 700 €</strong>,toujours bien en dessous de ce que percevrait un cadre salarié équivalent.
                 </p>
                 <p>
                   La retraite freelance est particulièrement pénalisante pour ceux qui ont alterné périodes de salariat et périodes d'indépendance. Les règles de liquidation diffèrent selon les régimes, ce qui peut créer des « trous » dans la carrière et réduire encore la pension finale.
@@ -89,7 +89,7 @@ export default function PageRetraite() {
                   Pour les <strong>gérants de SASU</strong>, la situation est encore plus contrastée : s'ils se rémunèrent en dividendes plutôt qu'en salaire, ils ne cotisent quasiment pas à la retraite obligatoire. Résultat : des droits à la retraite proches de zéro malgré une activité florissante.
                 </p>
                 <p>
-                  Le seul moyen d'obtenir une estimation fiable est de consulter son relevé de carrière sur <strong>info-retraite.fr</strong>, qui agrège tous les régimes auxquels vous avez cotisé. Mais cette estimation ne tient pas compte de l'inflation ni des réformes futures — deux facteurs qui pourraient encore réduire les pensions réelles.
+                  Le seul moyen d'obtenir une estimation fiable est de consulter son relevé de carrière sur <strong>info-retraite.fr</strong>, qui agrège tous les régimes auxquels vous avez cotisé. Mais cette estimation ne tient pas compte de l'inflation ni des réformes futures,deux facteurs qui pourraient encore réduire les pensions réelles.
                 </p>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function PageRetraite() {
 
                 <p className="font-semibold" style={{ color: "#2C2C2A" }}>1. Le PER indépendant (Plan d'Épargne Retraite)</p>
                 <p>
-                  Le <strong>PER indépendant</strong> est aujourd'hui le dispositif le plus efficace pour un freelance ou un auto-entrepreneur. Il permet de déduire les versements de son revenu imposable — jusqu'à 10 % du bénéfice imposable, voire davantage selon les plafonds — ce qui réduit immédiatement la facture fiscale tout en constituant un capital pour la retraite. Pour un indépendant à 30 % de TMI qui verse 5 000 € sur son PER, l'économie d'impôt immédiate est de 1 500 €.
+                  Le <strong>PER indépendant</strong> est aujourd'hui le dispositif le plus efficace pour un freelance ou un auto-entrepreneur. Il permet de déduire les versements de son revenu imposable,jusqu'à 10 % du bénéfice imposable, voire davantage selon les plafonds,ce qui réduit immédiatement la facture fiscale tout en constituant un capital pour la retraite. Pour un indépendant à 30 % de TMI qui verse 5 000 € sur son PER, l'économie d'impôt immédiate est de 1 500 €.
                 </p>
                 <p>
                   À la retraite, le capital peut être récupéré en rente viagère ou en capital (depuis la loi PACTE de 2019). Le <strong>PER retraite freelance</strong> est donc à la fois un outil d'optimisation fiscale à court terme et un filet de sécurité à long terme.
@@ -147,7 +147,7 @@ export default function PageRetraite() {
               Quelle sera vraiment votre retraite ?
             </h2>
             <p className="text-sm mb-8 max-w-md mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Le bilan Avenlib analyse votre situation retraite en 13 questions et vous oriente vers les dispositifs les plus adaptés à votre statut — PER, Madelin, assurance vie — gratuitement et sans engagement.
+              Le bilan Avenlib analyse votre situation retraite en 13 questions et vous oriente vers les dispositifs les plus adaptés à votre statut,PER, Madelin, assurance vie,gratuitement et sans engagement.
             </p>
             <Link
               href="/diagnostic"

@@ -161,6 +161,9 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
           Les bons partenaires pour toi
         </h2>
         <div className="space-y-4 mb-10">
+          {partenaires.length === 0 && (
+            <p className="text-sm text-secondary">Partenaires en cours de sélection, revenez bientôt.</p>
+          )}
           {partenaires.map((p) => (
             <div
               key={p.nom}
@@ -206,11 +209,15 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
           </p>
           <div className="flex flex-wrap gap-2">
             {[
-              { slug: "retraite", label: "Retraite" },
-              { slug: "prevoyance", label: "Prévoyance" },
-              { slug: "sante", label: "Santé" },
-              { slug: "fiscalite", label: "Fiscalité" },
-              { slug: "deces", label: "Décès/Invalidité" },
+              { slug: "retraite",     label: "Retraite" },
+              { slug: "prevoyance",   label: "Prévoyance" },
+              { slug: "sante",        label: "Santé" },
+              { slug: "fiscalite",    label: "Fiscalité" },
+              { slug: "deces",        label: "Décès/Invalidité" },
+              { slug: "banque_pro",   label: "Banque pro" },
+              { slug: "assurance_pro", label: "RC Pro" },
+              { slug: "epargne",      label: "Épargne" },
+              { slug: "credit",       label: "Crédit immo" },
             ]
               .filter((d) => d.slug !== domaine)
               .map((d) => (

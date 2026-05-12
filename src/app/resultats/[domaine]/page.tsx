@@ -5,7 +5,10 @@ import DomaineClient from "./DomaineClient";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const DOMAINES_VALIDES = ["retraite", "prevoyance", "sante", "fiscalite", "deces"];
+const DOMAINES_VALIDES = [
+  "retraite", "prevoyance", "sante", "fiscalite", "deces",
+  "banque_pro", "assurance_pro", "epargne", "credit",
+];
 
 export function generateStaticParams() {
   return DOMAINES_VALIDES.map((d) => ({ domaine: d }));

@@ -316,6 +316,46 @@ export default function DiagnosticClient() {
   }
 
   if (step === 13) {
+    // Vue pour utilisateur DÉJÀ CONNECTÉ
+    if (loggedInUser) {
+      const prenomUser =
+        loggedInUser.user_metadata?.prenom ||
+        loggedInUser.user_metadata?.full_name?.split(" ")[0] ||
+        loggedInUser.email?.split("@")[0] ||
+        "";
+      return (
+        <div className="min-h-screen" style={{ backgroundColor: "#FAFAFA" }}>
+          <ProgressBar progress={100} />
+          <div className="max-w-lg mx-auto px-6 py-16">
+            <button onClick={goBack} className="flex items-center gap-2 text-sm text-secondary mb-8 transition-colors">
+              <ArrowLeft size={16} /> Retour
+            </button>
+            <div className="bg-white border border-gray-100 rounded-2xl p-8">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: "#EFF9F5" }}>
+                <CheckSquare size={24} style={{ color: "#1D9E75" }} />
+              </div>
+              <h2 className="text-2xl font-bold mb-2" style={{ color: "#2C2C2A" }}>
+                Diagnostic mis à jour, {prenomUser} !
+              </h2>
+              <p className="mb-8" style={{ color: "#6B6B67" }}>
+                Tes nouvelles réponses vont remplacer ton diagnostic précédent dans ton espace personnel.
+              </p>
+              {error && <p className="text-sm mb-4" style={{ color: "#DC2626" }}>{error}</p>}
+              <button
+                onClick={handleUpdate}
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-btn text-white font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
+                style={{ backgroundColor: "#1D9E75" }}
+              >
+                {loading ? "Sauvegarde..." : <>Voir mes nouveaux résultats <ArrowRight size={18} /></>}
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Vue pour NOUVEL utilisateur (création de compte)
     return (
       <div className="min-h-screen" style={{ backgroundColor: "#FAFAFA" }}>
         <ProgressBar progress={100} />
@@ -370,7 +410,7 @@ export default function DiagnosticClient() {
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => { setEmail(e.target.value); if (error === "ALREADY_EXISTS") setError(""); }}
                   placeholder="marie@exemple.fr"
                   className="w-full border border-gray-200 rounded-btn px-4 py-3 text-sm focus:outline-none focus:border-gray-400 transition-colors"
                   required
@@ -427,9 +467,21 @@ export default function DiagnosticClient() {
                   </ul>
                 )}
               </div>
-              {error && (
+
+              {/* Message d'erreur email existant */}
+              {error === "ALREADY_EXISTS" ? (
+                <div className="rounded-lg px-4 py-3 text-sm" style={{ backgroundColor: "#FFF1F1", border: "1px solid #FECACA" }}>
+                  <p style={{ color: "#DC2626", fontWeight: 600, marginBottom: "4px" }}>
+                    Un compte existe déjà avec cet email.
+                  </p>
+                  <a href="/connexion" className="font-medium underline" style={{ color: "#991B1B" }}>
+                    Se connecter →
+                  </a>
+                </div>
+              ) : error ? (
                 <p className="text-sm" style={{ color: "#DC2626" }}>{error}</p>
-              )}
+              ) : null}
+
               <button
                 type="submit"
                 disabled={loading}

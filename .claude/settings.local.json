@@ -20,7 +20,9 @@
       "Bash(xargs sed -i '' 's/ , /, /g')",
       "Bash(npx tsc *)",
       "Bash(xargs sed -i '' 's/10 questions/11 questions/g')",
-      "Bash(xargs sed -i '' 's/11 questions/13 questions/g')"
+      "Bash(xargs sed -i '' 's/11 questions/13 questions/g')",
+      "Bash(curl -s http://localhost:3003)",
+      "Bash(kill 11707 13578)"
     ]
   }
 }

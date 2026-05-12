@@ -14,29 +14,8 @@ const NAV_LINKS = [
 
 const linkStyle = { color: "#2C2C2A", fontSize: "15px", fontWeight: 600, whiteSpace: "nowrap" as const };
 
-function capitalize(s: string): string {
-  if (!s) return s;
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
-
-function getPrenom(user: User): string {
-  const meta = user.user_metadata ?? {};
-  if (meta.prenom) return capitalize(String(meta.prenom));
-  if (meta.full_name) return capitalize(String(meta.full_name).split(" ")[0]);
-  if (meta.name) return capitalize(String(meta.name).split(" ")[0]);
-  try {
-    const stored = localStorage.getItem("avenlib_profile");
-    if (stored) {
-      const parsed = JSON.parse(stored) as { prenom?: string };
-      if (parsed.prenom) return capitalize(parsed.prenom);
-    }
-  } catch {}
-  return capitalize(user.email?.split("@")[0] ?? "");
-}
-
 export default function Navbar() {
   const [user, setUser] = useState<User | null>(null);
-  const [prenom, setPrenom] = useState("");
   const [ready, setReady] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -46,46 +25,13 @@ export default function Navbar() {
   useEffect(() => {
     const supabase = createClient();
 
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
-
-      if (session?.user) {
-        const { data: profile } = await supabase
-          .from("profiles")
-          .select("prenom")
-          .eq("user_id", session.user.id)
-          .single();
-
-        if (profile?.prenom) {
-          setPrenom(capitalize(profile.prenom));
-        } else {
-          setPrenom(getPrenom(session.user));
-        }
-      }
-
       setReady(true);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
-
-      if (session?.user) {
-        const supabaseClient = createClient();
-        const { data: profile } = await supabaseClient
-          .from("profiles")
-          .select("prenom")
-          .eq("user_id", session.user.id)
-          .single();
-
-        if (profile?.prenom) {
-          setPrenom(capitalize(profile.prenom));
-        } else {
-          setPrenom(getPrenom(session.user));
-        }
-      } else {
-        setPrenom("");
-      }
-
       setReady(true);
     });
 
@@ -131,7 +77,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Auth, masqué tant que la session n'est pas résolue */}
+          {/* Auth — masqué tant que la session n'est pas résolue */}
           {ready && (
             user ? (
               <div className="relative" ref={dropdownRef}>
@@ -140,7 +86,7 @@ export default function Navbar() {
                   className="flex items-center gap-1.5 transition-opacity hover:opacity-70"
                   style={linkStyle}
                 >
-                  Bonjour {prenom || user?.email?.split("@")[0]} 👋
+                  Mon compte
                   <ChevronDown
                     size={15}
                     style={{ transition: "transform 0.2s", transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
@@ -222,9 +168,6 @@ export default function Navbar() {
           {ready && (
             user ? (
               <div style={{ borderTop: "0.5px solid #D3D1C7", paddingTop: "8px" }}>
-                <p className="text-sm font-semibold mb-3" style={{ color: "#1D9E75" }}>
-                  Bonjour {prenom || user?.email?.split("@")[0]} 👋
-                </p>
                 <Link
                   href="/compte"
                   onClick={() => setMobileOpen(false)}

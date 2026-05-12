@@ -36,7 +36,7 @@ export default function PageFiscalite() {
         },
         {
           titre: "On cartographie les dispositifs auxquels vous avez droit",
-          texte: "PER, Madelin, frais réels, déduction des charges sociales, amortissements, le diagnostic Avenlib liste les leviers adaptés à votre situation spécifique.",
+          texte: "PER, Madelin, frais réels, déduction des charges sociales, amortissements, le bilan Avenlib liste les leviers adaptés à votre situation spécifique.",
         },
         {
           titre: "On vous met en relation avec un expert-comptable ou CGP",

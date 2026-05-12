@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Se connecter, Avenlib",
-  description: "Connectez-vous à votre espace Avenlib pour accéder à votre diagnostic et vos recommandations personnalisées.",
+  description: "Connectez-vous à votre espace Avenlib pour accéder à votre bilan et vos recommandations personnalisées.",
 };
 
 export default function PageConnexion() {

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Mon diagnostic, Avenlib",
+  title: "Mon bilan, Avenlib",
   description: "Ton tableau de bord de protection financière personnalisé.",
 };
 

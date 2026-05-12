@@ -32,7 +32,7 @@ export default function PageRetraite() {
       solutions={[
         {
           titre: "On analyse votre situation retraite actuelle",
-          texte: "Le diagnostic Avenlib calcule vos droits estimés selon votre régime (SSI, CIPAV, CARPIMKO…) et identifie précisément votre écart à combler.",
+          texte: "Le bilan Avenlib calcule vos droits estimés selon votre régime (SSI, CIPAV, CARPIMKO…) et identifie précisément votre écart à combler.",
         },
         {
           titre: "On vous oriente vers les bons dispositifs",

@@ -34,8 +34,8 @@ const etapes = [
 ];
 
 const arguments_ = [
-  { icon: Gift, titre: "Gratuit et sans engagement", description: "Le diagnostic ne coûte rien. Aucune carte bancaire, aucun abonnement. Tu explores, tu décides." },
-  { icon: ClipboardList, titre: "Diagnostic personnalisé en 13 questions", description: "On analyse ta situation réelle, statut, revenus, âge, famille, pour des recommandations qui te correspondent vraiment." },
+  { icon: Gift, titre: "Gratuit et sans engagement", description: "Le bilan ne coûte rien. Aucune carte bancaire, aucun abonnement. Tu explores, tu décides." },
+  { icon: ClipboardList, titre: "Bilan personnalisé en 13 questions", description: "On analyse ta situation réelle, statut, revenus, âge, famille, pour des recommandations qui te correspondent vraiment." },
   { icon: Users, titre: "Orienté vers les meilleurs spécialistes", description: "On ne vend rien. On t'oriente vers des experts sélectionnés pour leur sérieux et leur spécialisation indépendants." },
 ];
 
@@ -65,21 +65,21 @@ const temoignages = [
     metier: "Gérante de franchise",
     ville: "Bordeaux",
     note: 5,
-    texte: "Mon comptable ne m'avait jamais parlé d'optimisation fiscale. Le diagnostic a tout mis sur la table. Clair, concret, sans jargon.",
+    texte: "Mon comptable ne m'avait jamais parlé d'optimisation fiscale. Le bilan a tout mis sur la table. Clair, concret, sans jargon.",
   },
 ];
 
 const faq = [
   {
     question: "C'est vraiment gratuit ?",
-    reponse: "Oui, à 100%. Le diagnostic, les recommandations et l'accès à ta page de résultats sont totalement gratuits. Avenlib est rémunéré par les partenaires si tu souscris via notre plateforme, ce qui ne modifie jamais le prix que tu paies.",
+    reponse: "Oui, à 100%. Le bilan, les recommandations et l'accès à ta page de résultats sont totalement gratuits. Avenlib est rémunéré par les partenaires si tu souscris via notre plateforme, ce qui ne modifie jamais le prix que tu paies.",
   },
   {
     question: "Mes données sont-elles sécurisées ?",
     reponse: "Tes données sont chiffrées et stockées sur des serveurs européens (Supabase). Elles ne sont jamais revendues à des tiers. Tu peux demander leur suppression à tout moment à contact@avenlib.fr.",
   },
   {
-    question: "Combien de temps prend le diagnostic ?",
+    question: "Combien de temps prend le bilan ?",
     reponse: "Environ 3 minutes. 13 questions simples sur ta situation personnelle et professionnelle. Pas de calcul complexe, pas de document à préparer.",
   },
   {
@@ -133,7 +133,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-base transition-opacity hover:opacity-90"
                 style={{ backgroundColor: "#1D9E75", width: "fit-content" }}
               >
-                Faire mon diagnostic gratuit
+                Faire mon bilan gratuit
                 <ArrowRight size={18} />
               </Link>
               <p className="mt-4 text-sm" style={{ color: "#6B6B67" }}>
@@ -310,7 +310,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
                 style={{ backgroundColor: "#1D9E75" }}
               >
-                Commencer mon diagnostic <ArrowRight size={16} />
+                Commencer mon bilan <ArrowRight size={16} />
               </Link>
             </div>
           </div>
@@ -435,14 +435,14 @@ export default function Home() {
                 Prêt à connaître ta situation réelle ?
               </h2>
               <p className="mb-8 max-w-md mx-auto text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Le diagnostic est gratuit. Tes données sont confidentielles. Et les résultats sont immédiats.
+                Le bilan est gratuit. Tes données sont confidentielles. Et les résultats sont immédiats.
               </p>
               <Link
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: "#1D9E75" }}
               >
-                Faire mon diagnostic gratuit <ArrowRight size={18} />
+                Faire mon bilan gratuit <ArrowRight size={18} />
               </Link>
             </div>
           </div>

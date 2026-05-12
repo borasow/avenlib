@@ -21,7 +21,7 @@ export default function CGU() {
             </h2>
             <p>
               Avenlib est une plateforme d'information et d'orientation financière pour les
-              travailleurs indépendants. Les diagnostics et recommandations fournis sont indicatifs
+              travailleurs indépendants. Les bilans et recommandations fournis sont indicatifs
               et ne constituent pas un conseil financier, juridique ou fiscal au sens réglementaire.
             </p>
           </section>
@@ -31,7 +31,7 @@ export default function CGU() {
             </h2>
             <p>
               L'utilisation d'Avenlib est gratuite. L'utilisateur s'engage à fournir des
-              informations exactes lors du diagnostic. Avenlib se réserve le droit de modifier ou
+              informations exactes lors du bilan. Avenlib se réserve le droit de modifier ou
               d'interrompre le service à tout moment.
             </p>
           </section>

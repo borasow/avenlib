@@ -43,7 +43,7 @@ export default function PageBanque() {
           texte: "Qonto convient aux structures plus grandes, Shine est idéal pour les freelances en solo, Blank pour ceux qui démarrent. Avenlib vous oriente selon votre situation.",
         },
       ]}
-      ctaLabel="Faire mon diagnostic gratuit"
+      ctaLabel="Faire mon bilan gratuit"
     />
   );
 }

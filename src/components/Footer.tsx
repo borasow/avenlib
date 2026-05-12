@@ -24,7 +24,7 @@ export default function Footer() {
               <p className="font-semibold text-xs uppercase tracking-wider mb-1" style={{ color: "#2C2C2A" }}>Produit</p>
               <Link href="/#pourquoi" className="hover:text-[#2C2C2A] transition-colors">Pourquoi Avenlib</Link>
               <Link href="/#comment" className="hover:text-[#2C2C2A] transition-colors">Comment ça marche</Link>
-              <Link href="/diagnostic" className="hover:text-[#2C2C2A] transition-colors">Faire mon diagnostic</Link>
+              <Link href="/diagnostic" className="hover:text-[#2C2C2A] transition-colors">Faire mon bilan</Link>
             </div>
             <div className="flex flex-col gap-2.5">
               <p className="font-semibold text-xs uppercase tracking-wider mb-1" style={{ color: "#2C2C2A" }}>Société</p>

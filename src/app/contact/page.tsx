@@ -22,7 +22,7 @@ export default function Contact() {
           Nous contacter
         </h1>
         <p className="text-secondary mb-8 leading-relaxed">
-          Une question sur ton diagnostic, un partenariat, ou simplement envie
+          Une question sur ton bilan, un partenariat, ou simplement envie
           de discuter ? On répond sous 24h.
         </p>
         <a

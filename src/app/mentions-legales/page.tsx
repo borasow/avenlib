@@ -33,7 +33,7 @@ export default function MentionsLegales() {
               Données personnelles
             </h2>
             <p>
-              Les données collectées lors du diagnostic (prénom, email, réponses) sont utilisées
+              Les données collectées lors du bilan (prénom, email, réponses) sont utilisées
               uniquement pour personnaliser les recommandations et vous envoyer des conseils par email
               si vous avez consenti. Elles ne sont jamais revendues à des tiers.
             </p>

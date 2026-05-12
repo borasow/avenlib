@@ -73,9 +73,12 @@ function PartenaireItem({ p, domaine }: { p: { nom: string; description: string;
             </span>
           )}
         </div>
+        {p.tarif && (
+          <p style={{ fontSize: "11px", color: "#1D9E75", fontWeight: 500, marginBottom: "2px" }}>{p.tarif} *</p>
+        )}
         <p className="text-xs leading-relaxed" style={{ color: "#6B6B67" }}>{p.description}</p>
       </div>
-      <a
+      <
         href={p.url}
         target="_blank"
         rel="noopener noreferrer"
@@ -111,10 +114,10 @@ export default function ResultatsClient() {
   if (!profile) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>Aucun diagnostic trouvé</h2>
-        <p className="text-secondary mb-8">Tu dois d'abord faire ton diagnostic pour voir tes résultats.</p>
+        <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>Aucun bilan trouvé</h2>
+        <p className="text-secondary mb-8">Tu dois d'abord faire ton bilan pour voir tes résultats.</p>
         <Link href="/diagnostic" className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold" style={{ backgroundColor: "#1D9E75" }}>
-          Faire mon diagnostic <ArrowRight size={18} />
+          Faire mon bilan <ArrowRight size={18} />
         </Link>
       </div>
     );
@@ -139,7 +142,7 @@ export default function ResultatsClient() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2" style={{ color: "#2C2C2A" }}>
-            Bonjour {profile.prenom}, voici ton diagnostic
+            Bonjour {profile.prenom}, voici ton bilan
           </h1>
           <div className="flex items-center gap-3 flex-wrap">
             <span className="text-sm px-3 py-1 rounded-full font-medium" style={{ backgroundColor: "#EFF9F5", color: "#085041" }}>
@@ -171,7 +174,7 @@ export default function ResultatsClient() {
             <div>
               <p className="font-semibold text-sm mb-0.5" style={{ color: "#059669" }}>Bonne nouvelle : tu as déjà de bonnes bases</p>
               <p className="text-sm" style={{ color: "#065F46" }}>
-                Ton diagnostic confirme que ta situation est solide. Quelques optimisations ciblées pourraient néanmoins améliorer encore ta protection et réduire ta fiscalité.
+                Ton bilan confirme que ta situation est solide. Quelques optimisations ciblées pourraient néanmoins améliorer encore ta protection et réduire ta fiscalité.
               </p>
             </div>
           </div>
@@ -273,11 +276,16 @@ export default function ResultatsClient() {
 
                     {/* Partenaires */}
                     {partenaires.length > 0 ? (
-                      <div className="space-y-2">
-                        {partenaires.slice(0, 3).map((p) => (
-                          <PartenaireItem key={p.nom} p={p} domaine={key} />
-                        ))}
-                      </div>
+                      <>
+                        <div className="space-y-2">
+                          {partenaires.slice(0, 3).map((p) => (
+                            <PartenaireItem key={p.nom} p={p} domaine={key} />
+                          ))}
+                        </div>
+                        {partenaires.some((p) => p.tarif) && (
+                          <p className="mt-2" style={{ fontSize: "10px", color: "#9B9B97" }}>* Tarifs indicatifs, peuvent varier selon profil</p>
+                        )}
+                      </>
                     ) : (
                       <p className="text-xs text-center py-3" style={{ color: "#9B9B97" }}>
                         Partenaires en cours de sélection, revenez bientôt
@@ -333,11 +341,16 @@ export default function ResultatsClient() {
                         <p className="text-sm leading-relaxed" style={{ color: "#085041" }}>{meta.conseil}</p>
                       </div>
                       {partenaires.length > 0 ? (
-                        <div className="space-y-2">
-                          {partenaires.map((p) => (
-                            <PartenaireItem key={p.nom} p={p} domaine={key} />
-                          ))}
-                        </div>
+                        <>
+                          <div className="space-y-2">
+                            {partenaires.map((p) => (
+                              <PartenaireItem key={p.nom} p={p} domaine={key} />
+                            ))}
+                          </div>
+                          {partenaires.some((p) => p.tarif) && (
+                            <p className="mt-2" style={{ fontSize: "10px", color: "#9B9B97" }}>* Tarifs indicatifs, peuvent varier selon profil</p>
+                          )}
+                        </>
                       ) : (
                         <p className="text-xs text-center py-3" style={{ color: "#9B9B97" }}>
                           Partenaires en cours de sélection, revenez bientôt
@@ -360,7 +373,7 @@ export default function ResultatsClient() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold text-sm transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#1D9E75" }}
           >
-            Refaire le diagnostic <ArrowRight size={16} />
+            Mettre à jour mon bilan <ArrowRight size={16} />
           </Link>
         </div>
 

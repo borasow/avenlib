@@ -1,10 +1,9 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, LayoutDashboard, LogOut } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
-import type { User } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
+import { ChevronDown, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Qui sommes-nous ?", href: "/#qui-sommes-nous" },
@@ -15,46 +14,72 @@ const NAV_LINKS = [
 const linkStyle = { color: "#2C2C2A", fontSize: "15px", fontWeight: 600, whiteSpace: "nowrap" as const };
 
 export default function Navbar() {
-  const [user, setUser] = useState<User | null>(null);
+  const [prenom, setPrenom] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
 
   useEffect(() => {
-    const supabase = createClient();
+    const supabase = createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
+
+    async function loadUser(userId: string, email?: string) {
+      const { data } = await supabase
+        .from("profiles")
+        .select("prenom")
+        .eq("user_id", userId)
+        .single();
+      const raw = data?.prenom || email?.split("@")[0] || "Mon compte";
+      setPrenom(raw.split(/[.\s]/)[0]);
+      setReady(true);
+    }
 
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      setReady(true);
+      if (session?.user) {
+        loadUser(session.user.id, session.user.email ?? undefined);
+      } else {
+        setReady(true);
+      }
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-      setReady(true);
+      if (session?.user) {
+        loadUser(session.user.id, session.user.email ?? undefined);
+      } else {
+        setPrenom(null);
+        setReady(true);
+      }
     });
 
     return () => subscription.unsubscribe();
   }, []);
 
   useEffect(() => {
-    function handleOutsideClick(e: MouseEvent) {
+    function handleClickOutside(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setDropdownOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   async function handleSignOut() {
-    await createClient().auth.signOut();
+    const supabase = createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
+    await supabase.auth.signOut();
+    setPrenom(null);
     setDropdownOpen(false);
     setMobileOpen(false);
-    router.push("/");
-    router.refresh();
+    window.location.href = "/";
   }
+
+  const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
   return (
     <nav
@@ -77,22 +102,20 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Auth — masqué tant que la session n'est pas résolue */}
           {ready && (
-            user ? (
+            prenom ? (
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setDropdownOpen((v) => !v)}
                   className="flex items-center gap-1.5 transition-opacity hover:opacity-70"
                   style={linkStyle}
                 >
-                  Mon compte
+                  Bonjour {capitalize(prenom)} &nbsp;
                   <ChevronDown
                     size={15}
                     style={{ transition: "transform 0.2s", transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
                   />
                 </button>
-
                 {dropdownOpen && (
                   <div
                     className="absolute right-0 mt-2 w-48 rounded-xl overflow-hidden"
@@ -121,7 +144,7 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <Link href="/compte" className="transition-opacity hover:opacity-70" style={linkStyle}>
+              <Link href="/connexion" className="transition-opacity hover:opacity-70" style={linkStyle}>
                 Se connecter
               </Link>
             )
@@ -132,7 +155,7 @@ export default function Navbar() {
             className="font-semibold px-4 py-2 rounded-xl text-white transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#1D9E75", fontSize: "15px", whiteSpace: "nowrap" }}
           >
-            Faire mon diagnostic
+            Faire mon bilan
           </Link>
         </div>
 
@@ -166,7 +189,7 @@ export default function Navbar() {
           ))}
 
           {ready && (
-            user ? (
+            prenom ? (
               <div style={{ borderTop: "0.5px solid #D3D1C7", paddingTop: "8px" }}>
                 <Link
                   href="/compte"
@@ -188,7 +211,7 @@ export default function Navbar() {
               </div>
             ) : (
               <Link
-                href="/compte"
+                href="/connexion"
                 className="py-1 transition-opacity hover:opacity-70"
                 style={linkStyle}
                 onClick={() => setMobileOpen(false)}
@@ -204,7 +227,7 @@ export default function Navbar() {
             style={{ backgroundColor: "#1D9E75", fontSize: "17px" }}
             onClick={() => setMobileOpen(false)}
           >
-            Faire mon diagnostic
+            Faire mon bilan
           </Link>
         </div>
       )}

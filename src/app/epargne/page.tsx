@@ -43,7 +43,7 @@ export default function PageEpargne() {
           texte: "Selon votre TMI et votre horizon de placement, certains véhicules sont bien plus avantageux que d'autres. Un conseiller en gestion de patrimoine peut vous orienter gratuitement.",
         },
       ]}
-      ctaLabel="Faire mon diagnostic gratuit"
+      ctaLabel="Faire mon bilan gratuit"
     />
   );
 }

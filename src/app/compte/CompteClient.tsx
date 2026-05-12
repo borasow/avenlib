@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { calculerScores, DiagnosticAnswers } from "@/lib/scoring";
 import { ArrowRight, User, RefreshCw, BarChart2 } from "lucide-react";
 
@@ -25,6 +26,7 @@ function getBadge(score: number) {
 
 export default function CompteClient() {
   const [profile, setProfile] = useState<{ prenom: string; answers: DiagnosticAnswers } | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const stored = localStorage.getItem("avenlib_profile");
@@ -36,8 +38,7 @@ export default function CompteClient() {
   }, []);
 
   function handleReset() {
-    localStorage.removeItem("avenlib_profile");
-    setProfile(null);
+    router.push("/diagnostic");
   }
 
   if (!profile) {
@@ -53,14 +54,14 @@ export default function CompteClient() {
           Aucun profil trouvé
         </h2>
         <p className="text-secondary mb-8 max-w-sm">
-          Fais ton diagnostic pour créer ton profil et accéder à ton tableau de bord.
+          Fais ton bilan pour créer ton profil et accéder à ton tableau de bord.
         </p>
         <Link
           href="/diagnostic"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold"
           style={{ backgroundColor: "#1D9E75" }}
         >
-          Faire mon diagnostic <ArrowRight size={18} />
+          Faire mon bilan <ArrowRight size={18} />
         </Link>
       </div>
     );
@@ -83,7 +84,7 @@ export default function CompteClient() {
             onClick={handleReset}
             className="flex items-center gap-2 text-sm text-secondary hover:text-secondary transition-colors border border-gray-200 rounded-btn px-3 py-2"
           >
-            <RefreshCw size={14} /> Refaire le diagnostic
+            <RefreshCw size={14} /> Mettre à jour mon bilan
           </button>
         </div>
 
@@ -115,7 +116,7 @@ export default function CompteClient() {
                 </span>
                 <div className="flex items-center gap-3">
                   {getBadge(score.score)}
-                  <ArrowRight size={14} className="text-secondary group-hover:text-secondary transition-colors" />
+                  <span className="group-hover:underline" style={{ color: "#2C2C2A", fontSize: "13px", fontWeight: 700 }}>En savoir plus →</span>
                 </div>
               </Link>
             ))}
@@ -126,7 +127,7 @@ export default function CompteClient() {
               className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
               style={{ color: "#1D9E75" }}
             >
-              Voir le diagnostic complet <ArrowRight size={14} />
+              Voir le bilan complet <ArrowRight size={14} />
             </Link>
           </div>
         </div>

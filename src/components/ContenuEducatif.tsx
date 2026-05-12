@@ -36,7 +36,7 @@ export default function ContenuEducatif({
   intro,
   points,
   solutions,
-  ctaLabel = "Faire mon diagnostic gratuit",
+  ctaLabel = "Faire mon bilan gratuit",
 }: Props) {
   return (
     <>
@@ -124,7 +124,7 @@ export default function ContenuEducatif({
               Quelle est ta situation réelle ?
             </h2>
             <p className="text-sm mb-8 max-w-md mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Le diagnostic Avenlib analyse ta situation en 13 questions et t&apos;oriente vers les bons experts, gratuitement.
+              Le bilan Avenlib analyse ta situation en 13 questions et t&apos;oriente vers les bons experts, gratuitement.
             </p>
             <Link
               href="/diagnostic"

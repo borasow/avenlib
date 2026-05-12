@@ -253,7 +253,7 @@ export default function DiagnosticClient() {
         }),
       });
       localStorage.setItem("avenlib_profile", JSON.stringify({ prenom: prenomUser, answers }));
-      router.push("/resultats");
+      router.push("/compte");
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Une erreur est survenue. Réessaie.");
     } finally {
@@ -335,10 +335,10 @@ export default function DiagnosticClient() {
                 <CheckSquare size={24} style={{ color: "#1D9E75" }} />
               </div>
               <h2 className="text-2xl font-bold mb-2" style={{ color: "#2C2C2A" }}>
-                Diagnostic mis à jour, {prenomUser} !
+                Bilan mis à jour, {prenomUser} !
               </h2>
               <p className="mb-8" style={{ color: "#6B6B67" }}>
-                Tes nouvelles réponses vont remplacer ton diagnostic précédent dans ton espace personnel.
+                Tes nouvelles réponses vont remplacer ton bilan précédent dans ton espace personnel.
               </p>
               {error && <p className="text-sm mb-4" style={{ color: "#DC2626" }}>{error}</p>}
               <button
@@ -374,7 +374,7 @@ export default function DiagnosticClient() {
               Parfait, tu y es presque !
             </h2>
             <p className="text-secondary mb-8">
-              Crée ton compte pour voir ton diagnostic personnalisé.
+              Crée ton compte pour voir ton bilan personnalisé.
             </p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>

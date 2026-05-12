@@ -43,7 +43,7 @@ export default function PageAssurancePro() {
           texte: "Les assurtech spécialisées indépendants permettent de souscrire en ligne, d'obtenir son attestation immédiatement et de modifier ses garanties sans engagement.",
         },
       ]}
-      ctaLabel="Faire mon diagnostic gratuit"
+      ctaLabel="Faire mon bilan gratuit"
     />
   );
 }

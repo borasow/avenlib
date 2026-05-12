@@ -4,6 +4,7 @@ export interface Partenaire {
   url: string;
   tag?: string;
   logo?: string;
+  tarif?: string;
 }
 
 export const PARTENAIRES: Record<string, Partenaire[]> = {
@@ -14,24 +15,28 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://www.getcaravel.fr",
       tag: "Recommandé",
       logo: "/logos/caravel.png",
+      tarif: "Dès 50€/mois · Frais 1,38%/an",
     },
     {
       nom: "Linxea",
       description: "PER et assurance vie sans frais d'entrée. Large choix de fonds, interface claire.",
       url: "https://www.linxea.com",
       logo: "/logos/Linxea.png",
+      tarif: "Frais 0,5%/an · Sans frais d'entrée",
     },
     {
       nom: "Yomoni",
       description: "Gestion pilotée de ton PER, performante et accessible dès 1 000€.",
       url: "https://www.yomoni.fr",
       logo: "/logos/yomini.png",
+      tarif: "Frais 0,6 à 1,6%/an",
     },
     {
       nom: "Ramify",
       description: "PER et assurance vie haut de gamme pour optimiser ton épargne retraite.",
       url: "https://www.ramify.fr",
       logo: "/logos/Ramify.png",
+      tarif: "Frais 1,3 à 1,6%/an",
     },
   ],
   prevoyance: [
@@ -41,18 +46,21 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://www.wemind.io",
       tag: "Recommandé",
       logo: "/logos/wemind.png",
+      tarif: "Entre 50 et 100€/mois",
     },
     {
       nom: "April",
       description: "Prévoyance et arrêt maladie pour indépendants, devis en ligne.",
       url: "https://www.april.fr",
       logo: "/logos/april.png",
+      tarif: "Dès 30€/mois",
     },
     {
       nom: "Swiss Life",
       description: "Solutions prévoyance complètes pour TNS et professions libérales.",
       url: "https://www.swisslife.fr",
       logo: "/logos/swisslife.png",
+      tarif: "Entre 40 et 100€/mois",
     },
   ],
   sante: [
@@ -62,18 +70,21 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://alan.com/",
       tag: "Recommandé",
       logo: "/logos/alan.png",
+      tarif: "Dès 49€/mois",
     },
     {
       nom: "Heyme",
       description: "Mutuelle dédiée aux jeunes indépendants. Offres modulables, bon rapport qualité-prix.",
       url: "https://www.heyme.com",
       logo: "/logos/Heyme.png",
+      tarif: "Dès 37€/mois",
     },
     {
       nom: "Harmonie Mutuelle",
       description: "Mutuelle santé leader en France, offres dédiées aux indépendants et TNS.",
       url: "https://www.harmonie-mutuelle.fr",
       logo: "/logos/harmoniemutuelle.png",
+      tarif: "Devis personnalisé",
     },
   ],
   fiscalite: [
@@ -83,18 +94,21 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://www.dougs.fr",
       tag: "Recommandé",
       logo: "/logos/dougs.png",
+      tarif: "Dès 29€/mois",
     },
     {
       nom: "Indy",
       description: "Comptabilité automatisée pour freelances. Connexion bancaire, déclarations simplifiées.",
       url: "https://www.indy.fr",
       logo: "/logos/Indy.png",
+      tarif: "Gratuit · Dès 12€/mois",
     },
     {
       nom: "Pennylane",
       description: "Comptabilité et gestion financière tout-en-un pour entrepreneurs.",
       url: "https://www.pennylane.com",
       logo: "/logos/pennylane.png",
+      tarif: "Dès 14€/mois HT",
     },
   ],
   deces: [
@@ -104,12 +118,14 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://www.abeille-assurances.fr",
       tag: "Recommandé",
       logo: "/logos/Abeilleassurance.png",
+      tarif: "Entre 50 et 100€/mois",
     },
     {
       nom: "Malakoff Humanis",
       description: "Capital décès jusqu'à 1M€, rente invalidité, solution sur mesure pour TNS.",
       url: "https://www.malakoffhumanis.com",
       logo: "/logos/malakoffhumanis.png",
+      tarif: "Dès 40€/mois",
     },
   ],
   banque_pro: [
@@ -119,18 +135,21 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://qonto.com/fr",
       tag: "Recommandé",
       logo: "/logos/qonto.png",
+      tarif: "Dès 9€/mois HT",
     },
     {
       nom: "Shine",
       description: "Compte bancaire professionnel avec outils de facturation intégrés.",
       url: "https://www.shine.fr",
       logo: "/logos/Shine.png",
+      tarif: "Gratuit ou dès 9€/mois",
     },
     {
       nom: "Blank",
       description: "Compte pro 100% mobile, sans frais cachés.",
       url: "https://www.blank.app",
       logo: "/logos/Blank.png",
+      tarif: "Dès 9€/mois",
     },
   ],
   assurance_pro: [
@@ -140,12 +159,14 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://www.hiscox.fr",
       tag: "Recommandé",
       logo: "/logos/Hiscox.png",
+      tarif: "Devis personnalisé",
     },
     {
       nom: "Simplis",
       description: "RC Pro pour consultants et freelances, souscription 100% en ligne.",
       url: "https://www.simplis.fr",
       logo: "/logos/simplis.png",
+      tarif: "Dès 9,99€/mois",
     },
   ],
   epargne: [
@@ -155,12 +176,14 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://www.nalo.fr",
       tag: "Recommandé",
       logo: "/logos/Nalo.png",
+      tarif: "Frais max 1,6%/an · Dès 50€/mois",
     },
     {
       nom: "Ramify",
       description: "PER et assurance vie haut de gamme pour optimiser ton épargne retraite.",
       url: "https://www.ramify.fr",
       logo: "/logos/Ramify.png",
+      tarif: "Frais 1,3 à 1,6%/an",
     },
   ],
   immobilier: [
@@ -179,12 +202,14 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       url: "https://www.pretto.fr",
       tag: "Recommandé",
       logo: "/logos/Pretto.png",
+      tarif: "Gratuit · Commission à la signature",
     },
     {
       nom: "Defacto",
       description: "Financement rapide de ta trésorerie freelance.",
       url: "https://defacto.fr",
       logo: "/logos/defacto.svg",
+      tarif: "Sans abonnement · Taux 0,05%/jour",
     },
   ],
   formation: [],

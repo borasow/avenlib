@@ -32,7 +32,7 @@ export default function PagePrevoyance() {
       solutions={[
         {
           titre: "On évalue votre niveau de protection actuel",
-          texte: "Le diagnostic analyse ce que vous avez déjà en place (mutuelle, prévoyance, RC Pro) et identifie les vrais trous dans votre couverture.",
+          texte: "Le bilan analyse ce que vous avez déjà en place (mutuelle, prévoyance, RC Pro) et identifie les vrais trous dans votre couverture.",
         },
         {
           titre: "On calcule le bon niveau de couverture pour votre profil",

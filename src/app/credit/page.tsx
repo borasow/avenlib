@@ -43,7 +43,7 @@ export default function PageCredit() {
           texte: "Defacto finance votre trésorerie en 24h sans garantie personnelle. Idéal pour les creux d'activité ou les gros projets à avancer.",
         },
       ]}
-      ctaLabel="Faire mon diagnostic gratuit"
+      ctaLabel="Faire mon bilan gratuit"
     />
   );
 }

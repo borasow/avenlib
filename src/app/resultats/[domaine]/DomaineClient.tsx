@@ -29,6 +29,9 @@ function PartenaireCard({ p, onTrack }: { p: Partenaire; onTrack: () => void }) 
             </span>
           )}
         </div>
+        {p.tarif && (
+          <p style={{ fontSize: "12px", color: "#1D9E75", fontWeight: 500, marginBottom: "2px" }}>{p.tarif} *</p>
+        )}
         <p className="text-sm text-secondary leading-relaxed">{p.description}</p>
       </div>
       <a
@@ -96,7 +99,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
           href="/resultats"
           className="flex items-center gap-2 text-sm text-secondary hover:text-secondary mb-8 transition-colors"
         >
-          <ArrowLeft size={16} /> Retour au diagnostic
+          <ArrowLeft size={16} /> Retour au bilan
         </Link>
 
         {/* Header */}
@@ -193,7 +196,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
         <h2 className="text-xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
           Les bons partenaires pour toi
         </h2>
-        <div className="space-y-4 mb-10">
+        <div className="space-y-4 mb-2">
           {partenaires.length === 0 && (
             <p className="text-sm text-secondary">Partenaires en cours de sélection, revenez bientôt.</p>
           )}
@@ -201,6 +204,11 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
             <PartenaireCard key={p.nom} p={p} onTrack={() => handlePartenaireClick(p)} />
           ))}
         </div>
+        {partenaires.some((p) => p.tarif) && (
+          <p className="mb-10" style={{ fontSize: "11px", color: "#9B9B97" }}>
+            * Tarifs indicatifs, peuvent varier selon profil
+          </p>
+        )}
 
         {/* Navigation entre domaines */}
         <div

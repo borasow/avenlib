@@ -71,7 +71,7 @@ export default function ConnexionClient() {
             Connexion
           </h1>
           <p className="text-sm mb-8" style={{ color: "#6B6B67" }}>
-            Accède à ton diagnostic et tes recommandations.
+            Accède à ton bilan et tes recommandations.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -157,14 +157,14 @@ export default function ConnexionClient() {
             Pas encore de compte ?
           </p>
           <p className="text-sm mb-5" style={{ color: "#6B6B67", lineHeight: "1.6" }}>
-            Faites votre diagnostic gratuit en 13 questions et créez votre compte à la fin.
+            Faites votre bilan gratuit en 13 questions et créez votre compte à la fin.
           </p>
           <Link
             href="/diagnostic"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#1D9E75" }}
           >
-            Faire mon diagnostic <ArrowRight size={16} />
+            Faire mon bilan <ArrowRight size={16} />
           </Link>
         </div>
 

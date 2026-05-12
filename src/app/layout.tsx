@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Avenlib, L'indépendance sans l'inquiétude",
   description:
-    "Le premier service qui oriente les freelances et indépendants vers les bons experts. Retraite, prévoyance, fiscalité, crédit, santé. Diagnostic gratuit en 13 questions.",
+    "Le premier service qui oriente les freelances et indépendants vers les bons experts. Retraite, prévoyance, fiscalité, crédit, santé. Bilan gratuit en 13 questions.",
   keywords: "protection financière, freelance, indépendant, retraite, prévoyance, mutuelle, fiscalité",
   verification: {
     google: "fZzAMahDY16iUIfZOS-JNxHKnvdQTcVoAI8qJq-GbcM",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Avenlib, L'indépendance sans l'inquiétude",
     description:
-      "Le premier service qui oriente les freelances et indépendants vers les bons experts. Diagnostic gratuit en 13 questions.",
+      "Le premier service qui oriente les freelances et indépendants vers les bons experts. Bilan gratuit en 13 questions.",
     url: "https://avenlib.fr",
     siteName: "Avenlib",
     locale: "fr_FR",

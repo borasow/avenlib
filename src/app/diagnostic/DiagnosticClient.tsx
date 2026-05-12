@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, ArrowLeft, CheckSquare, Eye, EyeOff, Check } from "lucide-react";
+import type { User } from "@supabase/supabase-js";
 
 const QUESTIONS = [
   {
@@ -180,6 +181,15 @@ export default function DiagnosticClient() {
   const [showPassword, setShowPassword] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    import("@/lib/supabase/client").then(({ createClient }) => {
+      createClient().auth.getSession().then(({ data: { session } }) => {
+        if (session?.user) setLoggedInUser(session.user);
+      });
+    });
+  }, []);
   const [error, setError] = useState("");
 
   const pwRules = {
@@ -220,6 +230,38 @@ export default function DiagnosticClient() {
     else if (step > 0) setStep((s) => s - 1);
   }
 
+  // Soumission pour un utilisateur DÉJÀ connecté (mise à jour du diagnostic)
+  async function handleUpdate() {
+    if (!loggedInUser) return;
+    setLoading(true);
+    setError("");
+    try {
+      const prenomUser =
+        loggedInUser.user_metadata?.prenom ||
+        loggedInUser.user_metadata?.full_name?.split(" ")[0] ||
+        loggedInUser.email?.split("@")[0] ||
+        "";
+      await fetch("/api/inscription", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_id: loggedInUser.id,
+          prenom: prenomUser,
+          email: loggedInUser.email,
+          newsletter: false,
+          answers,
+        }),
+      });
+      localStorage.setItem("avenlib_profile", JSON.stringify({ prenom: prenomUser, answers }));
+      router.push("/resultats");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Une erreur est survenue. Réessaie.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // Soumission pour un NOUVEL utilisateur (création de compte)
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!prenom.trim() || !email.trim() || !password.trim()) {
@@ -240,9 +282,18 @@ export default function DiagnosticClient() {
         password,
         options: { data: { prenom: prenom.trim(), nom: nom.trim() } },
       });
-      if (authError && authError.message !== "User already registered") {
-        throw new Error(authError.message);
+
+      // Email déjà utilisé — Supabase renvoie soit une erreur, soit un user sans identités
+      const alreadyRegistered =
+        authError?.message === "User already registered" ||
+        (authData?.user && (authData.user.identities?.length ?? 0) === 0);
+
+      if (alreadyRegistered) {
+        setError("ALREADY_EXISTS");
+        return;
       }
+      if (authError) throw new Error(authError.message);
+
       await fetch("/api/inscription", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

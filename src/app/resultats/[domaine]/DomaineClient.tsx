@@ -72,7 +72,6 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
               >
                 {colors.badge}
               </span>
-              <span className="text-sm text-secondary">Score : {score.score}/100</span>
             </div>
           )}
         </div>
@@ -83,15 +82,9 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
             className="rounded-xl p-5 mb-6 border"
             style={{ backgroundColor: colors.bg, borderColor: colors.border }}
           >
-            <p className="text-sm font-medium mb-3" style={{ color: colors.text }}>
+            <p className="text-sm font-medium" style={{ color: colors.text }}>
               {score.message}
             </p>
-            <div className="h-2 bg-white/70 rounded-full overflow-hidden">
-              <div
-                className="h-full rounded-full"
-                style={{ width: `${score.score}%`, backgroundColor: colors.text }}
-              />
-            </div>
           </div>
         )}
 

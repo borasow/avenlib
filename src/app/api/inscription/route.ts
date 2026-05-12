@@ -46,8 +46,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Email de bienvenue via Resend
+    console.log("[Resend] Envoi tenté à :", email);
+    console.log("[Resend] RESEND_API_KEY présente :", !!process.env.RESEND_API_KEY);
+    console.log("[Resend] RESEND_FROM_EMAIL :", process.env.RESEND_FROM_EMAIL ?? "(non définie, fallback resend.dev)");
+
     if (!process.env.RESEND_API_KEY) {
-      console.warn("RESEND_API_KEY manquante, email non envoyé.");
+      console.warn("[Resend] RESEND_API_KEY manquante — email non envoyé.");
     } else {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
@@ -59,12 +63,12 @@ export async function POST(request: NextRequest) {
           html: buildEmailHtml(prenom, answers as DiagnosticAnswers),
         });
         if (emailError) {
-          console.error("Resend error:", JSON.stringify(emailError));
+          console.error("[Resend] Erreur Resend :", JSON.stringify(emailError));
         } else {
-          console.log("Email envoyé, id:", emailData?.id);
+          console.log("[Resend] Résultat Resend : OK, id =", emailData?.id);
         }
       } catch (emailErr) {
-        console.error("Email exception:", emailErr);
+        console.error("[Resend] Exception :", emailErr);
       }
     }
 

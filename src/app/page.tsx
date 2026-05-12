@@ -106,7 +106,7 @@ export default function Home() {
 
         {/* ── Badge pleine largeur ── */}
         <div style={{ display: "block", width: "100%", backgroundColor: "#1D9E75", color: "#FFFFFF", fontSize: "22px", fontWeight: 500, padding: "14px 0", textAlign: "center", borderRadius: 0 }}>
-          Le premier service qui oriente les freelances vers les bons experts
+          Le premier service qui oriente les freelances et indépendants vers les bons experts
         </div>
 
         {/* ── Hero ── */}

@@ -5,14 +5,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Avenlib, Ta protection financière, enfin claire",
+  title: "Avenlib — L'indépendance sans l'inquiétude",
   description:
-    "13 questions pour savoir exactement ce qu'il te manque en protection financière, et où le trouver. Retraite, prévoyance, santé, fiscalité pour indépendants.",
+    "Le premier service qui oriente les freelances et indépendants vers les bons experts. Retraite, prévoyance, fiscalité, crédit, santé. Diagnostic gratuit en 13 questions.",
   keywords: "protection financière, freelance, indépendant, retraite, prévoyance, mutuelle, fiscalité",
   openGraph: {
-    title: "Avenlib, Ta protection financière, enfin claire",
+    title: "Avenlib — L'indépendance sans l'inquiétude",
     description:
-      "13 questions pour savoir exactement ce qu'il te manque, et où le trouver.",
+      "Le premier service qui oriente les freelances et indépendants vers les bons experts. Diagnostic gratuit en 13 questions.",
     url: "https://avenlib.fr",
     siteName: "Avenlib",
     locale: "fr_FR",

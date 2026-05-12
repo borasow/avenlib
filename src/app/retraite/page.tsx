@@ -35,8 +35,8 @@ export default function PageRetraite() {
               { chiffre: "−40 %", label: "De moins qu'un salarié à situation équivalente" },
               { chiffre: "40 %", label: "Des indépendants sans aucune épargne retraite complémentaire" },
             ].map((s) => (
-              <div key={s.label} className="rounded-xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "0.5px solid #D3D1C7" }}>
-                <p className="text-3xl font-bold mb-1" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+              <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -45,7 +45,7 @@ export default function PageRetraite() {
 
         {/* Article */}
         <section className="max-w-3xl mx-auto px-6 pb-16">
-          <div className="rounded-2xl p-8 sm:p-12 space-y-10" style={{ backgroundColor: "#FFFFFF", border: "0.5px solid #D3D1C7" }}>
+          <div className="rounded-2xl p-8 sm:p-12 space-y-10" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}>
 
             {/* H2 1 */}
             <div>

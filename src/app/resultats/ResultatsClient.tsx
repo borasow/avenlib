@@ -109,7 +109,12 @@ export default function ResultatsClient() {
   }
 
   const scores = calculerScores(profile.answers);
-  const scoreKeys = Object.keys(scores);
+  const NIVEAU_ORDER: Record<string, number> = { urgent: 0, optimiser: 1, ok: 2 };
+  const scoreKeys = Object.keys(scores).sort((a, b) => {
+    const niveauDiff = NIVEAU_ORDER[scores[a].niveau] - NIVEAU_ORDER[scores[b].niveau];
+    if (niveauDiff !== 0) return niveauDiff;
+    return scores[a].score - scores[b].score;
+  });
   const urgentCount = scoreKeys.filter((k) => scores[k].niveau === "urgent").length;
   const ressenti = profile.answers.ressenti ?? "";
   const isTresInquiet = ressenti === "Très inquiet, j'ai besoin d'aide rapidement";

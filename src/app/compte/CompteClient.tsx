@@ -18,21 +18,9 @@ const LABELS: Record<string, string> = {
 const NIVEAU_ORDER: Record<string, number> = { urgent: 0, optimiser: 1, ok: 2 };
 
 function getBadge(score: number) {
-  if (score < 40) return (
-    <span style={{ background: "#FCEBEB", color: "#A32D2D", padding: "3px 10px", borderRadius: "20px", fontSize: "12px" }}>
-      🔴 Urgent
-    </span>
-  );
-  if (score <= 70) return (
-    <span style={{ background: "#FAEEDA", color: "#854F0B", padding: "3px 10px", borderRadius: "20px", fontSize: "12px" }}>
-      🟡 À optimiser
-    </span>
-  );
-  return (
-    <span style={{ background: "#EAF3DE", color: "#3B6D11", padding: "3px 10px", borderRadius: "20px", fontSize: "12px" }}>
-      🟢 OK
-    </span>
-  );
+  if (score < 40)  return <span style={{ fontSize: "18px", lineHeight: 1 }}>🔴</span>;
+  if (score <= 70) return <span style={{ fontSize: "18px", lineHeight: 1 }}>🟡</span>;
+  return               <span style={{ fontSize: "18px", lineHeight: 1 }}>🟢</span>;
 }
 
 export default function CompteClient() {

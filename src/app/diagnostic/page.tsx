@@ -3,9 +3,8 @@ import DiagnosticClient from "./DiagnosticClient";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Diagnostic, Avenlib",
-  description:
-    "Réponds à 13 questions pour identifier tes lacunes en protection financière.",
+  title: "Diagnostic gratuit, Votre protection financière en 13 questions",
+  description: "Répondez à 13 questions et découvrez exactement ce qu'il vous manque. Gratuit, sans engagement, résultats personnalisés.",
 };
 
 export default function DiagnosticPage() {

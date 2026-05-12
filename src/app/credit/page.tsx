@@ -11,7 +11,7 @@ export default function PageCredit() {
       meta={metadata}
       surtitre="Crédit & financement"
       titre="Crédit et financement pour indépendants"
-      intro="Les banques traditionnelles sont conçues pour les salariés. Revenus variables, statut atypique, absence de bulletins de paie — autant de raisons qui compliquent vos dossiers. Il existe pourtant des solutions."
+      intro="Les banques traditionnelles sont conçues pour les salariés. Revenus variables, statut atypique, absence de bulletins de paie, autant de raisons qui compliquent vos dossiers. Il existe pourtant des solutions."
       points={[
         {
           chiffre: "40 %",
@@ -32,7 +32,7 @@ export default function PageCredit() {
       solutions={[
         {
           titre: "Des acteurs qui comprennent vos revenus réels",
-          texte: "Mansa, Defacto et Pretto analysent vos flux Urssaf, vos factures et votre historique réel — pas seulement vos déclarations fiscales.",
+          texte: "Mansa, Defacto et Pretto analysent vos flux Urssaf, vos factures et votre historique réel, pas seulement vos déclarations fiscales.",
         },
         {
           titre: "Crédit immobilier : des courtiers spécialisés TNS",

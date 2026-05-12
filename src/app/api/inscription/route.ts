@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Données manquantes" }, { status: 400 });
     }
 
-    // Supabase — lazy init pour éviter les erreurs de build
+    // Supabase, lazy init pour éviter les erreurs de build
     if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
       const supabase = createClient(
         process.env.NEXT_PUBLIC_SUPABASE_URL,

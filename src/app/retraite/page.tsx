@@ -1,8 +1,8 @@
 import ContenuEducatif from "@/components/ContenuEducatif";
 
 export const metadata = {
-  title: "Retraite des indépendants : ce que personne ne vous dit | Avenlib",
-  description: "Sans cotisation automatique, votre retraite ne se construit pas. Découvrez les vrais chiffres et ce qu'Avenlib peut faire pour vous.",
+  title: "Retraite des indépendants, Combien toucherez-vous ?",
+  description: "Découvrez votre pension estimée en tant qu'indépendant. Micro-entrepreneur, EURL, SASU : simulez votre retraite et trouvez les meilleures solutions.",
 };
 
 export default function PageRetraite() {

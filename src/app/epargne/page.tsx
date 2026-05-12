@@ -16,7 +16,7 @@ export default function PageEpargne() {
         {
           chiffre: "3 mois",
           titre: "De charges à couvrir sans épargne de précaution",
-          texte: "Perte d'un client majeur, creux d'activité, imprévu fiscal — sans 3 à 6 mois de charges disponibles immédiatement, la situation peut rapidement devenir critique.",
+          texte: "Perte d'un client majeur, creux d'activité, imprévu fiscal, sans 3 à 6 mois de charges disponibles immédiatement, la situation peut rapidement devenir critique.",
         },
         {
           chiffre: "72 %",

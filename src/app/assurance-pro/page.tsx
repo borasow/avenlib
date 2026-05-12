@@ -2,7 +2,7 @@ import ContenuEducatif from "@/components/ContenuEducatif";
 
 export const metadata = {
   title: "Assurance pro : ce qu'il vous faut en tant qu'indépendant | Avenlib",
-  description: "RC Pro, protection juridique, assurance décennale — les assurances indispensables selon votre activité et votre statut.",
+  description: "RC Pro, protection juridique, assurance décennale, les assurances indispensables selon votre activité et votre statut.",
 };
 
 export default function PageAssurancePro() {
@@ -21,7 +21,7 @@ export default function PageAssurancePro() {
         {
           chiffre: "15 000 €",
           titre: "Le montant moyen d'un sinistre RC Pro pour un consultant",
-          texte: "Une erreur dans un livrable, un conseil mal suivi, un retard de mission — les conséquences financières peuvent être considérables, même pour des prestations courantes.",
+          texte: "Une erreur dans un livrable, un conseil mal suivi, un retard de mission, les conséquences financières peuvent être considérables, même pour des prestations courantes.",
         },
         {
           chiffre: "25 €",

@@ -1,8 +1,8 @@
 import ContenuEducatif from "@/components/ContenuEducatif";
 
 export const metadata = {
-  title: "Arrêt maladie : ce qu'il se passe vraiment pour un indépendant | Avenlib",
-  description: "En cas d'arrêt maladie, un indépendant peut attendre 90 jours sans aucune indemnité. Découvrez comment vous protéger efficacement.",
+  title: "Prévoyance indépendant, Que se passe-t-il en arrêt maladie ?",
+  description: "En tant qu'indépendant, la Sécu vous verse 22€/jour en arrêt maladie. Découvrez comment vous protéger avec les meilleures solutions du marché.",
 };
 
 export default function PagePrevoyance() {

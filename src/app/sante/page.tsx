@@ -1,8 +1,8 @@
 import ContenuEducatif from "@/components/ContenuEducatif";
 
 export const metadata = {
-  title: "Mutuelle santé : pourquoi la Sécu ne suffit pas | Avenlib",
-  description: "Les remboursements de la Sécurité sociale couvrent en moyenne 50% des frais de santé. En tant qu'indépendant, vous assumez le reste seul.",
+  title: "Mutuelle santé indépendant, Pourquoi la Sécu ne suffit pas",
+  description: "La Sécurité sociale rembourse en moyenne 70% des soins. Trouvez la mutuelle adaptée à votre statut d'indépendant.",
 };
 
 export default function PageSante() {

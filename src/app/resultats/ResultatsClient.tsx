@@ -134,7 +134,7 @@ export default function ResultatsClient() {
           </div>
         </div>
 
-        {/* Bandeau ressenti — Très inquiet */}
+        {/* Bandeau ressenti, Très inquiet */}
         {isTresInquiet && (
           <div className="rounded-xl p-4 mb-6 flex items-start gap-3" style={{ backgroundColor: "#FFF1F1", border: "1px solid #FECACA" }}>
             <AlertTriangle size={20} style={{ color: "#DC2626", flexShrink: 0, marginTop: 2 }} />
@@ -147,7 +147,7 @@ export default function ResultatsClient() {
           </div>
         )}
 
-        {/* Bandeau ressenti — Serein */}
+        {/* Bandeau ressenti, Serein */}
         {isSerein && (
           <div className="rounded-xl p-4 mb-6 flex items-start gap-3" style={{ backgroundColor: "#EFF9F5", border: "1px solid #A7F3D0" }}>
             <Smile size={20} style={{ color: "#059669", flexShrink: 0, marginTop: 2 }} />
@@ -175,7 +175,7 @@ export default function ResultatsClient() {
           </div>
         )}
 
-        {/* Accordéon principal — tous les domaines scorés */}
+        {/* Accordéon principal, tous les domaines scorés */}
         <div className="space-y-3 mb-6">
           {scoreKeys.map((key) => {
             const score = scores[key];
@@ -274,7 +274,7 @@ export default function ResultatsClient() {
                       </div>
                     ) : (
                       <p className="text-xs text-center py-3" style={{ color: "#9B9B97" }}>
-                        Partenaires en cours de sélection — revenez bientôt
+                        Partenaires en cours de sélection, revenez bientôt
                       </p>
                     )}
                   </div>
@@ -334,7 +334,7 @@ export default function ResultatsClient() {
                         </div>
                       ) : (
                         <p className="text-xs text-center py-3" style={{ color: "#9B9B97" }}>
-                          Partenaires en cours de sélection — revenez bientôt
+                          Partenaires en cours de sélection, revenez bientôt
                         </p>
                       )}
                     </div>

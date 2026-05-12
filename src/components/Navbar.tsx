@@ -131,7 +131,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Auth — masqué tant que la session n'est pas résolue */}
+          {/* Auth, masqué tant que la session n'est pas résolue */}
           {ready && (
             user ? (
               <div className="relative" ref={dropdownRef}>

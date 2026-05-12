@@ -1,8 +1,8 @@
 import ContenuEducatif from "@/components/ContenuEducatif";
 
 export const metadata = {
-  title: "Optimisation fiscale : les leviers que vous n'utilisez pas | Avenlib",
-  description: "La plupart des indépendants paient trop d'impôts faute d'accompagnement. Découvrez les dispositifs légaux souvent ignorés.",
+  title: "Optimisation fiscale freelance, Économisez jusqu'à 3 200€/an",
+  description: "PER, statut juridique, charges déductibles : découvrez tous les leviers pour réduire vos impôts légalement en tant qu'indépendant.",
 };
 
 export default function PageFiscalite() {

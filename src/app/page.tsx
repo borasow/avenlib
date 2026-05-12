@@ -22,8 +22,8 @@ const piliers = [
   { iconName: "Calculator" as const,  titre: "Fiscalité",              description: "Des leviers existent pour réduire tes impôts légalement selon ton statut.", href: "/fiscalite" },
   { iconName: "Heart" as const,       titre: "Santé",                  description: "La Sécu couvre peu. Une bonne mutuelle fait toute la différence.", href: "/sante" },
   { iconName: "Landmark" as const,    titre: "Crédit & Financement",   description: "Freelance ? Les banques compliquent votre dossier. On vous oriente vers ceux qui comprennent votre statut.", href: "/credit" },
-  { iconName: "CreditCard" as const,  titre: "Banque pro",             description: "Une bonne banque pro c'est la base. Comptes, virements, facturation — tout en un.", href: "/banque" },
-  { iconName: "ShieldCheck" as const, titre: "Assurance pro",          description: "RC Pro, assurance décennale, protection juridique — indispensable selon votre activité.", href: "/assurance-pro" },
+  { iconName: "CreditCard" as const,  titre: "Banque pro",             description: "Une bonne banque pro c'est la base. Comptes, virements, facturation, tout en un.", href: "/banque" },
+  { iconName: "ShieldCheck" as const, titre: "Assurance pro",          description: "RC Pro, assurance décennale, protection juridique, indispensable selon votre activité.", href: "/assurance-pro" },
   { iconName: "PiggyBank" as const,   titre: "Épargne & Investissement", description: "Faites fructifier votre épargne intelligemment selon votre profil de risque.", href: "/epargne" },
 ];
 

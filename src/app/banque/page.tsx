@@ -2,7 +2,7 @@ import ContenuEducatif from "@/components/ContenuEducatif";
 
 export const metadata = {
   title: "Quelle banque pro choisir pour un indépendant ? | Avenlib",
-  description: "Compte pro, facturation, virements, intégration comptable — comparez les meilleures banques pro pour freelances et TNS.",
+  description: "Compte pro, facturation, virements, intégration comptable, comparez les meilleures banques pro pour freelances et TNS.",
 };
 
 export default function PageBanque() {
@@ -21,7 +21,7 @@ export default function PageBanque() {
         {
           chiffre: "68 %",
           titre: "Des freelances insatisfaits de leur banque pro actuelle",
-          texte: "Interface vieillissante, support lent, pas d'intégration comptable, pas de facturation intégrée — les banques traditionnelles peinent à s'adapter aux nouveaux modes de travail.",
+          texte: "Interface vieillissante, support lent, pas d'intégration comptable, pas de facturation intégrée, les banques traditionnelles peinent à s'adapter aux nouveaux modes de travail.",
         },
         {
           chiffre: "0 €",
@@ -36,7 +36,7 @@ export default function PageBanque() {
         },
         {
           titre: "Accès mobile et gestion en temps réel",
-          texte: "Notifications instantanées, virements immédiats, cartes virtuelles — les néobanques pro sont conçues pour gérer votre activité depuis votre téléphone.",
+          texte: "Notifications instantanées, virements immédiats, cartes virtuelles, les néobanques pro sont conçues pour gérer votre activité depuis votre téléphone.",
         },
         {
           titre: "Des offres adaptées à chaque statut",

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ElementType } from "react";
 import Link from "next/link";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
 import { PARTENAIRES, DOMAINE_META } from "@/lib/partenaires";
@@ -9,7 +9,7 @@ import {
   Landmark, GraduationCap, Home,
 } from "lucide-react";
 
-const DOMAINE_CONFIG: Record<string, { label: string; icon: React.ElementType }> = {
+const DOMAINE_CONFIG: Record<string, { label: string; icon: ElementType }> = {
   retraite:      { label: "Retraite",                   icon: TrendingUp },
   prevoyance:    { label: "Prévoyance arrêt maladie",   icon: Shield },
   sante:         { label: "Mutuelle santé",              icon: Heart },
@@ -22,7 +22,7 @@ const DOMAINE_CONFIG: Record<string, { label: string; icon: React.ElementType }>
 };
 
 // Supplementary categories (no score, always shown)
-const EXTRAS: { key: string; icon: React.ElementType }[] = [
+const EXTRAS: { key: string; icon: ElementType }[] = [
   { key: "immobilier", icon: Home },
   { key: "formation",  icon: GraduationCap },
 ];

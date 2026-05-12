@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, ArrowLeft, CheckSquare, Eye, EyeOff, Check } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
@@ -262,7 +262,7 @@ export default function DiagnosticClient() {
   }
 
   // Soumission pour un NOUVEL utilisateur (création de compte)
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!prenom.trim() || !email.trim() || !password.trim()) {
       setError("Merci de renseigner tous les champs obligatoires.");

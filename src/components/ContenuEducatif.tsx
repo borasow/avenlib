@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,7 +25,7 @@ interface Props {
   ctaLabel?: string;
 }
 
-const CARD: React.CSSProperties = {
+const CARD: CSSProperties = {
   backgroundColor: "#FFFFFF",
   border: "0.5px solid #D3D1C7",
   borderRadius: "12px",

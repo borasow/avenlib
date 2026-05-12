@@ -15,10 +15,24 @@ const LABELS: Record<string, string> = {
   connaissance: "Connaissance finances",
 };
 
-function getBadgeStyle(niveau: string) {
-  if (niveau === "urgent") return { backgroundColor: "#FFF1F1", color: "#DC2626" };
-  if (niveau === "optimiser") return { backgroundColor: "#FFFBEB", color: "#D97706" };
-  return { backgroundColor: "#EFF9F5", color: "#059669" };
+const NIVEAU_ORDER: Record<string, number> = { urgent: 0, optimiser: 1, ok: 2 };
+
+function getBadge(score: number) {
+  if (score < 40) return (
+    <span style={{ background: "#FCEBEB", color: "#A32D2D", padding: "3px 10px", borderRadius: "20px", fontSize: "12px" }}>
+      🔴 Urgent
+    </span>
+  );
+  if (score <= 70) return (
+    <span style={{ background: "#FAEEDA", color: "#854F0B", padding: "3px 10px", borderRadius: "20px", fontSize: "12px" }}>
+      🟡 À optimiser
+    </span>
+  );
+  return (
+    <span style={{ background: "#EAF3DE", color: "#3B6D11", padding: "3px 10px", borderRadius: "20px", fontSize: "12px" }}>
+      🟢 OK
+    </span>
+  );
 }
 
 export default function CompteClient() {
@@ -87,14 +101,22 @@ export default function CompteClient() {
 
         {/* Résumé scores */}
         <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-1">
             <BarChart2 size={20} style={{ color: "#1D9E75" }} />
             <h2 className="font-semibold" style={{ color: "#2C2C2A" }}>
               Ton tableau de bord
             </h2>
           </div>
+          <p style={{ fontSize: "12px", color: "#6B6B67", marginBottom: "16px" }}>
+            🔴 Urgent · 🟡 À optimiser · 🟢 OK
+          </p>
           <div className="space-y-3">
-            {Object.entries(scores).map(([key, score]) => (
+            {Object.entries(scores)
+              .sort(([, a], [, b]) => {
+                const diff = NIVEAU_ORDER[a.niveau] - NIVEAU_ORDER[b.niveau];
+                return diff !== 0 ? diff : a.score - b.score;
+              })
+              .map(([key, score]) => (
               <Link
                 key={key}
                 href={`/resultats/${key}`}
@@ -104,12 +126,7 @@ export default function CompteClient() {
                   {score.titre}
                 </span>
                 <div className="flex items-center gap-3">
-                  <span
-                    className="text-xs px-2 py-0.5 rounded-full font-medium"
-                    style={getBadgeStyle(score.niveau)}
-                  >
-                    {score.score}/100
-                  </span>
+                  {getBadge(score.score)}
                   <ArrowRight size={14} className="text-secondary group-hover:text-secondary transition-colors" />
                 </div>
               </Link>

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import { calculerScores, DiagnosticAnswers } from "@/lib/scoring";
 
 export async function POST(request: NextRequest) {
   try {
@@ -51,8 +52,8 @@ export async function POST(request: NextRequest) {
         await resend.emails.send({
           from: "Avenlib <bonjour@avenlib.fr>",
           to: email,
-          subject: `${prenom}, ton diagnostic Avenlib est prêt`,
-          html: buildEmailHtml(prenom, answers),
+          subject: `${prenom}, voici ton diagnostic Avenlib 🎯`,
+          html: buildEmailHtml(prenom, answers as DiagnosticAnswers),
         });
       } catch (emailErr) {
         console.error("Email error:", emailErr);
@@ -66,45 +67,131 @@ export async function POST(request: NextRequest) {
   }
 }
 
-function buildEmailHtml(prenom: string, answers: Record<string, string | string[]>) {
-  const existant = Array.isArray(answers.existant)
-    ? answers.existant.join(", ")
-    : answers.existant || "Non renseigné";
+const DOMAINE_LABELS: Record<string, string> = {
+  retraite:      "Retraite",
+  prevoyance:    "Prévoyance arrêt maladie",
+  sante:         "Mutuelle santé",
+  fiscalite:     "Optimisation fiscale",
+  deces:         "Prévoyance décès / invalidité",
+  banque_pro:    "Banque professionnelle",
+  assurance_pro: "Assurance RC Pro",
+  epargne:       "Épargne & investissement",
+  credit:        "Crédit immobilier",
+};
 
+function niveauEmoji(niveau: string): string {
+  if (niveau === "urgent")    return "🔴 Urgent";
+  if (niveau === "optimiser") return "🟡 À optimiser";
+  return "🟢 OK";
+}
+
+function niveauColor(niveau: string): string {
+  if (niveau === "urgent")    return "#DC2626";
+  if (niveau === "optimiser") return "#D97706";
+  return "#059669";
+}
+
+function scoreRow(label: string, niveau: string, score: number): string {
   return `
-<!DOCTYPE html>
+    <tr>
+      <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+        <span style="font-size: 14px; color: #2C2C2A; font-weight: 500;">${label}</span>
+      </td>
+      <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; text-align: right;">
+        <span style="font-size: 13px; font-weight: 600; color: ${niveauColor(niveau)};">${niveauEmoji(niveau)}</span>
+        <span style="font-size: 12px; color: #9B9B97; margin-left: 6px;">${score}/100</span>
+      </td>
+    </tr>`;
+}
+
+function buildEmailHtml(prenom: string, answers: DiagnosticAnswers): string {
+  const scores = calculerScores(answers);
+  const scoreKeys = Object.keys(scores);
+  const urgentCount = scoreKeys.filter((k) => scores[k].niveau === "urgent").length;
+  const pension = scores.retraite?.pensionEstimee;
+
+  const scoresHtml = scoreKeys
+    .map((k) => scoreRow(DOMAINE_LABELS[k] ?? k, scores[k].niveau, scores[k].score))
+    .join("");
+
+  const alertBanner = urgentCount > 0
+    ? `<div style="background: #FFF1F1; border: 1px solid #FECACA; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #DC2626;">
+          ⚠️ ${urgentCount} domaine${urgentCount > 1 ? "s" : ""} nécessite${urgentCount > 1 ? "nt" : ""} une action urgente
+        </p>
+        <p style="margin: 6px 0 0; font-size: 13px; color: #991B1B;">
+          Consulte tes recommandations personnalisées pour agir rapidement.
+        </p>
+       </div>`
+    : "";
+
+  const pensionBlock = pension
+    ? `<div style="background: #EFF9F5; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;">
+        <p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #059669;">Pension retraite estimée</p>
+        <p style="margin: 0; font-size: 28px; font-weight: 700; color: #2C2C2A;">~${pension} €<span style="font-size: 14px; font-weight: 400; color: #6B6B67;">/mois</span></p>
+        <p style="margin: 6px 0 0; font-size: 12px; color: #6B6B67;">Estimation indicative selon ton statut et tes revenus.</p>
+       </div>`
+    : "";
+
+  return `<!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="font-family: Inter, Arial, sans-serif; color: #2C2C2A; background: #f9f9f9; margin: 0; padding: 0;">
-  <div style="max-width: 560px; margin: 40px auto; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e5e5e5;">
-    <div style="background: #085041; padding: 32px 40px;">
-      <p style="color: white; font-size: 22px; font-weight: 700; margin: 0;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Arial, sans-serif; color: #2C2C2A; background: #F1EFE8; margin: 0; padding: 0;">
+  <div style="max-width: 560px; margin: 40px auto; background: white; border-radius: 16px; overflow: hidden; border: 1px solid #D3D1C7;">
+
+    <!-- Header -->
+    <div style="background: #085041; padding: 28px 40px;">
+      <p style="color: white; font-size: 20px; font-weight: 700; margin: 0;">
         <span style="color: #1D9E75;">●</span> Avenlib
       </p>
     </div>
-    <div style="padding: 40px;">
-      <h1 style="font-size: 22px; font-weight: 700; margin: 0 0 8px;">
+
+    <!-- Body -->
+    <div style="padding: 36px 40px;">
+      <h1 style="font-size: 22px; font-weight: 700; margin: 0 0 6px; color: #2C2C2A;">
         Bonjour ${prenom} 👋
       </h1>
-      <p style="color: #666; margin: 0 0 24px; line-height: 1.6;">
-        Ton diagnostic financier est prêt. Voici un résumé de ta situation :
+      <p style="color: #6B6B67; margin: 0 0 28px; font-size: 15px; line-height: 1.6;">
+        Ton diagnostic est prêt. Voici un résumé de ta situation financière.
       </p>
-      <div style="background: #f9f9f9; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
-        <p style="margin: 0 0 8px; font-size: 14px;"><strong>Statut :</strong> ${answers.statut}</p>
-        <p style="margin: 0 0 8px; font-size: 14px;"><strong>Revenus :</strong> ${answers.revenus}/an</p>
-        <p style="margin: 0 0 8px; font-size: 14px;"><strong>Déjà en place :</strong> ${existant}</p>
-        <p style="margin: 0; font-size: 14px;"><strong>Prévoyance :</strong> ${answers.prevoyance_niveau}</p>
+
+      ${alertBanner}
+      ${pensionBlock}
+
+      <!-- Scores -->
+      <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9B9B97; margin: 0 0 4px;">Tes scores par domaine</p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 28px;">
+        ${scoresHtml}
+      </table>
+
+      <!-- CTA -->
+      <div style="text-align: center;">
+        <a href="https://avenlib.fr/compte"
+           style="display: inline-block; background: #1D9E75; color: white; text-decoration: none;
+                  padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 15px;">
+          Voir mes recommandations →
+        </a>
+        <p style="margin: 14px 0 0; font-size: 12px; color: #9B9B97;">
+          Tes recommandations sont disponibles dans ton espace personnel.
+        </p>
       </div>
-      <a href="https://avenlib.fr/resultats"
-         style="display: inline-block; background: #1D9E75; color: white; text-decoration: none;
-                padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 15px;">
-        Voir mon diagnostic complet →
-      </a>
-      <p style="margin-top: 32px; font-size: 12px; color: #999;">
-        © 2026 Avenlib ·
-        <a href="https://avenlib.fr/mentions-legales" style="color: #999;">Mentions légales</a>
+    </div>
+
+    <!-- Footer -->
+    <div style="background: #F9F8F4; border-top: 1px solid #E8E6DF; padding: 20px 40px; text-align: center;">
+      <p style="margin: 0; font-size: 13px; font-weight: 600; color: #2C2C2A;">
+        Avenlib, L'indépendance sans l'inquiétude
+      </p>
+      <p style="margin: 6px 0 0; font-size: 12px; color: #9B9B97;">
+        <a href="https://avenlib.fr/mentions-legales" style="color: #9B9B97; text-decoration: underline;">Mentions légales</a>
+        &nbsp;·&nbsp;
+        <a href="https://avenlib.fr/cgu" style="color: #9B9B97; text-decoration: underline;">CGU</a>
       </p>
     </div>
+
   </div>
 </body>
 </html>`;

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "Le premier service qui oriente les freelances et indépendants vers les bons experts. Retraite, prévoyance, fiscalité, crédit, santé. Diagnostic gratuit en 13 questions.",
   keywords: "protection financière, freelance, indépendant, retraite, prévoyance, mutuelle, fiscalité",
+  verification: {
+    google: "fZzAMahDY16iUIfZOS-JNxHKnvdQTcVoAI8qJq-GbcM",
+  },
   openGraph: {
     title: "Avenlib — L'indépendance sans l'inquiétude",
     description:

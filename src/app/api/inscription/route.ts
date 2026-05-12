@@ -46,17 +46,25 @@ export async function POST(request: NextRequest) {
     }
 
     // Email de bienvenue via Resend
-    if (process.env.RESEND_API_KEY) {
+    if (!process.env.RESEND_API_KEY) {
+      console.warn("RESEND_API_KEY manquante, email non envoyé.");
+    } else {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
-        await resend.emails.send({
-          from: "Avenlib <bonjour@avenlib.fr>",
+        const fromAddress = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+        const { data: emailData, error: emailError } = await resend.emails.send({
+          from: `Avenlib <${fromAddress}>`,
           to: email,
           subject: `${prenom}, voici ton diagnostic Avenlib 🎯`,
           html: buildEmailHtml(prenom, answers as DiagnosticAnswers),
         });
+        if (emailError) {
+          console.error("Resend error:", JSON.stringify(emailError));
+        } else {
+          console.log("Email envoyé, id:", emailData?.id);
+        }
       } catch (emailErr) {
-        console.error("Email error:", emailErr);
+        console.error("Email exception:", emailErr);
       }
     }
 

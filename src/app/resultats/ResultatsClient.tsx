@@ -213,26 +213,15 @@ export default function ResultatsClient() {
                       <p className="text-xs mt-0.5 truncate" style={{ color: "#6B6B67" }}>{score.message}</p>
                     )}
                   </div>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <div className="text-right">
-                      <p className="text-xl font-bold leading-none" style={{ color: colors.text }}>{score.score}</p>
-                      <p className="text-xs" style={{ color: "#9B9B97" }}>/100</p>
-                    </div>
-                    <ChevronDown
-                      size={18}
-                      style={{ color: "#6B6B67", transition: "transform 0.25s ease", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", flexShrink: 0 }}
-                    />
-                  </div>
+                  <ChevronDown
+                    size={18}
+                    style={{ color: "#6B6B67", transition: "transform 0.25s ease", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", flexShrink: 0 }}
+                  />
                 </button>
 
                 {/* Contenu */}
                 <div style={{ maxHeight: isOpen ? "900px" : "0px", overflow: "hidden", transition: "max-height 0.3s ease" }}>
                   <div className="px-5 pb-5">
-                    {/* Barre score */}
-                    <div className="h-1.5 rounded-full overflow-hidden mb-5" style={{ backgroundColor: "rgba(255,255,255,0.6)" }}>
-                      <div className="h-full rounded-full" style={{ width: `${score.score}%`, backgroundColor: colors.text, transition: "width 0.5s ease" }} />
-                    </div>
-
                     {/* Pension estimée (retraite) */}
                     {key === "retraite" && score.pensionEstimee && (
                       <div className="rounded-lg px-4 py-3 mb-4 border" style={{ backgroundColor: "rgba(255,255,255,0.8)", borderColor: "rgba(0,0,0,0.06)" }}>

@@ -180,6 +180,7 @@ export default function DiagnosticClient() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
+  const [cguAccepted, setCguAccepted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
 
@@ -266,6 +267,10 @@ export default function DiagnosticClient() {
     e.preventDefault();
     if (!prenom.trim() || !email.trim() || !password.trim()) {
       setError("Merci de renseigner tous les champs obligatoires.");
+      return;
+    }
+    if (!cguAccepted) {
+      setError("Merci d'accepter les CGU pour créer ton compte.");
       return;
     }
     if (!pwValid) {
@@ -416,17 +421,36 @@ export default function DiagnosticClient() {
                   required
                 />
               </div>
-              <label className="flex items-start gap-3 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={newsletter}
-                  onChange={(e) => setNewsletter(e.target.checked)}
-                  className="mt-0.5 shrink-0 accent-[#1D9E75]"
-                />
-                <span style={{ fontSize: "13px", color: "#6B6B67", lineHeight: "1.5" }}>
-                  J&apos;accepte de recevoir des conseils financiers personnalisés et les actualités Avenlib par email. Désinscription possible à tout moment.
-                </span>
-              </label>
+              <div className="flex flex-col gap-4">
+                <label className="flex items-start gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={cguAccepted}
+                    onChange={(e) => setCguAccepted(e.target.checked)}
+                    className="mt-0.5 shrink-0 accent-[#1D9E75]"
+                    required
+                  />
+                  <span style={{ fontSize: "13px", color: "#6B6B67", lineHeight: "1.5" }}>
+                    J&apos;accepte les{" "}
+                    <a href="/cgu" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75", textDecoration: "underline" }}>
+                      CGU
+                    </a>{" "}
+                    et la politique de confidentialité d&apos;Avenlib.{" "}
+                    <span style={{ color: "#DC2626", fontWeight: 600 }}>*</span>
+                  </span>
+                </label>
+                <label className="flex items-start gap-3 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={newsletter}
+                    onChange={(e) => setNewsletter(e.target.checked)}
+                    className="mt-0.5 shrink-0 accent-[#1D9E75]"
+                  />
+                  <span style={{ fontSize: "13px", color: "#6B6B67", lineHeight: "1.5" }}>
+                    J&apos;accepte de recevoir la newsletter Avenlib (conseils financiers, actualités pour indépendants) et les offres de nos partenaires sélectionnés (retraite, prévoyance, mutuelle, banque pro). Désinscription possible à tout moment.
+                  </span>
+                </label>
+              </div>
               <div>
                 <label className="block text-sm font-medium mb-1.5" style={{ color: "#2C2C2A" }}>
                   Mot de passe

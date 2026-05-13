@@ -115,7 +115,8 @@ function scoreRow(label: string, niveau: string): string {
     </tr>`;
 }
 
-function buildEmailHtml(prenom: string, answers: DiagnosticAnswers): string {
+function buildEmailHtml(prenomRaw: string, answers: DiagnosticAnswers): string {
+  const prenom = prenomRaw.charAt(0).toUpperCase() + prenomRaw.slice(1);
   const scores = calculerScores(answers);
   const scoreKeys = Object.keys(scores);
   const urgentCount = scoreKeys.filter((k) => scores[k].niveau === "urgent").length;

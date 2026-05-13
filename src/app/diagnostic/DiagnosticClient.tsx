@@ -22,11 +22,13 @@ const QUESTIONS = [
     titre: "Dans quel secteur exerces-tu ?",
     type: "single",
     options: [
-      "Tech / Digital / IT",
+      "Tech / Numérique",
       "Conseil / Management",
-      "Création / Communication",
-      "Profession libérale réglementée",
-      "Artisan / Commerce",
+      "Santé / Paramédical",
+      "BTP / Artisanat",
+      "Commerce / Vente",
+      "Créatif / Communication",
+      "Juridique / Finance",
       "Autre",
     ],
   },
@@ -51,6 +53,18 @@ const QUESTIONS = [
       "45 000 – 75 000 €",
       "75 000 – 120 000 €",
       "Plus de 120 000 €",
+    ],
+  },
+  {
+    id: "regime_fiscal",
+    titre: "Quel est ton régime fiscal ?",
+    type: "single",
+    options: [
+      "Micro-BIC (vente de marchandises)",
+      "Micro-BNC (prestations de services)",
+      "Régime réel simplifié",
+      "Régime réel normal",
+      "Je ne sais pas",
     ],
   },
   {
@@ -125,17 +139,6 @@ const QUESTIONS = [
     ],
   },
   {
-    id: "ressenti",
-    titre: "Comment tu te sens par rapport à ta situation financière ?",
-    type: "single",
-    options: [
-      "Serein, j'ai tout en place",
-      "Quelques lacunes mais pas urgent",
-      "Inquiet, je ne sais pas par où commencer",
-      "Très inquiet, j'ai besoin d'aide rapidement",
-    ],
-  },
-  {
     id: "logement",
     titre: "Quelle est ta situation par rapport au logement ?",
     type: "single",
@@ -167,6 +170,24 @@ const QUESTIONS = [
     ],
   },
 ];
+
+const RESSENTI_Q = {
+  id: "ressenti",
+  titre: "Comment tu te sens par rapport à ta situation financière ?",
+  type: "single",
+  options: [
+    "Serein, j'ai tout en place",
+    "Quelques lacunes mais pas urgent",
+    "Inquiet, je ne sais pas par où commencer",
+    "Très inquiet, j'ai besoin d'aide rapidement",
+  ],
+};
+
+function needsLogement(objectifs: string[]): boolean {
+  return objectifs.some(
+    (o) => o === "Acheter ma résidence principale" || o === "Obtenir un crédit immobilier"
+  );
+}
 
 type Answers = Record<string, string | string[]>;
 
@@ -201,14 +222,19 @@ export default function DiagnosticClient() {
   };
   const pwValid = Object.values(pwRules).every(Boolean);
 
-  const currentQ = QUESTIONS[step];
-  const progress = step < 13 ? Math.round((step / 13) * 100) : 100;
+  const currentQ = step < 13 ? QUESTIONS[step] : RESSENTI_Q;
+  const progress = step < 13 ? Math.round((step / 13) * 100) : step === 13 ? 99 : 100;
 
   function selectSingle(value: string) {
     setAnswers((prev) => ({ ...prev, [currentQ.id]: value }));
     setTimeout(() => {
-      if (step < 12) setStep((s) => s + 1);
-      else setStep(13);
+      if (step === 13) {
+        setStep(14);
+      } else if (step === 12) {
+        setStep(13);
+      } else if (step < 12) {
+        setStep((s) => s + 1);
+      }
     }, 200);
   }
 
@@ -227,8 +253,14 @@ export default function DiagnosticClient() {
   }
 
   function goBack() {
-    if (step === 13) setStep(12);
-    else if (step > 0) setStep((s) => s - 1);
+    if (step === 14) setStep(13);
+    else if (step === 13) setStep(12);
+    else if (step === 11) {
+      const obj = (answers.objectifs as string[]) || [];
+      setStep(needsLogement(obj) ? 10 : 9);
+    } else if (step > 0) {
+      setStep((s) => s - 1);
+    }
   }
 
   // Soumission pour un utilisateur DÉJÀ connecté (mise à jour du diagnostic)
@@ -320,7 +352,7 @@ export default function DiagnosticClient() {
     }
   }
 
-  if (step === 13) {
+  if (step === 14) {
     // Vue pour utilisateur DÉJÀ CONNECTÉ
     if (loggedInUser) {
       const prenomUser =
@@ -546,7 +578,7 @@ export default function DiagnosticClient() {
             <div />
           )}
           <span className="text-sm text-secondary">
-            Question {step + 1} / 13
+            {step < 13 ? `Question ${step + 1} / 13` : "Question bonus"}
           </span>
         </div>
 
@@ -603,7 +635,16 @@ export default function DiagnosticClient() {
 
         {q.type === "multi" && (
           <button
-            onClick={() => (step < 12 ? setStep((s) => s + 1) : setStep(13))}
+            onClick={() => {
+              if (step === 9) {
+                const obj = (currentAnswer as string[]) || [];
+                setStep(needsLogement(obj) ? 10 : 11);
+              } else if (step < 12) {
+                setStep((s) => s + 1);
+              } else {
+                setStep(13);
+              }
+            }}
             disabled={!currentAnswer || (currentAnswer as string[]).length === 0}
             className="mt-8 w-full flex items-center justify-center gap-2 py-3.5 rounded-btn text-white font-semibold transition-opacity hover:opacity-90 disabled:opacity-40"
             style={{ backgroundColor: "#1D9E75" }}

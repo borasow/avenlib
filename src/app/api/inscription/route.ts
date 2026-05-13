@@ -103,7 +103,7 @@ function niveauColor(niveau: string): string {
   return "#059669";
 }
 
-function scoreRow(label: string, niveau: string, score: number): string {
+function scoreRow(label: string, niveau: string): string {
   return `
     <tr>
       <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
@@ -111,7 +111,6 @@ function scoreRow(label: string, niveau: string, score: number): string {
       </td>
       <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; text-align: right;">
         <span style="font-size: 13px; font-weight: 600; color: ${niveauColor(niveau)};">${niveauEmoji(niveau)}</span>
-        <span style="font-size: 12px; color: #9B9B97; margin-left: 6px;">${score}/100</span>
       </td>
     </tr>`;
 }
@@ -123,7 +122,7 @@ function buildEmailHtml(prenom: string, answers: DiagnosticAnswers): string {
   const pension = scores.retraite?.pensionEstimee;
 
   const scoresHtml = scoreKeys
-    .map((k) => scoreRow(DOMAINE_LABELS[k] ?? k, scores[k].niveau, scores[k].score))
+    .map((k) => scoreRow(DOMAINE_LABELS[k] ?? k, scores[k].niveau))
     .join("");
 
   const alertBanner = urgentCount > 0

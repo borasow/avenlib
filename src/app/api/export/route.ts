@@ -43,7 +43,11 @@ function formatDate(v: unknown): string {
 
 function escape(v: unknown): string {
   if (v === null || v === undefined) return "";
-  const s = Array.isArray(v) ? v.join(", ") : String(v);
+  let val = v;
+  if (typeof val === "string" && val.startsWith("[")) {
+    try { val = JSON.parse(val); } catch {}
+  }
+  const s = Array.isArray(val) ? val.join(", ") : String(val);
   return `"${s.replace(/"/g, '""')}"`;
 }
 

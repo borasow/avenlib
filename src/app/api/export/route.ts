@@ -3,13 +3,65 @@ import { createClient } from "@supabase/supabase-js";
 
 const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "avenlib-admin-2024";
 
-const COLUMNS = [
+type ProfileRow = {
+  id: unknown;
+  created_at: unknown;
+  email: unknown;
+  prenom: unknown;
+  nom: unknown;
+  statut: unknown;
+  secteur: unknown;
+  anciennete: unknown;
+  revenus: unknown;
+  situation_familiale: unknown;
+  age: unknown;
+  existant: unknown;
+  prevoyance_niveau: unknown;
+  objectifs: unknown;
+  sentiment_financier: unknown;
+  logement: unknown;
+  compte_bancaire_pro: unknown;
+  assurance_rc_pro: unknown;
+  newsletter_consent: unknown;
+};
+
+const HEADERS = [
   "id", "created_at", "email", "prenom", "nom",
   "statut", "secteur", "anciennete", "revenus",
   "situation_familiale", "age", "existant",
   "prevoyance_niveau", "objectifs", "sentiment_financier",
   "logement", "compte_bancaire_pro", "assurance_rc_pro", "newsletter_consent",
 ];
+
+function escape(v: unknown): string {
+  if (v === null || v === undefined) return "";
+  const s = Array.isArray(v) ? v.join(", ") : String(v);
+  return `"${s.replace(/"/g, '""')}"`;
+}
+
+function rowToCsv(row: ProfileRow): string {
+  return [
+    escape(row.id),
+    escape(row.created_at),
+    escape(row.email),
+    escape(row.prenom),
+    escape(row.nom),
+    escape(row.statut),
+    escape(row.secteur),
+    escape(row.anciennete),
+    escape(row.revenus),
+    escape(row.situation_familiale),
+    escape(row.age),
+    escape(row.existant),
+    escape(row.prevoyance_niveau),
+    escape(row.objectifs),
+    escape(row.sentiment_financier),
+    escape(row.logement),
+    escape(row.compte_bancaire_pro),
+    escape(row.assurance_rc_pro),
+    escape(row.newsletter_consent),
+  ].join(";");
+}
 
 export async function GET(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get("secret");
@@ -24,24 +76,15 @@ export async function GET(request: NextRequest) {
 
   const { data, error } = await supabase
     .from("profiles")
-    .select(COLUMNS.join(", "))
+    .select(HEADERS.join(", "))
     .order("created_at", { ascending: false });
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  const escape = (v: unknown) => {
-    if (v === null || v === undefined) return "";
-    const s = Array.isArray(v) ? v.join(", ") : String(v);
-    return `"${s.replace(/"/g, '""')}"`;
-  };
-
-  const header = COLUMNS.join(";");
-  const rows = (data ?? []).map((row) => {
-    const r = row as Record<string, unknown>;
-    return COLUMNS.map((col) => escape(r[col])).join(";");
-  });
+  const header = HEADERS.join(";");
+  const rows = (data ?? []).map((row) => rowToCsv(row as ProfileRow));
   const csv = [header, ...rows].join("\n");
 
   return new NextResponse(csv, {

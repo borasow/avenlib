@@ -166,7 +166,7 @@ function buildEmailHtml(prenom: string, answers: DiagnosticAnswers): string {
         Bonjour ${prenom} 👋
       </h1>
       <p style="color: #6B6B67; margin: 0 0 28px; font-size: 15px; line-height: 1.6;">
-        Ton bilan est prêt. Voici un résumé de ta situation financière.
+        Ton bilan est prêt. Voici un résumé de ta situation.
       </p>
 
       ${alertBanner}

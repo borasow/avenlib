@@ -49,7 +49,7 @@ export default function ContenuEducatif({
           <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
             {surtitre}
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
             {titre}
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>

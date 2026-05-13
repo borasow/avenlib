@@ -86,12 +86,12 @@ export default function Navbar() {
       className="w-full sticky top-0 z-50"
       style={{ backgroundColor: "#F1EFE8", borderBottom: "0.5px solid #D3D1C7" }}
     >
-      <div className="max-w-6xl mx-auto px-10 py-5 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 py-3 md:py-5 flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-avenlib.png" alt="Avenlib" style={{ height: "120px", width: "auto" }} />
+          <img src="/logo-avenlib.png" alt="Avenlib" style={{ height: "clamp(60px, 10vw, 100px)", width: "auto" }} />
         </Link>
 
         {/* Desktop */}

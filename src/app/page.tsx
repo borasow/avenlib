@@ -106,32 +106,32 @@ export default function Home() {
       <main style={{ backgroundColor: "#F1EFE8" }}>
 
         {/* ── Badge pleine largeur ── */}
-        <div style={{ display: "block", width: "100%", backgroundColor: "#1D9E75", color: "#FFFFFF", fontSize: "24px", fontWeight: 600, padding: "16px 0", textAlign: "center", borderRadius: 0, whiteSpace: "nowrap" }}>
+        <div style={{ display: "block", width: "100%", backgroundColor: "#1D9E75", color: "#FFFFFF", fontSize: "clamp(16px, 3vw, 24px)", fontWeight: 600, padding: "14px 16px", textAlign: "center", borderRadius: 0 }}>
           Le bilan complet et gratuit pour freelances et indépendants
         </div>
 
         {/* ── Hero ── */}
-        <section style={{ backgroundColor: "#F1EFE8", minHeight: "700px" }}>
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row" style={{ minHeight: "700px" }}>
+        <section style={{ backgroundColor: "#F1EFE8" }}>
+          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:min-h-[700px]">
 
-            {/* Colonne gauche, texte 45% */}
-            <div className="flex flex-col justify-center py-20 pr-0 md:pr-12" style={{ width: "45%", flexShrink: 0 }}>
+            {/* Colonne gauche, texte */}
+            <div className="flex flex-col justify-center py-12 md:py-20 pr-0 md:pr-12 md:w-[45%] w-full">
 
               {/* Titre */}
-              <h1 className="text-5xl sm:text-6xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>
                 L&apos;indépendance
                 <br />
                 <span style={{ color: "#1D9E75" }}>sans l&apos;inquiétude.</span>
               </h1>
 
               {/* Sous-titre */}
-              <p className="mb-10 leading-relaxed" style={{ color: "#2C2C2A", fontSize: "20px" }}>
+              <p className="mb-8 leading-relaxed text-base md:text-xl" style={{ color: "#2C2C2A" }}>
                 Retraite, prévoyance, fiscalité, crédit, santé, on t&apos;oriente vers les bons experts.
               </p>
 
               <Link
                 href="/diagnostic"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-base transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-white font-semibold text-base transition-opacity hover:opacity-90"
                 style={{ backgroundColor: "#1D9E75", width: "fit-content" }}
               >
                 Faire mon bilan gratuit
@@ -142,13 +142,13 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Colonne droite, illustration 55% */}
-            <div className="hidden md:flex items-center" style={{ width: "55%", flexShrink: 0 }}>
+            {/* Colonne droite, illustration */}
+            <div className="hidden md:flex items-center md:w-[55%]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/hero-illustration.png"
                 alt="Illustration Avenlib"
-                style={{ width: "100%", height: "auto", maxWidth: "none", display: "block" }}
+                style={{ width: "100%", height: "auto", display: "block" }}
               />
             </div>
 
@@ -243,7 +243,7 @@ export default function Home() {
                     className="px-6 py-7 text-center"
                     style={{ borderLeft: i > 0 ? "0.5px solid rgba(255,255,255,0.12)" : undefined }}
                   >
-                    <p className="mb-1" style={{ fontSize: "42px", fontWeight: 700, color: "#FFFFFF", lineHeight: 1 }}>{s.chiffre}</p>
+                    <p className="mb-1" style={{ fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 700, color: "#FFFFFF", lineHeight: 1 }}>{s.chiffre}</p>
                     <p className="text-xs leading-snug" style={{ color: "rgba(255,255,255,0.5)" }}>{s.label}</p>
                   </div>
                 ))}

@@ -585,10 +585,11 @@ export default function DiagnosticClient() {
         <h2 className="text-2xl font-bold mb-1" style={{ color: "#2C2C2A" }}>
           {q.titre}
         </h2>
-        {"sousTitre" in q && q.sousTitre && (
-          <p className="text-sm text-secondary mb-6">{q.sousTitre}</p>
+        {"sousTitre" in q && (q as { sousTitre?: string }).sousTitre ? (
+          <p className="text-sm text-secondary mb-6">{(q as { sousTitre: string }).sousTitre}</p>
+        ) : (
+          <div className="mb-6" />
         )}
-        {!("sousTitre" in q) && <div className="mb-6" />}
 
         {step === 0 && (
           <p

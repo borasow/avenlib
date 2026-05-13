@@ -84,7 +84,7 @@ export async function GET(request: NextRequest) {
   }
 
   const header = HEADERS.join(";");
-  const rows = (data ?? []).map((row) => rowToCsv(row as ProfileRow));
+  const rows = (data ?? []).map((row) => rowToCsv(row as unknown as ProfileRow));
   const csv = [header, ...rows].join("\n");
 
   return new NextResponse(csv, {

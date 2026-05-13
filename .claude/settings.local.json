@@ -22,7 +22,13 @@
       "Bash(xargs sed -i '' 's/10 questions/11 questions/g')",
       "Bash(xargs sed -i '' 's/11 questions/13 questions/g')",
       "Bash(curl -s http://localhost:3003)",
-      "Bash(kill 11707 13578)"
+      "Bash(kill 11707 13578)",
+      "Bash(perl -pi -e 's/Diagnostic mis à jour/Bilan mis à jour/g;' -e 's/ton diagnostic précédent/ton bilan précédent/g;' -e 's/ton diagnostic personnalisé/ton bilan personnalisé/g;' src/app/diagnostic/DiagnosticClient.tsx)",
+      "Bash(perl -pi -e 's/Faire mon diagnostic\\(?! gratuit\\)/Faire mon bilan/g;' src/components/Footer.tsx)",
+      "Bash(perl -pi -e 's/\\(nom: \"Caravel\",\\\\n.*description:.*\\\\n.*url:.*\\\\n.*tag:.*\\\\n.*logo:.*,\\)/$1\\\\n      tarif: \"Dès 50€\\\\/mois\",/g;' src/lib/partenaires.ts)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

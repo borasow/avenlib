@@ -33,6 +33,14 @@ const HEADERS = [
   "logement", "compte_bancaire_pro", "assurance_rc_pro", "newsletter_consent",
 ];
 
+function formatDate(v: unknown): string {
+  if (!v) return "";
+  const d = new Date(String(v));
+  if (isNaN(d.getTime())) return String(v);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
 function escape(v: unknown): string {
   if (v === null || v === undefined) return "";
   const s = Array.isArray(v) ? v.join(", ") : String(v);
@@ -42,7 +50,7 @@ function escape(v: unknown): string {
 function rowToCsv(row: ProfileRow): string {
   return [
     escape(row.id),
-    escape(row.created_at),
+    escape(formatDate(row.created_at)),
     escape(row.email),
     escape(row.prenom),
     escape(row.nom),
@@ -87,7 +95,8 @@ export async function GET(request: NextRequest) {
   const rows = (data ?? []).map((row) => rowToCsv(row as unknown as ProfileRow));
   const csv = [header, ...rows].join("\n");
 
-  return new NextResponse(csv, {
+  const bom = "﻿";
+  return new NextResponse(bom + csv, {
     headers: {
       "Content-Type": "text/csv; charset=utf-8",
       "Content-Disposition": `attachment; filename="avenlib-inscriptions-${new Date().toISOString().slice(0, 10)}.csv"`,

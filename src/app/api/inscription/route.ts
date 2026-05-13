@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
         const { data: emailData, error: emailError } = await resend.emails.send({
           from: `Avenlib <${fromAddress}>`,
           to: email,
-          subject: `${prenom}, voici ton bilan Avenlib 🎯`,
+          subject: `${prenom.charAt(0).toUpperCase() + prenom.slice(1)}, voici ton bilan Avenlib 🎯`,
           html: buildEmailHtml(prenom, answers as DiagnosticAnswers),
         });
         if (emailError) {

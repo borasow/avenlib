@@ -38,9 +38,10 @@ export async function GET(request: NextRequest) {
   };
 
   const header = COLUMNS.join(";");
-  const rows = (data ?? []).map((row) =>
-    COLUMNS.map((col) => escape(row[col])).join(";")
-  );
+  const rows = (data ?? []).map((row) => {
+    const r = row as Record<string, unknown>;
+    return COLUMNS.map((col) => escape(r[col])).join(";");
+  });
   const csv = [header, ...rows].join("\n");
 
   return new NextResponse(csv, {

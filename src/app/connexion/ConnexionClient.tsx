@@ -1,12 +1,14 @@
 "use client";
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Eye, EyeOff } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
 export default function ConnexionClient() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirect") ?? "/compte";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +33,7 @@ export default function ConnexionClient() {
         }
         return;
       }
-      router.push("/compte");
+      router.push(redirectTo);
       router.refresh();
     } catch {
       setError("Une erreur est survenue. Réessaie.");

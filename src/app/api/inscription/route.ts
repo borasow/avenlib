@@ -181,7 +181,7 @@ function buildEmailHtml(prenomRaw: string, answers: DiagnosticAnswers): string {
 
       <!-- CTA -->
       <div style="text-align: center;">
-        <a href="https://avenlib.fr/compte"
+        <a href="https://avenlib.fr/connexion?redirect=/compte"
            style="display: inline-block; background: #1D9E75; color: white; text-decoration: none;
                   padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 15px;">
           Voir mes recommandations →

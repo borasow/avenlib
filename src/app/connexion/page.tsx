@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import ConnexionClient from "./ConnexionClient";
 import Navbar from "@/components/Navbar";
 
@@ -11,7 +12,9 @@ export default function PageConnexion() {
   return (
     <>
       <Navbar />
-      <ConnexionClient />
+      <Suspense>
+        <ConnexionClient />
+      </Suspense>
     </>
   );
 }

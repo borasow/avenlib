@@ -1,8 +1,14 @@
 import ContenuEducatif from "@/components/ContenuEducatif";
 
 export const metadata = {
-  title: "Prévoyance indépendant, Que se passe-t-il en arrêt maladie ?",
+  title: "Prévoyance indépendant | Que se passe-t-il en arrêt maladie ?",
   description: "En tant qu'indépendant, la Sécu vous verse 22€/jour en arrêt maladie. Découvrez comment vous protéger avec les meilleures solutions du marché.",
+  openGraph: {
+    title: "Prévoyance indépendant | Que se passe-t-il en arrêt maladie ?",
+    description: "En tant qu'indépendant, la Sécu vous verse 22€/jour en arrêt maladie. Découvrez comment vous protéger.",
+    url: "https://avenlib.fr/prevoyance",
+    images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
+  },
 };
 
 export default function PagePrevoyance() {

@@ -3,8 +3,14 @@ import DiagnosticClient from "./DiagnosticClient";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Bilan gratuit, Votre protection financière en 13 questions",
-  description: "Répondez à 13 questions et découvrez exactement ce qu'il vous manque. Gratuit, sans engagement, résultats personnalisés.",
+  title: "Faire mon diagnostic financier | Avenlib",
+  description: "13 questions pour connaître votre situation financière complète. Gratuit, confidentiel, résultat immédiat.",
+  openGraph: {
+    title: "Faire mon diagnostic financier | Avenlib",
+    description: "13 questions pour connaître votre situation financière complète. Gratuit, confidentiel, résultat immédiat.",
+    url: "https://avenlib.fr/diagnostic",
+    images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
+  },
 };
 
 export default function DiagnosticPage() {

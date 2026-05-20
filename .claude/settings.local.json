@@ -28,7 +28,8 @@
       "Bash(perl -pi -e 's/\\(nom: \"Caravel\",\\\\n.*description:.*\\\\n.*url:.*\\\\n.*tag:.*\\\\n.*logo:.*,\\)/$1\\\\n      tarif: \"Dès 50€\\\\/mois\",/g;' src/lib/partenaires.ts)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git commit *)"
     ]
   }
 }

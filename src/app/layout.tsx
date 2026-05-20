@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "Avenlib",
     locale: "fr_FR",
     type: "website",
+    images: [{ url: "https://avenlib.fr/logo-avenlib.png", width: 400, height: 200, alt: "Avenlib" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Avenlib | Bilan financier gratuit pour indépendants",
+    description: "Retraite, prévoyance, mutuelle, fiscalité — diagnostic gratuit en 13 questions.",
+    images: ["https://avenlib.fr/logo-avenlib.png"],
   },
 };
 

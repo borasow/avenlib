@@ -6,6 +6,12 @@ import { ArrowRight } from "lucide-react";
 export const metadata = {
   title: "Retraite des indépendants : combien toucherez-vous vraiment ?",
   description: "Retraite freelance, micro-entrepreneur, auto-entrepreneur : découvrez pourquoi les indépendants sont mal couverts et les solutions concrètes pour préparer votre retraite (PER, Madelin…).",
+  openGraph: {
+    title: "Retraite des indépendants : combien toucherez-vous vraiment ?",
+    description: "Freelance et micro-entrepreneur : découvrez vos droits à la retraite et comment vous protéger.",
+    url: "https://avenlib.fr/retraite",
+    images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
+  },
 };
 
 export default function PageRetraite() {

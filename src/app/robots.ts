@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/compte"],
+      disallow: ["/api/", "/compte", "/admin"],
     },
     sitemap: "https://avenlib.fr/sitemap.xml",
   };

@@ -3,10 +3,10 @@ import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
   title: "Avenlib | Le bilan financier gratuit pour freelances et indépendants",
-  description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre diagnostic en 5 minutes. Gratuit et sans engagement.",
+  description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 5 minutes. Gratuit et sans engagement.",
   openGraph: {
     title: "Avenlib | Le bilan financier gratuit pour freelances et indépendants",
-    description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre diagnostic en 5 minutes. Gratuit et sans engagement.",
+    description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 5 minutes. Gratuit et sans engagement.",
     url: "https://avenlib.fr",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
   },
@@ -42,14 +42,14 @@ const piliers = [
 
 const etapes = [
   { numero: "01", titre: "Tu réponds à 13 questions", description: "Statut, revenus, famille, ce qui est déjà en place. 3 minutes chrono.", Icon: CheckCircle2 },
-  { numero: "02", titre: "On analyse ta situation", description: "Notre algorithme identifie tes lacunes et évalue tes risques sur 5 domaines.", Icon: BarChart2 },
+  { numero: "02", titre: "On analyse ta situation", description: "Notre algorithme identifie tes lacunes et évalue tes risques sur 9 domaines.", Icon: BarChart2 },
   { numero: "03", titre: "On te montre quoi faire et avec qui", description: "Des recommandations concrètes avec les bons partenaires, selon ta situation.", Icon: MapPin },
 ];
 
 const arguments_ = [
   { icon: Gift, titre: "Gratuit et sans engagement", description: "Le bilan ne coûte rien. Aucune carte bancaire, aucun abonnement. Tu explores, tu décides." },
   { icon: ClipboardList, titre: "Bilan personnalisé en 13 questions", description: "On analyse ta situation réelle, statut, revenus, âge, famille, pour des recommandations qui te correspondent vraiment." },
-  { icon: Users, titre: "Orienté vers les meilleurs spécialistes", description: "On ne vend rien. On t'oriente vers des experts sélectionnés pour leur sérieux et leur spécialisation indépendants." },
+  { icon: Users, titre: "Orienté vers les partenaires sélectionnés pour les indépendants", description: "On ne vend rien. On t'oriente vers des experts sélectionnés pour leur sérieux et leur spécialisation indépendants." },
 ];
 
 const temoignages = [
@@ -138,7 +138,7 @@ export default function Home() {
 
               {/* Sous-titre */}
               <p className="mb-8 leading-relaxed text-base md:text-xl" style={{ color: "#2C2C2A" }}>
-                Retraite, prévoyance, fiscalité, crédit, santé, on t&apos;oriente vers les bons experts.
+                Retraite, prévoyance, fiscalité, crédit, santé, on t&apos;oriente vers les bonnes solutions.
               </p>
 
               <Link
@@ -212,7 +212,7 @@ export default function Home() {
                       "Pas de protection en cas d'arrêt maladie.",
                     ].map((item) => (
                       <p key={item} className="flex items-start gap-3 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
-                        <span className="shrink-0 mt-0.5" style={{ color: "#1D9E75" }}>,</span>
+                        <span className="shrink-0 mt-0.5" style={{ color: "#1D9E75" }}>•</span>
                         {item}
                       </p>
                     ))}

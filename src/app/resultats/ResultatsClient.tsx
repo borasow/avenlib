@@ -2,11 +2,11 @@
 import { useEffect, useState, ElementType } from "react";
 import Link from "next/link";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
-import { PARTENAIRES, DOMAINE_META, Partenaire } from "@/lib/partenaires";
+import { getPartenaires, DOMAINE_META, Partenaire } from "@/lib/partenaires";
 import {
   ArrowRight, TrendingUp, Shield, Heart, Calculator, AlertTriangle,
   ChevronDown, ExternalLink, Smile, Building2, ShieldCheck, PiggyBank,
-  Landmark, GraduationCap, Home,
+  Landmark,
 } from "lucide-react";
 
 const DOMAINE_CONFIG: Record<string, { label: string; icon: ElementType }> = {
@@ -21,11 +21,6 @@ const DOMAINE_CONFIG: Record<string, { label: string; icon: ElementType }> = {
   credit:        { label: "Crédit immobilier",           icon: Landmark },
 };
 
-// Supplementary categories (no score, always shown)
-const EXTRAS: { key: string; icon: ElementType }[] = [
-  { key: "immobilier", icon: Home },
-  { key: "formation",  icon: GraduationCap },
-];
 
 function getNiveauColor(niveau: ScoreDomaine["niveau"]) {
   if (niveau === "urgent")    return { bg: "#FFF1F1", border: "#FECACA", text: "#DC2626", badge: "🔴 Urgent" };
@@ -204,7 +199,7 @@ export default function ResultatsClient() {
             const colors = getNiveauColor(score.niveau);
             const Icon = config.icon;
             const meta = DOMAINE_META[key];
-            const partenaires = PARTENAIRES[key] ?? [];
+            const partenaires = getPartenaires(key, profile.answers);
             const isOpen = openDomaine === key;
 
             return (
@@ -296,72 +291,6 @@ export default function ResultatsClient() {
               </div>
             );
           })}
-        </div>
-
-        {/* Ressources complémentaires (sans score) */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span style={{ display: "block", width: "32px", height: "2px", backgroundColor: "#D3D1C7", borderRadius: "2px" }} />
-            <p style={{ fontSize: "12px", fontWeight: 700, color: "#6B6B67", letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
-              Ressources complémentaires
-            </p>
-          </div>
-          <div className="space-y-3">
-            {EXTRAS.map(({ key, icon: Icon }) => {
-              const meta = DOMAINE_META[key];
-              const partenaires = PARTENAIRES[key] ?? [];
-              const isOpen = openDomaine === key;
-              return (
-                <div
-                  key={key}
-                  className="rounded-xl border overflow-hidden"
-                  style={{ borderColor: isOpen ? "#D3D1C7" : "#E8E6DF", backgroundColor: isOpen ? "#F9F8F4" : "#FFFFFF" }}
-                >
-                  <button
-                    className="w-full text-left px-5 py-4 flex items-center gap-4 transition-colors"
-                    onClick={() => setOpenDomaine(isOpen ? null : key)}
-                  >
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: isOpen ? "#F1EFE8" : "#F3F4F6" }}>
-                      <Icon size={20} style={{ color: "#6B6B67" }} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <span className="font-semibold text-sm" style={{ color: "#2C2C2A" }}>{meta.titre}</span>
-                      {!isOpen && <p className="text-xs mt-0.5 truncate" style={{ color: "#6B6B67" }}>{meta.description}</p>}
-                    </div>
-                    <ChevronDown size={18} style={{ color: "#9B9B97", transition: "transform 0.25s ease", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", flexShrink: 0 }} />
-                  </button>
-                  <div style={{ maxHeight: isOpen ? "600px" : "0px", overflow: "hidden", transition: "max-height 0.3s ease" }}>
-                    <div className="px-5 pb-5">
-                      <div className="mb-4">
-                        <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#6B6B67" }}>Pourquoi c'est important</p>
-                        <p className="text-sm leading-relaxed" style={{ color: "#2C2C2A" }}>{meta.description}</p>
-                      </div>
-                      <div className="rounded-lg px-4 py-3 mb-5" style={{ backgroundColor: "#EFF9F5" }}>
-                        <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#1D9E75" }}>Notre recommandation</p>
-                        <p className="text-sm leading-relaxed" style={{ color: "#085041" }}>{meta.conseil}</p>
-                      </div>
-                      {partenaires.length > 0 ? (
-                        <>
-                          <div className="space-y-2">
-                            {partenaires.map((p) => (
-                              <PartenaireItem key={p.nom} p={p} domaine={key} />
-                            ))}
-                          </div>
-                          {partenaires.some((p) => p.tarif) && (
-                            <p className="mt-2" style={{ fontSize: "10px", color: "#9B9B97" }}>* Tarifs indicatifs, peuvent varier selon profil</p>
-                          )}
-                        </>
-                      ) : (
-                        <p className="text-xs text-center py-3" style={{ color: "#9B9B97" }}>
-                          Partenaires en cours de sélection, revenez bientôt
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
 
         {/* CTA */}

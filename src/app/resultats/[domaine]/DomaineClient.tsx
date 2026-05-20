@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, Lightbulb, Info } from "lucide-react";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
-import { Partenaire } from "@/lib/partenaires";
+import { Partenaire, getPartenaires } from "@/lib/partenaires";
 
 function PartenaireCard({ p, onTrack }: { p: Partenaire; onTrack: () => void }) {
   const [imgError, setImgError] = useState(false);
@@ -62,7 +62,7 @@ function getNiveauColor(niveau?: ScoreDomaine["niveau"]) {
 
 export default function DomaineClient({ domaine, partenaires, meta }: Props) {
   const [score, setScore] = useState<ScoreDomaine | null>(null);
-  const [_profile, setProfile] = useState<{ prenom: string; answers: DiagnosticAnswers } | null>(null);
+  const [profile, setProfile] = useState<{ prenom: string; answers: DiagnosticAnswers } | null>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem("avenlib_profile");
@@ -75,6 +75,8 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
       } catch {}
     }
   }, [domaine]);
+
+  const displayedPartenaires = profile ? getPartenaires(domaine, profile.answers) : partenaires;
 
   const colors = getNiveauColor(score?.niveau);
 
@@ -197,14 +199,14 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
           Les bons partenaires pour toi
         </h2>
         <div className="space-y-4 mb-2">
-          {partenaires.length === 0 && (
+          {displayedPartenaires.length === 0 && (
             <p className="text-sm text-secondary">Partenaires en cours de sélection, revenez bientôt.</p>
           )}
-          {partenaires.map((p) => (
+          {displayedPartenaires.map((p) => (
             <PartenaireCard key={p.nom} p={p} onTrack={() => handlePartenaireClick(p)} />
           ))}
         </div>
-        {partenaires.some((p) => p.tarif) && (
+        {displayedPartenaires.some((p) => p.tarif) && (
           <p className="mb-10" style={{ fontSize: "11px", color: "#9B9B97" }}>
             * Tarifs indicatifs, peuvent varier selon profil
           </p>

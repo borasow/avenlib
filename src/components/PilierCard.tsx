@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { ArrowRight, TrendingUp, Shield, Calculator, Heart, Landmark, CreditCard, ShieldCheck, PiggyBank } from "lucide-react";
+import { ArrowRight, TrendingUp, Shield, Calculator, Heart, Landmark, CreditCard, ShieldCheck, PiggyBank, Briefcase } from "lucide-react";
 
-const ICON_MAP = { TrendingUp, Shield, Calculator, Heart, Landmark, CreditCard, ShieldCheck, PiggyBank } as const;
+const ICON_MAP = { TrendingUp, Shield, Calculator, Heart, Landmark, CreditCard, ShieldCheck, PiggyBank, Briefcase } as const;
 type IconName = keyof typeof ICON_MAP;
 
 interface Props {

@@ -45,11 +45,18 @@ export function calculerScores(answers: DiagnosticAnswers): Record<string, Score
   }
 
   const portageRep = answers.portage_salarial ?? "";
-  if (
-    portageRep &&
-    portageRep !== "Non, je préfère rester indépendant" &&
-    answers.statut !== "Salarié porté (portage salarial)"
-  ) {
+  const isSalariéPorté = answers.statut === "Salarié porté (portage salarial)";
+  const showPortage =
+    isSalariéPorté ||
+    (
+      portageRep !== "Non, je préfère rester indépendant" &&
+      (
+        portageRep !== "" ||
+        answers.anciennete === "Moins d'1 an" ||
+        answers.statut === "Micro-entrepreneur / Auto-entrepreneur"
+      )
+    );
+  if (showPortage) {
     scores.portage_salarial = calculerPortage(answers);
   }
 
@@ -304,22 +311,63 @@ function calculerEpargne(a: DiagnosticAnswers): ScoreDomaine {
 
 function calculerPortage(a: DiagnosticAnswers): ScoreDomaine {
   const rep = a.portage_salarial ?? "";
-  let score: number;
-  let niveau: RiskLevel;
-  let message: string;
+  const isSalariéPorté = a.statut === "Salarié porté (portage salarial)";
+  const isMicro = a.statut === "Micro-entrepreneur / Auto-entrepreneur";
+  const isDebutant = a.anciennete === "Moins d'1 an";
+  const revemusFaibles = a.revenus === "Moins de 25 000 €";
 
-  if (rep === "Oui, je connais et ça m'intéresse") {
-    score = 55; niveau = "optimiser";
-    message = "Le portage salarial t'intéresse — découvre les sociétés qui peuvent t'accompagner selon ton secteur et ton niveau de revenus.";
-  } else if (rep === "J'en ai entendu parler mais je ne sais pas si c'est pour moi") {
-    score = 40; niveau = "optimiser";
-    message = "Le portage salarial combine liberté du freelance et sécurité du salarié (chômage, retraite, mutuelle). Ça vaut le coup d'explorer selon ton profil.";
-  } else {
-    score = 25; niveau = "urgent";
-    message = "Tu ne connais pas encore le portage salarial. C'est une alternative intéressante au statut indépendant classique : tu restes libre mais avec les protections d'un salarié.";
+  if (isSalariéPorté) {
+    return {
+      niveau: "ok", titre: "Portage salarial", score: 90,
+      message: "Tu es déjà en portage salarial. Tu bénéficies des avantages du statut salarié tout en restant libre dans tes missions. Vérifie que ta société de portage est adaptée à ton volume d'activité.",
+    };
   }
 
-  return { niveau, titre: "Portage salarial", score, message };
+  if (rep === "Oui, je connais et ça m'intéresse") {
+    return {
+      niveau: "optimiser", titre: "Portage salarial", score: 55,
+      message: "Le portage salarial t'intéresse — découvre les sociétés qui peuvent t'accompagner selon ton secteur et ton niveau de revenus.",
+    };
+  }
+
+  if (rep === "J'en ai entendu parler mais je ne sais pas si c'est pour moi") {
+    return {
+      niveau: "optimiser", titre: "Portage salarial", score: 40,
+      message: "Le portage salarial combine liberté du freelance et sécurité du salarié (chômage, retraite, mutuelle). Ça vaut le coup d'explorer selon ton profil.",
+    };
+  }
+
+  if (rep === "Non, je ne connais pas") {
+    return {
+      niveau: "urgent", titre: "Portage salarial", score: 20,
+      message: "Tu ne connais pas encore le portage salarial. C'est une alternative au statut indépendant classique : tu restes libre mais avec les protections d'un salarié (chômage, mutuelle, retraite).",
+    };
+  }
+
+  // Pas de réponse à la question bonus : scoring basé sur le profil
+  if (isDebutant && isMicro) {
+    return {
+      niveau: "urgent", titre: "Portage salarial", score: 25,
+      message: "Tu démarres en micro-entrepreneur. Le portage salarial pourrait être une meilleure option : liberté des missions, protection chômage, mutuelle et retraite inclus dès le 1er jour.",
+    };
+  }
+  if (isDebutant) {
+    return {
+      niveau: "optimiser", titre: "Portage salarial", score: 38,
+      message: "Tu viens de te lancer. Le portage salarial est une alternative à explorer : tu restes indépendant dans tes missions mais avec les protections d'un salarié.",
+    };
+  }
+  if (isMicro && revemusFaibles) {
+    return {
+      niveau: "optimiser", titre: "Portage salarial", score: 42,
+      message: "En micro-entrepreneur avec des revenus modestes, le portage salarial peut t'offrir une couverture sociale bien supérieure (chômage, retraite, mutuelle) pour un coût comparable.",
+    };
+  }
+  // micro en général
+  return {
+    niveau: "optimiser", titre: "Portage salarial", score: 50,
+    message: "En tant que micro-entrepreneur, le portage salarial mérite d'être comparé à ton statut actuel. Il peut offrir une meilleure protection sociale selon ton chiffre d'affaires.",
+  };
 }
 
 /* ── Crédit immobilier (conditionnel) ── */

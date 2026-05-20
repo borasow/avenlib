@@ -38,6 +38,7 @@ const piliers = [
   { iconName: "CreditCard" as const,  titre: "Banque pro",             description: "Une bonne banque pro c'est la base. Comptes, virements, facturation, tout en un.", href: "/banque" },
   { iconName: "ShieldCheck" as const, titre: "Assurance pro",          description: "RC Pro, assurance décennale, protection juridique, indispensable selon votre activité.", href: "/assurance-pro" },
   { iconName: "PiggyBank" as const,   titre: "Épargne & Investissement", description: "Faites fructifier votre épargne intelligemment selon votre profil de risque.", href: "/epargne" },
+  { iconName: "Briefcase" as const,   titre: "Portage salarial",        description: "Liberté du freelance + protections du salarié. Une alternative souvent méconnue des indépendants.", href: "/portage" },
 ];
 
 const etapes = [

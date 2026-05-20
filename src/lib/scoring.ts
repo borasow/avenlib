@@ -13,13 +13,14 @@ export interface DiagnosticAnswers {
   secteur: string;
   anciennete: string;
   revenus: string;
+  regime_fiscal?: string;
   situation_familiale: string;
   age: string;
   existant: string[];
   prevoyance_niveau: string;
   objectifs: string[];
-  ressenti: string;
-  logement: string;
+  ressenti?: string;
+  logement?: string;
   banque_pro: string;
   rc_pro: string;
 }
@@ -157,14 +158,32 @@ function calculerFiscalite(a: DiagnosticAnswers): ScoreDomaine {
 
   if (a.existant.includes("PER / épargne retraite")) score += 15;
 
-  let message = "Ton niveau fiscal semble adapté à ta situation.";
-  if (score < 40) {
-    message = "Avec tes revenus et ton statut, tu laisses probablement beaucoup d'argent sur la table. Un audit fiscal s'impose.";
-  } else if (score < 60) {
-    message = "Il existe des leviers fiscaux que tu n'exploites pas encore (PER, optimisation de charges...).";
+  // Ajustement selon régime fiscal
+  const regime = a.regime_fiscal ?? "";
+  if (regime === "Micro-BIC (vente de marchandises)" || regime === "Micro-BNC (prestations de services)") {
+    score -= 10;
+  } else if (regime === "Régime réel simplifié" || regime === "Régime réel normal") {
+    score += 15;
+  } else if (regime === "Je ne sais pas") {
+    score -= 15;
   }
 
-  return { niveau: score >= 70 ? "ok" : score >= 40 ? "optimiser" : "urgent", titre: "Optimisation fiscale", score: Math.min(100, score), message };
+  let message: string;
+  if (score < 30) {
+    message = "Tu ne connais pas ton régime fiscal ou tu es en micro avec des revenus élevés. Un accompagnement comptable est urgent pour éviter de surpayer tes impôts.";
+  } else if (score < 50) {
+    message = "Avec tes revenus et ton statut, tu laisses probablement beaucoup d'argent sur la table. Un audit fiscal s'impose.";
+  } else if (score < 70) {
+    if (regime === "Micro-BIC (vente de marchandises)" || regime === "Micro-BNC (prestations de services)") {
+      message = "Le régime micro limite tes charges déductibles. Selon tes dépenses réelles, le régime réel pourrait être bien plus avantageux.";
+    } else {
+      message = "Il existe des leviers fiscaux que tu n'exploites pas encore (PER, optimisation de charges...).";
+    }
+  } else {
+    message = "Tu es au régime réel avec une bonne maîtrise de tes leviers fiscaux. Continue à optimiser avec un expert-comptable.";
+  }
+
+  return { niveau: score >= 70 ? "ok" : score >= 40 ? "optimiser" : "urgent", titre: "Optimisation fiscale", score: Math.min(100, Math.max(0, score)), message };
 }
 
 /* ── Décès/Invalidité ── */
@@ -179,7 +198,7 @@ function calculerDeces(a: DiagnosticAnswers): ScoreDomaine {
   ];
   const aCharge =
     AVEC_ENFANTS.includes(a.situation_familiale) ||
-    a.logement === "Propriétaire avec emprunt en cours";
+    (a.logement ?? "") === "Propriétaire avec emprunt en cours";
 
   if (!aCharge) score = 65;
   if (a.existant.includes("Assurance vie")) score += 20;

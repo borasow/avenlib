@@ -186,15 +186,6 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       tarif: "Frais 1,3 à 1,6%/an",
     },
   ],
-  immobilier: [
-    {
-      nom: "Pretto",
-      description: "Courtier crédit immo spécialisé dans les dossiers indépendants.",
-      url: "https://www.pretto.fr",
-      tag: "Recommandé",
-      logo: "/logos/Pretto.png",
-    },
-  ],
   credit: [
     {
       nom: "Pretto",
@@ -212,7 +203,6 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       tarif: "Sans abonnement · Taux 0,05%/jour",
     },
   ],
-  formation: [],
 };
 
 export const DOMAINE_META: Record<string, { titre: string; description: string; conseil: string }> = {
@@ -256,19 +246,54 @@ export const DOMAINE_META: Record<string, { titre: string; description: string; 
     description: "Sans épargne constituée, un imprévu professionnel (perte de client, creux d'activité) peut déstabiliser rapidement ta trésorerie personnelle.",
     conseil: "Construire une épargne de précaution (3 à 6 mois de charges) est la première étape. Ensuite, l'assurance vie et le PEA permettent de faire fructifier tes excédents avec une fiscalité avantageuse.",
   },
-  immobilier: {
-    titre: "Crédit immobilier",
-    description: "Les indépendants ont souvent du mal à obtenir un crédit immobilier : revenus variables, statut non salarié. Les banques classiques sont frileuses face aux dossiers atypiques.",
-    conseil: "Des courtiers spécialisés dans les dossiers d'indépendants connaissent les banques qui acceptent ces profils. Ils optimisent ton dossier pour maximiser tes chances d'obtenir le meilleur taux.",
-  },
   credit: {
     titre: "Crédit & financement",
     description: "Les banques traditionnelles peinent à évaluer les revenus variables des indépendants. Obtenir un crédit ou un financement professionnel est souvent plus complexe qu'en étant salarié.",
     conseil: "Des acteurs spécialisés dans les profils freelances peuvent analyser tes revenus réels (Urssaf, facturation) et te proposer des solutions adaptées à ton statut.",
   },
-  formation: {
-    titre: "Formation professionnelle",
-    description: "En tant qu'indépendant, tu cotises à des fonds de formation mais peu savent comment les utiliser. Ces droits sont souvent inexploités faute d'information.",
-    conseil: "Selon ton statut, tu peux mobiliser le CPF, le FIFPL ou l'AGEFICE pour financer des formations sans toucher à ta trésorerie. Un levier sous-utilisé qui mérite d'être activé.",
-  },
 };
+
+export function getPartenaires(
+  domaine: string,
+  answers: { existant?: string[]; banque_pro?: string; rc_pro?: string }
+): Partenaire[] {
+  const all = PARTENAIRES[domaine] ?? [];
+  const existant = answers.existant ?? [];
+
+  switch (domaine) {
+    case "banque_pro":
+      if (
+        existant.includes("Compte bancaire pro dédié") ||
+        answers.banque_pro === "Oui, compte pro dédié"
+      ) {
+        return all.map((p) => ({ ...p, tag: p.tag === "Recommandé" ? undefined : p.tag }));
+      }
+      return all;
+
+    case "assurance_pro":
+      if (
+        existant.includes("RC Pro / Assurance professionnelle") ||
+        answers.rc_pro === "Oui, je suis couvert"
+      ) {
+        return all.map((p) => ({ ...p, tag: undefined }));
+      }
+      return all;
+
+    case "retraite":
+      if (existant.includes("PER / épargne retraite")) {
+        return all.map((p) =>
+          p.nom === "Caravel" ? { ...p, tag: undefined, description: p.description + " (tu as déjà un PER — compare les frais)" } : p
+        );
+      }
+      return all;
+
+    case "sante":
+      if (existant.includes("Mutuelle santé")) {
+        return all.map((p) => ({ ...p, tag: undefined }));
+      }
+      return all;
+
+    default:
+      return all;
+  }
+}

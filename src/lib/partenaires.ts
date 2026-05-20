@@ -186,6 +186,30 @@ export const PARTENAIRES: Record<string, Partenaire[]> = {
       tarif: "Frais 1,3 à 1,6%/an",
     },
   ],
+  portage_salarial: [
+    {
+      nom: "Embarq",
+      description: "Société de portage salarial spécialisée dans les consultants et freelances tech & conseil. Accompagnement personnalisé, zéro frais cachés.",
+      url: "https://www.embarq.fr",
+      tag: "Recommandé",
+      logo: "/logos/embarq.png",
+      tarif: "Frais de gestion 5 à 10% du CA HT",
+    },
+    {
+      nom: "ITG",
+      description: "Leader du portage salarial en France. Plus de 10 000 consultants portés, toutes activités, accompagnement juridique et comptable inclus.",
+      url: "https://www.itg.fr",
+      logo: "/logos/itg.png",
+      tarif: "Frais de gestion 5 à 7% du CA HT",
+    },
+    {
+      nom: "Cegelem",
+      description: "Portage salarial pour consultants indépendants. Mutuelle, prévoyance et retraite inclus dès le premier mois d'activité.",
+      url: "https://www.cegelem.com",
+      logo: "/logos/cegelem.png",
+      tarif: "Frais de gestion 5 à 8% du CA HT",
+    },
+  ],
   credit: [
     {
       nom: "Pretto",
@@ -245,6 +269,11 @@ export const DOMAINE_META: Record<string, { titre: string; description: string; 
     titre: "Épargne & investissement",
     description: "Sans épargne constituée, un imprévu professionnel (perte de client, creux d'activité) peut déstabiliser rapidement ta trésorerie personnelle.",
     conseil: "Construire une épargne de précaution (3 à 6 mois de charges) est la première étape. Ensuite, l'assurance vie et le PEA permettent de faire fructifier tes excédents avec une fiscalité avantageuse.",
+  },
+  portage_salarial: {
+    titre: "Portage salarial",
+    description: "Le portage salarial te permet de travailler en freelance tout en bénéficiant du statut de salarié : accès au chômage, mutuelle d'entreprise, retraite complémentaire, prévoyance. Une alternative souvent ignorée des indépendants qui démarrent.",
+    conseil: "Si tu es en début d'activité ou en micro-entrepreneur, le portage salarial peut te donner accès à des protections que tu n'as pas aujourd'hui — sans renoncer à ta liberté de choisir tes missions.",
   },
   credit: {
     titre: "Crédit & financement",

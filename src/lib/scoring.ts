@@ -23,6 +23,7 @@ export interface DiagnosticAnswers {
   logement?: string;
   banque_pro: string;
   rc_pro: string;
+  portage_salarial?: string;
 }
 
 const REVENUS_SUP_45K = ["45 000 – 75 000 €", "75 000 – 120 000 €", "Plus de 120 000 €"];
@@ -41,6 +42,15 @@ export function calculerScores(answers: DiagnosticAnswers): Record<string, Score
 
   if ((answers.objectifs as string[] | undefined)?.includes("Obtenir un crédit immobilier")) {
     scores.credit = calculerCredit(answers);
+  }
+
+  const portageRep = answers.portage_salarial ?? "";
+  if (
+    portageRep &&
+    portageRep !== "Non, je préfère rester indépendant" &&
+    answers.statut !== "Salarié porté (portage salarial)"
+  ) {
+    scores.portage_salarial = calculerPortage(answers);
   }
 
   return scores;
@@ -288,6 +298,28 @@ function calculerEpargne(a: DiagnosticAnswers): ScoreDomaine {
   }
 
   return { niveau, titre: "Épargne & investissement", score, message };
+}
+
+/* ── Portage salarial (conditionnel bonus) ── */
+
+function calculerPortage(a: DiagnosticAnswers): ScoreDomaine {
+  const rep = a.portage_salarial ?? "";
+  let score: number;
+  let niveau: RiskLevel;
+  let message: string;
+
+  if (rep === "Oui, je connais et ça m'intéresse") {
+    score = 55; niveau = "optimiser";
+    message = "Le portage salarial t'intéresse — découvre les sociétés qui peuvent t'accompagner selon ton secteur et ton niveau de revenus.";
+  } else if (rep === "J'en ai entendu parler mais je ne sais pas si c'est pour moi") {
+    score = 40; niveau = "optimiser";
+    message = "Le portage salarial combine liberté du freelance et sécurité du salarié (chômage, retraite, mutuelle). Ça vaut le coup d'explorer selon ton profil.";
+  } else {
+    score = 25; niveau = "urgent";
+    message = "Tu ne connais pas encore le portage salarial. C'est une alternative intéressante au statut indépendant classique : tu restes libre mais avec les protections d'un salarié.";
+  }
+
+  return { niveau, titre: "Portage salarial", score, message };
 }
 
 /* ── Crédit immobilier (conditionnel) ── */

@@ -6,7 +6,7 @@ import { getPartenaires, DOMAINE_META, Partenaire } from "@/lib/partenaires";
 import {
   ArrowRight, TrendingUp, Shield, Heart, Calculator, AlertTriangle,
   ChevronDown, ExternalLink, Smile, Building2, ShieldCheck, PiggyBank,
-  Landmark,
+  Landmark, Briefcase,
 } from "lucide-react";
 
 const DOMAINE_CONFIG: Record<string, { label: string; icon: ElementType }> = {
@@ -18,7 +18,8 @@ const DOMAINE_CONFIG: Record<string, { label: string; icon: ElementType }> = {
   banque_pro:    { label: "Banque professionnelle",      icon: Building2 },
   assurance_pro: { label: "Assurance RC Pro",            icon: ShieldCheck },
   epargne:       { label: "Épargne & investissement",    icon: PiggyBank },
-  credit:        { label: "Crédit immobilier",           icon: Landmark },
+  credit:          { label: "Crédit immobilier",           icon: Landmark },
+  portage_salarial: { label: "Portage salarial",            icon: Briefcase },
 };
 
 

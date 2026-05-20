@@ -230,7 +230,8 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
               { slug: "banque_pro",   label: "Banque pro" },
               { slug: "assurance_pro", label: "RC Pro" },
               { slug: "epargne",      label: "Épargne" },
-              { slug: "credit",       label: "Crédit immo" },
+              { slug: "credit",           label: "Crédit immo" },
+              { slug: "portage_salarial", label: "Portage salarial" },
             ]
               .filter((d) => d.slug !== domaine)
               .map((d) => (

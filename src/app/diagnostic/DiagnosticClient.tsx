@@ -14,6 +14,7 @@ const QUESTIONS = [
       "EURL / EI au réel",
       "SASU / SAS",
       "SARL / EURL (gérant majoritaire)",
+      "Salarié porté (portage salarial)",
       "Je ne sais pas encore",
     ],
   },
@@ -183,10 +184,29 @@ const RESSENTI_Q = {
   ],
 };
 
+const PORTAGE_Q = {
+  id: "portage_salarial",
+  titre: "As-tu envisagé le portage salarial ?",
+  type: "single",
+  options: [
+    "Oui, je connais et ça m'intéresse",
+    "J'en ai entendu parler mais je ne sais pas si c'est pour moi",
+    "Non, je ne connais pas",
+    "Non, je préfère rester indépendant",
+  ],
+};
+
 function needsLogement(objectifs: string[]): boolean {
   return objectifs.some(
     (o) => o === "Acheter ma résidence principale" || o === "Obtenir un crédit immobilier"
   );
+}
+
+function needsPortage(answers: Answers): boolean {
+  const statut = answers.statut as string;
+  const anciennete = answers.anciennete as string;
+  if (statut === "Salarié porté (portage salarial)") return false;
+  return statut === "Micro-entrepreneur / Auto-entrepreneur" || anciennete === "Moins d'1 an";
 }
 
 type Answers = Record<string, string | string[]>;
@@ -222,14 +242,17 @@ export default function DiagnosticClient() {
   };
   const pwValid = Object.values(pwRules).every(Boolean);
 
-  const currentQ = step < 13 ? QUESTIONS[step] : RESSENTI_Q;
-  const progress = step < 13 ? Math.round((step / 13) * 100) : step === 13 ? 99 : 100;
+  const currentQ = step < 13 ? QUESTIONS[step] : step === 13 ? RESSENTI_Q : PORTAGE_Q;
+  const progress = step < 13 ? Math.round((step / 13) * 100) : step < 15 ? 99 : 100;
 
   function selectSingle(value: string) {
-    setAnswers((prev) => ({ ...prev, [currentQ.id]: value }));
+    const nextAnswers = { ...answers, [currentQ.id]: value };
+    setAnswers(nextAnswers);
     setTimeout(() => {
-      if (step === 13) {
-        setStep(14);
+      if (step === 14) {
+        setStep(15);
+      } else if (step === 13) {
+        setStep(needsPortage(nextAnswers) ? 14 : 15);
       } else if (step === 12) {
         setStep(13);
       } else if (step < 12) {
@@ -253,7 +276,8 @@ export default function DiagnosticClient() {
   }
 
   function goBack() {
-    if (step === 14) setStep(13);
+    if (step === 15) setStep(needsPortage(answers) ? 14 : 13);
+    else if (step === 14) setStep(13);
     else if (step === 13) setStep(12);
     else if (step === 11) {
       const obj = (answers.objectifs as string[]) || [];
@@ -352,7 +376,7 @@ export default function DiagnosticClient() {
     }
   }
 
-  if (step === 14) {
+  if (step === 15) {
     // Vue pour utilisateur DÉJÀ CONNECTÉ
     if (loggedInUser) {
       const prenomUser =
@@ -580,6 +604,7 @@ export default function DiagnosticClient() {
           <span className="text-sm text-secondary">
             {step < 13 ? `Question ${step + 1} / 13` : "Question bonus"}
           </span>
+
         </div>
 
         <h2 className="text-2xl font-bold mb-1" style={{ color: "#2C2C2A" }}>

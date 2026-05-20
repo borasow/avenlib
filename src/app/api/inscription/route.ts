@@ -67,6 +67,21 @@ export async function POST(request: NextRequest) {
         } else {
           console.log("[Resend] Résultat Resend : OK, id =", emailData?.id);
         }
+
+        // Notification interne
+        const prenomCapitalized = prenom.charAt(0).toUpperCase() + prenom.slice(1);
+        const nomDisplay = nom ? ` ${nom.charAt(0).toUpperCase() + nom.slice(1)}` : "";
+        const dateInscription = new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" });
+        await resend.emails.send({
+          from: `Avenlib <${fromAddress}>`,
+          to: "contact@avenlib.fr",
+          subject: "🎉 Nouvel utilisateur sur Avenlib",
+          html: `
+            <p><strong>Prénom :</strong> ${prenomCapitalized}${nomDisplay}</p>
+            <p><strong>Email :</strong> ${email}</p>
+            <p><strong>Date d'inscription :</strong> ${dateInscription}</p>
+          `,
+        });
       } catch (emailErr) {
         console.error("[Resend] Exception :", emailErr);
       }

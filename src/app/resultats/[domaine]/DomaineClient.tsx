@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Lightbulb, Info } from "lucide-react";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
 import { Partenaire, getPartenaires } from "@/lib/partenaires";
-import { slugify } from "@/lib/partenaires-utils";
+import { slugify, PARTENAIRES_AVEC_ACCORD } from "@/lib/partenaires-utils";
 
 function PartenaireCard({ p, domaine, onTrack }: { p: Partenaire; domaine: string; onTrack: () => void }) {
   const [imgError, setImgError] = useState(false);
@@ -35,14 +35,27 @@ function PartenaireCard({ p, domaine, onTrack }: { p: Partenaire; domaine: strin
         )}
         <p className="text-sm text-secondary leading-relaxed">{p.description}</p>
       </div>
-      <Link
-        href={`/partenaires/${slugify(p.nom)}?domaine=${domaine}`}
-        onClick={onTrack}
-        className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
-        style={{ backgroundColor: "#1D9E75" }}
-      >
-        Être recontacté <ArrowRight size={14} />
-      </Link>
+      {PARTENAIRES_AVEC_ACCORD.has(slugify(p.nom)) ? (
+        <Link
+          href={`/partenaires/${slugify(p.nom)}?domaine=${domaine}`}
+          onClick={onTrack}
+          className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          style={{ backgroundColor: "#1D9E75" }}
+        >
+          Être recontacté <ArrowRight size={14} />
+        </Link>
+      ) : (
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={onTrack}
+          className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          style={{ backgroundColor: "#1D9E75" }}
+        >
+          Voir l'offre <ArrowRight size={14} />
+        </a>
+      )}
     </div>
   );
 }

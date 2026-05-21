@@ -35,6 +35,11 @@ export function findPartenaireBySlug(slug: string): PartenaireWithMeta | null {
   return null;
 }
 
+// Ajouter le slug du partenaire ici quand l'accord est signé
+export const PARTENAIRES_AVEC_ACCORD = new Set<string>([
+  "caravel",
+]);
+
 export const DOMAINE_LABELS: Record<string, string> = {
   retraite:        "Retraite",
   prevoyance:      "Prévoyance arrêt maladie",

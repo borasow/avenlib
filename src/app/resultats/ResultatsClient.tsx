@@ -3,7 +3,7 @@ import { useEffect, useState, ElementType } from "react";
 import Link from "next/link";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
 import { getPartenaires, DOMAINE_META, Partenaire } from "@/lib/partenaires";
-import { slugify } from "@/lib/partenaires-utils";
+import { slugify, PARTENAIRES_AVEC_ACCORD } from "@/lib/partenaires-utils";
 import {
   ArrowRight, TrendingUp, Shield, Heart, Calculator, AlertTriangle,
   ChevronDown, Smile, Building2, ShieldCheck, PiggyBank,
@@ -75,14 +75,27 @@ function PartenaireItem({ p, domaine }: { p: Partenaire; domaine: string }) {
         )}
         <p className="text-xs leading-relaxed" style={{ color: "#6B6B67" }}>{p.description}</p>
       </div>
-      <Link
-        href={`/partenaires/${slugify(p.nom)}?domaine=${domaine}`}
-        onClick={() => trackClick(domaine, p.nom)}
-        className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-white transition-opacity hover:opacity-90"
-        style={{ backgroundColor: "#1D9E75" }}
-      >
-        Être recontacté <ArrowRight size={12} />
-      </Link>
+      {PARTENAIRES_AVEC_ACCORD.has(slugify(p.nom)) ? (
+        <Link
+          href={`/partenaires/${slugify(p.nom)}?domaine=${domaine}`}
+          onClick={() => trackClick(domaine, p.nom)}
+          className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-white transition-opacity hover:opacity-90"
+          style={{ backgroundColor: "#1D9E75" }}
+        >
+          Être recontacté <ArrowRight size={12} />
+        </Link>
+      ) : (
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackClick(domaine, p.nom)}
+          className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-white transition-opacity hover:opacity-90"
+          style={{ backgroundColor: "#1D9E75" }}
+        >
+          Voir l'offre <ArrowRight size={12} />
+        </a>
+      )}
     </div>
   );
 }

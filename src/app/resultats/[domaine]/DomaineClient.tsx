@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Lightbulb, Info } from "lucide-react";
+import { ArrowLeft, ArrowRight, Lightbulb, Info } from "lucide-react";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
 import { Partenaire, getPartenaires } from "@/lib/partenaires";
+import { slugify } from "@/lib/partenaires-utils";
 
-function PartenaireCard({ p, onTrack }: { p: Partenaire; onTrack: () => void }) {
+function PartenaireCard({ p, domaine, onTrack }: { p: Partenaire; domaine: string; onTrack: () => void }) {
   const [imgError, setImgError] = useState(false);
   return (
     <div className="bg-white border border-gray-100 rounded-xl p-5 flex items-start justify-between gap-4">
@@ -34,16 +35,14 @@ function PartenaireCard({ p, onTrack }: { p: Partenaire; onTrack: () => void }) 
         )}
         <p className="text-sm text-secondary leading-relaxed">{p.description}</p>
       </div>
-      <a
-        href={p.url}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href={`/partenaires/${slugify(p.nom)}?domaine=${domaine}`}
         onClick={onTrack}
         className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
         style={{ backgroundColor: "#1D9E75" }}
       >
-        Voir l'offre <ExternalLink size={14} />
-      </a>
+        Être recontacté <ArrowRight size={14} />
+      </Link>
     </div>
   );
 }
@@ -203,7 +202,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
             <p className="text-sm text-secondary">Partenaires en cours de sélection, revenez bientôt.</p>
           )}
           {displayedPartenaires.map((p) => (
-            <PartenaireCard key={p.nom} p={p} onTrack={() => handlePartenaireClick(p)} />
+            <PartenaireCard key={p.nom} p={p} domaine={domaine} onTrack={() => handlePartenaireClick(p)} />
           ))}
         </div>
         {displayedPartenaires.some((p) => p.tarif) && (

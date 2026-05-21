@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Shield, CheckCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Shield, ExternalLink } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import type { PartenaireWithMeta } from "@/lib/partenaires-utils";
 
@@ -99,11 +99,11 @@ export default function PartenaireClient({ partenaire, domaine, domaineLabel }: 
         {/* Logo + titre */}
         <div className="bg-white rounded-2xl p-6 mb-6 border" style={{ borderColor: "#D3D1C7" }}>
           <div className="flex items-center gap-4 mb-4">
-            {!logoError ? (
+            {(partenaire.logo || partenaire.logoUrl) && !logoError ? (
               <img
-                src={partenaire.logoUrl}
+                src={partenaire.logo ?? partenaire.logoUrl}
                 alt={partenaire.nom}
-                style={{ height: "48px", maxWidth: "140px", objectFit: "contain" }}
+                style={{ height: "48px", maxWidth: "160px", objectFit: "contain" }}
                 onError={() => setLogoError(true)}
               />
             ) : (
@@ -124,6 +124,15 @@ export default function PartenaireClient({ partenaire, domaine, domaineLabel }: 
               {partenaire.tarif}
             </p>
           )}
+          <a
+            href={partenaire.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs mt-3 transition-opacity hover:opacity-70"
+            style={{ color: "#9B9B97" }}
+          >
+            Voir le site <ExternalLink size={11} />
+          </a>
         </div>
 
         {/* Formulaire */}

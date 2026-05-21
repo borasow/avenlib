@@ -68,18 +68,38 @@ export async function POST(request: NextRequest) {
           console.log("[Resend] Résultat Resend : OK, id =", emailData?.id);
         }
 
-        // Notification interne
-        const prenomCapitalized = prenom.charAt(0).toUpperCase() + prenom.slice(1);
-        const nomDisplay = nom ? ` ${nom.charAt(0).toUpperCase() + nom.slice(1)}` : "";
+        // Notification interne enrichie
+        const prenomCap = prenom.charAt(0).toUpperCase() + prenom.slice(1);
+        const nomCap = nom ? nom.charAt(0).toUpperCase() + nom.slice(1) : "";
         const dateInscription = new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" });
+        const scores = calculerScores(answers as DiagnosticAnswers);
+        const urgents = Object.entries(scores)
+          .filter(([, s]) => s.niveau === "urgent")
+          .map(([k]) => DOMAINE_LABELS[k] ?? k);
+        const urgentsHtml = urgents.length > 0
+          ? urgents.map((d) => `<li style="color:#DC2626;">🔴 ${d}</li>`).join("")
+          : `<li style="color:#059669;">Aucun domaine urgent</li>`;
         await resend.emails.send({
           from: `Avenlib <${fromAddress}>`,
           to: "contact@avenlib.fr",
-          subject: "🎉 Nouvel utilisateur sur Avenlib",
+          subject: `🎉 Nouvelle inscription — ${prenomCap} ${nomCap}`,
           html: `
-            <p><strong>Prénom :</strong> ${prenomCapitalized}${nomDisplay}</p>
-            <p><strong>Email :</strong> ${email}</p>
-            <p><strong>Date d'inscription :</strong> ${dateInscription}</p>
+            <div style="font-family:sans-serif;max-width:540px;color:#2C2C2A;">
+              <h2 style="color:#1D9E75;margin:0 0 20px;">Nouvelle inscription Avenlib</h2>
+              <table style="border-collapse:collapse;width:100%;">
+                <tr><td style="padding:8px 0;font-weight:600;width:180px;color:#6B6B67;vertical-align:top;">Prénom / Nom</td><td>${prenomCap} ${nomCap}</td></tr>
+                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Email</td><td><a href="mailto:${email}" style="color:#1D9E75;">${email}</a></td></tr>
+                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Statut juridique</td><td>${(answers as DiagnosticAnswers).statut ?? "—"}</td></tr>
+                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Revenus</td><td>${(answers as DiagnosticAnswers).revenus ?? "—"}</td></tr>
+                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Âge</td><td>${(answers as DiagnosticAnswers).age ?? "—"}</td></tr>
+                <tr>
+                  <td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Domaines urgents</td>
+                  <td><ul style="margin:0;padding-left:16px;">${urgentsHtml}</ul></td>
+                </tr>
+                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Newsletter</td><td>${newsletter ? "✅ Oui" : "❌ Non"}</td></tr>
+                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Date d'inscription</td><td>${dateInscription}</td></tr>
+              </table>
+            </div>
           `,
         });
       } catch (emailErr) {
@@ -95,15 +115,16 @@ export async function POST(request: NextRequest) {
 }
 
 const DOMAINE_LABELS: Record<string, string> = {
-  retraite:      "Retraite",
-  prevoyance:    "Prévoyance arrêt maladie",
-  sante:         "Mutuelle santé",
-  fiscalite:     "Optimisation fiscale",
-  deces:         "Prévoyance décès / invalidité",
-  banque_pro:    "Banque professionnelle",
-  assurance_pro: "Assurance RC Pro",
-  epargne:       "Épargne & investissement",
-  credit:        "Crédit immobilier",
+  retraite:         "Retraite",
+  prevoyance:       "Prévoyance arrêt maladie",
+  sante:            "Mutuelle santé",
+  fiscalite:        "Optimisation fiscale",
+  deces:            "Prévoyance décès / invalidité",
+  banque_pro:       "Banque professionnelle",
+  assurance_pro:    "Assurance RC Pro",
+  epargne:          "Épargne & investissement",
+  credit:           "Crédit immobilier",
+  portage_salarial: "Portage salarial",
 };
 
 function niveauEmoji(niveau: string): string {

@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
-  title: "Avenlib | Le bilan financier gratuit pour freelances et indépendants",
-  description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 5 minutes. Gratuit et sans engagement.",
+  title: "Avenlib | Le bilan protection gratuit pour freelances et indépendants",
+  description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 3 minutes. Gratuit et sans engagement.",
   openGraph: {
-    title: "Avenlib | Le bilan financier gratuit pour freelances et indépendants",
-    description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 5 minutes. Gratuit et sans engagement.",
+    title: "Avenlib | Le bilan protection gratuit pour freelances et indépendants",
+    description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 3 minutes. Gratuit et sans engagement.",
     url: "https://avenlib.fr",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
   },

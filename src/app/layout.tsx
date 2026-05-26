@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Avenlib | Bilan financier gratuit pour indépendants",
-    description: "Retraite, prévoyance, mutuelle, fiscalité — diagnostic gratuit en 13 questions.",
+    description: "Retraite, prévoyance, mutuelle, fiscalité — bilan gratuit en 13 questions.",
     images: ["https://avenlib.fr/logo-avenlib.png"],
   },
 };

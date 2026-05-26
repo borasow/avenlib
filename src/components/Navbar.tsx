@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { createBrowserClient } from "@supabase/ssr";
+import { createClient } from "@/lib/supabase/client";
 import { ChevronDown, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
@@ -21,17 +21,14 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const supabase = createBrowserClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    const supabase = createClient();
 
     async function loadUser(userId: string, email?: string) {
       const { data } = await supabase
         .from("profiles")
         .select("prenom")
         .eq("user_id", userId)
-        .single();
+        .maybeSingle();
       const raw = data?.prenom || email?.split("@")[0] || "Mon compte";
       setPrenom(raw.split(/[.\s]/)[0]);
       setReady(true);
@@ -68,10 +65,7 @@ export default function Navbar() {
   }, []);
 
   async function handleSignOut() {
-    const supabase = createBrowserClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    const supabase = createClient();
     await supabase.auth.signOut();
     setPrenom(null);
     setDropdownOpen(false);

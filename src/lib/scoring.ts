@@ -11,7 +11,8 @@ export interface ScoreDomaine {
 /** Fourchette (±15 %, arrondie à 50 €) pour ne pas afficher un chiffre faussement précis. */
 export function fourchettePension(p: number): string {
   const r = (x: number) => Math.round(x / 50) * 50;
-  return `${r(p * 0.85)} à ${r(p * 1.15)} €`;
+  const f = (x: number) => r(x).toLocaleString("fr-FR");
+  return `${f(p * 0.85)} à ${f(p * 1.15)} €`;
 }
 
 export interface DiagnosticAnswers {

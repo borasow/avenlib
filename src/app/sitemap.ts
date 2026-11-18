@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { ARTICLES } from "@/lib/blog";
+
 const BASE_URL = "https://avenlib.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/banque",       priority: 0.8, changeFrequency: "monthly" },
     { url: "/assurance-pro",priority: 0.8, changeFrequency: "monthly" },
     { url: "/epargne",      priority: 0.8, changeFrequency: "monthly" },
+    { url: "/blog", priority: 0.8, changeFrequency: "weekly" },
+    ...ARTICLES.map((a) => ({ url: `/blog/${a.slug}`, priority: 0.7, changeFrequency: "monthly" as const })),
     { url: "/mentions-legales", priority: 0.3, changeFrequency: "yearly" },
     { url: "/cgu",          priority: 0.3, changeFrequency: "yearly" },
     { url: "/contact",      priority: 0.5, changeFrequency: "yearly" },

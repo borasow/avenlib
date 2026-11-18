@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Qui sommes-nous ?", href: "/#qui-sommes-nous" },
   { label: "Pourquoi Avenlib ?", href: "/#pourquoi" },
   { label: "Comment ça marche ?", href: "/#comment" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const linkStyle = { color: "#2C2C2A", fontSize: "15px", fontWeight: 600, whiteSpace: "nowrap" as const };

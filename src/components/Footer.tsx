@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-bold text-base" style={{ color: "#2C2C2A" }}>Avenlib</span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "#6B6B67" }}>
-              Le premier service qui oriente les freelances vers les bons experts pour leur protection financière.
+              Le bilan global qui oriente les freelances et indépendants vers les bons experts pour leur protection financière.
             </p>
           </div>
 
@@ -28,7 +28,8 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-2.5">
               <p className="font-semibold text-xs uppercase tracking-wider mb-1" style={{ color: "#2C2C2A" }}>Société</p>
-              <Link href="/contact" className="hover:text-[#2C2C2A] transition-colors">Qui sommes-nous</Link>
+              <Link href="/#qui-sommes-nous" className="hover:text-[#2C2C2A] transition-colors">Qui sommes-nous</Link>
+              <Link href="/blog" className="hover:text-[#2C2C2A] transition-colors">Blog</Link>
               <Link href="/contact" className="hover:text-[#2C2C2A] transition-colors">Contact</Link>
             </div>
             <div className="flex flex-col gap-2.5">

@@ -5,10 +5,10 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Prévoyance indépendant : que se passe-t-il en arrêt maladie ?",
-  description: "La Sécu vous verse 22€/jour en arrêt maladie. Découvrez comment vous protéger efficacement avec les meilleures solutions pour indépendants.",
+  description: "En arrêt maladie, les indemnités de la Sécu sont plafonnées et versées après 3 jours de carence. Découvrez comment vous protéger.",
   openGraph: {
     title: "Prévoyance indépendant : que se passe-t-il en arrêt maladie ?",
-    description: "La Sécu vous verse 22€/jour en arrêt maladie. Découvrez comment vous protéger efficacement.",
+    description: "Indemnités plafonnées et 3 jours de carence : découvrez comment vous protéger en tant qu'indépendant.",
     url: "https://avenlib.fr/prevoyance",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
   },
@@ -37,9 +37,9 @@ export default function PagePrevoyance() {
         <section className="max-w-3xl mx-auto px-6 pb-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { chiffre: "22 €/j", label: "Indemnité journalière versée par le SSI après le délai de carence" },
-              { chiffre: "90 jours", label: "De carence avant toute indemnisation pour les TNS au SSI" },
-              { chiffre: "620 €", label: "Coût annuel moyen d'une prévoyance sérieuse — moins de 2€/jour" },
+              { chiffre: "65,84 €", label: "Indemnité journalière maximale en 2026 pour un indépendant au SSI (brut)" },
+              { chiffre: "3 jours", label: "De carence avant le début de l'indemnisation" },
+              { chiffre: "12 mois", label: "D'affiliation continue nécessaires pour ouvrir droit aux indemnités" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
                 <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
@@ -62,7 +62,7 @@ export default function PagePrevoyance() {
                   Quand un salarié tombe malade, la Sécurité sociale prend le relais dès le 4e jour. Son employeur peut même maintenir tout ou partie de son salaire. Pour un travailleur indépendant, la réalité est radicalement différente : le régime SSI (Sécurité sociale des indépendants) impose un <strong>délai de carence de 3 jours</strong> pour les accidents, mais en pratique, les indemnités journalières ne sont versées qu'après un délai effectif pouvant aller jusqu'à plusieurs semaines selon le traitement administratif.
                 </p>
                 <p>
-                  Pire encore pour les micro-entrepreneurs et auto-entrepreneurs qui relèvent de la même caisse mais dont les droits sont directement liés au chiffre d'affaires déclaré. En dessous d'un certain seuil de revenus, les indemnités journalières peuvent être inférieures à 22 €/jour, voire nulles pour ceux qui ont déclaré peu ou pas de revenus l'année précédente.
+                  Pire encore pour les micro-entrepreneurs et auto-entrepreneurs qui relèvent de la même caisse mais dont les droits sont directement liés au chiffre d'affaires déclaré. En dessous d'un certain seuil de revenus, les indemnités journalières peuvent être très faibles, voire nulles pour ceux qui ont déclaré peu ou pas de revenus l'année précédente.
                 </p>
                 <p>
                   L'impact financier est immédiat et brutal : les charges fixes continuent (loyer, abonnements, cotisations sociales minimales), le chiffre d'affaires s'arrête net, et le revenu de remplacement est dérisoire. Un arrêt de 2 mois peut coûter 8 000 à 15 000 € de revenus perdus à un freelance tech ou consultant facturant 700 €/jour.

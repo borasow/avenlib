@@ -134,14 +134,14 @@ function estimerRetraite(a: DiagnosticAnswers): number {
 function calculerPrevoyance(a: DiagnosticAnswers): ScoreDomaine {
   let score = 30;
   if (a.prevoyance_niveau === "Je suis bien couvert") score = 90;
-  else if (a.prevoyance_niveau === "Je touche la sécu seulement (~22€/jour)") score = 25;
+  else if (a.prevoyance_niveau === "Je touche la sécu seulement" || a.prevoyance_niveau === "Je touche la sécu seulement (~22€/jour)") score = 25;
   else if (a.prevoyance_niveau === "Je ne touche rien") score = 5;
   else if (a.prevoyance_niveau === "Je ne sais pas") score = 20;
   if (a.existant.includes("Prévoyance arrêt maladie")) score = Math.max(score, 70);
 
   const message =
     score < 40
-      ? "En cas d'arrêt maladie, tu percevras ~22€/jour de la Sécu. C'est bien en dessous de ton niveau de vie."
+      ? "En cas d'arrêt maladie, tu percevras seulement une indemnité plafonnée de la Sécu, après 3 jours de carence. C'est souvent bien en dessous de ton niveau de vie."
       : score < 70
       ? "Ta couverture arrêt maladie est partielle. Un complément de prévoyance s'impose."
       : "Ta prévoyance arrêt maladie est bien en place.";

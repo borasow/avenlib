@@ -37,9 +37,9 @@ export default function PageSante() {
         <section className="max-w-3xl mx-auto px-6 pb-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { chiffre: "70 %", label: "Taux de remboursement moyen de la Sécu (hors optique et dentaire)" },
-              { chiffre: "2 400 €", label: "Coût moyen annuel d'un reste-à-charge non couvert" },
-              { chiffre: "4,8 M", label: "D'indépendants sans mutuelle adaptée à leur situation réelle" },
+              { chiffre: "Partiel", label: "La Sécu ne rembourse qu'une partie de vos frais de santé" },
+              { chiffre: "100 % Santé", label: "Des paniers de soins sans reste à charge en optique, dentaire et audiologie" },
+              { chiffre: "0 employeur", label: "Pas de mutuelle collective : à vous de choisir et de financer la vôtre" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
                 <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>

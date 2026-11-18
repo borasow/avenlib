@@ -37,9 +37,9 @@ export default function PageRetraite() {
         <section className="max-w-3xl mx-auto px-6 pb-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { chiffre: "620 €", label: "Pension mensuelle moyenne d'un indépendant (régime SSI)" },
-              { chiffre: "−40 %", label: "De moins qu'un salarié à revenus équivalents" },
-              { chiffre: "40 %", label: "Des indépendants sans aucune épargne retraite complémentaire" },
+              { chiffre: "0 €", label: "de retraite complémentaire obligatoire équivalente à l'AGIRC-ARRCO pour de nombreux statuts" },
+              { chiffre: "Seul", label: "Vous cotisez sans part employeur : vos droits dépendent de vos revenus" },
+              { chiffre: "Gratuit", label: "Votre relevé de carrière sur info-retraite.fr" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
                 <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
@@ -62,13 +62,13 @@ export default function PageRetraite() {
                   En France, la retraite des travailleurs indépendants repose sur des régimes obligatoires spécifiques : le SSI (Sécurité sociale des indépendants) pour les artisans et commerçants, la CIPAV pour les professions libérales, ou encore l'URSSAF pour les auto-entrepreneurs. Ces régimes fonctionnent sur le principe de la répartition, comme celui des salariés, mais avec une différence majeure : les cotisations sont calculées sur des revenus souvent volatils et les taux de remplacement sont structurellement plus faibles.
                 </p>
                 <p>
-                  Un salarié peut espérer percevoir environ 50 à 75 % de son dernier salaire à la retraite. Pour un indépendant, ce taux tombe souvent en dessous de 30 à 40 %. Concrètement, un freelance qui gagne 4 000 € nets par mois aujourd'hui peut se retrouver avec moins de 1 200 € de pension — soit une chute brutale de son niveau de vie.
+                  Un salarié peut espérer percevoir environ 50 à 75 % de son dernier salaire à la retraite. Pour un indépendant, ce taux est souvent nettement plus faible, et il dépend de votre statut et de vos revenus passés. Un freelance qui gagne bien sa vie aujourd'hui peut donc voir son niveau de vie chuter fortement à la retraite.
                 </p>
                 <p>
                   Deuxième problème : les années de faibles revenus pèsent lourd. Un auto-entrepreneur ou un micro-entrepreneur qui débute avec un petit chiffre d'affaires accumule très peu de trimestres validés et de points retraite. Les premières années d'activité hypothèquent la pension future de façon durable.
                 </p>
                 <p>
-                  Troisième problème : l'absence de retraite complémentaire obligatoire comparable à celle des salariés (AGIRC-ARRCO). Les indépendants doivent, par eux-mêmes, mettre en place une épargne complémentaire — ce que près de 40 % d'entre eux ne font pas, faute d'information ou de temps.
+                  Troisième problème : l'absence de retraite complémentaire obligatoire comparable à celle des salariés (AGIRC-ARRCO). Les indépendants doivent, par eux-mêmes, mettre en place une épargne complémentaire, ce que beaucoup ne font pas, faute d'information ou de temps.
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function PageRetraite() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>Retraite micro-entrepreneur et auto-entrepreneur</h3>
                   <p>
-                    La retraite auto-entrepreneur est calculée sur la base du chiffre d'affaires déclaré, après application d'un abattement forfaitaire. Un micro-entrepreneur qui déclare 35 000 € de CA (services) cotise sur environ 22 750 € de revenus nets. Après 40 ans de carrière à ce niveau, la pension estimée tourne autour de <strong>620 à 850 € par mois</strong>. C'est la pension indépendant la plus faible du marché — suffisante pour survivre, insuffisante pour vivre.
+                    La retraite auto-entrepreneur est calculée sur la base du chiffre d'affaires déclaré, après application d'un abattement forfaitaire. Plus ce chiffre d'affaires est faible, moins vous validez de trimestres et de points. <strong>Consultez votre relevé sur info-retraite.fr</strong> pour connaître une estimation réelle de votre pension.
                   </p>
                   <p className="mt-2">
                     La retraite micro-entrepreneur souffre d'une autre particularité : le plafond de CA du régime (77 700 € pour les services en 2024) limite mécaniquement la base de cotisation. Un freelance qui dépasse ce seuil et reste en micro paie des cotisations sans bénéficier de droits supplémentaires au-delà.

@@ -37,9 +37,9 @@ export default function PageCredit() {
         <section className="max-w-3xl mx-auto px-6 pb-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { chiffre: "40 %", label: "Des indépendants refusés ou compliqués par leur banque principale" },
+              { chiffre: "Souvent", label: "Les banques demandent plusieurs années d'historique aux indépendants" },
               { chiffre: "3 ans", label: "D'historique souvent exigé par les banques classiques" },
-              { chiffre: "2 min", label: "Pour obtenir une simulation chez les acteurs spécialisés" },
+              { chiffre: "Simulation", label: "Rapide chez certains acteurs spécialisés" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
                 <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>

@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Optimisation fiscale freelance : économisez jusqu'à 3 200€/an",
+  title: "Optimisation fiscale freelance : les leviers à connaître",
   description: "PER, charges déductibles, choix du statut : tous les leviers pour réduire vos impôts légalement en tant qu'indépendant.",
   openGraph: {
-    title: "Optimisation fiscale freelance : économisez jusqu'à 3 200€/an",
+    title: "Optimisation fiscale freelance : les leviers à connaître",
     description: "PER, charges déductibles, choix du statut : tous les leviers pour réduire vos impôts légalement.",
     url: "https://avenlib.fr/fiscalite",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
@@ -26,7 +26,7 @@ export default function PageFiscalite() {
             Fiscalité & optimisation
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
-            Optimisation fiscale freelance : économisez jusqu'à 3 200€/an
+            Optimisation fiscale freelance : les leviers à connaître
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
             La fiscalité des indépendants est complexe, mais elle réserve des opportunités que la plupart n'exploitent pas. PER, régime réel, déductions Madelin : voici comment réduire légalement votre imposition.
@@ -37,9 +37,9 @@ export default function PageFiscalite() {
         <section className="max-w-3xl mx-auto px-6 pb-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { chiffre: "3 200 €", label: "Économie fiscale annuelle moyenne non réalisée par les indépendants" },
-              { chiffre: "10 %", label: "Seulement des indépendants utilisent un PER comme outil fiscal" },
-              { chiffre: "32 908 €", label: "Plafond de déduction fiscale via le PER en 2024" },
+              { chiffre: "5", label: "Leviers principaux : statut, charges, PER, Madelin, rémunération" },
+              { chiffre: "PER", label: "Versements déductibles du revenu imposable dans la limite d'un plafond" },
+              { chiffre: "Expert", label: "Validez toute stratégie avec un expert-comptable" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
                 <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>

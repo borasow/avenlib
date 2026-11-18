@@ -237,7 +237,7 @@ export const DOMAINE_META: Record<string, { titre: string; description: string; 
   },
   prevoyance: {
     titre: "Ta prévoyance arrêt maladie",
-    description: "En cas d'arrêt maladie, la Sécurité sociale verse environ 22€/jour après un délai de carence de 3 jours. C'est loin d'être suffisant pour maintenir ton niveau de vie.",
+    description: "En cas d'arrêt maladie, la Sécurité sociale verse une indemnité plafonnée (65,84 € brut par jour maximum en 2026) après 3 jours de carence. C'est souvent insuffisant pour maintenir ton niveau de vie.",
     conseil: "Une assurance prévoyance complémentaire te permet de percevoir des indemnités journalières proches de tes revenus habituels dès le premier jour d'arrêt.",
   },
   sante: {

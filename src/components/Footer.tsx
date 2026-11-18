@@ -47,7 +47,7 @@ export default function Footer() {
         >
           <span>© 2026 Avenlib, Tous droits réservés</span>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/avenlib/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-[#2C2C2A] transition-colors"

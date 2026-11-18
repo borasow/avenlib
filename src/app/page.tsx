@@ -3,10 +3,10 @@ import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
   title: "Avenlib | Le bilan protection gratuit pour freelances et indépendants",
-  description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 3 minutes. Gratuit et sans engagement.",
+  description: "Retraite, prévoyance, mutuelle, fiscalité : faites votre bilan en 3 minutes. Gratuit et sans engagement.",
   openGraph: {
     title: "Avenlib | Le bilan protection gratuit pour freelances et indépendants",
-    description: "Retraite, prévoyance, mutuelle, fiscalité — faites votre bilan en 3 minutes. Gratuit et sans engagement.",
+    description: "Retraite, prévoyance, mutuelle, fiscalité : faites votre bilan en 3 minutes. Gratuit et sans engagement.",
     url: "https://avenlib.fr",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
   },
@@ -31,7 +31,7 @@ import {
 
 const piliers = [
   { iconName: "TrendingUp" as const,  titre: "Retraite",               description: "En tant qu'indépendant, tu cotises peu. Prépare-toi avant qu'il soit trop tard.", href: "/retraite" },
-  { iconName: "Shield" as const,      titre: "Prévoyance",             description: "Un arrêt maladie peut te laisser avec 22€/jour. Découvre comment te protéger.", href: "/prevoyance" },
+  { iconName: "Shield" as const,      titre: "Prévoyance",             description: "Une indemnité d'arrêt maladie souvent bien inférieure à ton revenu. Découvre comment te protéger.", href: "/prevoyance" },
   { iconName: "Calculator" as const,  titre: "Fiscalité",              description: "Des leviers existent pour réduire tes impôts légalement selon ton statut.", href: "/fiscalite" },
   { iconName: "Heart" as const,       titre: "Santé",                  description: "La Sécu couvre peu. Une bonne mutuelle fait toute la différence.", href: "/sante" },
   { iconName: "Landmark" as const,    titre: "Crédit & Financement",   description: "Freelance ? Les banques compliquent votre dossier. On vous oriente vers ceux qui comprennent votre statut.", href: "/credit" },
@@ -171,10 +171,10 @@ export default function Home() {
                 {/* Partie 1 + 2 */}
                 <div>
                   <p className="text-2xl sm:text-3xl font-bold leading-snug text-white mb-4">
-                    En France, 7 indépendants sur 10 sont sous-protégés sans le savoir.
+                    Indépendant, tu es responsable de ta propre protection.
                   </p>
                   <p className="text-base font-medium leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.70)" }}>
-                    4,8 millions d&apos;indépendants en France. 70% n&apos;ont pas les bonnes protections en place.
+                    Retraite, arrêt maladie, mutuelle, fiscalité : sais-tu où tu en es vraiment ?
                   </p>
                   <div className="space-y-3">
                     {[
@@ -216,10 +216,10 @@ export default function Home() {
                 style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}
               >
                 {[
-                  { chiffre: "4,8M",    label: "indépendants en France" },
-                  { chiffre: "620€",    label: "pension moyenne d'un freelance" },
-                  { chiffre: "22€/j",   label: "indemnité sécu en arrêt maladie" },
-                  { chiffre: "3 200€",  label: "d'économies fiscales annuelles non réalisées en moyenne" },
+                  { chiffre: "13,5 %", label: "des personnes en emploi en France sont indépendantes (Insee, 2025)" },
+                  { chiffre: "3 jours", label: "de carence avant toute indemnité en arrêt maladie" },
+                  { chiffre: "65,84 €", label: "indemnité journalière maximale par jour en 2026 (SSI)" },
+                  { chiffre: "9", label: "domaines analysés par ton bilan, en 3 minutes" },
                 ].map((s, i) => (
                   <div
                     key={s.chiffre}
@@ -332,7 +332,7 @@ export default function Home() {
                 {/* Colonne gauche */}
                 <div className="space-y-5 text-sm leading-relaxed" style={{ color: "#6B6B67" }}>
                   <p>
-                    Avenlib est né d&apos;un constat simple : en France, <strong style={{ color: "#2C2C2A" }}>4,8 millions d&apos;indépendants</strong> travaillent à leur compte sans filet de sécurité. Pas de mutuelle d&apos;entreprise, pas de conseiller RH, pas de bulletin de salaire qui gère tout automatiquement.
+                    Avenlib est né d&apos;un constat simple : en France, <strong style={{ color: "#2C2C2A" }}>plus d&apos;une personne en emploi sur dix</strong> travaille à leur compte sans filet de sécurité. Pas de mutuelle d&apos;entreprise, pas de conseiller RH, pas de bulletin de salaire qui gère tout automatiquement.
                   </p>
                   <p>
                     Résultat : la plupart ne savent pas combien ils toucheront à la retraite, ne sont pas couverts en cas d&apos;arrêt maladie, et paient trop d&apos;impôts faute d&apos;optimisation.

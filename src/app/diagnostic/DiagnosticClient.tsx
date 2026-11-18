@@ -117,7 +117,7 @@ const QUESTIONS = [
     type: "single",
     options: [
       "Je suis bien couvert",
-      "Je touche la sécu seulement (~22€/jour)",
+      "Je touche la sécu seulement",
       "Je ne touche rien",
       "Je ne sais pas",
     ],

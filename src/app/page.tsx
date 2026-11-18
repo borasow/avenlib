@@ -95,7 +95,7 @@ export default function Home() {
 
         {/* ── Hero ── */}
         <section style={{ backgroundColor: "#F1EFE8" }}>
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:min-h-[700px]">
+          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:min-h-[560px]">
 
             {/* Colonne gauche, texte */}
             <div className="flex flex-col justify-center py-12 md:py-20 pr-0 md:pr-12 md:w-[45%] w-full">
@@ -140,7 +140,7 @@ export default function Home() {
 
         {/* ── 4 Piliers ── */}
         <section className="max-w-6xl mx-auto px-6 pb-14">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {piliers.map((p) => (
               <PilierCard
                 key={p.titre}
@@ -237,7 +237,7 @@ export default function Home() {
         </section>
 
         {/* ── Pourquoi Avenlib ── */}
-        <section className="py-20" id="pourquoi">
+        <section className="py-20" id="pourquoi" style={{ backgroundColor: "#E1F5EE" }}>
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-2" style={{ color: "#2C2C2A" }}>
               Pourquoi Avenlib
@@ -296,6 +296,42 @@ export default function Home() {
               >
                 Commencer mon bilan <ArrowRight size={16} />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Aperçu du résultat ── */}
+        <section className="py-20" style={{ backgroundColor: "#FFFFFF" }}>
+          <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-3" style={{ color: "#2C2C2A" }}>
+                Un tableau clair, domaine par domaine
+              </h2>
+              <p className="text-base leading-relaxed mb-5" style={{ color: "#4A4A47" }}>
+                À la fin du bilan, tu vois d&apos;un coup d&apos;œil où tu es exposé et par quoi commencer.
+              </p>
+              <ul className="space-y-2 text-sm" style={{ color: "#2C2C2A" }}>
+                <li className="flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#E24B4A" }} /> À traiter en priorité</li>
+                <li className="flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#EF9F27" }} /> À améliorer</li>
+                <li className="flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#1D9E75" }} /> Bien couvert</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl p-5" style={{ backgroundColor: "#F1EFE8", border: "2px solid #E8E6DF" }}>
+              <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "#6B6B67" }}>Exemple de résultat</p>
+              <div className="space-y-2">
+                {[
+                  ["Retraite", "#E24B4A"],
+                  ["Prévoyance", "#E24B4A"],
+                  ["Santé", "#EF9F27"],
+                  ["Fiscalité", "#EF9F27"],
+                  ["Banque pro", "#1D9E75"],
+                ].map(([nom, couleur]) => (
+                  <div key={nom} className="flex items-center justify-between rounded-xl px-4 py-3" style={{ backgroundColor: "#FFFFFF", border: "1px solid #E8E6DF" }}>
+                    <span className="text-sm font-medium" style={{ color: "#2C2C2A" }}>{nom}</span>
+                    <span className="w-4 h-4 rounded-full" style={{ backgroundColor: couleur }} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

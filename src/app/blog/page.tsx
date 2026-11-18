@@ -1,8 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 import { ARTICLES, formatDate } from "@/lib/blog";
+
+const COVERS: Record<string, string> = {
+  "retraite-freelance": "/blog/retraite.png",
+  "prevoyance-independant": "/blog/prevoyance.png",
+  "mutuelle-auto-entrepreneur": "/blog/mutuelle.png",
+  "optimisation-fiscale-freelance": "/blog/fiscalite.png",
+  "protection-sociale-independant": "/blog/protection.png",
+};
 
 const title = "Blog Avenlib : protection financière des freelances et indépendants";
 const description =
@@ -38,17 +47,20 @@ export default function BlogPage() {
             <Link
               key={a.slug}
               href={`/blog/${a.slug}`}
-              className="block rounded-2xl p-6 transition-opacity hover:opacity-80"
+              className="block rounded-2xl overflow-hidden transition-transform hover:-translate-y-0.5"
               style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}
             >
-              <div className="text-xs mb-2" style={{ color: "#1D9E75" }}>
-                {a.categorie} · {formatDate(a.date)} · {a.lecture} de lecture
+              <Image src={COVERS[a.slug]} alt={a.titre} width={1200} height={630} className="w-full h-auto" />
+              <div className="p-6">
+                <div className="text-xs mb-2 font-medium" style={{ color: "#1D9E75" }}>
+                  {a.categorie} · {formatDate(a.date)} · {a.lecture} de lecture
+                </div>
+                <h2 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>{a.titre}</h2>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: "#4A4A47" }}>{a.description}</p>
+                <span className="inline-flex items-center gap-1 text-sm font-medium" style={{ color: "#1D9E75" }}>
+                  Lire l&apos;article <ArrowRight size={14} />
+                </span>
               </div>
-              <h2 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>{a.titre}</h2>
-              <p className="text-sm leading-relaxed mb-3" style={{ color: "#6B6B67" }}>{a.description}</p>
-              <span className="inline-flex items-center gap-1 text-sm font-medium" style={{ color: "#1D9E75" }}>
-                Lire l&apos;article <ArrowRight size={14} />
-              </span>
             </Link>
           ))}
         </section>

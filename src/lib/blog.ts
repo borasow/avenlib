@@ -12,6 +12,7 @@ export type Article = {
   date: string; // ISO
   lecture: string;
   intro: string;
+  aretenir: string[];
   sections: ArticleSection[];
   ctaTitre: string;
   ctaTexte: string;
@@ -29,6 +30,11 @@ export const ARTICLES: Article[] = [
     lecture: "6 min",
     intro:
       "Quand on travaille à son compte, on pense rarement à la retraite avant 45 ou 50 ans. Pourtant, c'est le sujet sur lequel les indépendants sont les plus exposés : pas d'employeur qui cotise pour eux, des revenus qui varient, et aucune retraite complémentaire automatique comme celle des salariés. Voici comment tout cela fonctionne et ce que vous pouvez faire dès maintenant.",
+    aretenir: [
+      "Vos droits dépendent de ce que vous cotisez, sans part employeur.",
+      "Votre relevé de carrière est gratuit sur info-retraite.fr.",
+      "Un PER ou une assurance-vie permet de compléter, plus tôt c'est plus léger.",
+    ],
     sections: [
       {
         titre: "Pourquoi la retraite des indépendants est souvent plus faible",
@@ -95,6 +101,11 @@ export const ARTICLES: Article[] = [
     lecture: "6 min",
     intro:
       "Un salarié qui tombe malade continue souvent à toucher une grande partie de son salaire. Un indépendant, lui, voit ses revenus chuter alors que ses charges continuent. C'est le risque le moins visible quand on se met à son compte, et pourtant l'un des plus graves. Voici ce qui est couvert, ce qui ne l'est pas, et comment s'y prendre.",
+    aretenir: [
+      "3 jours de carence avant le début des indemnités.",
+      "L'indemnité est plafonnée, et vos charges continuent.",
+      "Comparez la franchise, le niveau d'indemnisation et la définition de l'invalidité.",
+    ],
     sections: [
       {
         titre: "Ce que prévoit le régime obligatoire",
@@ -158,6 +169,11 @@ export const ARTICLES: Article[] = [
     lecture: "5 min",
     intro:
       "Quand vous étiez salarié, votre employeur choisissait une mutuelle collective et en payait une partie. En devenant auto-entrepreneur, vous perdez cet avantage : à vous de choisir et de financer votre complémentaire santé. Avec autant d'offres sur le marché, il est facile de payer trop cher ou d'être mal couvert.",
+    aretenir: [
+      "Pas de mutuelle collective : le choix et le coût vous reviennent.",
+      "Identifiez vos besoins (optique, dentaire, famille) avant de comparer.",
+      "Comparez à garanties équivalentes, et vérifiez les délais de carence.",
+    ],
     sections: [
       {
         titre: "Pourquoi une mutuelle reste importante",
@@ -220,6 +236,11 @@ export const ARTICLES: Article[] = [
     lecture: "6 min",
     intro:
       "Payer des impôts est normal. En payer plus que nécessaire est une erreur. Beaucoup de freelances ne connaissent pas les leviers légaux qui existent pour réduire leur imposition. Voici cinq pistes à explorer, avec un conseil important : validez toujours votre stratégie avec un expert-comptable, car chaque situation est différente.",
+    aretenir: [
+      "5 leviers : statut, charges, PER, Madelin, rémunération.",
+      "Chaque situation est différente, validez avec un expert-comptable.",
+      "Un suivi rigoureux de vos dépenses fait la différence.",
+    ],
     sections: [
       {
         titre: "1. Choisir le bon statut juridique",
@@ -277,6 +298,11 @@ export const ARTICLES: Article[] = [
     lecture: "7 min",
     intro:
       "Devenir indépendant, c'est gagner en liberté. C'est aussi perdre un filet de sécurité que l'on ne remarque qu'au moment d'en avoir besoin. Salarié, votre employeur s'occupait de beaucoup de choses : mutuelle, prévoyance, cotisations. Indépendant, vous devenez responsable de votre protection. Voici le panorama complet, en cinq piliers.",
+    aretenir: [
+      "5 piliers : santé, arrêt maladie, retraite, invalidité, décès.",
+      "Commencez par savoir où vous en êtes sur chacun.",
+      "La prévoyance et la mutuelle passent avant l'épargne.",
+    ],
     sections: [
       {
         titre: "Pilier 1 : la santé",

@@ -38,6 +38,12 @@ export default function MentionsLegales() {
               si vous avez consenti. Elles ne sont jamais revendues à des tiers.
             </p>
             <p className="mt-2">
+              Newsletter : si vous cochez la case dédiée lors du bilan, vous recevez un email mensuel
+              d'Avenlib. Votre consentement est enregistré avec sa date et conservé tant que vous
+              restez abonné. Vous pouvez vous désinscrire à tout moment via le lien présent dans
+              chaque email, ou en écrivant à contact@avenlib.fr.
+            </p>
+            <p className="mt-2">
               Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de
               suppression de vos données. Contactez-nous à : contact@avenlib.fr
             </p>

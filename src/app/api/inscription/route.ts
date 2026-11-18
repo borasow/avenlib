@@ -36,6 +36,8 @@ export async function POST(request: NextRequest) {
         compte_bancaire_pro: answers.banque_pro,
         assurance_rc_pro:    answers.rc_pro,
         newsletter_consent:  newsletter ?? false,
+        newsletter_consent_at: newsletter ? new Date().toISOString() : null,
+        ...(newsletter ? { newsletter_unsubscribed_at: null } : {}),
         updated_at:          new Date().toISOString(),
       };
 

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Lightbulb, Info } from "lucide-react";
-import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
+import { calculerScores, DiagnosticAnswers, ScoreDomaine, fourchettePension } from "@/lib/scoring";
 import { Partenaire, getPartenaires } from "@/lib/partenaires";
 import { slugify, PARTENAIRES_AVEC_ACCORD } from "@/lib/partenaires-utils";
 
@@ -156,7 +156,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
             </p>
             <div className="flex items-end gap-2 mb-1">
               <span className="text-4xl font-bold" style={{ color: "#2C2C2A" }}>
-                ~{score.pensionEstimee} €
+                {fourchettePension(score.pensionEstimee)}
               </span>
               <span className="text-sm mb-1" style={{ color: "#6B6B67" }}>/mois à la retraite</span>
             </div>

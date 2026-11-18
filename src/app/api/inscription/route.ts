@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
-import { calculerScores, DiagnosticAnswers } from "@/lib/scoring";
+import { calculerScores, DiagnosticAnswers, fourchettePension } from "@/lib/scoring";
 
 export async function POST(request: NextRequest) {
   try {
@@ -176,8 +176,8 @@ function buildEmailHtml(prenomRaw: string, answers: DiagnosticAnswers): string {
   const pensionBlock = pension
     ? `<div style="background: #EFF9F5; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;">
         <p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #059669;">Pension retraite estimée</p>
-        <p style="margin: 0; font-size: 28px; font-weight: 700; color: #2C2C2A;">~${pension} €<span style="font-size: 14px; font-weight: 400; color: #6B6B67;">/mois</span></p>
-        <p style="margin: 6px 0 0; font-size: 12px; color: #6B6B67;">Estimation indicative selon ton statut et tes revenus. Pour un chiffre plus précis, consulte ton relevé sur <a href="https://www.info-retraite.fr" style="color: #6B6B67; text-decoration: underline;">info-retraite.fr</a> (gratuit).</p>
+        <p style="margin: 0; font-size: 28px; font-weight: 700; color: #2C2C2A;">${fourchettePension(pension)}<span style="font-size: 14px; font-weight: 400; color: #6B6B67;">/mois</span></p>
+        <p style="margin: 6px 0 0; font-size: 12px; color: #6B6B67;">Fourchette indicative selon ton statut et tes revenus. Pour un chiffre plus précis, consulte ton relevé sur <a href="https://www.info-retraite.fr" style="color: #6B6B67; text-decoration: underline;">info-retraite.fr</a> (gratuit).</p>
        </div>`
     : "";
 

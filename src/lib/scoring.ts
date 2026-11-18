@@ -8,6 +8,12 @@ export interface ScoreDomaine {
   pensionEstimee?: number;
 }
 
+/** Fourchette (±15 %, arrondie à 50 €) pour ne pas afficher un chiffre faussement précis. */
+export function fourchettePension(p: number): string {
+  const r = (x: number) => Math.round(x / 50) * 50;
+  return `${r(p * 0.85)} à ${r(p * 1.15)} €`;
+}
+
 export interface DiagnosticAnswers {
   statut: string;
   secteur: string;

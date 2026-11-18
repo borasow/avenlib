@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState, ElementType } from "react";
 import Link from "next/link";
-import { calculerScores, DiagnosticAnswers, ScoreDomaine } from "@/lib/scoring";
+import { calculerScores, DiagnosticAnswers, ScoreDomaine, fourchettePension } from "@/lib/scoring";
 import { getPartenaires, DOMAINE_META, Partenaire } from "@/lib/partenaires";
 import { slugify, PARTENAIRES_AVEC_ACCORD } from "@/lib/partenaires-utils";
 import {
@@ -255,7 +255,7 @@ export default function ResultatsClient() {
                       <div className="rounded-lg px-4 py-3 mb-4 border" style={{ backgroundColor: "rgba(255,255,255,0.8)", borderColor: "rgba(0,0,0,0.06)" }}>
                         <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: colors.text }}>Pension estimée</p>
                         <div className="flex items-end gap-1">
-                          <span className="text-3xl font-bold" style={{ color: "#2C2C2A" }}>~{score.pensionEstimee} €</span>
+                          <span className="text-3xl font-bold" style={{ color: "#2C2C2A" }}>{fourchettePension(score.pensionEstimee)}</span>
                           <span className="text-sm mb-0.5" style={{ color: "#6B6B67" }}>/mois</span>
                         </div>
                         <p className="text-xs mt-2" style={{ color: "#9B9B97" }}>

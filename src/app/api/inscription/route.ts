@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
         await resend.emails.send({
           from: `Avenlib <${fromAddress}>`,
           to: "contact@avenlib.fr",
-          subject: `🎉 Nouvelle inscription — ${prenomCap} ${nomCap}`,
+          subject: `🎉 Nouvelle inscription : ${prenomCap} ${nomCap}`,
           html: `
             <div style="font-family:sans-serif;max-width:540px;color:#2C2C2A;">
               <h2 style="color:#1D9E75;margin:0 0 20px;">Nouvelle inscription Avenlib</h2>
@@ -210,7 +210,7 @@ function buildEmailHtml(prenomRaw: string, answers: DiagnosticAnswers): string {
       ${pensionBlock}
 
       <!-- Scores -->
-      <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9B9B97; margin: 0 0 4px;">Tes scores par domaine</p>
+      <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9B9B97; margin: 0 0 4px;">Ta situation par domaine</p>
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 28px;">
         ${scoresHtml}
       </table>

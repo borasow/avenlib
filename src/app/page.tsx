@@ -53,36 +53,6 @@ const arguments_ = [
   { icon: Users, titre: "Orienté vers les partenaires sélectionnés pour les indépendants", description: "On ne vend rien. On t'oriente vers des experts sélectionnés pour leur sérieux et leur spécialisation indépendants." },
 ];
 
-const temoignages = [
-  {
-    photo: "/testimonials/marie.jpg",
-    prenom: "Marie",
-    age: 34,
-    metier: "Développeuse freelance",
-    ville: "Paris",
-    note: 5,
-    texte: "En 10 minutes, j'ai enfin compris pourquoi ma retraite était une catastrophe annoncée. Et surtout, j'ai su quoi faire. J'aurais dû faire ça il y a 5 ans.",
-  },
-  {
-    photo: "/testimonials/thomas.jpg",
-    prenom: "Thomas",
-    age: 42,
-    metier: "Consultant indépendant",
-    ville: "Lyon",
-    note: 5,
-    texte: "J'avais zéro prévoyance. Un arrêt maladie de 2 mois m'a coûté cher. Avenlib m'a orienté vers Wemind en 3 clics. Souscription faite dans la foulée.",
-  },
-  {
-    photo: "/testimonials/sophie.jpg",
-    prenom: "Sophie",
-    age: 38,
-    metier: "Gérante de franchise",
-    ville: "Bordeaux",
-    note: 5,
-    texte: "Mon comptable ne m'avait jamais parlé d'optimisation fiscale. Le bilan a tout mis sur la table. Clair, concret, sans jargon.",
-  },
-];
-
 const faq = [
   {
     question: "C'est vraiment gratuit ?",
@@ -326,56 +296,6 @@ export default function Home() {
               >
                 Commencer mon bilan <ArrowRight size={16} />
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Témoignages ── */}
-        <section className="py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-2" style={{ color: "#2C2C2A" }}>
-              Ce qu&apos;ils en disent
-            </h2>
-            <p className="text-center mb-12 text-sm" style={{ color: "#6B6B67" }}>
-              Des indépendants comme toi, qui ont enfin vu clair.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {temoignages.map((t) => (
-                <div key={t.prenom} className="p-6 flex flex-col" style={CARD}>
-                  {/* Étoiles */}
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: t.note }).map((_, i) => (
-                      <span key={i} style={{ color: "#1D9E75" }}>★</span>
-                    ))}
-                  </div>
-                  {/* Témoignage */}
-                  <p className="text-sm leading-relaxed italic flex-1 mb-6" style={{ color: "#2C2C2A" }}>
-                    &ldquo;{t.texte}&rdquo;
-                  </p>
-                  {/* Séparateur */}
-                  <div className="h-px w-8 mb-4" style={{ backgroundColor: "#D3D1C7" }} />
-                  {/* Profil */}
-                  <div className="flex items-center gap-3">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={t.photo}
-                      alt={t.prenom}
-                      style={{
-                        width: "64px",
-                        height: "64px",
-                        borderRadius: "50%",
-                        objectFit: "cover",
-                        border: "2px solid #1D9E75",
-                        flexShrink: 0,
-                      }}
-                    />
-                    <div>
-                      <p className="text-sm font-semibold" style={{ color: "#2C2C2A" }}>{t.prenom}, {t.age} ans</p>
-                      <p className="text-xs" style={{ color: "#6B6B67" }}>{t.metier} · {t.ville}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>

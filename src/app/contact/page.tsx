@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact, Avenlib",
@@ -21,17 +22,14 @@ export default function Contact() {
         <h1 className="text-3xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
           Nous contacter
         </h1>
-        <p className="text-secondary mb-8 leading-relaxed">
+        <p className="text-secondary mb-8 leading-relaxed" style={{ color: "#4B4B47" }}>
           Une question sur ton bilan, un partenariat, ou simplement envie
           de discuter ? On répond sous 24h.
         </p>
-        <a
-          href="mailto:contact@avenlib.fr"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-btn text-white font-semibold transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#15805F" }}
-        >
-          <Mail size={18} /> contact@avenlib.fr
-        </a>
+        <ContactForm />
+        <p className="text-sm mt-6" style={{ color: "#6B6B67" }}>
+          Tu préfères écrire directement ? <a href="mailto:contact@avenlib.fr" className="underline">contact@avenlib.fr</a>
+        </p>
       </main>
       <Footer />
     </>

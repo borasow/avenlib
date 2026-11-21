@@ -61,6 +61,10 @@ export default function MentionsLegales() {
               chaque email.
             </p>
             <p className="mt-2">
+              Formulaire de contact : le prénom, le nom, l'email, le motif et le message saisis sont
+              utilisés uniquement pour vous répondre et conservés 12 mois maximum.
+            </p>
+            <p className="mt-2">
               Responsable du traitement : Avenlib, contact@avenlib.fr. Prestataires utilisés : Supabase
               (base de données), Resend (envoi d'emails), Vercel (hébergement). Base légale : votre
               consentement pour la newsletter et les rappels, l'exécution de votre demande pour l'envoi

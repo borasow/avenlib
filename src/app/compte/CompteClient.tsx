@@ -5,17 +5,7 @@ import { useRouter } from "next/navigation";
 import { calculerScores, DiagnosticAnswers } from "@/lib/scoring";
 import { ArrowRight, User, RefreshCw } from "lucide-react";
 import TableauDeBord from "./TableauDeBord";
-
-const LABELS: Record<string, string> = {
-  statut: "Statut juridique",
-  secteur: "Secteur",
-  anciennete: "Ancienneté",
-  revenus: "Revenus annuels",
-  situation_familiale: "Situation familiale",
-  age: "Âge",
-  prevoyance_niveau: "Niveau de prévoyance",
-  connaissance: "Connaissance finances",
-};
+import ProfilCompte from "./ProfilCompte";
 
 export default function CompteClient() {
   const [profile, setProfile] = useState<{ prenom: string; answers: DiagnosticAnswers } | null>(null);
@@ -78,69 +68,7 @@ export default function CompteClient() {
 
         <TableauDeBord scores={scores} />
 
-        {/* Profil */}
-        <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">
-          <div className="flex items-center gap-2 mb-4">
-            <User size={20} style={{ color: "#15805F" }} />
-            <h2 className="font-semibold" style={{ color: "#2C2C2A" }}>
-              Mon profil
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {Object.entries(LABELS).map(([key, label]) => {
-              const val = profile.answers[key as keyof DiagnosticAnswers];
-              if (!val) return null;
-              return (
-                <div key={key}>
-                  <p className="text-xs text-secondary mb-0.5">{label}</p>
-                  <p className="text-sm font-medium" style={{ color: "#2C2C2A" }}>
-                    {Array.isArray(val) ? val.join(", ") : val}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Ce qui est en place */}
-        {profile.answers.existant && profile.answers.existant.length > 0 && (
-          <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">
-            <h2 className="font-semibold mb-3" style={{ color: "#2C2C2A" }}>
-              Déjà en place
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {profile.answers.existant.map((item) => (
-                <span
-                  key={item}
-                  className="text-xs px-3 py-1.5 rounded-full border border-gray-200"
-                  style={{ color: "#2C2C2A" }}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Objectifs */}
-        {profile.answers.objectifs && profile.answers.objectifs.length > 0 && (
-          <div className="bg-white border border-gray-100 rounded-xl p-6">
-            <h2 className="font-semibold mb-3" style={{ color: "#2C2C2A" }}>
-              Mes objectifs
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {profile.answers.objectifs.map((obj) => (
-                <span
-                  key={obj}
-                  className="text-xs px-3 py-1.5 rounded-full"
-                  style={{ backgroundColor: "#EFF9F5", color: "#085041" }}
-                >
-                  {obj}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
+        <ProfilCompte answers={profile.answers} />
       </div>
     </div>
   );

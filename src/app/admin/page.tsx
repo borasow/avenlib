@@ -2,16 +2,19 @@
 import { useState } from "react";
 import { Download, Lock } from "lucide-react";
 
-const ADMIN_SECRET = "avenlib-admin-2024";
-
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handleLogin(e: React.FormEvent) {
+  async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    if (password === ADMIN_SECRET) {
+    const res = await fetch("/api/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+    if (res.ok) {
       setAuthed(true);
       setError("");
     } else {
@@ -20,7 +23,7 @@ export default function AdminPage() {
   }
 
   function handleExport() {
-    window.open(`/api/export?secret=${ADMIN_SECRET}`, "_blank");
+    window.open("/api/export", "_blank");
   }
 
   if (!authed) {

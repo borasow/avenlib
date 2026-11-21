@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "avenlib-admin-2024";
+import { ADMIN_COOKIE, isAdminCookie } from "@/lib/adminAuth";
 
 type ProfileRow = {
   id: unknown;
@@ -76,8 +76,7 @@ function rowToCsv(row: ProfileRow): string {
 }
 
 export async function GET(request: NextRequest) {
-  const secret = request.nextUrl.searchParams.get("secret");
-  if (secret !== ADMIN_SECRET) {
+  if (!isAdminCookie(request.cookies.get(ADMIN_COOKIE)?.value)) {
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   }
 

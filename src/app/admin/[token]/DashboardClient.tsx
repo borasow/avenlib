@@ -127,7 +127,7 @@ export default function DashboardClient({ token }: { token: string }) {
           <button
             onClick={exportCSV}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white"
-            style={{ backgroundColor: "#1D9E75" }}
+            style={{ backgroundColor: "#15805F" }}
           >
             <Download size={14} /> Exporter CSV
           </button>
@@ -138,7 +138,7 @@ export default function DashboardClient({ token }: { token: string }) {
           {[
             { label: "Total", value: stats.total, color: "#2C2C2A" },
             { label: "Nouveaux", value: stats.nouveau, color: "#D97706" },
-            { label: "Convertis", value: stats.converti, color: "#1D9E75" },
+            { label: "Convertis", value: stats.converti, color: "#15805F" },
           ].map((s) => (
             <div key={s.label} className="bg-white rounded-xl p-5 border" style={{ borderColor: "#D3D1C7" }}>
               <p className="text-xs font-medium mb-1" style={{ color: "#6B6B67" }}>{s.label}</p>
@@ -175,7 +175,7 @@ export default function DashboardClient({ token }: { token: string }) {
                       <td className="px-4 py-3 font-medium" style={{ color: "#2C2C2A" }}>
                         {lead.prenom} {lead.nom}
                       </td>
-                      <td className="px-4 py-3" style={{ color: "#1D9E75" }}>
+                      <td className="px-4 py-3" style={{ color: "#15805F" }}>
                         <a href={`mailto:${lead.email}`}>{lead.email}</a>
                       </td>
                       <td className="px-4 py-3" style={{ color: "#2C2C2A" }}>

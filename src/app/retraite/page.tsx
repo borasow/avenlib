@@ -23,7 +23,7 @@ export default function PageRetraite() {
 
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             Retraite & indépendants
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -43,7 +43,7 @@ export default function PageRetraite() {
               { chiffre: "Gratuit", label: "Votre relevé de carrière sur info-retraite.fr" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
-                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#15805F" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -106,7 +106,7 @@ export default function PageRetraite() {
                 </div>
 
                 <p>
-                  Pour obtenir une estimation fiable, consultez votre relevé de carrière sur <strong>info-retraite.fr</strong>, qui agrège tous les régimes auxquels vous avez cotisé. Ou faites le <Link href="/diagnostic" style={{ color: "#1D9E75", textDecoration: "underline" }}>bilan Avenlib</Link> qui calcule une estimation instantanée selon votre statut et vos revenus.
+                  Pour obtenir une estimation fiable, consultez votre relevé de carrière sur <strong>info-retraite.fr</strong>, qui agrège tous les régimes auxquels vous avez cotisé. Ou faites le <Link href="/diagnostic" style={{ color: "#15805F", textDecoration: "underline" }}>bilan Avenlib</Link> qui calcule une estimation instantanée selon votre statut et vos revenus.
                 </p>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function PageRetraite() {
                   <strong>À 50 ans :</strong> L'urgence est réelle. Deux leviers à activer immédiatement : maximiser les versements sur le PER (les plafonds non utilisés des 3 dernières années sont reportables) et consulter son relevé de carrière pour identifier les trimestres manquants éventuels.
                 </p>
                 <p>
-                  Quelle que soit votre situation, la première étape est de connaître précisément votre pension estimée et l'écart à combler. C'est exactement ce que permet le <Link href="/diagnostic" style={{ color: "#1D9E75", textDecoration: "underline" }}>bilan Avenlib</Link>, en 13 questions et 3 minutes.
+                  Quelle que soit votre situation, la première étape est de connaître précisément votre pension estimée et l'écart à combler. C'est exactement ce que permet le <Link href="/diagnostic" style={{ color: "#15805F", textDecoration: "underline" }}>bilan Avenlib</Link>, en 13 questions et 3 minutes.
                 </p>
               </div>
             </div>
@@ -182,7 +182,7 @@ export default function PageRetraite() {
                   { href: "/fiscalite", label: "Optimisation fiscale" },
                   { href: "/epargne", label: "Épargne & investissement" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#1D9E75", borderColor: "#1D9E75" }}>
+                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#15805F", borderColor: "#1D9E75" }}>
                     {l.label}
                   </Link>
                 ))}
@@ -195,7 +195,7 @@ export default function PageRetraite() {
         {/* CTA */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Passez à l'action</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#4CC9A0" }}>Passez à l'action</p>
             <h2 className="text-2xl font-bold mb-3 text-white">
               Fais ton bilan retraite gratuit →
             </h2>
@@ -203,7 +203,7 @@ export default function PageRetraite() {
               Le bilan Avenlib calcule votre pension estimée en 13 questions et vous oriente vers les dispositifs les plus adaptés à votre statut — PER, Madelin, assurance vie — gratuitement et sans engagement.
             </p>
             <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan retraite gratuit" icon={<ArrowRight size={18} />} />
+              style={{ backgroundColor: "#15805F" }} label="Faire mon bilan retraite gratuit" icon={<ArrowRight size={18} />} />
           </div>
         </section>
 

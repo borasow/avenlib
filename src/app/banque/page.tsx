@@ -23,7 +23,7 @@ export default function PageBanque() {
 
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             Banque professionnelle
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -43,7 +43,7 @@ export default function PageBanque() {
               { chiffre: "72 h", label: "Ouverture d'un compte pro en ligne contre 3-4 semaines en agence" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
-                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#15805F" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -137,7 +137,7 @@ export default function PageBanque() {
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
-                  Le vrai gain d'une néobanque pro n'est pas le prix, c'est l'intégration avec votre écosystème comptable. Qonto, Shine et Blank s'intègrent nativement avec les principaux logiciels de comptabilité (<Link href="/fiscalite" style={{ color: "#1D9E75", textDecoration: "underline" }}>Pennylane, Indy, Dougs</Link>), ce qui permet de synchroniser automatiquement vos transactions, de catégoriser vos dépenses et de préparer vos déclarations fiscales sans saisie manuelle.
+                  Le vrai gain d'une néobanque pro n'est pas le prix, c'est l'intégration avec votre écosystème comptable. Qonto, Shine et Blank s'intègrent nativement avec les principaux logiciels de comptabilité (<Link href="/fiscalite" style={{ color: "#15805F", textDecoration: "underline" }}>Pennylane, Indy, Dougs</Link>), ce qui permet de synchroniser automatiquement vos transactions, de catégoriser vos dépenses et de préparer vos déclarations fiscales sans saisie manuelle.
                 </p>
                 <p>
                   Pour un freelance qui passe 3 à 5 heures par mois sur sa comptabilité, cette automatisation représente un gain de temps et d'énergie considérable. Sans compter la réduction des erreurs de saisie qui peuvent déclencher des demandes d'éclaircissement de l'URSSAF.
@@ -154,7 +154,7 @@ export default function PageBanque() {
                   { href: "/assurance-pro", label: "RC Pro" },
                   { href: "/credit", label: "Crédit immobilier" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#1D9E75", borderColor: "#1D9E75" }}>
+                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#15805F", borderColor: "#1D9E75" }}>
                     {l.label}
                   </Link>
                 ))}
@@ -167,7 +167,7 @@ export default function PageBanque() {
         {/* CTA */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Passez à l'action</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#4CC9A0" }}>Passez à l'action</p>
             <h2 className="text-2xl font-bold mb-3 text-white">
               Évalue ta situation financière complète →
             </h2>
@@ -175,7 +175,7 @@ export default function PageBanque() {
               Le bilan Avenlib analyse 9 domaines de votre situation d'indépendant en 13 questions et vous oriente vers les meilleures solutions du marché, gratuitement.
             </p>
             <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
+              style={{ backgroundColor: "#15805F" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
           </div>
         </section>
 

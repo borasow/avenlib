@@ -76,8 +76,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         {/* En-tête */}
         <section style={{ backgroundColor: "#F1EFE8" }}>
           <div className="max-w-3xl mx-auto px-6 pt-14 pb-10">
-            <Link href="/blog" className="text-sm" style={{ color: "#1D9E75" }}>← Tous les articles</Link>
-            <div className="text-xs mt-6 mb-3 font-medium" style={{ color: "#1D9E75" }}>
+            <Link href="/blog" className="text-sm" style={{ color: "#15805F" }}>← Tous les articles</Link>
+            <div className="text-xs mt-6 mb-3 font-medium" style={{ color: "#15805F" }}>
               {a.categorie} · {formatDate(a.date)} · {a.lecture} de lecture
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold mb-5" style={{ color: "#2C2C2A" }}>{a.titre}</h1>
@@ -101,7 +101,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <ul className="space-y-2">
                 {a.aretenir.map((x) => (
                   <li key={x} className="flex gap-2 text-sm leading-relaxed" style={{ color: DARK }}>
-                    <CheckCircle2 size={18} className="shrink-0 mt-0.5" style={{ color: "#1D9E75" }} />
+                    <CheckCircle2 size={18} className="shrink-0 mt-0.5" style={{ color: "#4CC9A0" }} />
                     <span>{x}</span>
                   </li>
                 ))}
@@ -111,7 +111,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             {a.sections.length > 2 && (
               <nav className="mb-10 text-sm" aria-label="Sommaire">
                 <p className="font-bold mb-2" style={{ color: "#2C2C2A" }}>Sommaire</p>
-                <ol className="list-decimal pl-5 space-y-1" style={{ color: "#1D9E75" }}>
+                <ol className="list-decimal pl-5 space-y-1" style={{ color: "#15805F" }}>
                   {a.sections.map((s) => (
                     <li key={s.titre}><a href={`#${anchor(s.titre)}`} className="underline">{s.titre}</a></li>
                   ))}

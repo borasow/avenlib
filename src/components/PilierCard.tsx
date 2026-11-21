@@ -29,7 +29,7 @@ export default function PilierCard({ iconName, titre, description, href }: Props
       onMouseLeave={() => setHovered(false)}
     >
       <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "#E1F5EE" }}>
-        <Icon size={19} style={{ color: "#1D9E75" }} />
+        <Icon size={19} style={{ color: "#15805F" }} />
       </div>
       <h3 className="mb-2" style={{ color: "#2C2C2A", fontSize: "18px", fontWeight: 600 }}>
         {titre}
@@ -40,7 +40,7 @@ export default function PilierCard({ iconName, titre, description, href }: Props
       <a
         href={href}
         className="inline-flex items-center gap-1 text-sm font-semibold transition-opacity hover:opacity-70"
-        style={{ color: "#1D9E75" }}
+        style={{ color: "#15805F" }}
       >
         En savoir plus <ArrowRight size={14} />
       </a>

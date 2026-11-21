@@ -91,7 +91,7 @@ export default function Home() {
       <main style={{ backgroundColor: "#F1EFE8" }}>
 
         {/* ── Badge pleine largeur ── */}
-        <div style={{ display: "block", width: "100%", backgroundColor: "#1D9E75", color: "#FFFFFF", fontSize: "clamp(16px, 3vw, 24px)", fontWeight: 600, padding: "14px 16px", textAlign: "center", borderRadius: 0 }}>
+        <div style={{ display: "block", width: "100%", backgroundColor: "#15805F", color: "#FFFFFF", fontSize: "clamp(16px, 3vw, 24px)", fontWeight: 600, padding: "14px 16px", textAlign: "center", borderRadius: 0 }}>
           Le bilan complet et gratuit pour freelances et indépendants
         </div>
 
@@ -106,7 +106,7 @@ export default function Home() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>
                 L&apos;indépendance
                 <br />
-                <span style={{ color: "#1D9E75" }}>sans l&apos;inquiétude.</span>
+                <span style={{ color: "#15805F" }}>sans l&apos;inquiétude.</span>
               </h1>
 
               {/* Sous-titre */}
@@ -115,7 +115,7 @@ export default function Home() {
               </p>
 
               <BilanLink className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-white font-semibold text-base transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#1D9E75", width: "fit-content" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
+                style={{ backgroundColor: "#15805F", width: "fit-content" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
               <p className="mt-4 text-sm" style={{ color: "#6B6B67" }}>
                 Gratuit · Sans engagement · 100% confidentiel
               </p>
@@ -153,10 +153,10 @@ export default function Home() {
         <section className="max-w-6xl mx-auto px-6 pb-6">
           <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#1D9E75" }}>Essaye maintenant</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#15805F" }}>Essaye maintenant</p>
               <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: "#2C2C2A" }}>Des calculateurs gratuits</h2>
             </div>
-            <Link href="/outils" className="text-sm font-bold flex items-center gap-1" style={{ color: "#1D9E75" }}>
+            <Link href="/outils" className="text-sm font-bold flex items-center gap-1" style={{ color: "#15805F" }}>
               Voir les {OUTILS.length} calculateurs <ArrowRight size={16} />
             </Link>
           </div>
@@ -167,7 +167,7 @@ export default function Home() {
                 <Link key={slug} href={`/outils/${slug}`} className="rounded-2xl p-6 flex flex-col transition-opacity hover:opacity-80" style={{ backgroundColor: "#FFFFFF", border: "0.5px solid #D3D1C7" }}>
                   <p className="font-bold text-base mb-2" style={{ color: "#2C2C2A" }}>{o.nav}</p>
                   <p className="text-sm mb-4" style={{ color: "#6B6B67" }}>{o.accroche}</p>
-                  <span className="mt-auto text-sm font-bold flex items-center gap-1" style={{ color: "#1D9E75" }}>Calculer <ArrowRight size={14} /></span>
+                  <span className="mt-auto text-sm font-bold flex items-center gap-1" style={{ color: "#15805F" }}>Calculer <ArrowRight size={14} /></span>
                 </Link>
               );
             })}
@@ -181,7 +181,7 @@ export default function Home() {
 
               {/* Label */}
               <div className="flex items-center gap-3 mb-8">
-                <span style={{ display: "block", width: "40px", height: "3px", backgroundColor: "#1D9E75", borderRadius: "2px", flexShrink: 0 }} />
+                <span style={{ display: "block", width: "40px", height: "3px", backgroundColor: "#15805F", borderRadius: "2px", flexShrink: 0 }} />
                 <p style={{ fontSize: "24px", fontWeight: 800, color: "#5DCAA5", letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
                   Le problème
                 </p>
@@ -204,7 +204,7 @@ export default function Home() {
                       "Pas de protection en cas d'arrêt maladie.",
                     ].map((item) => (
                       <p key={item} className="flex items-start gap-3 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
-                        <span className="shrink-0 mt-0.5" style={{ color: "#1D9E75" }}>•</span>
+                        <span className="shrink-0 mt-0.5" style={{ color: "#15805F" }}>•</span>
                         {item}
                       </p>
                     ))}
@@ -272,7 +272,7 @@ export default function Home() {
                 return (
                   <div key={a.titre} className="p-7" style={CARD}>
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style={{ backgroundColor: "#E1F5EE" }}>
-                      <Icon size={21} style={{ color: "#1D9E75" }} />
+                      <Icon size={21} style={{ color: "#15805F" }} />
                     </div>
                     <h3 className="font-semibold text-base mb-2" style={{ color: "#2C2C2A" }}>{a.titre}</h3>
                     <p className="text-sm leading-relaxed" style={{ color: "#6B6B67" }}>{a.description}</p>
@@ -298,9 +298,9 @@ export default function Home() {
                 return (
                   <div key={e.numero} className="p-6" style={CARD}>
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="text-xs font-bold tabular-nums" style={{ color: "#1D9E75" }}>{e.numero}</span>
+                      <span className="text-xs font-bold tabular-nums" style={{ color: "#15805F" }}>{e.numero}</span>
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#E1F5EE" }}>
-                        <Icon size={16} style={{ color: "#1D9E75" }} />
+                        <Icon size={16} style={{ color: "#15805F" }} />
                       </div>
                     </div>
                     <h3 className="font-semibold text-base mb-2" style={{ color: "#2C2C2A" }}>{e.titre}</h3>
@@ -313,7 +313,7 @@ export default function Home() {
               <Link
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#1D9E75" }}
+                style={{ backgroundColor: "#15805F" }}
               >
                 Commencer mon bilan <ArrowRight size={16} />
               </Link>
@@ -334,7 +334,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm" style={{ color: "#2C2C2A" }}>
                 <li className="flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#E24B4A" }} /> À traiter en priorité</li>
                 <li className="flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#EF9F27" }} /> À améliorer</li>
-                <li className="flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#1D9E75" }} /> Bien couvert</li>
+                <li className="flex items-center gap-2"><span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#15805F" }} /> Bien couvert</li>
               </ul>
             </div>
             <div className="rounded-2xl p-5" style={{ backgroundColor: "#F1EFE8", border: "2px solid #E8E6DF" }}>
@@ -394,7 +394,7 @@ export default function Home() {
                   <p>
                     Résultat : la plupart ne savent pas combien ils toucheront à la retraite, ne sont pas couverts en cas d&apos;arrêt maladie, et paient trop d&apos;impôts faute d&apos;optimisation.
                   </p>
-                  <p className="font-semibold text-base" style={{ color: "#1D9E75" }}>
+                  <p className="font-semibold text-base" style={{ color: "#15805F" }}>
                     On a créé Avenlib pour changer ça.
                   </p>
                 </div>
@@ -429,7 +429,7 @@ export default function Home() {
                 Le bilan est gratuit. Tes données sont confidentielles. Et les résultats sont immédiats.
               </p>
               <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
+                style={{ backgroundColor: "#15805F" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
             </div>
           </div>
         </section>

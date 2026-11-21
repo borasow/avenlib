@@ -72,7 +72,7 @@ function PartenaireItem({ p, domaine }: { p: Partenaire; domaine: string }) {
           )}
         </div>
         {p.tarif && (
-          <p style={{ fontSize: "11px", color: "#1D9E75", fontWeight: 500, marginBottom: "2px" }}>{p.tarif} *</p>
+          <p style={{ fontSize: "11px", color: "#15805F", fontWeight: 500, marginBottom: "2px" }}>{p.tarif} *</p>
         )}
         <p className="text-xs leading-relaxed" style={{ color: "#6B6B67" }}>{p.description}</p>
       </div>
@@ -81,7 +81,7 @@ function PartenaireItem({ p, domaine }: { p: Partenaire; domaine: string }) {
           href={`/partenaires/${slugify(p.nom)}?domaine=${domaine}`}
           onClick={() => trackClick(domaine, p.nom)}
           className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#1D9E75" }}
+          style={{ backgroundColor: "#15805F" }}
         >
           Être recontacté <ArrowRight size={12} />
         </Link>
@@ -92,7 +92,7 @@ function PartenaireItem({ p, domaine }: { p: Partenaire; domaine: string }) {
           rel="noopener noreferrer"
           onClick={() => trackClick(domaine, p.nom)}
           className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#1D9E75" }}
+          style={{ backgroundColor: "#15805F" }}
         >
           Voir l'offre <ArrowRight size={12} />
         </a>
@@ -125,7 +125,7 @@ export default function ResultatsClient() {
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>Aucun bilan trouvé</h2>
         <p className="text-secondary mb-8">Tu dois d'abord faire ton bilan pour voir tes résultats.</p>
-        <BilanLink className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold" style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan" icon={<ArrowRight size={18} />} />
+        <BilanLink className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold" style={{ backgroundColor: "#15805F" }} label="Faire mon bilan" icon={<ArrowRight size={18} />} />
       </div>
     );
   }
@@ -275,7 +275,7 @@ export default function ResultatsClient() {
                         </div>
                         {/* Recommandation */}
                         <div className="rounded-lg px-4 py-3 mb-5" style={{ backgroundColor: "rgba(255,255,255,0.7)" }}>
-                          <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#1D9E75" }}>Notre recommandation</p>
+                          <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#15805F" }}>Notre recommandation</p>
                           <p className="text-sm leading-relaxed" style={{ color: "#085041" }}>{meta.conseil}</p>
                         </div>
                       </>
@@ -312,7 +312,7 @@ export default function ResultatsClient() {
           <Link
             href="/diagnostic"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold text-sm transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#1D9E75" }}
+            style={{ backgroundColor: "#15805F" }}
           >
             Mettre à jour mon bilan <ArrowRight size={16} />
           </Link>

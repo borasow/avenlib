@@ -23,7 +23,7 @@ export default function PageFiscalite() {
 
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             Fiscalité & optimisation
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -43,7 +43,7 @@ export default function PageFiscalite() {
               { chiffre: "Expert", label: "Validez toute stratégie avec un expert-comptable" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
-                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#15805F" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -133,7 +133,7 @@ export default function PageFiscalite() {
                   Le plafond de déduction est généreux : 10 % du bénéfice imposable (dans la limite de 8 plafonds de la Sécurité sociale), majorés de 15 % de la part comprise entre 1 et 8 plafonds, avec un minimum de 4 806 € et un maximum de 88 911 € pour les versements 2026. Si vous n'avez pas utilisé tout votre plafond les 3 dernières années, vous pouvez le rattraper — c'est le « carry-forward » du PER.
                 </p>
                 <p>
-                  Exemple concret : un consultant indépendant avec 80 000 € de bénéfice net et une TMI à 41 % verse 8 000 € sur son PER. Il économise 3 280 € d'impôts cette année, tout en constituant un capital retraite. Le PER est donc simultanément un outil d'optimisation fiscale à court terme et un outil de <Link href="/retraite" style={{ color: "#1D9E75", textDecoration: "underline" }}>préparation à la retraite</Link>.
+                  Exemple concret : un consultant indépendant avec 80 000 € de bénéfice net et une TMI à 41 % verse 8 000 € sur son PER. Il économise 3 280 € d'impôts cette année, tout en constituant un capital retraite. Le PER est donc simultanément un outil d'optimisation fiscale à court terme et un outil de <Link href="/retraite" style={{ color: "#15805F", textDecoration: "underline" }}>préparation à la retraite</Link>.
                 </p>
                 <div className="rounded-xl p-4 space-y-2" style={{ backgroundColor: "#EFF9F5", border: "1px solid #A7F3D0" }}>
                   <p className="font-semibold text-sm" style={{ color: "#085041" }}>Nos partenaires PER recommandés :</p>
@@ -179,7 +179,7 @@ export default function PageFiscalite() {
                   { href: "/epargne", label: "Épargne & investissement" },
                   { href: "/banque", label: "Banque pro" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#1D9E75", borderColor: "#1D9E75" }}>
+                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#15805F", borderColor: "#1D9E75" }}>
                     {l.label}
                   </Link>
                 ))}
@@ -192,7 +192,7 @@ export default function PageFiscalite() {
         {/* CTA */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Passez à l'action</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#4CC9A0" }}>Passez à l'action</p>
             <h2 className="text-2xl font-bold mb-3 text-white">
               Évalue ton niveau d'optimisation fiscale →
             </h2>
@@ -200,7 +200,7 @@ export default function PageFiscalite() {
               Le bilan Avenlib identifie vos leviers fiscaux inexploités en 13 questions et vous oriente vers les bons experts et outils — gratuitement.
             </p>
             <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan fiscal gratuit" icon={<ArrowRight size={18} />} />
+              style={{ backgroundColor: "#15805F" }} label="Faire mon bilan fiscal gratuit" icon={<ArrowRight size={18} />} />
           </div>
         </section>
 

@@ -120,7 +120,7 @@ export default function PartenaireClient({ partenaire, domaine, domaineLabel }: 
             {partenaire.description}
           </p>
           {partenaire.tarif && (
-            <p className="text-xs font-medium mt-2" style={{ color: "#1D9E75" }}>
+            <p className="text-xs font-medium mt-2" style={{ color: "#15805F" }}>
               {partenaire.tarif}
             </p>
           )}
@@ -199,7 +199,7 @@ export default function PartenaireClient({ partenaire, domaine, domaineLabel }: 
 
             <div>
               <label className="block text-xs font-medium mb-1" style={{ color: "#6B6B67" }}>
-                Téléphone <span style={{ color: "#1D9E75" }}>*</span>
+                Téléphone <span style={{ color: "#15805F" }}>*</span>
               </label>
               <input
                 type="tel"
@@ -233,7 +233,7 @@ export default function PartenaireClient({ partenaire, domaine, domaineLabel }: 
               disabled={loading || !rgpd}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-white font-semibold transition-opacity"
               style={{
-                backgroundColor: "#1D9E75",
+                backgroundColor: "#15805F",
                 opacity: loading || !rgpd ? 0.6 : 1,
                 cursor: loading || !rgpd ? "not-allowed" : "pointer",
               }}

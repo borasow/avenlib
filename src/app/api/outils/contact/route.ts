@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
 <p style="color:#6B6B67;margin:0 0 20px">Voici le résultat de ton calcul sur Avenlib.</p>
 <ul style="padding-left:18px;line-height:1.7">${lignes.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>
 <p style="font-size:13px;color:#6B6B67">Estimation indicative, pas un conseil personnalisé. Chiffres 2026.</p>
-<p style="margin:24px 0"><a href="${SITE_URL}/diagnostic" style="background:#1D9E75;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold">Faire mon bilan gratuit</a></p>
+<p style="margin:24px 0"><a href="${SITE_URL}/diagnostic" style="background:#15805F;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold">Faire mon bilan gratuit</a></p>
 <p style="font-size:12px;color:#6B6B67;margin:0">${pied}</p></div></div>`;
       const { error } = await resend.emails.send({ from: `Avenlib <${from}>`, to: mail, subject: `Ton résultat : ${outil.titre}`, html });
       if (error) console.error("[outils/contact] Resend :", JSON.stringify(error));

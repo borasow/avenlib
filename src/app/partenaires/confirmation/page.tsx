@@ -9,7 +9,7 @@ export default function ConfirmationPage() {
           className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
           style={{ backgroundColor: "#EFF9F5" }}
         >
-          <CheckCircle size={32} style={{ color: "#1D9E75" }} />
+          <CheckCircle size={32} style={{ color: "#15805F" }} />
         </div>
 
         <h1 className="text-2xl font-bold mb-3" style={{ color: "#2C2C2A" }}>
@@ -34,7 +34,7 @@ export default function ConfirmationPage() {
         <Link
           href="/resultats"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#1D9E75" }}
+          style={{ backgroundColor: "#15805F" }}
         >
           Voir mon bilan complet <ArrowRight size={16} />
         </Link>

@@ -31,7 +31,7 @@ export default function AdminPage() {
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#F1EFE8" }}>
         <div className="bg-white rounded-2xl p-10 w-full max-w-sm border border-gray-200 shadow-sm">
           <div className="flex items-center gap-3 mb-8">
-            <Lock size={20} style={{ color: "#1D9E75" }} />
+            <Lock size={20} style={{ color: "#15805F" }} />
             <h1 className="text-xl font-bold" style={{ color: "#2C2C2A" }}>Espace admin</h1>
           </div>
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
@@ -47,7 +47,7 @@ export default function AdminPage() {
             <button
               type="submit"
               className="py-3 rounded-xl text-white font-semibold text-sm"
-              style={{ backgroundColor: "#1D9E75" }}
+              style={{ backgroundColor: "#15805F" }}
             >
               Accéder
             </button>
@@ -71,7 +71,7 @@ export default function AdminPage() {
           <button
             onClick={handleExport}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#1D9E75" }}
+            style={{ backgroundColor: "#15805F" }}
           >
             <Download size={16} />
             Télécharger le CSV

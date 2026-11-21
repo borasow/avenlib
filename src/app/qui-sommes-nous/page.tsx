@@ -27,7 +27,7 @@ export default function PageQuiSommesNous() {
       <Navbar />
       <main style={{ backgroundColor: "#F1EFE8" }}>
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-8">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Qui sommes-nous</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>Qui sommes-nous</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>
             Un indépendant bien protégé est un indépendant vraiment libre.
           </h1>
@@ -43,8 +43,8 @@ export default function PageQuiSommesNous() {
             </div>
           ))}
           <div className="flex flex-wrap gap-3 pt-4">
-            <BilanLink className="rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }} label="Faire mon bilan gratuit" />
-            <Link href="/outils/calcul-indemnites-arret-maladie" className="rounded-lg px-5 py-3 text-sm font-bold" style={{ border: "2px solid #1D9E75", color: "#1D9E75" }}>Calculer mes indemnités</Link>
+            <BilanLink className="rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }} label="Faire mon bilan gratuit" />
+            <Link href="/outils/calcul-indemnites-arret-maladie" className="rounded-lg px-5 py-3 text-sm font-bold" style={{ border: "2px solid #1D9E75", color: "#15805F" }}>Calculer mes indemnités</Link>
           </div>
         </section>
       </main>

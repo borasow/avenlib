@@ -94,10 +94,10 @@ async function sendEmails({
       subject: `Ta demande de contact chez ${partenaire_nom} est confirmée`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #2C2C2A;">
-          <h2 style="color: #1D9E75;">Bonjour ${prenom},</h2>
+          <h2 style="color: #15805F;">Bonjour ${prenom},</h2>
           <p>Ta demande de contact auprès de <strong>${partenaire_nom}</strong> (${domaineLabel}) a bien été transmise.</p>
           <p>Un conseiller va te recontacter dans les prochains jours au <strong>${telephone}</strong>.</p>
-          <p style="color: #6B6B67; font-size: 14px;">En attendant, tu peux consulter ton bilan complet sur <a href="https://avenlib.fr/resultats" style="color: #1D9E75;">avenlib.fr/resultats</a>.</p>
+          <p style="color: #6B6B67; font-size: 14px;">En attendant, tu peux consulter ton bilan complet sur <a href="https://avenlib.fr/resultats" style="color: #15805F;">avenlib.fr/resultats</a>.</p>
           <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 24px 0;" />
           <p style="color: #9B9B97; font-size: 12px;">Avenlib · Le bilan financier des indépendants</p>
         </div>
@@ -110,11 +110,11 @@ async function sendEmails({
       subject: `Nouveau lead Avenlib — ${prenom} ${nom} (${domaineLabel})`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #2C2C2A;">
-          <h2 style="color: #1D9E75;">Nouveau lead via Avenlib</h2>
+          <h2 style="color: #15805F;">Nouveau lead via Avenlib</h2>
           <table style="border-collapse: collapse; width: 100%;">
             <tr><td style="padding: 8px 0; font-weight: 600; width: 140px;">Prénom</td><td>${prenom}</td></tr>
             <tr><td style="padding: 8px 0; font-weight: 600;">Nom</td><td>${nom}</td></tr>
-            <tr><td style="padding: 8px 0; font-weight: 600;">Email</td><td><a href="mailto:${email}" style="color: #1D9E75;">${email}</a></td></tr>
+            <tr><td style="padding: 8px 0; font-weight: 600;">Email</td><td><a href="mailto:${email}" style="color: #15805F;">${email}</a></td></tr>
             <tr><td style="padding: 8px 0; font-weight: 600;">Téléphone</td><td>${telephone}</td></tr>
             <tr><td style="padding: 8px 0; font-weight: 600;">Domaine</td><td>${domaineLabel}</td></tr>
             <tr><td style="padding: 8px 0; font-weight: 600;">ID Lead</td><td style="font-size: 12px; color: #9B9B97;">${lead_id}</td></tr>

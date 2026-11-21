@@ -23,7 +23,7 @@ export default function PageCredit() {
 
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             Crédit & financement
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -43,7 +43,7 @@ export default function PageCredit() {
               { chiffre: "Simulation", label: "Rapide chez certains acteurs spécialisés" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
-                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#15805F" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -88,7 +88,7 @@ export default function PageCredit() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>L'apport personnel : votre meilleur atout</h3>
                   <p>
-                    Un apport de 20 à 30 % du prix du bien (contre 10 % pour un salarié) rassure considérablement les banques sur un dossier freelance. Si votre <Link href="/epargne" style={{ color: "#1D9E75", textDecoration: "underline" }}>épargne</Link> le permet, augmenter l'apport peut débloquer des taux plus favorables et élargir le nombre de banques disposées à étudier votre dossier.
+                    Un apport de 20 à 30 % du prix du bien (contre 10 % pour un salarié) rassure considérablement les banques sur un dossier freelance. Si votre <Link href="/epargne" style={{ color: "#15805F", textDecoration: "underline" }}>épargne</Link> le permet, augmenter l'apport peut débloquer des taux plus favorables et élargir le nombre de banques disposées à étudier votre dossier.
                   </p>
                 </div>
 
@@ -136,7 +136,7 @@ export default function PageCredit() {
                   Des acteurs comme Defacto analysent vos données réelles (factures, relevés URSSAF, compte bancaire) et peuvent mettre à disposition du financement en 24 à 48 heures, sans garantie personnelle et sans abonnement. C'est une alternative efficace à l'affacturage traditionnel pour les freelances qui ont des délais de paiement longs.
                 </p>
                 <p>
-                  L'essentiel reste de ne pas confondre besoin de trésorerie ponctuel et problème structurel de l'activité. Si vous avez régulièrement besoin de financement externe pour couvrir vos charges, c'est le signe qu'une <Link href="/epargne" style={{ color: "#1D9E75", textDecoration: "underline" }}>épargne de précaution</Link> insuffisante — et un problème à traiter en priorité.
+                  L'essentiel reste de ne pas confondre besoin de trésorerie ponctuel et problème structurel de l'activité. Si vous avez régulièrement besoin de financement externe pour couvrir vos charges, c'est le signe qu'une <Link href="/epargne" style={{ color: "#15805F", textDecoration: "underline" }}>épargne de précaution</Link> insuffisante — et un problème à traiter en priorité.
                 </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function PageCredit() {
                   { href: "/banque", label: "Banque pro" },
                   { href: "/fiscalite", label: "Optimisation fiscale" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#1D9E75", borderColor: "#1D9E75" }}>
+                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#15805F", borderColor: "#1D9E75" }}>
                     {l.label}
                   </Link>
                 ))}
@@ -163,7 +163,7 @@ export default function PageCredit() {
         {/* CTA */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Passez à l'action</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#4CC9A0" }}>Passez à l'action</p>
             <h2 className="text-2xl font-bold mb-3 text-white">
               Évalue ta capacité d'emprunt gratuitement →
             </h2>
@@ -171,7 +171,7 @@ export default function PageCredit() {
               Le bilan Avenlib analyse votre profil financier et vous oriente vers les meilleures solutions de financement adaptées à votre statut d'indépendant, gratuitement.
             </p>
             <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
+              style={{ backgroundColor: "#15805F" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
           </div>
         </section>
 

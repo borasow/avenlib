@@ -79,7 +79,7 @@ export default function Calculateur() {
             </dl>
           </>
         )}
-        <BilanLink className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }} label="Faire mon bilan gratuit" />
+        <BilanLink className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }} label="Faire mon bilan gratuit" />
       </div>
     </div>
     <EmailCapture slug="calcul-indemnites-arret-maladie" resume={resume} />

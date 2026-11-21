@@ -19,7 +19,7 @@ export default function PageCalculateur() {
       <Navbar />
       <main style={{ backgroundColor: "#F1EFE8" }}>
         <section className="max-w-5xl mx-auto px-6 pt-16 pb-8">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Outil gratuit</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>Outil gratuit</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>
             Si tu tombes malade, tu touches combien ?
           </h1>

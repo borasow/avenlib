@@ -393,7 +393,7 @@ export default function DiagnosticClient() {
             </button>
             <div className="bg-white border border-gray-100 rounded-2xl p-8">
               <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: "#EFF9F5" }}>
-                <CheckSquare size={24} style={{ color: "#1D9E75" }} />
+                <CheckSquare size={24} style={{ color: "#15805F" }} />
               </div>
               <h2 className="text-2xl font-bold mb-2" style={{ color: "#2C2C2A" }}>
                 Bilan mis à jour, {prenomUser} !
@@ -406,7 +406,7 @@ export default function DiagnosticClient() {
                 onClick={handleUpdate}
                 disabled={loading}
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-btn text-white font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
-                style={{ backgroundColor: "#1D9E75" }}
+                style={{ backgroundColor: "#15805F" }}
               >
                 {loading ? "Sauvegarde..." : <>Voir mes nouveaux résultats <ArrowRight size={18} /></>}
               </button>
@@ -429,7 +429,7 @@ export default function DiagnosticClient() {
               className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
               style={{ backgroundColor: "#EFF9F5" }}
             >
-              <CheckSquare size={24} style={{ color: "#1D9E75" }} />
+              <CheckSquare size={24} style={{ color: "#15805F" }} />
             </div>
             <h2 className="text-2xl font-bold mb-2" style={{ color: "#2C2C2A" }}>
               Parfait, tu y es presque !
@@ -488,7 +488,7 @@ export default function DiagnosticClient() {
                   />
                   <span style={{ fontSize: "13px", color: "#6B6B67", lineHeight: "1.5" }}>
                     J&apos;accepte les{" "}
-                    <a href="/cgu" target="_blank" rel="noopener noreferrer" style={{ color: "#1D9E75", textDecoration: "underline" }}>
+                    <a href="/cgu" target="_blank" rel="noopener noreferrer" style={{ color: "#15805F", textDecoration: "underline" }}>
                       CGU
                     </a>{" "}
                     et la politique de confidentialité d&apos;Avenlib.{" "}
@@ -566,7 +566,7 @@ export default function DiagnosticClient() {
                 type="submit"
                 disabled={loading}
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-btn text-white font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
-                style={{ backgroundColor: "#1D9E75" }}
+                style={{ backgroundColor: "#15805F" }}
               >
                 {loading ? "Chargement..." : <>Voir mes résultats <ArrowRight size={18} /></>}
               </button>
@@ -673,7 +673,7 @@ export default function DiagnosticClient() {
             }}
             disabled={!currentAnswer || (currentAnswer as string[]).length === 0}
             className="mt-8 w-full flex items-center justify-center gap-2 py-3.5 rounded-btn text-white font-semibold transition-opacity hover:opacity-90 disabled:opacity-40"
-            style={{ backgroundColor: "#1D9E75" }}
+            style={{ backgroundColor: "#15805F" }}
           >
             Continuer <ArrowRight size={18} />
           </button>
@@ -688,7 +688,7 @@ function ProgressBar({ progress }: { progress: number }) {
     <div className="w-full h-1 bg-gray-100">
       <div
         className="h-1 transition-all duration-300"
-        style={{ width: `${progress}%`, backgroundColor: "#1D9E75" }}
+        style={{ width: `${progress}%`, backgroundColor: "#15805F" }}
       />
     </div>
   );

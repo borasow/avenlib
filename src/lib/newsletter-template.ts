@@ -27,7 +27,7 @@ function bloc(b: NewsletterBloc): string {
       b.etapes
         .map(
           (e, i) => `<table cellpadding="0" cellspacing="0" style="margin:0 0 10px;width:100%;"><tr>
-            <td width="36" valign="top"><div style="width:28px;height:28px;border-radius:14px;background:#1D9E75;color:#FFFFFF;font-weight:700;font-size:14px;line-height:28px;text-align:center;">${i + 1}</div></td>
+            <td width="36" valign="top"><div style="width:28px;height:28px;border-radius:14px;background:#15805F;color:#FFFFFF;font-weight:700;font-size:14px;line-height:28px;text-align:center;">${i + 1}</div></td>
             <td valign="top" style="font-size:16px;line-height:1.6;color:#3F3F3C;padding-top:2px;">${esc(e)}</td></tr></table>`
         )
         .join("")
@@ -35,7 +35,7 @@ function bloc(b: NewsletterBloc): string {
   }
   if (b.lien) {
     parts.push(
-      `<p style="margin:10px 0 0;"><a href="${esc(b.lien.url)}" style="color:#1D9E75;font-weight:700;font-size:16px;">${esc(b.lien.label)} &rarr;</a></p>`
+      `<p style="margin:10px 0 0;"><a href="${esc(b.lien.url)}" style="color:#15805F;font-weight:700;font-size:16px;">${esc(b.lien.label)} &rarr;</a></p>`
     );
   }
   return parts.join("");
@@ -63,7 +63,7 @@ export function renderNewsletter(issue: NewsletterIssue, email: string): string 
         <tr><td style="padding:18px 20px;">
           <div style="font-size:18px;font-weight:700;color:#2C2C2A;line-height:1.35;margin-bottom:8px;">${esc(issue.blog.titre)}</div>
           <div style="font-size:15px;line-height:1.6;color:#3F3F3C;margin-bottom:12px;">${esc(issue.blog.texte)}</div>
-          <a href="${esc(issue.blog.url)}" style="color:#1D9E75;font-weight:700;font-size:15px;">Lire l'article &rarr;</a>
+          <a href="${esc(issue.blog.url)}" style="color:#15805F;font-weight:700;font-size:15px;">Lire l'article &rarr;</a>
         </td></tr>
       </table>
     </td></tr>

@@ -55,12 +55,12 @@ export default function BlogPage() {
             >
               <Image src={COVERS[a.slug]} alt={a.titre} width={1200} height={630} className="w-full h-auto" />
               <div className="p-6">
-                <div className="text-xs mb-2 font-medium" style={{ color: "#1D9E75" }}>
+                <div className="text-xs mb-2 font-medium" style={{ color: "#15805F" }}>
                   {a.categorie} · {formatDate(a.date)} · {a.lecture} de lecture
                 </div>
                 <h2 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>{a.titre}</h2>
                 <p className="text-sm leading-relaxed mb-3" style={{ color: "#4A4A47" }}>{a.description}</p>
-                <span className="inline-flex items-center gap-1 text-sm font-medium" style={{ color: "#1D9E75" }}>
+                <span className="inline-flex items-center gap-1 text-sm font-medium" style={{ color: "#15805F" }}>
                   Lire l&apos;article <ArrowRight size={14} />
                 </span>
               </div>

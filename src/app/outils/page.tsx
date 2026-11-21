@@ -16,7 +16,7 @@ export default function PageOutils() {
       <Navbar />
       <main style={{ backgroundColor: "#F1EFE8" }}>
         <section className="max-w-5xl mx-auto px-6 pt-16 pb-8">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Calculateur Avenlib</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>Calculateur Avenlib</p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>Tous tes chiffres d&apos;indépendant, au même endroit</h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#6B6B67" }}>Des calculateurs gratuits, basés sur les règles 2026.</p>
         </section>

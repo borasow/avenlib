@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
             <div className="flex items-center gap-1.5 mb-3">
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#1D9E75" }} />
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#15805F" }} />
               <span className="font-bold text-base" style={{ color: "#2C2C2A" }}>Avenlib</span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "#6B6B67" }}>

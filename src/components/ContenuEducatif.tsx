@@ -46,7 +46,7 @@ export default function ContenuEducatif({
 
         {/* ── Hero ── */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-12">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             {surtitre}
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -60,8 +60,8 @@ export default function ContenuEducatif({
         {/* ── Le problème en 3 points ── */}
         <section className="max-w-3xl mx-auto px-6 pb-14">
           <div className="flex items-center gap-3 mb-8">
-            <span style={{ display: "block", width: "40px", height: "3px", backgroundColor: "#1D9E75", borderRadius: "2px" }} />
-            <p style={{ fontSize: "13px", fontWeight: 700, color: "#1D9E75", letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
+            <span style={{ display: "block", width: "40px", height: "3px", backgroundColor: "#15805F", borderRadius: "2px" }} />
+            <p style={{ fontSize: "13px", fontWeight: 700, color: "#15805F", letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
               Le problème
             </p>
           </div>
@@ -73,9 +73,9 @@ export default function ContenuEducatif({
                     className="w-14 h-14 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: "#E1F5EE" }}
                   >
-                    <AlertTriangle size={20} style={{ color: "#1D9E75" }} />
+                    <AlertTriangle size={20} style={{ color: "#15805F" }} />
                   </div>
-                  <p className="text-center text-xs font-bold mt-2" style={{ color: "#1D9E75" }}>
+                  <p className="text-center text-xs font-bold mt-2" style={{ color: "#15805F" }}>
                     {p.chiffre}
                   </p>
                 </div>
@@ -95,15 +95,15 @@ export default function ContenuEducatif({
         {/* ── Ce qu'Avenlib propose ── */}
         <section className="max-w-3xl mx-auto px-6 pb-14">
           <div className="flex items-center gap-3 mb-8">
-            <span style={{ display: "block", width: "40px", height: "3px", backgroundColor: "#1D9E75", borderRadius: "2px" }} />
-            <p style={{ fontSize: "13px", fontWeight: 700, color: "#1D9E75", letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
+            <span style={{ display: "block", width: "40px", height: "3px", backgroundColor: "#15805F", borderRadius: "2px" }} />
+            <p style={{ fontSize: "13px", fontWeight: 700, color: "#15805F", letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
               Ce qu&apos;Avenlib propose
             </p>
           </div>
           <div className="space-y-4">
             {solutions.map((s, i) => (
               <div key={i} className="p-6 flex gap-5" style={CARD}>
-                <CheckCircle2 size={22} style={{ color: "#1D9E75", flexShrink: 0, marginTop: 2 }} />
+                <CheckCircle2 size={22} style={{ color: "#15805F", flexShrink: 0, marginTop: 2 }} />
                 <div>
                   <h3 className="font-semibold mb-1" style={{ color: "#2C2C2A", fontSize: "16px" }}>
                     {s.titre}
@@ -120,7 +120,7 @@ export default function ContenuEducatif({
         {/* ── CTA ── */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <Lightbulb size={32} className="mx-auto mb-4" style={{ color: "#1D9E75" }} />
+            <Lightbulb size={32} className="mx-auto mb-4" style={{ color: "#4CC9A0" }} />
             <h2 className="text-2xl font-bold mb-3 text-white">
               Quelle est ta situation réelle ?
             </h2>
@@ -131,7 +131,7 @@ export default function ContenuEducatif({
               label={ctaLabel}
               icon={<ArrowRight size={18} />}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }}
+              style={{ backgroundColor: "#15805F" }}
             />
           </div>
         </section>

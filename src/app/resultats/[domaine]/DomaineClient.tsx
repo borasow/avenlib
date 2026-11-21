@@ -31,7 +31,7 @@ function PartenaireCard({ p, domaine, onTrack }: { p: Partenaire; domaine: strin
           )}
         </div>
         {p.tarif && (
-          <p style={{ fontSize: "12px", color: "#1D9E75", fontWeight: 500, marginBottom: "2px" }}>{p.tarif} *</p>
+          <p style={{ fontSize: "12px", color: "#15805F", fontWeight: 500, marginBottom: "2px" }}>{p.tarif} *</p>
         )}
         <p className="text-sm text-secondary leading-relaxed">{p.description}</p>
       </div>
@@ -40,7 +40,7 @@ function PartenaireCard({ p, domaine, onTrack }: { p: Partenaire; domaine: strin
           href={`/partenaires/${slugify(p.nom)}?domaine=${domaine}`}
           onClick={onTrack}
           className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#1D9E75" }}
+          style={{ backgroundColor: "#15805F" }}
         >
           Être recontacté <ArrowRight size={14} />
         </Link>
@@ -51,7 +51,7 @@ function PartenaireCard({ p, domaine, onTrack }: { p: Partenaire; domaine: strin
           rel="noopener noreferrer"
           onClick={onTrack}
           className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-btn text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#1D9E75" }}
+          style={{ backgroundColor: "#15805F" }}
         >
           Voir l'offre <ArrowRight size={14} />
         </a>
@@ -151,7 +151,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
             className="rounded-xl p-6 mb-6 border"
             style={{ backgroundColor: "#FFFFFF", borderColor: "#D3D1C7" }}
           >
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#1D9E75" }}>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#15805F" }}>
               Ta pension estimée
             </p>
             <div className="flex items-end gap-2 mb-1">
@@ -178,7 +178,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
         {/* Explication */}
         <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">
           <div className="flex items-start gap-3 mb-3">
-            <Info size={20} style={{ color: "#1D9E75", flexShrink: 0, marginTop: 2 }} />
+            <Info size={20} style={{ color: "#15805F", flexShrink: 0, marginTop: 2 }} />
             <div>
               <h2 className="font-semibold mb-2" style={{ color: "#2C2C2A" }}>
                 Pourquoi c'est important
@@ -194,7 +194,7 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
           style={{ backgroundColor: "#EFF9F5" }}
         >
           <div className="flex items-start gap-3">
-            <Lightbulb size={20} style={{ color: "#1D9E75", flexShrink: 0, marginTop: 2 }} />
+            <Lightbulb size={20} style={{ color: "#15805F", flexShrink: 0, marginTop: 2 }} />
             <div>
               <h2 className="font-semibold mb-2" style={{ color: "#085041" }}>
                 Notre recommandation

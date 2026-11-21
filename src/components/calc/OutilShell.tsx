@@ -23,7 +23,7 @@ export default function OutilShell({ slug, children, methode }: { slug: string; 
       <Navbar />
       <main style={{ backgroundColor: "#F1EFE8" }}>
         <section className="max-w-5xl mx-auto px-6 pt-16 pb-8">
-          <Link href="/outils" className="text-xs font-bold uppercase tracking-widest mb-4 inline-block" style={{ color: "#1D9E75" }}>
+          <Link href="/outils" className="text-xs font-bold uppercase tracking-widest mb-4 inline-block" style={{ color: "#15805F" }}>
             Calculateur Avenlib · {o.theme}
           </Link>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>{o.titre}</h1>

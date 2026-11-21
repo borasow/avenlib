@@ -22,7 +22,7 @@ export default function PagePrevoyance() {
 
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             Prévoyance & protection
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -42,7 +42,7 @@ export default function PagePrevoyance() {
               { chiffre: "12 mois", label: "D'affiliation continue nécessaires pour ouvrir droit aux indemnités" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
-                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#15805F" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -158,7 +158,7 @@ export default function PagePrevoyance() {
                   { href: "/retraite", label: "Retraite indépendant" },
                   { href: "/assurance-pro", label: "RC Pro" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#1D9E75", borderColor: "#1D9E75" }}>
+                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#15805F", borderColor: "#1D9E75" }}>
                     {l.label}
                   </Link>
                 ))}
@@ -171,7 +171,7 @@ export default function PagePrevoyance() {
         {/* CTA */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Passez à l'action</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#4CC9A0" }}>Passez à l'action</p>
             <h2 className="text-2xl font-bold mb-3 text-white">
               Évalue ta prévoyance gratuitement →
             </h2>
@@ -181,7 +181,7 @@ export default function PagePrevoyance() {
             <Link
               href="/diagnostic"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }}
+              style={{ backgroundColor: "#15805F" }}
             >
               Évaluer ma prévoyance gratuitement <ArrowRight size={18} />
             </Link>

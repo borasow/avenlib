@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         emerald: {
-          primary: "#1D9E75",
+          primary: "#15805F",
           dark: "#085041",
         },
         text: {

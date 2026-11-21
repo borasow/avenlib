@@ -23,7 +23,7 @@ export default function PageEpargne() {
 
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             Épargne & investissement
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -43,7 +43,7 @@ export default function PageEpargne() {
               { chiffre: "+30 %", label: "D'économie fiscale possible avec l'assurance vie et le PER combinés" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
-                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#15805F" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -81,7 +81,7 @@ export default function PageEpargne() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>Le PER : épargne et optimisation fiscale</h3>
                   <p>
-                    Le Plan d'Épargne Retraite est à la fois un outil d'épargne long terme et un levier fiscal puissant. Les versements sont déductibles du revenu imposable (pour un indépendant : 10 % du bénéfice imposable, majorés de 15 % de la part entre 1 et 8 plafonds de la Sécurité sociale, jusqu'à 88 911 € en 2026), ce qui réduit immédiatement votre imposition. En savoir plus sur <Link href="/retraite" style={{ color: "#1D9E75", textDecoration: "underline" }}>la retraite des indépendants et le PER</Link>.
+                    Le Plan d'Épargne Retraite est à la fois un outil d'épargne long terme et un levier fiscal puissant. Les versements sont déductibles du revenu imposable (pour un indépendant : 10 % du bénéfice imposable, majorés de 15 % de la part entre 1 et 8 plafonds de la Sécurité sociale, jusqu'à 88 911 € en 2026), ce qui réduit immédiatement votre imposition. En savoir plus sur <Link href="/retraite" style={{ color: "#15805F", textDecoration: "underline" }}>la retraite des indépendants et le PER</Link>.
                   </p>
                 </div>
 
@@ -91,7 +91,7 @@ export default function PageEpargne() {
                     L'assurance vie est l'enveloppe d'investissement la plus populaire en France, et pour de bonnes raisons. Elle permet d'investir dans des fonds en euros (capital garanti, rendement faible) et des unités de compte (actions, obligations, SCPI) selon votre profil de risque. Après 8 ans de détention, les plus-values bénéficient d'un abattement fiscal de 4 600 € par an (9 200 € pour un couple) — un avantage significatif pour un investisseur long terme.
                   </p>
                   <p className="mt-2">
-                    Pour un indépendant, l'assurance vie présente un autre avantage : la transmission. En cas de décès, le capital est versé aux bénéficiaires désignés hors succession, avec une fiscalité très avantageuse. C'est aussi un outil de <Link href="/retraite" style={{ color: "#1D9E75", textDecoration: "underline" }}>préparation à la retraite</Link> complémentaire du PER.
+                    Pour un indépendant, l'assurance vie présente un autre avantage : la transmission. En cas de décès, le capital est versé aux bénéficiaires désignés hors succession, avec une fiscalité très avantageuse. C'est aussi un outil de <Link href="/retraite" style={{ color: "#15805F", textDecoration: "underline" }}>préparation à la retraite</Link> complémentaire du PER.
                   </p>
                 </div>
 
@@ -155,7 +155,7 @@ export default function PageEpargne() {
                   { href: "/fiscalite", label: "Optimisation fiscale" },
                   { href: "/credit", label: "Crédit immobilier" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#1D9E75", borderColor: "#1D9E75" }}>
+                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#15805F", borderColor: "#1D9E75" }}>
                     {l.label}
                   </Link>
                 ))}
@@ -168,7 +168,7 @@ export default function PageEpargne() {
         {/* CTA */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Passez à l'action</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#4CC9A0" }}>Passez à l'action</p>
             <h2 className="text-2xl font-bold mb-3 text-white">
               Évalue ta stratégie d'épargne gratuitement →
             </h2>
@@ -176,7 +176,7 @@ export default function PageEpargne() {
               Le bilan Avenlib analyse votre situation financière globale et vous oriente vers les meilleures solutions d'épargne et d'investissement adaptées à votre profil, gratuitement.
             </p>
             <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan épargne gratuit" icon={<ArrowRight size={18} />} />
+              style={{ backgroundColor: "#15805F" }} label="Faire mon bilan épargne gratuit" icon={<ArrowRight size={18} />} />
           </div>
         </section>
 

@@ -133,7 +133,7 @@ export default function ConnexionClient() {
               type="submit"
               disabled={loading}
               className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-white font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
-              style={{ backgroundColor: "#1D9E75" }}
+              style={{ backgroundColor: "#15805F" }}
             >
               {loading ? "Connexion..." : <>Se connecter <ArrowRight size={18} /></>}
             </button>
@@ -162,7 +162,7 @@ export default function ConnexionClient() {
             Faites votre bilan gratuit en 13 questions et créez votre compte à la fin.
           </p>
           <BilanLink className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan" icon={<ArrowRight size={16} />} />
+            style={{ backgroundColor: "#15805F" }} label="Faire mon bilan" icon={<ArrowRight size={16} />} />
         </div>
 
       </div>

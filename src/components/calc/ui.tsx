@@ -94,7 +94,7 @@ export function EmailCapture({ slug, resume }: { slug: string; resume: string[] 
           <div className="flex flex-col sm:flex-row gap-3">
             <input type="email" required placeholder="ton@email.fr" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-1 rounded-lg px-3 py-3 text-base" style={fieldStyle} aria-label="Ton email" />
             <input type="text" tabIndex={-1} autoComplete="off" value={site} onChange={(e) => setSite(e.target.value)} className="hidden" aria-hidden="true" name="website" />
-            <button type="submit" disabled={etat === "envoi"} className="rounded-lg px-5 py-3 text-sm font-bold disabled:opacity-60" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>
+            <button type="submit" disabled={etat === "envoi"} className="rounded-lg px-5 py-3 text-sm font-bold disabled:opacity-60" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }}>
               {etat === "envoi" ? "Envoi..." : "Envoyer"}
             </button>
           </div>
@@ -141,7 +141,7 @@ export function Cta({ text = "Faire mon bilan gratuit", href = "/diagnostic" }: 
   const fait = useBilanFait();
   const voir = fait && href === "/diagnostic";
   return (
-    <Link href={voir ? "/resultats" : href} className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>
+    <Link href={voir ? "/resultats" : href} className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }}>
       {voir ? "Voir mon bilan" : text}
     </Link>
   );

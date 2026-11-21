@@ -16,7 +16,7 @@ export default function Contact() {
           className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
           style={{ backgroundColor: "#EFF9F5" }}
         >
-          <Mail size={28} style={{ color: "#1D9E75" }} />
+          <Mail size={28} style={{ color: "#15805F" }} />
         </div>
         <h1 className="text-3xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
           Nous contacter
@@ -28,7 +28,7 @@ export default function Contact() {
         <a
           href="mailto:contact@avenlib.fr"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-btn text-white font-semibold transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#1D9E75" }}
+          style={{ backgroundColor: "#15805F" }}
         >
           <Mail size={18} /> contact@avenlib.fr
         </a>

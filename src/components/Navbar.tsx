@@ -120,7 +120,7 @@ export default function Navbar() {
                     </span>
                   )
                 )}
-                <Link href="/outils" className="block px-4 py-3 text-sm font-bold" style={{ color: "#1D9E75", borderTop: "0.5px solid #D3D1C7" }}>Voir tous les calculateurs</Link>
+                <Link href="/outils" className="block px-4 py-3 text-sm font-bold" style={{ color: "#15805F", borderTop: "0.5px solid #D3D1C7" }}>Voir tous les calculateurs</Link>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function Navbar() {
                       className="flex items-center gap-3 px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors"
                       style={{ color: "#2C2C2A" }}
                     >
-                      <LayoutDashboard size={15} style={{ color: "#1D9E75" }} />
+                      <LayoutDashboard size={15} style={{ color: "#15805F" }} />
                       Mon espace
                     </Link>
                     <div style={{ borderTop: "0.5px solid #D3D1C7" }}>
@@ -180,7 +180,7 @@ export default function Navbar() {
           )}
 
           <BilanLink className="font-semibold px-4 py-2 rounded-xl text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#1D9E75", fontSize: "15px", whiteSpace: "nowrap" }} label="Faire mon bilan" />
+            style={{ backgroundColor: "#15805F", fontSize: "15px", whiteSpace: "nowrap" }} label="Faire mon bilan" />
         </div>
 
         {/* Mobile burger */}
@@ -236,7 +236,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 py-1.5 text-sm font-medium"
                   style={{ color: "#2C2C2A" }}
                 >
-                  <LayoutDashboard size={14} style={{ color: "#1D9E75" }} />
+                  <LayoutDashboard size={14} style={{ color: "#15805F" }} />
                   Mon espace
                 </Link>
                 <button
@@ -263,7 +263,7 @@ export default function Navbar() {
           <BilanLink
             label="Faire mon bilan"
             className="font-semibold px-4 py-2.5 rounded-xl text-white text-center transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#1D9E75", fontSize: "17px" }}
+            style={{ backgroundColor: "#15805F", fontSize: "17px" }}
             onClick={() => setMobileOpen(false)}
           />
         </div>

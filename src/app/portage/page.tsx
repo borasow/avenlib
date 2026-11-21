@@ -23,7 +23,7 @@ export default function PagePortage() {
 
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#15805F" }}>
             Portage salarial
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
@@ -43,7 +43,7 @@ export default function PagePortage() {
               { chiffre: "100 %", label: "Des protections salariales : chômage, retraite, mutuelle, prévoyance" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
-                <p className="text-4xl font-bold mb-2" style={{ color: "#1D9E75" }}>{s.chiffre}</p>
+                <p className="text-4xl font-bold mb-2" style={{ color: "#15805F" }}>{s.chiffre}</p>
                 <p className="text-sm leading-snug" style={{ color: "#6B6B67" }}>{s.label}</p>
               </div>
             ))}
@@ -129,7 +129,7 @@ export default function PagePortage() {
                   <p>− Charges patronales (~45%) − 2 305 €</p>
                   <p>= Salaire brut :            5 135 €</p>
                   <p>− Charges salariales (~23%) − 1 181 €</p>
-                  <p style={{ fontWeight: 700, color: "#1D9E75" }}>= Salaire net :           ≈ 3 950 €/mois</p>
+                  <p style={{ fontWeight: 700, color: "#15805F" }}>= Salaire net :           ≈ 3 950 €/mois</p>
                 </div>
                 <p>
                   En comparaison, un micro-entrepreneur qui facture 8 000 € HT/mois en prestations de services (BNC) paie environ 25,6 % de cotisations, soit un revenu net d'environ 5 950 €. La différence (≈ 2 000 €/mois) représente le coût des protections sociales supplémentaires du portage : chômage, retraite complémentaire AGIRC-ARRCO, mutuelle, prévoyance.
@@ -189,7 +189,7 @@ export default function PagePortage() {
                   <li>Vous avez déjà une épargne de précaution solide et une clientèle stable</li>
                 </ul>
                 <p>
-                  Le <Link href="/diagnostic" style={{ color: "#1D9E75", textDecoration: "underline" }}>bilan Avenlib</Link> analyse votre profil et vous dit si le portage salarial est pertinent pour votre situation, en le comparant à votre statut actuel.
+                  Le <Link href="/diagnostic" style={{ color: "#15805F", textDecoration: "underline" }}>bilan Avenlib</Link> analyse votre profil et vous dit si le portage salarial est pertinent pour votre situation, en le comparant à votre statut actuel.
                 </p>
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function PagePortage() {
                   { href: "/retraite", label: "Retraite freelance" },
                   { href: "/fiscalite", label: "Optimisation fiscale" },
                 ].map((l) => (
-                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#1D9E75", borderColor: "#1D9E75" }}>
+                  <Link key={l.href} href={l.href} className="text-sm px-3 py-1.5 rounded-full border" style={{ color: "#15805F", borderColor: "#1D9E75" }}>
                     {l.label}
                   </Link>
                 ))}
@@ -216,7 +216,7 @@ export default function PagePortage() {
         {/* CTA */}
         <section className="max-w-3xl mx-auto px-6 pb-20">
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#1D9E75" }}>Passez à l'action</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#4CC9A0" }}>Passez à l'action</p>
             <h2 className="text-2xl font-bold mb-3 text-white">
               Portage salarial ou indépendant ? Découvre ce qui est fait pour toi →
             </h2>
@@ -224,7 +224,7 @@ export default function PagePortage() {
               Le bilan Avenlib analyse ton profil en 13 questions et te dit si le portage salarial est adapté à ta situation, gratuitement.
             </p>
             <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
+              style={{ backgroundColor: "#15805F" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
           </div>
         </section>
 

@@ -26,7 +26,7 @@ function html(prenom: string | null, email: string) {
 <p>${salut}</p>
 <p>Ton bilan Avenlib date d'il y a environ 6 mois. Depuis, ton activité, tes revenus ou ta protection ont peut-être changé.</p>
 <p>Le refaire prend 3 minutes et te montre où tu en es aujourd'hui.</p>
-<p style="margin:24px 0"><a href="${SITE_URL}/diagnostic" style="background:#1D9E75;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold">Refaire mon bilan</a></p>
+<p style="margin:24px 0"><a href="${SITE_URL}/diagnostic" style="background:#15805F;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold">Refaire mon bilan</a></p>
 <p style="font-size:12px;color:#6B6B67">Tu reçois cet email car tu as accepté de recevoir les emails d'Avenlib. <a href="${unsubscribePageUrl(email)}" style="color:#6B6B67">Me désinscrire</a></p>
 </div>`;
 }

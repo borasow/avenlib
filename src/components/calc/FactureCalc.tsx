@@ -73,7 +73,7 @@ export default function FactureCalc() {
               <button type="button" aria-label="Supprimer la ligne" onClick={() => setLignes(lignes.filter((_, j) => j !== i))} className="text-lg" style={{ color: "#6B6B67" }}>×</button>
             </div>
           ))}
-          <button type="button" onClick={() => setLignes([...lignes, { d: "", q: "1", p: "0" }])} className="text-sm font-bold" style={{ color: "#1D9E75" }}>+ Ajouter une ligne</button>
+          <button type="button" onClick={() => setLignes([...lignes, { d: "", q: "1", p: "0" }])} className="text-sm font-bold" style={{ color: "#15805F" }}>+ Ajouter une ligne</button>
           <label className="flex items-start gap-3 text-sm cursor-pointer">
             <input type="checkbox" checked={sansTva} onChange={(e) => setSansTva(e.target.checked)} className="h-5 w-5 mt-0.5 accent-[#1D9E75]" />
             <span>Je suis en franchise de TVA (micro-entrepreneur sous le seuil)</span>
@@ -82,7 +82,7 @@ export default function FactureCalc() {
           {type === "facture"
             ? <><Champ label="Délai de paiement" value={echeance} onChange={setEcheance} /><Champ label="IBAN (facultatif)" value={iban} onChange={setIban} /></>
             : <Champ label="Durée de validité du devis" value={validite} onChange={setValidite} />}
-          <button type="button" onClick={() => window.print()} className="w-full rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>
+          <button type="button" onClick={() => window.print()} className="w-full rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }}>
             Enregistrer en PDF / imprimer
           </button>
           <p className="text-xs" style={{ color: "#6B6B67" }}>Rien n&apos;est envoyé ni enregistré : tout reste dans ton navigateur. Dans la fenêtre d&apos;impression, choisis &laquo; Enregistrer au format PDF &raquo;.</p>

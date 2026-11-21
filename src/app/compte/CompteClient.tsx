@@ -49,7 +49,7 @@ export default function CompteClient() {
           className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
           style={{ backgroundColor: "#EFF9F5" }}
         >
-          <User size={28} style={{ color: "#1D9E75" }} />
+          <User size={28} style={{ color: "#15805F" }} />
         </div>
         <h2 className="text-2xl font-bold mb-3" style={{ color: "#2C2C2A" }}>
           Aucun profil trouvé
@@ -58,7 +58,7 @@ export default function CompteClient() {
           Fais ton bilan pour créer ton profil et accéder à ton tableau de bord.
         </p>
         <BilanLink className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold"
-          style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan" icon={<ArrowRight size={18} />} />
+          style={{ backgroundColor: "#15805F" }} label="Faire mon bilan" icon={<ArrowRight size={18} />} />
       </div>
     );
   }
@@ -87,7 +87,7 @@ export default function CompteClient() {
         {/* Résumé scores */}
         <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">
           <div className="flex items-center gap-2 mb-1">
-            <BarChart2 size={20} style={{ color: "#1D9E75" }} />
+            <BarChart2 size={20} style={{ color: "#15805F" }} />
             <h2 className="font-semibold" style={{ color: "#2C2C2A" }}>
               Ton tableau de bord
             </h2>
@@ -121,7 +121,7 @@ export default function CompteClient() {
             <Link
               href="/resultats"
               className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
-              style={{ color: "#1D9E75" }}
+              style={{ color: "#15805F" }}
             >
               Voir le bilan complet <ArrowRight size={14} />
             </Link>
@@ -131,7 +131,7 @@ export default function CompteClient() {
         {/* Profil */}
         <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <User size={20} style={{ color: "#1D9E75" }} />
+            <User size={20} style={{ color: "#15805F" }} />
             <h2 className="font-semibold" style={{ color: "#2C2C2A" }}>
               Mon profil
             </h2>

@@ -87,10 +87,10 @@ export async function POST(request: NextRequest) {
           subject: `🎉 Nouvelle inscription : ${prenomCap} ${nomCap}`,
           html: `
             <div style="font-family:sans-serif;max-width:540px;color:#2C2C2A;">
-              <h2 style="color:#1D9E75;margin:0 0 20px;">Nouvelle inscription Avenlib</h2>
+              <h2 style="color:#15805F;margin:0 0 20px;">Nouvelle inscription Avenlib</h2>
               <table style="border-collapse:collapse;width:100%;">
                 <tr><td style="padding:8px 0;font-weight:600;width:180px;color:#6B6B67;vertical-align:top;">Prénom / Nom</td><td>${prenomCap} ${nomCap}</td></tr>
-                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Email</td><td><a href="mailto:${email}" style="color:#1D9E75;">${email}</a></td></tr>
+                <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Email</td><td><a href="mailto:${email}" style="color:#15805F;">${email}</a></td></tr>
                 <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Statut juridique</td><td>${(answers as DiagnosticAnswers).statut ?? "—"}</td></tr>
                 <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Revenus</td><td>${(answers as DiagnosticAnswers).revenus ?? "—"}</td></tr>
                 <tr><td style="padding:8px 0;font-weight:600;color:#6B6B67;vertical-align:top;">Âge</td><td>${(answers as DiagnosticAnswers).age ?? "—"}</td></tr>
@@ -195,7 +195,7 @@ function buildEmailHtml(prenomRaw: string, answers: DiagnosticAnswers): string {
     <!-- Header -->
     <div style="background: #085041; padding: 28px 40px;">
       <p style="color: white; font-size: 20px; font-weight: 700; margin: 0;">
-        <span style="color: #1D9E75;">●</span> Avenlib
+        <span style="color: #4CC9A0;">●</span> Avenlib
       </p>
     </div>
 
@@ -220,7 +220,7 @@ function buildEmailHtml(prenomRaw: string, answers: DiagnosticAnswers): string {
       <!-- CTA -->
       <div style="text-align: center;">
         <a href="https://avenlib.fr/connexion?redirect=/compte"
-           style="display: inline-block; background: #1D9E75; color: white; text-decoration: none;
+           style="display: inline-block; background: #15805F; color: white; text-decoration: none;
                   padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 15px;">
           Voir mes recommandations →
         </a>

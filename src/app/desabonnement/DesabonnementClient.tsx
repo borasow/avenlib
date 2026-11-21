@@ -36,7 +36,7 @@ export default function DesabonnementClient({ email, token }: { email: string; t
         onClick={go}
         disabled={state === "loading"}
         className="px-6 py-3 rounded-xl text-white text-sm font-semibold"
-        style={{ backgroundColor: "#1D9E75", opacity: state === "loading" ? 0.6 : 1 }}
+        style={{ backgroundColor: "#15805F", opacity: state === "loading" ? 0.6 : 1 }}
       >
         {state === "loading" ? "En cours..." : "Confirmer la désinscription"}
       </button>

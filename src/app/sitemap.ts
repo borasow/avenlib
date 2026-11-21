@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: { url: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
     { url: "/",              priority: 1.0, changeFrequency: "weekly" },
     { url: "/diagnostic",   priority: 0.9, changeFrequency: "monthly" },
+    { url: "/qui-sommes-nous", priority: 0.6, changeFrequency: "yearly" },
+    { url: "/outils/calcul-indemnites-arret-maladie", priority: 0.8, changeFrequency: "monthly" },
     { url: "/connexion",    priority: 0.5, changeFrequency: "yearly" },
     { url: "/resultats",    priority: 0.8, changeFrequency: "monthly" },
     { url: "/retraite",     priority: 0.8, changeFrequency: "monthly" },

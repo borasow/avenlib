@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import { ChevronDown, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Qui sommes-nous ?", href: "/#qui-sommes-nous" },
+  { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
   { label: "Pourquoi Avenlib ?", href: "/#pourquoi" },
   { label: "Comment ça marche ?", href: "/#comment" },
   { label: "Blog", href: "/blog" },

@@ -1,0 +1,15 @@
+import assert from "node:assert";
+import { readFileSync } from "node:fs";
+import ts from "typescript";
+const src = readFileSync(new URL("./ij.ts", import.meta.url), "utf8");
+const js = ts.transpileModule(src, { compilerOptions: { module: "ESNext", target: "ES2020" } }).outputText;
+const m = await import("data:text/javascript;base64," + Buffer.from(js).toString("base64"));
+const a = m.calculerIj({ statut: "reel", montantAnnuel: 60000, dureeJours: 30, chargesMensuelles: 2000 });
+assert.equal(a.ijJour, 65.84); assert.equal(a.joursIndemnises, 27); assert.equal(a.plafonne, true);
+const b = m.calculerIj({ statut: "reel", montantAnnuel: 30000, dureeJours: 10, chargesMensuelles: 0 });
+assert.equal(b.ijJour, 41.1);
+const c = m.calculerIj({ statut: "micro_bnc", montantAnnuel: 6000, dureeJours: 10, chargesMensuelles: 0 });
+assert.equal(c.droit, false);
+const d = m.calculerIj({ statut: "micro_bnc", montantAnnuel: 30000, dureeJours: 2, chargesMensuelles: 0 });
+assert.equal(d.totalIj, 0);
+console.log("ij ok");

@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-2.5">
               <p className="font-semibold text-xs uppercase tracking-wider mb-1" style={{ color: "#2C2C2A" }}>Société</p>
-              <Link href="/#qui-sommes-nous" className="hover:text-[#2C2C2A] transition-colors">Qui sommes-nous</Link>
+              <Link href="/qui-sommes-nous" className="hover:text-[#2C2C2A] transition-colors">Qui sommes-nous</Link>
               <Link href="/blog" className="hover:text-[#2C2C2A] transition-colors">Blog</Link>
               <Link href="/contact" className="hover:text-[#2C2C2A] transition-colors">Contact</Link>
             </div>

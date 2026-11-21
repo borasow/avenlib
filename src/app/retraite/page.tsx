@@ -86,7 +86,7 @@ export default function PageRetraite() {
                     La retraite auto-entrepreneur est calculée sur la base du chiffre d'affaires déclaré, après application d'un abattement forfaitaire. Plus ce chiffre d'affaires est faible, moins vous validez de trimestres et de points. <strong>Consultez votre relevé sur info-retraite.fr</strong> pour connaître une estimation réelle de votre pension.
                   </p>
                   <p className="mt-2">
-                    La retraite micro-entrepreneur souffre d'une autre particularité : le plafond de CA du régime (77 700 € pour les services en 2024) limite mécaniquement la base de cotisation. Un freelance qui dépasse ce seuil et reste en micro paie des cotisations sans bénéficier de droits supplémentaires au-delà.
+                    La retraite micro-entrepreneur souffre d'une autre particularité : le plafond de CA du régime (83 600 € pour les services en 2026) limite mécaniquement la base de cotisation. Un freelance qui dépasse ce seuil et reste en micro paie des cotisations sans bénéficier de droits supplémentaires au-delà.
                   </p>
                 </div>
 
@@ -120,7 +120,7 @@ export default function PageRetraite() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>Le PER indépendant : le levier numéro 1</h3>
                   <p>
-                    Le <strong>PER indépendant</strong> (Plan d'Épargne Retraite) est aujourd'hui le dispositif le plus efficace pour un freelance ou un auto-entrepreneur. Il permet de déduire les versements de son revenu imposable — jusqu'à 10 % du bénéfice imposable, plafonné à 32 908 € en 2024 — ce qui réduit immédiatement la facture fiscale tout en constituant un capital pour la retraite.
+                    Le <strong>PER indépendant</strong> (Plan d'Épargne Retraite) est aujourd'hui le dispositif le plus efficace pour un freelance ou un auto-entrepreneur. Il permet de déduire les versements de son revenu imposable — jusqu'à 10 % du bénéfice imposable, majorés de 15 % de la part comprise entre 1 et 8 plafonds de la Sécurité sociale, soit jusqu'à 88 911 € en 2026 — ce qui réduit immédiatement la facture fiscale tout en constituant un capital pour la retraite.
                   </p>
                   <p className="mt-2">
                     Exemple concret : un indépendant à 30 % de TMI qui verse 5 000 € sur son PER économise 1 500 € d'impôts cette année, tout en se constituant un capital retraite. La déduction est applicable dès la première année, sans plafond de revenus minimum.

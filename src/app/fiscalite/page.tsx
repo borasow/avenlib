@@ -72,7 +72,7 @@ export default function PageFiscalite() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>Rester en micro avec des revenus élevés</h3>
                   <p>
-                    Le régime micro-entrepreneur est simple, mais il est rarement optimal au-delà de 30 000-40 000 € de revenus. L'abattement forfaitaire (34 % pour les services) ne reflète pas la réalité des charges si vous avez des frais professionnels significatifs. Passer au régime réel permet de déduire 100 % de vos charges réelles : loyer professionnel, matériel, déplacements, formation, cotisations de prévoyance Madelin…
+                    Le régime micro-entrepreneur est simple, mais il est rarement optimal au-delà de 30 000-40 000 € de revenus. L'abattement forfaitaire (50 % pour les services BIC, 34 % pour les professions libérales) ne reflète pas la réalité des charges si vous avez des frais professionnels significatifs. Passer au régime réel permet de déduire 100 % de vos charges réelles : loyer professionnel, matériel, déplacements, formation, cotisations de prévoyance Madelin…
                   </p>
                 </div>
 
@@ -129,7 +129,7 @@ export default function PageFiscalite() {
                   Le Plan d'Épargne Retraite est le dispositif fiscal le plus puissant pour réduire ses impôts légalement en tant qu'indépendant. Son fonctionnement est simple : vous versez de l'argent sur le PER, vous déduisez ces versements de votre revenu imposable, et votre capital fructifie jusqu'à la retraite.
                 </p>
                 <p>
-                  Le plafond de déduction est généreux : 10 % du bénéfice net imposable, avec un minimum de 4 399 € et un maximum de 32 908 € (chiffres 2024). Si vous n'avez pas utilisé tout votre plafond les 3 dernières années, vous pouvez le rattraper — c'est le « carry-forward » du PER.
+                  Le plafond de déduction est généreux : 10 % du bénéfice imposable (dans la limite de 8 plafonds de la Sécurité sociale), majorés de 15 % de la part comprise entre 1 et 8 plafonds, avec un minimum de 4 806 € et un maximum de 88 911 € pour les versements 2026. Si vous n'avez pas utilisé tout votre plafond les 3 dernières années, vous pouvez le rattraper — c'est le « carry-forward » du PER.
                 </p>
                 <p>
                   Exemple concret : un consultant indépendant avec 80 000 € de bénéfice net et une TMI à 41 % verse 8 000 € sur son PER. Il économise 3 280 € d'impôts cette année, tout en constituant un capital retraite. Le PER est donc simultanément un outil d'optimisation fiscale à court terme et un outil de <Link href="/retraite" style={{ color: "#1D9E75", textDecoration: "underline" }}>préparation à la retraite</Link>.

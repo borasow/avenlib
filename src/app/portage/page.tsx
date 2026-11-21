@@ -94,7 +94,7 @@ export default function PagePortage() {
                   <ul className="space-y-2 pl-4">
                     <li><strong>Frais de gestion :</strong> la société de portage prélève entre 5 et 10 % de ton CA HT, ce qui réduit ton salaire net.</li>
                     <li><strong>Charges sociales élevées :</strong> le taux de charges salariales + patronales dépasse 45 %, contre 20-25 % pour un micro-entrepreneur. Ton salaire net représente environ 45-55 % de ton CA HT.</li>
-                    <li><strong>Revenus minimums :</strong> la loi impose un salaire minimum de 2 517 € brut/mois (environ 1 960 € net), ce qui exige un CA mensuel minimum d'environ 4 500-5 000 € HT pour être viable.</li>
+                    <li><strong>Revenus minimums :</strong> la convention de branche impose un salaire minimum d'environ 2 800 € brut/mois pour un salarié porté junior (70 % du plafond mensuel de la Sécurité sociale, soit 4 005 € en 2026), et davantage pour un senior, ce qui exige un CA mensuel minimum d'environ 4 500-5 000 € HT pour être viable.</li>
                     <li><strong>Pas d'optimisation fiscale avancée :</strong> tu ne peux pas déduire de frais professionnels aussi librement qu'en société.</li>
                   </ul>
                 </div>
@@ -131,10 +131,10 @@ export default function PagePortage() {
                   <p style={{ fontWeight: 700, color: "#1D9E75" }}>= Salaire net :           ≈ 3 950 €/mois</p>
                 </div>
                 <p>
-                  En comparaison, un micro-entrepreneur qui facture 8 000 € HT/mois en prestations de services (BNC) paie environ 22 % de cotisations, soit un revenu net d'environ 6 240 €. La différence (≈ 2 300 €/mois) représente le coût des protections sociales supplémentaires du portage : chômage, retraite complémentaire AGIRC-ARRCO, mutuelle, prévoyance.
+                  En comparaison, un micro-entrepreneur qui facture 8 000 € HT/mois en prestations de services (BNC) paie environ 25,6 % de cotisations, soit un revenu net d'environ 5 950 €. La différence (≈ 2 000 €/mois) représente le coût des protections sociales supplémentaires du portage : chômage, retraite complémentaire AGIRC-ARRCO, mutuelle, prévoyance.
                 </p>
                 <p>
-                  La vraie question est donc : ces protections valent-elles 2 300 €/mois pour vous ? Pour un freelance débutant qui valorise la sécurité, la réponse est souvent oui. Pour un indépendant expérimenté avec une clientèle stable et une épargne solide, la réponse peut être non.
+                  La vraie question est donc : ces protections valent-elles 2 000 €/mois pour vous ? Pour un freelance débutant qui valorise la sécurité, la réponse est souvent oui. Pour un indépendant expérimenté avec une clientèle stable et une épargne solide, la réponse peut être non.
                 </p>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function PagePortage() {
                 </ul>
                 <p className="mt-2">Il est moins adapté si :</p>
                 <ul className="space-y-1 pl-4">
-                  <li>Vos revenus sont irréguliers (le salaire minimum de 2 517 € brut doit être respecté chaque mois d'activité)</li>
+                  <li>Vos revenus sont irréguliers (le salaire minimum conventionnel (environ 2 800 € brut) doit être respecté chaque mois d'activité)</li>
                   <li>Vous avez de nombreuses charges professionnelles déductibles (frais de déplacement, matériel important) — le réel sera plus avantageux</li>
                   <li>Vous avez déjà une épargne de précaution solide et une clientèle stable</li>
                 </ul>

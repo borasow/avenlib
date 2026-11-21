@@ -80,7 +80,7 @@ export default function PageEpargne() {
                 <div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "#2C2C2A" }}>Le PER : épargne et optimisation fiscale</h3>
                   <p>
-                    Le Plan d'Épargne Retraite est à la fois un outil d'épargne long terme et un levier fiscal puissant. Les versements sont déductibles du revenu imposable (jusqu'à 10 % du bénéfice net, plafonné à 32 908 € en 2024), ce qui réduit immédiatement votre imposition. En savoir plus sur <Link href="/retraite" style={{ color: "#1D9E75", textDecoration: "underline" }}>la retraite des indépendants et le PER</Link>.
+                    Le Plan d'Épargne Retraite est à la fois un outil d'épargne long terme et un levier fiscal puissant. Les versements sont déductibles du revenu imposable (pour un indépendant : 10 % du bénéfice imposable, majorés de 15 % de la part entre 1 et 8 plafonds de la Sécurité sociale, jusqu'à 88 911 € en 2026), ce qui réduit immédiatement votre imposition. En savoir plus sur <Link href="/retraite" style={{ color: "#1D9E75", textDecoration: "underline" }}>la retraite des indépendants et le PER</Link>.
                   </p>
                 </div>
 

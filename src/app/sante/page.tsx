@@ -62,7 +62,7 @@ export default function PageSante() {
                   En théorie, un indépendant affilié au SSI bénéficie des mêmes droits de base qu'un salarié : consultations, médicaments, hospitalisation, maternité. En pratique, la Sécu ne couvre qu'une partie des dépenses réelles.
                 </p>
                 <p>
-                  Pour une consultation chez un généraliste de secteur 1 (26,50 €), la Sécu rembourse environ 70 %, soit 18,55 €. Mais pour un spécialiste en secteur 2 ou 3, les dépassements d'honoraires ne sont pas remboursés et peuvent atteindre 150 à 400 € par consultation.
+                  Pour une consultation chez un généraliste de secteur 1 (30 €), la Sécu rembourse 70 %, soit 21 €, moins 2 € de participation forfaitaire, soit 19 €. Mais pour un spécialiste en secteur 2 ou 3, les dépassements d'honoraires ne sont pas remboursés et peuvent atteindre 150 à 400 € par consultation.
                 </p>
                 <p>
                   Sur l'optique, le remboursement Sécu est symbolique : quelques euros pour des lunettes à 200-600 €. Sur le dentaire, un implant à 1 200 € est remboursé environ 110 € par la Sécu seule. L'hospitalisation couvre le séjour, mais pas la chambre individuelle ni les dépassements du chirurgien.
@@ -123,7 +123,7 @@ export default function PageSante() {
                   <strong>Conditions :</strong> être TNS (artisan, commerçant, profession libérale — pas applicable aux gérants assimilés-salariés de SASU), souscrire un contrat « responsable et solidaire », et être à jour de ses cotisations sociales obligatoires.
                 </p>
                 <p>
-                  <strong>Plafond de déduction 2024 :</strong> les cotisations santé Madelin sont déductibles dans la limite de 3,75 % du bénéfice + 7 % du PASS, soit environ 7 247 € par an. Concrètement, pour un TNS à 30 % de TMI qui paie 1 200 €/an de mutuelle Madelin, l'économie d'impôts est de <strong>360 €/an</strong> — soit une mutuelle qui coûte réellement 840 € après avantage fiscal.
+                  <strong>Plafond de déduction :</strong> les cotisations santé Madelin sont déductibles dans une limite annuelle qui dépend de votre bénéfice et du plafond de la Sécurité sociale (à confirmer avec votre expert-comptable). Concrètement, pour un TNS à 30 % de TMI qui paie 1 200 €/an de mutuelle Madelin, l'économie d'impôts est de <strong>360 €/an</strong> — soit une mutuelle qui coûte réellement 840 € après avantage fiscal.
                 </p>
                 <p>
                   La mutuelle auto-entrepreneur, en revanche, ne bénéficie pas des déductions Madelin (les micro-entrepreneurs ne peuvent pas déduire leurs charges). Mais les cotisations peuvent être prises en compte dans le calcul de l'impôt sur le revenu via les frais réels si vous optez pour ce régime de déclaration.

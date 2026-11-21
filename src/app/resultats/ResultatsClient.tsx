@@ -149,7 +149,7 @@ export default function ResultatsClient() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2" style={{ color: "#2C2C2A" }}>
-            Bonjour {profile.prenom}, voici ton bilan
+            Bonjour {profile.prenom.trim().charAt(0).toUpperCase() + profile.prenom.trim().slice(1)}, voici ton bilan
           </h1>
           <div className="flex items-center gap-3 flex-wrap">
             <span className="text-sm px-3 py-1 rounded-full font-medium" style={{ backgroundColor: "#EFF9F5", color: "#085041" }}>

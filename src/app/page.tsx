@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { OUTILS } from "@/lib/outils";
 import CookieBanner from "@/components/CookieBanner";
 import PilierCard from "@/components/PilierCard";
 import {
@@ -150,6 +151,31 @@ export default function Home() {
                 href={p.href}
               />
             ))}
+          </div>
+        </section>
+
+        {/* ── Calculateurs ── */}
+        <section className="max-w-6xl mx-auto px-6 pb-6">
+          <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#1D9E75" }}>Essaye maintenant</p>
+              <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: "#2C2C2A" }}>Des calculateurs gratuits, sans inscription</h2>
+            </div>
+            <Link href="/outils" className="text-sm font-bold flex items-center gap-1" style={{ color: "#1D9E75" }}>
+              Voir les {OUTILS.length} calculateurs <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {["calcul-indemnites-arret-maladie", "retraite-independant", "revenu-net-independant", "tjm-freelance"].map((slug) => {
+              const o = OUTILS.find((x) => x.slug === slug)!;
+              return (
+                <Link key={slug} href={`/outils/${slug}`} className="rounded-2xl p-6 flex flex-col transition-opacity hover:opacity-80" style={{ backgroundColor: "#FFFFFF", border: "0.5px solid #D3D1C7" }}>
+                  <p className="font-bold text-base mb-2" style={{ color: "#2C2C2A" }}>{o.nav}</p>
+                  <p className="text-sm mb-4" style={{ color: "#6B6B67" }}>{o.accroche}</p>
+                  <span className="mt-auto text-sm font-bold flex items-center gap-1" style={{ color: "#1D9E75" }}>Calculer <ArrowRight size={14} /></span>
+                </Link>
+              );
+            })}
           </div>
         </section>
 

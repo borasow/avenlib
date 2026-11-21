@@ -175,8 +175,8 @@ export default function DomaineClient({ domaine, partenaires, meta }: Props) {
           <p className="text-sm" style={{ color: "#6B6B67" }}>Partenaires en cours de sélection, reviens bientôt.</p>
         )}
         <ul className="space-y-3">
-          {displayedPartenaires.map((p, i) => (
-            <PartenaireCard key={p.nom} p={p} domaine={domaine} premier={i === 0 && displayedPartenaires.length > 1} onTrack={() => handlePartenaireClick(p)} />
+          {displayedPartenaires.map((p) => (
+            <PartenaireCard key={p.nom} p={p} domaine={domaine} premier={p.tag === "Recommandé"} onTrack={() => handlePartenaireClick(p)} />
           ))}
         </ul>
         {displayedPartenaires.some((p) => p.tarif) && (

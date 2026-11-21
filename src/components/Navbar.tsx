@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
   { label: "Pourquoi Avenlib ?", href: "/#pourquoi" },
   { label: "Comment ça marche ?", href: "/#comment" },
+  { label: "Calcul d'indemnités", href: "/outils/calcul-indemnites-arret-maladie" },
   { label: "Blog", href: "/blog" },
 ];
 

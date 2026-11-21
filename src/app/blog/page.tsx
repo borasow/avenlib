@@ -11,6 +11,9 @@ const COVERS: Record<string, string> = {
   "mutuelle-auto-entrepreneur": "/blog/mutuelle.png",
   "optimisation-fiscale-freelance": "/blog/fiscalite.png",
   "protection-sociale-independant": "/blog/protection.png",
+  "acre-2026-reduction-exoneration": "/blog/acre-2026.png",
+  "facture-electronique-independants-2026": "/blog/facture-electronique.png",
+  "micro-entrepreneur-2026-plafonds-cotisations": "/blog/micro-2026.png",
 };
 
 const title = "Blog Avenlib : protection financière des freelances et indépendants";

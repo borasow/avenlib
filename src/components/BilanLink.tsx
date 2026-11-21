@@ -2,14 +2,20 @@
 
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import Link from "next/link";
+import { BILAN_EVENT, bilanPresent } from "@/lib/bilanLocal";
 
 // Vrai si la personne a déjà fait son bilan sur cet appareil.
 export function useBilanFait() {
   const [fait, setFait] = useState(false);
   useEffect(() => {
-    try {
-      setFait(!!localStorage.getItem("avenlib_profile"));
-    } catch {}
+    const maj = () => setFait(bilanPresent());
+    maj();
+    window.addEventListener(BILAN_EVENT, maj);
+    window.addEventListener("storage", maj);
+    return () => {
+      window.removeEventListener(BILAN_EVENT, maj);
+      window.removeEventListener("storage", maj);
+    };
   }, []);
   return fait;
 }

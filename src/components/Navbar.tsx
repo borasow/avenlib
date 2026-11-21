@@ -5,6 +5,7 @@ import Link from "next/link";
 import BilanLink from "@/components/BilanLink";
 import { OUTILS } from "@/lib/outils";
 import { createClient } from "@/lib/supabase/client";
+import { effacerBilanLocal, restaurerBilan } from "@/lib/bilanLocal";
 import { ChevronDown, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
@@ -29,6 +30,7 @@ export default function Navbar() {
     const supabase = createClient();
 
     async function loadUser(userId: string, email?: string) {
+      restaurerBilan(supabase, userId).catch(() => {});
       const { data } = await supabase
         .from("profiles")
         .select("prenom")
@@ -72,6 +74,7 @@ export default function Navbar() {
   async function handleSignOut() {
     const supabase = createClient();
     await supabase.auth.signOut();
+    effacerBilanLocal();
     setPrenom(null);
     setDropdownOpen(false);
     setMobileOpen(false);

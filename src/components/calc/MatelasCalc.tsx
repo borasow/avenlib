@@ -25,7 +25,7 @@ export default function MatelasCalc() {
           { l: "Temps pour y arriver", v: r.manque === 0 ? "Atteint" : r.moisPourAtteindre === null ? "Épargne à 0 €" : `${r.moisPourAtteindre} mois`, strong: true },
         ]} />
         <Note>Un indépendant n&apos;a pas de chômage classique : 6 mois est un repère courant, à adapter à ta régularité de revenus.</Note>
-        <Cta />
+        <Cta pitch="Ton matelas dit combien de temps tu tiens. Reste à vérifier ce qui t'est versé en cas d'arrêt maladie." />
       </>}
     />
   );

@@ -40,7 +40,7 @@ export default function NetCalc() {
           { l: "Net annuel", v: eur(r.netApresImpot), strong: true, tone: "good" },
         ]} />
         <Note>{mode === "reel" ? "Au réel, les cotisations sont estimées à 30 % du bénéfice : elles varient selon le revenu." : "En micro, les charges ne réduisent ni les cotisations ni l'impôt."}</Note>
-        <Cta />
+        <Cta pitch="Ton net est le point de départ : reste à savoir ce que tu mets de côté pour ta retraite et ta protection." />
       </>}
     />
   );

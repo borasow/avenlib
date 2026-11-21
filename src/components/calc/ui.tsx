@@ -137,12 +137,19 @@ export function Note({ children }: { children: ReactNode }) {
   return <p className="text-sm leading-relaxed mt-4" style={{ color: "#E1F5EE" }}>{children}</p>;
 }
 
-export function Cta({ text = "Faire mon bilan gratuit", href = "/diagnostic" }: { text?: string; href?: string }) {
+export function Cta({ text = "Faire mon bilan complet gratuit", href = "/diagnostic", pitch }: { text?: string; href?: string; pitch?: string }) {
   const fait = useBilanFait();
   const voir = fait && href === "/diagnostic";
   return (
-    <Link href={voir ? "/resultats" : href} className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }}>
-      {voir ? "Voir mon bilan" : text}
-    </Link>
+    <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.18)" }}>
+      {!voir && (
+        <p className="text-sm leading-relaxed mb-3" style={{ color: "#E1F5EE" }}>
+          {pitch ?? "Ce résultat n'est qu'une pièce du puzzle."} Le bilan Avenlib passe en revue retraite, prévoyance, impôts et épargne en 3 minutes, gratuit.
+        </p>
+      )}
+      <Link href={voir ? "/resultats" : href} className="block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }}>
+        {voir ? "Voir mon bilan" : text}
+      </Link>
+    </div>
   );
 }

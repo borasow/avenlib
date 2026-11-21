@@ -32,7 +32,7 @@ export default function TjmCalc() {
           { l: "Net annuel visé", v: eur(net * 12), strong: true, tone: "good" },
         ]} />
         <Note>Ajoute une marge pour les imprévus et les périodes sans mission. Un TJM trop juste te laisse sans filet.</Note>
-        <Cta />
+        <Cta pitch="Ton TJM doit couvrir ton net, mais aussi ta protection en cas d'arrêt ou de coup dur." />
       </>}
     />
   );

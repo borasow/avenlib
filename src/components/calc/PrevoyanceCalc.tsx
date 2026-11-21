@@ -29,7 +29,7 @@ export default function PrevoyanceCalc() {
           { l: `Reste à ta charge pendant la franchise (${fr} j)`, v: eur(r.coutFranchise), strong: true, tone: "bad" },
         ]} />
         <Note>Une franchise plus longue réduit la cotisation, mais tu finances toi-même cette période : prévois ce montant en épargne. Montants bruts, estimation.</Note>
-        <Cta text="Comparer les solutions de prévoyance" />
+        <Cta text="Comparer les solutions de prévoyance" pitch="Ce calcul porte sur l'arrêt maladie. Le reste de ta protection compte aussi." />
       </>}
     />
   );

@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import BilanLink from "@/components/BilanLink";
 import { calculerIj, Statut, CARENCE_JOURS } from "@/lib/ij";
-import { EmailCapture } from "@/components/calc/ui";
+import { Cta, EmailCapture } from "@/components/calc/ui";
 
 const fmt = (n: number) => n.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
 const fieldStyle = { border: "2px solid #E8E6DF", backgroundColor: "#FFFFFF", color: "#2C2C2A" };
@@ -79,7 +78,7 @@ export default function Calculateur() {
             </dl>
           </>
         )}
-        <BilanLink className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#15805F", color: "#FFFFFF" }} label="Faire mon bilan gratuit" />
+        <Cta pitch="Ces indemnités sont souvent bien plus basses que ton revenu : le bilan chiffre l'écart et ce qui peut le combler." />
       </div>
     </div>
     <EmailCapture slug="calcul-indemnites-arret-maladie" resume={resume} />

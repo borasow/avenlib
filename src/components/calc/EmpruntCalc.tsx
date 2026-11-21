@@ -28,7 +28,7 @@ export default function EmpruntCalc() {
           { l: "Budget d'achat", v: eur(r.budget), strong: true, tone: "good" },
         ]} />
         <Note>Calcul avec 35 % d&apos;endettement maximum et 0,34 % d&apos;assurance par an. Les banques regardent la régularité de tes revenus : plus ils sont stables, mieux c&apos;est.</Note>
-        <Cta />
+        <Cta pitch="Les banques regardent aussi ta protection : un indépendant couvert est un dossier plus solide." />
       </>}
     />
   );

@@ -25,7 +25,7 @@ export default function RetraiteCalc() {
           { l: r.tauxPlein ? "Taux plein" : "Taux plein non atteint", v: r.tauxPlein ? "Oui" : "Décote possible", strong: true, tone: r.tauxPlein ? "good" : "bad" },
         ]} />
         <Note>Pour les artisans, commerçants et libéraux non réglementés (SSI). L&apos;écart avec ton revenu actuel est ce que la prévoyance et l&apos;épargne retraite peuvent combler.</Note>
-        <Cta />
+        <Cta pitch="Si ta pension est trop basse, il y a des leviers à activer." />
       </>}
     />
   );

@@ -32,7 +32,7 @@ export default function MicroReelCalc() {
           { l: "Cotisations au réel (estimées)", v: eur(reel.cotisations) },
         ]} />
         <Note>Célibataire sans autre revenu, par simplification. Le réel implique un comptable (souvent 800 à 1 500 € par an) qui n&apos;est pas compté ici.</Note>
-        <Cta />
+        <Cta pitch="Le bon régime dépend aussi de ta protection sociale, qui change selon ton statut." />
       </>}
     />
   );

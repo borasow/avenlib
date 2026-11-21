@@ -34,7 +34,7 @@ export default function SalarieCalc() {
           { l: "Jours facturés par an", v: String(r.joursFactures) },
         ]} />
         <Note>Un freelance facture environ 1,5 à 2,5 fois le salaire journalier brut d'un salarié pour garder le même net : il paie ses congés, son arrêt maladie, sa mutuelle et ses périodes sans mission. Estimation indicative.</Note>
-        <Cta />
+        <Cta pitch="En passant freelance, tu n'as pas de chômage classique et plus de mutuelle employeur : à compenser." />
       </>}
     />
   );

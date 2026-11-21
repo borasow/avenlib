@@ -29,7 +29,7 @@ export default function ImpotCalc() {
           { l: "Taux moyen d'imposition", v: revenu ? (impot / revenu * 100).toFixed(1).replace(".", ",") + " %" : "0 %", strong: true },
         ]} />
         <Note>Barème 2026 (revenus 2025). Hors décote, réductions et crédits d&apos;impôt, qui peuvent faire baisser le montant.</Note>
-        <Cta />
+        <Cta pitch="Certains dispositifs, comme le PER, peuvent réduire cet impôt : à voir selon ta situation." />
       </>}
     />
   );

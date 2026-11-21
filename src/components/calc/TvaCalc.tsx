@@ -30,7 +30,7 @@ export default function TvaCalc() {
           { l: "Marge avant le seuil majoré", v: r.margeMajore >= 0 ? eur(r.margeMajore) : "Dépassé de " + eur(-r.margeMajore) },
         ]} />
         <Note>Avec la TVA, tes prix HT ne changent pas mais tes clients particuliers paient 20 % de plus, sauf si tu baisses ton prix. Pense-y avant de franchir le seuil.</Note>
-        <Cta />
+        <Cta pitch="La TVA n'est qu'un volet de ta situation d'indépendant." />
       </>}
     />
   );

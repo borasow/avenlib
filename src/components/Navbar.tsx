@@ -93,7 +93,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-5 2xl:gap-8">
           {NAV_LINKS.slice(0, 3).map((l) => (
             <Link key={l.label} href={l.href} className="transition-opacity hover:opacity-70" style={linkStyle}>
               {l.label}
@@ -189,7 +189,7 @@ export default function Navbar() {
 
         {/* Mobile burger */}
         <button
-          className="md:hidden p-2 rounded-lg"
+          className="xl:hidden p-2 rounded-lg"
           style={{ color: "#2C2C2A" }}
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Menu"
@@ -201,7 +201,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div
-          className="md:hidden px-6 pb-5 flex flex-col gap-4"
+          className="xl:hidden px-6 pb-5 flex flex-col gap-4"
           style={{ backgroundColor: "#F1EFE8", borderTop: "0.5px solid #D3D1C7" }}
         >
           {NAV_LINKS.slice(0, 3).map((l) => (

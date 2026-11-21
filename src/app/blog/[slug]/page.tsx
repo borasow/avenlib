@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
@@ -145,13 +146,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <div className="max-w-3xl mx-auto px-6 py-14 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-white">{a.ctaTitre}</h2>
             <p className="text-base mb-7" style={{ color: "#D5EDE4" }}>{a.ctaTexte}</p>
-            <Link
-              href="/diagnostic"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold"
-              style={{ backgroundColor: "#FFFFFF", color: DARK }}
-            >
-              Faire mon bilan gratuit <ArrowRight size={16} />
-            </Link>
+            <BilanLink className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold"
+              style={{ backgroundColor: "#FFFFFF", color: DARK }} label="Faire mon bilan gratuit" icon={<ArrowRight size={16} />} />
           </div>
         </section>
 

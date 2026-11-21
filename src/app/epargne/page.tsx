@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
@@ -174,13 +175,8 @@ export default function PageEpargne() {
             <p className="text-sm mb-8 max-w-md mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
               Le bilan Avenlib analyse votre situation financière globale et vous oriente vers les meilleures solutions d'épargne et d'investissement adaptées à votre profil, gratuitement.
             </p>
-            <Link
-              href="/diagnostic"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1D9E75" }}
-            >
-              Faire mon bilan épargne gratuit <ArrowRight size={18} />
-            </Link>
+            <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan épargne gratuit" icon={<ArrowRight size={18} />} />
           </div>
         </section>
 

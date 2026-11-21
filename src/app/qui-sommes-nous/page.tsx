@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -42,7 +43,7 @@ export default function PageQuiSommesNous() {
             </div>
           ))}
           <div className="flex flex-wrap gap-3 pt-4">
-            <Link href="/diagnostic" className="rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>Faire mon bilan gratuit</Link>
+            <BilanLink className="rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }} label="Faire mon bilan gratuit" />
             <Link href="/outils/calcul-indemnites-arret-maladie" className="rounded-lg px-5 py-3 text-sm font-bold" style={{ border: "2px solid #1D9E75", color: "#1D9E75" }}>Calculer mes indemnités</Link>
           </div>
         </section>

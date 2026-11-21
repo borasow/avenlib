@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import { calculerIj, Statut, CARENCE_JOURS } from "@/lib/ij";
 import { EmailCapture } from "@/components/calc/ui";
 
@@ -79,9 +80,7 @@ export default function Calculateur() {
             </dl>
           </>
         )}
-        <Link href="/diagnostic" className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>
-          Faire mon bilan gratuit
-        </Link>
+        <BilanLink className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }} label="Faire mon bilan gratuit" />
       </div>
     </div>
     <EmailCapture slug="calcul-indemnites-arret-maladie" resume={resume} />

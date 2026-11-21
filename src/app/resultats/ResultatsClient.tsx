@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, ElementType } from "react";
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import { calculerScores, DiagnosticAnswers, ScoreDomaine, fourchettePension } from "@/lib/scoring";
 import { getPartenaires, DOMAINE_META, Partenaire } from "@/lib/partenaires";
 import { slugify, PARTENAIRES_AVEC_ACCORD } from "@/lib/partenaires-utils";
@@ -124,9 +125,7 @@ export default function ResultatsClient() {
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>Aucun bilan trouvé</h2>
         <p className="text-secondary mb-8">Tu dois d'abord faire ton bilan pour voir tes résultats.</p>
-        <Link href="/diagnostic" className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold" style={{ backgroundColor: "#1D9E75" }}>
-          Faire mon bilan <ArrowRight size={18} />
-        </Link>
+        <BilanLink className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold" style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan" icon={<ArrowRight size={18} />} />
       </div>
     );
   }

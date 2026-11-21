@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, AlertTriangle, Lightbulb, CheckCircle2 } from "lucide-react";
@@ -127,13 +127,12 @@ export default function ContenuEducatif({
             <p className="text-sm mb-8 max-w-md mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
               Le bilan Avenlib analyse ta situation en 13 questions et t&apos;oriente vers les bons experts, gratuitement.
             </p>
-            <Link
-              href="/diagnostic"
+            <BilanLink
+              label={ctaLabel}
+              icon={<ArrowRight size={18} />}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: "#1D9E75" }}
-            >
-              {ctaLabel} <ArrowRight size={18} />
-            </Link>
+            />
           </div>
         </section>
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import { OUTILS } from "@/lib/outils";
 import { createClient } from "@/lib/supabase/client";
 import { ChevronDown, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
@@ -178,13 +179,8 @@ export default function Navbar() {
             )
           )}
 
-          <Link
-            href="/diagnostic"
-            className="font-semibold px-4 py-2 rounded-xl text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#1D9E75", fontSize: "15px", whiteSpace: "nowrap" }}
-          >
-            Faire mon bilan
-          </Link>
+          <BilanLink className="font-semibold px-4 py-2 rounded-xl text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#1D9E75", fontSize: "15px", whiteSpace: "nowrap" }} label="Faire mon bilan" />
         </div>
 
         {/* Mobile burger */}
@@ -264,14 +260,12 @@ export default function Navbar() {
             )
           )}
 
-          <Link
-            href="/diagnostic"
+          <BilanLink
+            label="Faire mon bilan"
             className="font-semibold px-4 py-2.5 rounded-xl text-white text-center transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#1D9E75", fontSize: "17px" }}
             onClick={() => setMobileOpen(false)}
-          >
-            Faire mon bilan
-          </Link>
+          />
         </div>
       )}
     </nav>

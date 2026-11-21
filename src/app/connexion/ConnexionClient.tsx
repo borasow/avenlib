@@ -1,6 +1,7 @@
 "use client";
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Eye, EyeOff } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
@@ -161,13 +162,8 @@ export default function ConnexionClient() {
           <p className="text-sm mb-5" style={{ color: "#6B6B67", lineHeight: "1.6" }}>
             Faites votre bilan gratuit en 13 questions et créez votre compte à la fin.
           </p>
-          <Link
-            href="/diagnostic"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#1D9E75" }}
-          >
-            Faire mon bilan <ArrowRight size={16} />
-          </Link>
+          <BilanLink className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan" icon={<ArrowRight size={16} />} />
         </div>
 
       </div>

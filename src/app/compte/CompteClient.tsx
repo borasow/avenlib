@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import { useRouter } from "next/navigation";
 import { calculerScores, DiagnosticAnswers } from "@/lib/scoring";
 import { ArrowRight, User, RefreshCw, BarChart2 } from "lucide-react";
@@ -56,13 +57,8 @@ export default function CompteClient() {
         <p className="text-secondary mb-8 max-w-sm">
           Fais ton bilan pour créer ton profil et accéder à ton tableau de bord.
         </p>
-        <Link
-          href="/diagnostic"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold"
-          style={{ backgroundColor: "#1D9E75" }}
-        >
-          Faire mon bilan <ArrowRight size={18} />
-        </Link>
+        <BilanLink className="inline-flex items-center gap-2 px-6 py-3 rounded-btn text-white font-semibold"
+          style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan" icon={<ArrowRight size={18} />} />
       </div>
     );
   }

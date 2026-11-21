@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
 };
 import Link from "next/link";
+import BilanLink from "@/components/BilanLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { OUTILS } from "@/lib/outils";
@@ -113,14 +114,8 @@ export default function Home() {
                 Retraite, prévoyance, fiscalité, crédit, santé, on t&apos;oriente vers les bonnes solutions.
               </p>
 
-              <Link
-                href="/diagnostic"
-                className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-white font-semibold text-base transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#1D9E75", width: "fit-content" }}
-              >
-                Faire mon bilan gratuit
-                <ArrowRight size={18} />
-              </Link>
+              <BilanLink className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-white font-semibold text-base transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#1D9E75", width: "fit-content" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
               <p className="mt-4 text-sm" style={{ color: "#6B6B67" }}>
                 Gratuit · Sans engagement · 100% confidentiel
               </p>
@@ -433,13 +428,8 @@ export default function Home() {
               <p className="mb-8 max-w-md mx-auto text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Le bilan est gratuit. Tes données sont confidentielles. Et les résultats sont immédiats.
               </p>
-              <Link
-                href="/diagnostic"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#1D9E75" }}
-              >
-                Faire mon bilan gratuit <ArrowRight size={18} />
-              </Link>
+              <BilanLink className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#1D9E75" }} label="Faire mon bilan gratuit" icon={<ArrowRight size={18} />} />
             </div>
           </div>
         </section>

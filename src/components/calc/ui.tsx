@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useBilanFait } from "@/components/BilanLink";
 import { ReactNode, useState } from "react";
 
 export const eur = (n: number, d = 0) =>
@@ -137,9 +138,11 @@ export function Note({ children }: { children: ReactNode }) {
 }
 
 export function Cta({ text = "Faire mon bilan gratuit", href = "/diagnostic" }: { text?: string; href?: string }) {
+  const fait = useBilanFait();
+  const voir = fait && href === "/diagnostic";
   return (
-    <Link href={href} className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>
-      {text}
+    <Link href={voir ? "/resultats" : href} className="mt-6 block text-center rounded-lg px-5 py-3 text-sm font-bold" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>
+      {voir ? "Voir mon bilan" : text}
     </Link>
   );
 }

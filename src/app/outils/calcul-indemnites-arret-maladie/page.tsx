@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Calculateur from "./Calculateur";
+import { MAJ_CHIFFRES } from "@/lib/outils";
 
 const TITLE = "Arrêt maladie indépendant : combien tu touches ? Calculateur gratuit";
 const DESC = "Estime tes indemnités journalières d'indépendant (SSI), le jour de carence et le manque à gagner face à tes charges. Gratuit, sans inscription.";
@@ -37,11 +38,11 @@ export default function PageCalculateur() {
             <h2 className="text-xl font-bold pt-2" style={{ color: "#2C2C2A" }}>Ce que cet outil ne couvre pas</h2>
             <ul className="list-disc pl-5 space-y-1">
               <li>Il s&apos;agit d&apos;une estimation, pas d&apos;un calcul officiel de ta caisse.</li>
-              <li>Il faut au moins 12 mois d&apos;affiliation et un revenu au-dessus du seuil d&apos;ouverture des droits (environ 4 600 €).</li>
+              <li>Il faut au moins 12 mois d&apos;affiliation et un revenu au-dessus du seuil d&apos;ouverture des droits (4 582 € en 2026, soit 10 % de la moyenne des plafonds de la Sécurité sociale des trois dernières années).</li>
               <li>Montants bruts, avant prélèvements sociaux.</li>
               <li>Les professions libérales réglementées (médecins, avocats, architectes...) relèvent d&apos;une caisse propre, aux règles différentes.</li>
             </ul>
-            <p style={{ color: "#6B6B67" }}>Information générale, pas un conseil personnalisé. Sources : ameli.fr, service-public.fr.</p>
+            <p style={{ color: "#6B6B67" }}>Information générale, pas un conseil personnalisé. Chiffres 2026, mis à jour le {MAJ_CHIFFRES}, revérifiés chaque 1er janvier. Sources : <a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36708" target="_blank" rel="noopener noreferrer" className="underline">service-public.gouv.fr</a>, ameli.fr.</p>
           </div>
         </section>
       </main>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { OUTILS } from "@/lib/outils";
+import { MAJ_CHIFFRES, OUTILS, SOURCES } from "@/lib/outils";
 
 export function outilMetadata(slug: string) {
   const o = OUTILS.find((x) => x.slug === slug)!;
@@ -34,7 +34,15 @@ export default function OutilShell({ slug, children, methode }: { slug: string; 
           <div className="rounded-2xl p-8 space-y-4 text-sm leading-relaxed" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF", color: "#4B4B47" }}>
             <h2 className="text-xl font-bold" style={{ color: "#2C2C2A" }}>Comment c&apos;est calculé</h2>
             {methode}
-            <p style={{ color: "#6B6B67" }}>Estimation indicative, pas un conseil personnalisé. Chiffres 2026 issus de sources publiques (service-public.gouv.fr, economie.gouv.fr, ameli.fr, Assurance retraite).</p>
+            <p style={{ color: "#6B6B67" }}>Estimation indicative, pas un conseil personnalisé. Chiffres 2026, mis à jour le {MAJ_CHIFFRES}, revérifiés chaque 1er janvier.</p>
+            {(SOURCES[slug] ?? []).length > 0 && (
+              <p style={{ color: "#6B6B67" }}>
+                Sources :{" "}
+                {(SOURCES[slug] ?? []).map((x, i) => (
+                  <span key={x.u}>{i > 0 && " · "}<a href={x.u} target="_blank" rel="noopener noreferrer" className="underline">{x.l}</a></span>
+                ))}
+              </p>
+            )}
           </div>
         </section>
         <section className="max-w-5xl mx-auto px-6 pb-20">

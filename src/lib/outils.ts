@@ -18,3 +18,24 @@ export const OUTILS: Outil[] = [
   { slug: "retraite-independant", nav: "Retraite : ma future pension", titre: "Retraite d'indépendant : combien tu toucheras ?", accroche: "Ta pension estimée, base et complémentaire.", meta: "Estime ta pension de retraite d'indépendant (SSI) : retraite de base, complémentaire RCI et taux de remplacement.", theme: "Retraite" },
   { slug: "capacite-emprunt-independant", nav: "Prêt : ma capacité d'emprunt", titre: "Capacité d'emprunt d'un indépendant", accroche: "Ce qu'une banque peut te prêter avec tes revenus.", meta: "Calcule ta capacité d'emprunt d'indépendant : mensualité maximale, capital empruntable et budget avec apport.", theme: "Projets" },
 ];
+
+export const MAJ_CHIFFRES = "21 novembre 2026";
+
+type Source = { l: string; u: string };
+const SP = { l: "service-public.gouv.fr, barème de l'impôt sur le revenu", u: "https://www.service-public.gouv.fr/particuliers/vosdroits/F1419" };
+const ECO = { l: "economie.gouv.fr, cotisations des micro-entreprises", u: "https://www.economie.gouv.fr/entreprises/gerer-sa-micro-entreprise/micro-entreprises-quel-est-le-montant-de-vos-cotisations-sociales" };
+const IJ = { l: "service-public.gouv.fr, protection sociale de l'entrepreneur individuel", u: "https://entreprendre.service-public.gouv.fr/vosdroits/F36708" };
+const IMP = { l: "impots.gouv.fr, abattement micro-entrepreneur", u: "https://www.impots.gouv.fr/professionnel/questions/je-suis-micro-entrepreneur-puis-je-deduire-des-charges" };
+const RET = { l: "Assurance retraite, régime complémentaire des indépendants", u: "https://www.statistiques-recherche.lassuranceretraite.fr/app/uploads/2026/02/Fiche-stock_Regime-complementaire-_TI_2025.pdf" };
+
+export const SOURCES: Record<string, Source[]> = {
+  "calcul-indemnites-arret-maladie": [IJ],
+  "prevoyance-independant": [IJ],
+  "matelas-securite": [],
+  "revenu-net-independant": [ECO, IMP, SP],
+  "micro-ou-reel": [ECO, IMP, SP],
+  "tjm-freelance": [ECO],
+  "calcul-impot-revenu": [SP],
+  "retraite-independant": [RET],
+  "capacite-emprunt-independant": [],
+};

@@ -6,7 +6,9 @@ export const PASS = 48060; // plafond annuel de la Sécurité sociale
 export const IJ_MAX = 65.84; // PASS / 730, brut par jour
 export const IJ_MIN_ENTREPRENEUR = 26.33;
 export const IJ_MIN_MICRO = 6.27;
-export const SEUIL_REVENU = 4582; // revenu annuel moyen minimal pour ouvrir droit (sources divergentes : 4 582 € / 4 806 €)
+// Seuil d'ouverture des droits : 10 % de la moyenne des PASS des 3 années précédentes ((43 992 + 46 368 + 47 100) / 3 = 45 820 → 4 582 €).
+// Certains sites citent 4 806 € (10 % du PASS 2026) : c'est une simplification, pas la règle.
+export const SEUIL_REVENU = 4582;
 export const CARENCE_JOURS = 3;
 
 export type Statut = "micro_bic_vente" | "micro_bic_service" | "micro_bnc" | "reel";

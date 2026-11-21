@@ -9,8 +9,13 @@ const NAV_LINKS = [
   { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
   { label: "Pourquoi Avenlib ?", href: "/#pourquoi" },
   { label: "Comment ça marche ?", href: "/#comment" },
-  { label: "Calculateur Avenlib", href: "/outils/calcul-indemnites-arret-maladie" },
   { label: "Blog", href: "/blog" },
+];
+
+const CALCULATEURS = [
+  { label: "Arrêt maladie : combien je touche ?", href: "/outils/calcul-indemnites-arret-maladie" },
+  { label: "Retraite : ma future pension", href: null },
+  { label: "Prêt : ma capacité d'emprunt", href: null },
 ];
 
 const linkStyle = { color: "#2C2C2A", fontSize: "15px", fontWeight: 600, whiteSpace: "nowrap" as const };
@@ -92,7 +97,36 @@ export default function Navbar() {
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((l) => (
+          {NAV_LINKS.slice(0, 3).map((l) => (
+            <Link key={l.label} href={l.href} className="transition-opacity hover:opacity-70" style={linkStyle}>
+              {l.label}
+            </Link>
+          ))}
+
+          <div className="relative group">
+            <button type="button" className="flex items-center gap-1.5 transition-opacity hover:opacity-70" style={linkStyle} aria-haspopup="true">
+              Calculateur Avenlib
+              <ChevronDown size={15} />
+            </button>
+            <div className="absolute left-0 top-full pt-3 hidden group-hover:block group-focus-within:block">
+              <div className="w-72 rounded-xl overflow-hidden" style={{ backgroundColor: "#FFFFFF", border: "0.5px solid #D3D1C7", boxShadow: "0 8px 24px rgba(0,0,0,0.10)" }}>
+                {CALCULATEURS.map((c) =>
+                  c.href ? (
+                    <Link key={c.label} href={c.href} className="block px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors" style={{ color: "#2C2C2A" }}>
+                      {c.label}
+                    </Link>
+                  ) : (
+                    <span key={c.label} className="flex items-center justify-between px-4 py-3 text-sm font-medium cursor-default" style={{ color: "#9A9A95" }}>
+                      {c.label}
+                      <span className="text-xs rounded-full px-2 py-0.5" style={{ backgroundColor: "#F1EFE8", color: "#6B6B67" }}>Bientôt</span>
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+
+          {NAV_LINKS.slice(3).map((l) => (
             <Link key={l.label} href={l.href} className="transition-opacity hover:opacity-70" style={linkStyle}>
               {l.label}
             </Link>
@@ -172,14 +206,29 @@ export default function Navbar() {
           className="md:hidden px-6 pb-5 flex flex-col gap-4"
           style={{ backgroundColor: "#F1EFE8", borderTop: "0.5px solid #D3D1C7" }}
         >
-          {NAV_LINKS.map((l) => (
-            <Link
-              key={l.label}
-              href={l.href}
-              className="py-1 transition-opacity hover:opacity-70"
-              style={linkStyle}
-              onClick={() => setMobileOpen(false)}
-            >
+          {NAV_LINKS.slice(0, 3).map((l) => (
+            <Link key={l.label} href={l.href} className="py-1 transition-opacity hover:opacity-70" style={linkStyle} onClick={() => setMobileOpen(false)}>
+              {l.label}
+            </Link>
+          ))}
+
+          <div>
+            <p style={linkStyle} className="py-1">Calculateur Avenlib</p>
+            <div className="pl-3 flex flex-col gap-2 mt-1">
+              {CALCULATEURS.map((c) =>
+                c.href ? (
+                  <Link key={c.label} href={c.href} className="text-sm font-medium py-1" style={{ color: "#2C2C2A" }} onClick={() => setMobileOpen(false)}>
+                    {c.label}
+                  </Link>
+                ) : (
+                  <span key={c.label} className="text-sm font-medium py-1" style={{ color: "#9A9A95" }}>{c.label} (bientôt)</span>
+                )
+              )}
+            </div>
+          </div>
+
+          {NAV_LINKS.slice(3).map((l) => (
+            <Link key={l.label} href={l.href} className="py-1 transition-opacity hover:opacity-70" style={linkStyle} onClick={() => setMobileOpen(false)}>
               {l.label}
             </Link>
           ))}

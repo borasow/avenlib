@@ -44,6 +44,23 @@ export default function MentionsLegales() {
               chaque email, ou en écrivant à contact@avenlib.fr.
             </p>
             <p className="mt-2">
+              Calculateurs : si vous demandez à recevoir le résultat d'un calculateur par email, votre
+              adresse, le calculateur utilisé et le résumé du résultat sont enregistrés pour vous envoyer
+              cet email. Ces données sont conservées 3 ans maximum. Vous ne recevez la newsletter que si
+              vous avez coché la case prévue à cet effet, qui n'est jamais cochée par défaut.
+            </p>
+            <p className="mt-2">
+              Rappel du bilan : si vous avez fait votre bilan et consenti à recevoir nos emails, nous
+              pouvons vous envoyer un rappel environ 6 mois plus tard pour le refaire. Chaque email
+              contient un lien de désinscription.
+            </p>
+            <p className="mt-2">
+              Responsable du traitement : Avenlib, contact@avenlib.fr. Prestataires utilisés : Supabase
+              (base de données), Resend (envoi d'emails), Vercel (hébergement). Base légale : votre
+              consentement pour la newsletter et les rappels, l'exécution de votre demande pour l'envoi
+              d'un résultat. Vous pouvez aussi saisir la CNIL (cnil.fr) en cas de difficulté.
+            </p>
+            <p className="mt-2">
               Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de
               suppression de vos données. Contactez-nous à : contact@avenlib.fr
             </p>

@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "RC Pro indépendant : êtes-vous vraiment couvert ?",
+  title: "RC Pro indépendant : êtes-vous vraiment couvert ?",
   description: "La RC Pro est indispensable pour tout indépendant. Découvrez les meilleures offres du marché et pourquoi votre patrimoine personnel est en jeu.",
   openGraph: {
-    title: "RC Pro indépendant : êtes-vous vraiment couvert ?",
+    title: "RC Pro indépendant : êtes-vous vraiment couvert ?",
     description: "La RC Pro est indispensable pour tout indépendant. Découvrez les meilleures offres du marché.",
     url: "https://avenlib.fr/assurance-pro",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
@@ -27,7 +27,7 @@ export default function PageAssurancePro() {
             Assurance professionnelle
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
-            RC Pro indépendant : êtes-vous vraiment couvert ?
+            RC Pro indépendant : êtes-vous vraiment couvert ?
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
             En cas d'erreur dans une mission, de dommage causé à un client ou de litige juridique, c'est votre patrimoine personnel qui est en jeu sans assurance RC Pro. Ce n'est pas une option, c'est une nécessité.
@@ -56,7 +56,7 @@ export default function PageAssurancePro() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Qu'est-ce que la RC Pro et pourquoi est-elle indispensable ?
+                Qu'est-ce que la RC Pro et pourquoi est-elle indispensable ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
@@ -105,7 +105,7 @@ export default function PageAssurancePro() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Comment choisir sa RC Pro quand on est indépendant ?
+                Comment choisir sa RC Pro quand on est indépendant ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>Les critères essentiels pour choisir votre assurance RC Pro :</p>
@@ -131,7 +131,7 @@ export default function PageAssurancePro() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Combien coûte une RC Pro indépendant ?
+                Combien coûte une RC Pro indépendant ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>

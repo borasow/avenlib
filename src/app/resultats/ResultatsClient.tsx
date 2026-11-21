@@ -307,7 +307,7 @@ export default function ResultatsClient() {
 
         {/* CTA */}
         <div className="rounded-xl p-6 text-center" style={{ backgroundColor: "#085041" }}>
-          <h3 className="text-white font-bold text-lg mb-2">Besoin d'être accompagné(e) ?</h3>
+          <h3 className="text-white font-bold text-lg mb-2">Besoin d'être accompagné(e) ?</h3>
           <p className="text-white/70 text-sm mb-4">Explore chaque domaine pour découvrir les solutions adaptées à ta situation.</p>
           <Link
             href="/diagnostic"

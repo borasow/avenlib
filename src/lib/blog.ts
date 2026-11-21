@@ -22,7 +22,7 @@ export type Article = {
 export const ARTICLES: Article[] = [
   {
     slug: "retraite-freelance",
-    titre: "Retraite freelance : combien toucherez-vous vraiment ?",
+    titre: "Retraite freelance : combien toucherez-vous vraiment ?",
     description:
       "Freelance, micro-entrepreneur ou profession libérale : comprenez comment se calcule votre future retraite, pourquoi elle est souvent faible et comment la compléter.",
     categorie: "Retraite",
@@ -76,14 +76,14 @@ export const ARTICLES: Article[] = [
         ],
       },
       {
-        titre: "Quand commencer ?",
+        titre: "Quand commencer ?",
         paragraphes: [
           "Le plus tôt possible. Grâce aux intérêts composés, un euro placé à 30 ans pèse beaucoup plus qu'un euro placé à 50 ans. Mais il n'est jamais trop tard : même à 45 ou 50 ans, des versements réguliers sur un PER améliorent sensiblement la situation.",
           "Le bon réflexe : fixez-vous un pourcentage de votre chiffre d'affaires à mettre de côté chaque mois, plutôt qu'un montant fixe, pour que l'effort s'adapte à vos revenus.",
         ],
       },
     ],
-    ctaTitre: "Où en êtes-vous sur la retraite ?",
+    ctaTitre: "Où en êtes-vous sur la retraite ?",
     ctaTexte:
       "Le bilan Avenlib analyse votre situation sur 9 domaines, dont la retraite, en 3 minutes. Gratuit et sans engagement.",
     sources: [
@@ -93,7 +93,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "prevoyance-independant",
-    titre: "Prévoyance indépendant : que se passe-t-il si vous tombez malade ?",
+    titre: "Prévoyance indépendant : que se passe-t-il si vous tombez malade ?",
     description:
       "Arrêt maladie, invalidité, décès : ce que couvre la Sécurité sociale pour un indépendant, ce qui manque et comment choisir une prévoyance adaptée.",
     categorie: "Prévoyance",
@@ -151,7 +151,7 @@ export const ARTICLES: Article[] = [
         ],
       },
     ],
-    ctaTitre: "Êtes-vous bien couvert en cas d'arrêt maladie ?",
+    ctaTitre: "Êtes-vous bien couvert en cas d'arrêt maladie ?",
     ctaTexte:
       "Le bilan Avenlib identifie vos lacunes de prévoyance et vous oriente vers des acteurs spécialisés dans les indépendants. 3 minutes, gratuit.",
     sources: [
@@ -161,7 +161,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "mutuelle-auto-entrepreneur",
-    titre: "Quelle mutuelle choisir quand on est auto-entrepreneur ?",
+    titre: "Quelle mutuelle choisir quand on est auto-entrepreneur ?",
     description:
       "Sans mutuelle d'entreprise, comment choisir sa complémentaire santé quand on est auto-entrepreneur ou freelance ? Garanties, prix et pièges à éviter.",
     categorie: "Santé",
@@ -188,10 +188,10 @@ export const ARTICLES: Article[] = [
           "La meilleure mutuelle n'est pas la plus chère ni la plus complète, c'est celle qui correspond à votre profil. Posez-vous ces questions avant de comparer :",
         ],
         liste: [
-          "Portez-vous des lunettes ou des lentilles ?",
-          "Avez-vous des soins dentaires prévus ou un historique important ?",
-          "Faut-il couvrir votre famille ?",
-          "Consultez-vous régulièrement des spécialistes qui pratiquent des dépassements d'honoraires ?",
+          "Portez-vous des lunettes ou des lentilles ?",
+          "Avez-vous des soins dentaires prévus ou un historique important ?",
+          "Faut-il couvrir votre famille ?",
+          "Consultez-vous régulièrement des spécialistes qui pratiquent des dépassements d'honoraires ?",
         ],
       },
       {
@@ -218,7 +218,7 @@ export const ARTICLES: Article[] = [
         ],
       },
     ],
-    ctaTitre: "Quelle mutuelle pour votre profil ?",
+    ctaTitre: "Quelle mutuelle pour votre profil ?",
     ctaTexte:
       "Le bilan Avenlib analyse votre situation et vous oriente vers des mutuelles adaptées aux indépendants. Gratuit, sans engagement.",
     sources: [
@@ -280,7 +280,7 @@ export const ARTICLES: Article[] = [
         ],
       },
     ],
-    ctaTitre: "Passez-vous à côté d'économies fiscales ?",
+    ctaTitre: "Passez-vous à côté d'économies fiscales ?",
     ctaTexte:
       "Le bilan Avenlib repère les leviers fiscaux qui peuvent s'appliquer à votre situation et vous oriente vers les bons experts. Gratuit, en 3 minutes.",
     sources: [
@@ -335,7 +335,7 @@ export const ARTICLES: Article[] = [
         ],
       },
       {
-        titre: "Par où commencer ?",
+        titre: "Par où commencer ?",
         paragraphes: [
           "Ne cherchez pas à tout régler d'un coup. Commencez par savoir où vous en êtes sur chaque pilier, puis traitez les priorités. En général, la prévoyance et la mutuelle passent avant l'épargne, car elles protègent votre capacité à travailler.",
           "Le budget total dépend de votre âge, de vos revenus, de votre statut et de votre situation familiale. Il n'existe pas de formule universelle, d'où l'intérêt de partir d'un état des lieux personnalisé.",

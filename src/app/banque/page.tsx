@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Banque pro indépendant : quel compte choisir en 2026 ?",
+  title: "Banque pro indépendant : quel compte choisir en 2026 ?",
   description: "Qonto, Shine, Blank : comparatif des meilleures banques pro pour freelances et indépendants. Facturation, comptabilité, tarifs.",
   openGraph: {
-    title: "Banque pro indépendant : quel compte choisir en 2026 ?",
+    title: "Banque pro indépendant : quel compte choisir en 2026 ?",
     description: "Qonto, Shine, Blank : comparatif des meilleures banques pro pour freelances et indépendants.",
     url: "https://avenlib.fr/banque",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
@@ -27,7 +27,7 @@ export default function PageBanque() {
             Banque professionnelle
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
-            Banque pro indépendant : quel compte choisir en 2026 ?
+            Banque pro indépendant : quel compte choisir en 2026 ?
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
             Avoir un compte professionnel dédié est obligatoire pour les sociétés et fortement conseillé pour tous les indépendants. Mais toutes les banques ne se valent pas quand on est freelance. Voici comment choisir.
@@ -56,7 +56,7 @@ export default function PageBanque() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Pourquoi avoir un compte bancaire professionnel dédié ?
+                Pourquoi avoir un compte bancaire professionnel dédié ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
@@ -75,7 +75,7 @@ export default function PageBanque() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Banque traditionnelle vs néobanque pro : que choisir ?
+                Banque traditionnelle vs néobanque pro : que choisir ?
               </h2>
               <div className="space-y-6 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <div>

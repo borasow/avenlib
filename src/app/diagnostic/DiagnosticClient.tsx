@@ -7,7 +7,7 @@ import type { User } from "@supabase/supabase-js";
 const QUESTIONS = [
   {
     id: "statut",
-    titre: "Quel est ton statut juridique ?",
+    titre: "Quel est ton statut juridique ?",
     type: "single",
     options: [
       "Micro-entrepreneur / Auto-entrepreneur",
@@ -20,7 +20,7 @@ const QUESTIONS = [
   },
   {
     id: "secteur",
-    titre: "Dans quel secteur exerces-tu ?",
+    titre: "Dans quel secteur exerces-tu ?",
     type: "single",
     options: [
       "Tech / Numérique",
@@ -35,7 +35,7 @@ const QUESTIONS = [
   },
   {
     id: "anciennete",
-    titre: "Depuis combien de temps es-tu indépendant(e) ?",
+    titre: "Depuis combien de temps es-tu indépendant(e) ?",
     type: "single",
     options: [
       "Moins d'1 an",
@@ -46,7 +46,7 @@ const QUESTIONS = [
   },
   {
     id: "revenus",
-    titre: "Quels sont tes revenus annuels nets ?",
+    titre: "Quels sont tes revenus annuels nets ?",
     type: "single",
     options: [
       "Moins de 25 000 €",
@@ -58,7 +58,7 @@ const QUESTIONS = [
   },
   {
     id: "regime_fiscal",
-    titre: "Quel est ton régime fiscal ?",
+    titre: "Quel est ton régime fiscal ?",
     type: "single",
     options: [
       "Micro-BIC (vente de marchandises)",
@@ -70,7 +70,7 @@ const QUESTIONS = [
   },
   {
     id: "situation_familiale",
-    titre: "Quelle est ta situation familiale ?",
+    titre: "Quelle est ta situation familiale ?",
     type: "single",
     options: [
       "Célibataire, sans enfant",
@@ -84,7 +84,7 @@ const QUESTIONS = [
   },
   {
     id: "age",
-    titre: "Quel est ton âge ?",
+    titre: "Quel est ton âge ?",
     type: "single",
     options: [
       "Moins de 30 ans",
@@ -95,7 +95,7 @@ const QUESTIONS = [
   },
   {
     id: "existant",
-    titre: "Qu'as-tu déjà mis en place ?",
+    titre: "Qu'as-tu déjà mis en place ?",
     sousTitre: "Plusieurs réponses possibles",
     type: "multi",
     options: [
@@ -113,7 +113,7 @@ const QUESTIONS = [
   },
   {
     id: "prevoyance_niveau",
-    titre: "Quel est ton niveau de couverture en cas d'arrêt maladie ?",
+    titre: "Quel est ton niveau de couverture en cas d'arrêt maladie ?",
     type: "single",
     options: [
       "Je suis bien couvert",
@@ -141,7 +141,7 @@ const QUESTIONS = [
   },
   {
     id: "logement",
-    titre: "Quelle est ta situation par rapport au logement ?",
+    titre: "Quelle est ta situation par rapport au logement ?",
     type: "single",
     options: [
       "Locataire",
@@ -152,7 +152,7 @@ const QUESTIONS = [
   },
   {
     id: "banque_pro",
-    titre: "As-tu un compte bancaire professionnel dédié ?",
+    titre: "As-tu un compte bancaire professionnel dédié ?",
     type: "single",
     options: [
       "Oui, compte pro dédié",
@@ -162,7 +162,7 @@ const QUESTIONS = [
   },
   {
     id: "rc_pro",
-    titre: "As-tu une assurance RC Pro ?",
+    titre: "As-tu une assurance RC Pro ?",
     type: "single",
     options: [
       "Oui, je suis couvert",
@@ -174,7 +174,7 @@ const QUESTIONS = [
 
 const RESSENTI_Q = {
   id: "ressenti",
-  titre: "Comment tu te sens par rapport à ta situation financière ?",
+  titre: "Comment tu te sens par rapport à ta situation financière ?",
   type: "single",
   options: [
     "Serein, j'ai tout en place",
@@ -186,7 +186,7 @@ const RESSENTI_Q = {
 
 const PORTAGE_Q = {
   id: "portage_salarial",
-  titre: "As-tu envisagé le portage salarial ?",
+  titre: "As-tu envisagé le portage salarial ?",
   type: "single",
   options: [
     "Oui, je connais et ça m'intéresse",
@@ -432,7 +432,7 @@ export default function DiagnosticClient() {
               <CheckSquare size={24} style={{ color: "#15805F" }} />
             </div>
             <h2 className="text-2xl font-bold mb-2" style={{ color: "#2C2C2A" }}>
-              Parfait, tu y es presque !
+              Parfait, tu y es presque !
             </h2>
             <p className="text-secondary mb-8">
               Crée ton compte pour voir ton bilan personnalisé.

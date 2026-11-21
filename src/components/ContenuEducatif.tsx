@@ -122,7 +122,7 @@ export default function ContenuEducatif({
           <div className="rounded-2xl px-8 py-14 text-center" style={{ backgroundColor: "#085041" }}>
             <Lightbulb size={32} className="mx-auto mb-4" style={{ color: "#4CC9A0" }} />
             <h2 className="text-2xl font-bold mb-3 text-white">
-              Quelle est ta situation réelle ?
+              Quelle est ta situation réelle ?
             </h2>
             <p className="text-sm mb-8 max-w-md mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
               Le bilan Avenlib analyse ta situation en 13 questions et t&apos;oriente vers les bons experts, gratuitement.

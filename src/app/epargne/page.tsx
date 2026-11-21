@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Épargne et investissement pour indépendants : par où commencer ?",
+  title: "Épargne et investissement pour indépendants : par où commencer ?",
   description: "PER, assurance-vie, PEA : les meilleures solutions d'épargne et d'investissement pour les freelances et indépendants.",
   openGraph: {
-    title: "Épargne et investissement pour indépendants : par où commencer ?",
+    title: "Épargne et investissement pour indépendants : par où commencer ?",
     description: "PER, assurance-vie, PEA : les meilleures solutions d'épargne pour les freelances.",
     url: "https://avenlib.fr/epargne",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
@@ -27,7 +27,7 @@ export default function PageEpargne() {
             Épargne & investissement
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
-            Épargne et investissement pour indépendants : par où commencer ?
+            Épargne et investissement pour indépendants : par où commencer ?
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
             Un salarié dispose d'un filet de sécurité : chômage, arrêt maladie, épargne salariale. Un indépendant n'a rien de tout cela. Construire une épargne solide n'est pas un luxe, c'est une nécessité structurelle.
@@ -117,7 +117,7 @@ export default function PageEpargne() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Quelle stratégie d'épargne pour un indépendant ?
+                Quelle stratégie d'épargne pour un indépendant ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>

@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Retraite des indépendants : combien toucherez-vous vraiment ?",
+  title: "Retraite des indépendants : combien toucherez-vous vraiment ?",
   description: "Micro-entrepreneur, EURL, SASU : découvrez votre pension estimée et les solutions pour améliorer votre retraite.",
   openGraph: {
-    title: "Retraite des indépendants : combien toucherez-vous vraiment ?",
+    title: "Retraite des indépendants : combien toucherez-vous vraiment ?",
     description: "Micro-entrepreneur, EURL, SASU : découvrez votre pension estimée et les solutions pour améliorer votre retraite.",
     url: "https://avenlib.fr/retraite",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
@@ -27,7 +27,7 @@ export default function PageRetraite() {
             Retraite & indépendants
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
-            Retraite des indépendants : combien toucherez-vous vraiment ?
+            Retraite des indépendants : combien toucherez-vous vraiment ?
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
             Retraite freelance, retraite micro-entrepreneur, retraite auto-entrepreneur : les indépendants cotisent chaque année, mais les pensions perçues sont souvent deux fois inférieures à celles des salariés. Voici pourquoi, et surtout comment y remédier.
@@ -78,7 +78,7 @@ export default function PageRetraite() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Combien touchera un freelance selon son statut ?
+                Combien touchera un freelance selon son statut ?
               </h2>
               <div className="space-y-6 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <div>
@@ -152,7 +152,7 @@ export default function PageRetraite() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Quand commencer à préparer sa retraite ?
+                Quand commencer à préparer sa retraite ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>

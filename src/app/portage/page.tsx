@@ -56,7 +56,7 @@ export default function PagePortage() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Qu'est-ce que le portage salarial exactement ?
+                Qu'est-ce que le portage salarial exactement ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
@@ -101,7 +101,7 @@ export default function PagePortage() {
                 </div>
 
                 <div className="rounded-xl p-4" style={{ backgroundColor: "#FFFBEB", border: "1px solid #FDE68A" }}>
-                  <p className="text-sm font-semibold mb-1" style={{ color: "#D97706" }}>À qui s'adresse vraiment le portage salarial ?</p>
+                  <p className="text-sm font-semibold mb-1" style={{ color: "#D97706" }}>À qui s'adresse vraiment le portage salarial ?</p>
                   <p className="text-sm" style={{ color: "#92400E" }}>
                     Le portage est particulièrement adapté aux consultants qui facturent entre 4 000 et 15 000 € HT/mois, aux freelances qui souhaitent se lancer sans créer de société, et à ceux qui valorisent la sécurité (chômage, retraite) sur la maximisation du revenu net.
                   </p>
@@ -113,7 +113,7 @@ export default function PagePortage() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Comment fonctionne le calcul du salaire en portage ?
+                Comment fonctionne le calcul du salaire en portage ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
@@ -144,7 +144,7 @@ export default function PagePortage() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Comment choisir sa société de portage salarial ?
+                Comment choisir sa société de portage salarial ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>Les critères essentiels pour choisir :</p>
@@ -171,7 +171,7 @@ export default function PagePortage() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Le portage salarial est-il fait pour vous ?
+                Le portage salarial est-il fait pour vous ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>Le portage salarial est probablement une bonne option si :</p>

@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Crédit immobilier freelance : comment convaincre les banques ?",
+  title: "Crédit immobilier freelance : comment convaincre les banques ?",
   description: "Freelance et propriétaire, c'est possible. Nos partenaires Pretto et Defacto comprennent votre statut et optimisent votre dossier.",
   openGraph: {
-    title: "Crédit immobilier freelance : comment convaincre les banques ?",
+    title: "Crédit immobilier freelance : comment convaincre les banques ?",
     description: "Freelance et propriétaire, c'est possible. Nos partenaires comprennent votre statut.",
     url: "https://avenlib.fr/credit",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
@@ -27,7 +27,7 @@ export default function PageCredit() {
             Crédit & financement
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
-            Crédit immobilier freelance : comment convaincre les banques ?
+            Crédit immobilier freelance : comment convaincre les banques ?
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
             Les banques traditionnelles sont conçues pour les salariés. Revenus variables, absence de bulletins de paie, statut atypique — autant de raisons qui compliquent les dossiers des indépendants. Pourtant, freelance et propriétaire, c'est tout à fait possible.
@@ -75,7 +75,7 @@ export default function PageCredit() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Comment optimiser son dossier de crédit immobilier en tant qu'indépendant ?
+                Comment optimiser son dossier de crédit immobilier en tant qu'indépendant ?
               </h2>
               <div className="space-y-6 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <div>

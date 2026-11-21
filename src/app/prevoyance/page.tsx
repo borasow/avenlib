@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Prévoyance indépendant : que se passe-t-il en arrêt maladie ?",
+  title: "Prévoyance indépendant : que se passe-t-il en arrêt maladie ?",
   description: "En arrêt maladie, les indemnités de la Sécu sont plafonnées et versées après 3 jours de carence. Découvrez comment vous protéger.",
   openGraph: {
-    title: "Prévoyance indépendant : que se passe-t-il en arrêt maladie ?",
+    title: "Prévoyance indépendant : que se passe-t-il en arrêt maladie ?",
     description: "Indemnités plafonnées et 3 jours de carence : découvrez comment vous protéger en tant qu'indépendant.",
     url: "https://avenlib.fr/prevoyance",
     images: [{ url: "https://avenlib.fr/logo-avenlib.png", alt: "Avenlib" }],
@@ -26,7 +26,7 @@ export default function PagePrevoyance() {
             Prévoyance & protection
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#2C2C2A" }}>
-            Prévoyance indépendant : que se passe-t-il en arrêt maladie ?
+            Prévoyance indépendant : que se passe-t-il en arrêt maladie ?
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#6B6B67" }}>
             Un salarié malade est indemnisé dès le 4e jour. Un indépendant, lui, peut attendre 3 mois sans rien. Cette réalité, peu de gens la connaissent — jusqu'au jour où elle les touche.
@@ -107,7 +107,7 @@ export default function PagePrevoyance() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Comment choisir sa prévoyance quand on est indépendant ?
+                Comment choisir sa prévoyance quand on est indépendant ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>
@@ -134,7 +134,7 @@ export default function PagePrevoyance() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Combien coûte une bonne prévoyance indépendant ?
+                Combien coûte une bonne prévoyance indépendant ?
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <p>

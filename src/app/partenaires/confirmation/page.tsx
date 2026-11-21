@@ -13,7 +13,7 @@ export default function ConfirmationPage() {
         </div>
 
         <h1 className="text-2xl font-bold mb-3" style={{ color: "#2C2C2A" }}>
-          Demande envoyée !
+          Demande envoyée !
         </h1>
         <p className="text-sm leading-relaxed mb-8" style={{ color: "#6B6B67" }}>
           Le partenaire va te recontacter dans les prochains jours. Tu recevras aussi un email de confirmation avec les détails de ta demande.
@@ -24,7 +24,7 @@ export default function ConfirmationPage() {
           style={{ backgroundColor: "#EFF9F5" }}
         >
           <p className="text-xs font-semibold mb-1" style={{ color: "#085041" }}>
-            Et maintenant ?
+            Et maintenant ?
           </p>
           <p className="text-xs leading-relaxed" style={{ color: "#085041" }}>
             Consulte les autres domaines de ton bilan pour optimiser l'ensemble de ta protection sociale en tant qu'indépendant.

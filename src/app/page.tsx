@@ -57,19 +57,19 @@ const arguments_ = [
 
 const faq = [
   {
-    question: "C'est vraiment gratuit ?",
+    question: "C'est vraiment gratuit ?",
     reponse: "Oui, à 100%. Le bilan, les recommandations et l'accès à ta page de résultats sont totalement gratuits. Avenlib est rémunéré par les partenaires si tu souscris via notre plateforme, ce qui ne modifie jamais le prix que tu paies.",
   },
   {
-    question: "Mes données sont-elles sécurisées ?",
+    question: "Mes données sont-elles sécurisées ?",
     reponse: "Tes données sont chiffrées et stockées sur des serveurs européens (Supabase). Elles ne sont jamais revendues à des tiers. Tu peux demander leur suppression à tout moment à contact@avenlib.fr.",
   },
   {
-    question: "Combien de temps prend le bilan ?",
+    question: "Combien de temps prend le bilan ?",
     reponse: "Environ 3 minutes. 13 questions simples sur ta situation personnelle et professionnelle. Pas de calcul complexe, pas de document à préparer.",
   },
   {
-    question: "Êtes-vous un assureur ?",
+    question: "Êtes-vous un assureur ?",
     reponse: "Non. Avenlib n'est pas un assureur, ni un conseiller financier réglementé. Nous sommes un service d'orientation : on analyse ta situation et on t'envoie vers les bons experts. Les décisions et souscriptions se font directement avec eux.",
   },
 ];
@@ -195,7 +195,7 @@ export default function Home() {
                     Indépendant, tu es responsable de ta propre protection.
                   </p>
                   <p className="text-base font-medium leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.70)" }}>
-                    Retraite, arrêt maladie, mutuelle, fiscalité : sais-tu où tu en es vraiment ?
+                    Retraite, arrêt maladie, mutuelle, fiscalité : sais-tu où tu en es vraiment ?
                   </p>
                   <div className="space-y-3">
                     {[
@@ -218,8 +218,8 @@ export default function Home() {
                     style={{ backgroundColor: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.12)" }}
                   >
                     <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.85)" }}>
-                      Tu sais combien tu toucheras à la retraite ?<br />
-                      Ce qui se passe si tu tombes malade 3 mois ?
+                      Tu sais combien tu toucheras à la retraite ?<br />
+                      Ce qui se passe si tu tombes malade 3 mois ?
                     </p>
                     <p className="text-base leading-relaxed mt-3" style={{ color: "rgba(255,255,255,0.55)" }}>
                       La plupart des indépendants ne savent pas.
@@ -423,7 +423,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="rounded-2xl px-8 py-16 text-center" style={{ backgroundColor: "#085041" }}>
               <h2 className="text-3xl font-bold mb-3 text-white">
-                Prêt à connaître ta situation réelle ?
+                Prêt à connaître ta situation réelle ?
               </h2>
               <p className="mb-8 max-w-md mx-auto text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Le bilan est gratuit. Tes données sont confidentielles. Et les résultats sont immédiats.

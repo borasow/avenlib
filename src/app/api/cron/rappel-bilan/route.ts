@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
     const { error: sendErr } = await resend.emails.send({
       from,
       to: p.email,
-      subject: "Ton bilan Avenlib a 6 mois : on le met à jour ?",
+      subject: "Ton bilan Avenlib a 6 mois : on le met à jour ?",
       html: html(p.prenom, p.email),
       headers: {
         "List-Unsubscribe": `<${unsubscribeApiUrl(p.email)}>`,

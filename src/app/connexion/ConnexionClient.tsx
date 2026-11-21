@@ -122,7 +122,7 @@ export default function ConnexionClient() {
             {/* Messages d'erreur / succès */}
             {error === "__SUCCESS__" ? (
               <div className="rounded-lg px-4 py-3 text-sm" style={{ backgroundColor: "#EFF9F5", border: "1px solid #A7F3D0" }}>
-                <p style={{ color: "#059669", fontWeight: 600 }}>Email envoyé !</p>
+                <p style={{ color: "#059669", fontWeight: 600 }}>Email envoyé !</p>
                 <p style={{ color: "#065F46", marginTop: "2px" }}>Vérifie ta boîte mail pour réinitialiser ton mot de passe.</p>
               </div>
             ) : error ? (
@@ -146,17 +146,17 @@ export default function ConnexionClient() {
             className="mt-4 text-sm underline transition-opacity hover:opacity-70 disabled:opacity-40"
             style={{ color: "#6B6B67" }}
           >
-            Mot de passe oublié ?
+            Mot de passe oublié ?
           </button>
         </div>
 
-        {/* Bloc "Pas encore de compte ?" */}
+        {/* Bloc "Pas encore de compte ?" */}
         <div
           className="rounded-2xl p-6 text-center"
           style={{ backgroundColor: "#F1EFE8", border: "0.5px solid #D3D1C7" }}
         >
           <p className="font-semibold mb-1" style={{ color: "#2C2C2A", fontSize: "15px" }}>
-            Pas encore de compte ?
+            Pas encore de compte ?
           </p>
           <p className="text-sm mb-5" style={{ color: "#6B6B67", lineHeight: "1.6" }}>
             Faites votre bilan gratuit en 13 questions et créez votre compte à la fin.

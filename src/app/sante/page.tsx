@@ -77,7 +77,7 @@ export default function PageSante() {
 
             <div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "#2C2C2A" }}>
-                Comment choisir sa mutuelle quand on est indépendant ?
+                Comment choisir sa mutuelle quand on est indépendant ?
               </h2>
               <div className="space-y-6 text-base leading-relaxed" style={{ color: "#4B4B47" }}>
                 <div>

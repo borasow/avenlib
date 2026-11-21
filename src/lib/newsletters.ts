@@ -29,7 +29,7 @@ export const ISSUES: NewsletterIssue[] = [
     sujet: "Avenlib : 3 jours sans indemnité si vous tombez malade",
     preheader: "Arrêt maladie, retraite : le point du mois pour les indépendants.",
     cover: { src: `${ASSETS}/cover-2026-12.png`, alt: "Avenlib, le point du mois, décembre 2026" },
-    titre: "Si vous tombez malade demain, que se passe-t-il vraiment ?",
+    titre: "Si vous tombez malade demain, que se passe-t-il vraiment ?",
     intro:
       "Salarié, un arrêt maladie est souvent amorti par l'employeur. Indépendant, c'est une autre histoire : les règles sont différentes, et peu de gens les connaissent avant d'en avoir besoin. Voici l'essentiel, en deux minutes.",
     chiffre: { valeur: "3 jours", label: "de carence avant le début de toute indemnité" },

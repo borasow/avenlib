@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import BilanLink from "@/components/BilanLink";
 import { calculerIj, Statut, CARENCE_JOURS } from "@/lib/ij";
 import { EmailCapture } from "@/components/calc/ui";

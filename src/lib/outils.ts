@@ -17,6 +17,10 @@ export const OUTILS: Outil[] = [
   { slug: "calcul-impot-revenu", nav: "Mon impôt sur le revenu", titre: "Estime ton impôt sur le revenu", accroche: "Barème 2026, parts et quotient familial.", meta: "Estime ton impôt sur le revenu avec le barème 2026 (revenus 2025), le quotient familial et son plafonnement.", theme: "Revenus" },
   { slug: "retraite-independant", nav: "Retraite : ma future pension", titre: "Retraite d'indépendant : combien tu toucheras ?", accroche: "Ta pension estimée, base et complémentaire.", meta: "Estime ta pension de retraite d'indépendant (SSI) : retraite de base, complémentaire RCI et taux de remplacement.", theme: "Retraite" },
   { slug: "capacite-emprunt-independant", nav: "Prêt : ma capacité d'emprunt", titre: "Capacité d'emprunt d'un indépendant", accroche: "Ce qu'une banque peut te prêter avec tes revenus.", meta: "Calcule ta capacité d'emprunt d'indépendant : mensualité maximale, capital empruntable et budget avec apport.", theme: "Projets" },
+  { slug: "seuil-tva-independant", nav: "Seuil de TVA", titre: "Seuil de TVA : quand dois-tu la facturer ?", accroche: "Franchise en base, seuils et dépassement.", meta: "Calcule si tu dois facturer la TVA : seuils de franchise 2026 (37 500 € et 85 000 €), seuil majoré et date d'application.", theme: "Revenus" },
+  { slug: "freelance-vs-salarie", nav: "Freelance ou salarié ?", titre: "Freelance ou salarié : combien facturer pour égaler ton CDI ?", accroche: "Ton TJM pour gagner autant qu'en CDI.", meta: "Convertis ton salaire brut de CDI en TJM de freelance pour gagner le même net, avec cotisations micro-entrepreneur.", theme: "Projets" },
+  { slug: "echeances-independant", nav: "Calendrier des échéances", titre: "Calendrier des échéances d'un indépendant", accroche: "Urssaf, impôts, CFE : les dates et un rappel par email.", meta: "Les dates à ne pas rater pour un micro-entrepreneur : déclaration Urssaf, impôt sur le revenu, CFE. Reçois un rappel par email.", theme: "Revenus" },
+  { slug: "devis-facture-gratuit", nav: "Devis et facture", titre: "Générateur de devis et facture gratuit", accroche: "Un document propre avec les mentions obligatoires, en PDF.", meta: "Crée gratuitement un devis ou une facture de micro-entrepreneur avec les mentions obligatoires, puis enregistre-le en PDF.", theme: "Revenus" },
 ];
 
 export const MAJ_CHIFFRES = "21 novembre 2026";
@@ -38,4 +42,8 @@ export const SOURCES: Record<string, Source[]> = {
   "calcul-impot-revenu": [SP],
   "retraite-independant": [RET],
   "capacite-emprunt-independant": [],
+  "seuil-tva-independant": [{ l: "justice.fr, franchise en base de TVA", u: "https://www.justice.fr/fiche/franchise-base-tva" }],
+  "freelance-vs-salarie": [ECO],
+  "echeances-independant": [{ l: "Urssaf, déclarer son chiffre d'affaires", u: "https://www.autoentrepreneur.urssaf.fr" }],
+  "devis-facture-gratuit": [{ l: "service-public.gouv.fr, mentions obligatoires sur une facture", u: "https://entreprendre.service-public.gouv.fr/vosdroits/F31808" }],
 };

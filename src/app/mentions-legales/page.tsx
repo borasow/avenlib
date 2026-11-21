@@ -55,6 +55,12 @@ export default function MentionsLegales() {
               contient un lien de désinscription.
             </p>
             <p className="mt-2">
+              Rappels d'échéances : si vous demandez des rappels sur le calendrier des échéances, votre
+              adresse email et la périodicité choisie sont conservées jusqu'à votre désinscription, pour
+              vous envoyer un email 5 jours avant chaque échéance. Le lien de désinscription figure dans
+              chaque email.
+            </p>
+            <p className="mt-2">
               Responsable du traitement : Avenlib, contact@avenlib.fr. Prestataires utilisés : Supabase
               (base de données), Resend (envoi d'emails), Vercel (hébergement). Base légale : votre
               consentement pour la newsletter et les rappels, l'exécution de votre demande pour l'envoi

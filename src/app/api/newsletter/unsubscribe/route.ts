@@ -9,6 +9,7 @@ async function unsubscribe(email: string, token: string) {
     .from("profiles")
     .update({ newsletter_consent: false, newsletter_unsubscribed_at: new Date().toISOString() })
     .eq("email", email);
+  await supabase.from("echeance_abonnes").update({ actif: false }).eq("email", email);
   return !error;
 }
 

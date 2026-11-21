@@ -28,7 +28,7 @@ export default function Contact() {
         </p>
         <ContactForm />
         <p className="text-sm mt-6" style={{ color: "#6B6B67" }}>
-          Tu préfères écrire directement ? <a href="mailto:contact@avenlib.fr" className="underline">contact@avenlib.fr</a>
+          Remplis le formulaire, on te répond sous 24h.
         </p>
       </main>
       <Footer />

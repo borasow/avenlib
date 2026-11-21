@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { OUTILS } from "@/lib/outils";
 import { createClient } from "@/lib/supabase/client";
 import { ChevronDown, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 
@@ -12,11 +13,7 @@ const NAV_LINKS = [
   { label: "Blog", href: "/blog" },
 ];
 
-const CALCULATEURS = [
-  { label: "Arrêt maladie : combien je touche ?", href: "/outils/calcul-indemnites-arret-maladie" },
-  { label: "Retraite : ma future pension", href: null },
-  { label: "Prêt : ma capacité d'emprunt", href: null },
-];
+const CALCULATEURS = OUTILS.map((o) => ({ label: o.nav, href: `/outils/${o.slug}` as string | null }));
 
 const linkStyle = { color: "#2C2C2A", fontSize: "15px", fontWeight: 600, whiteSpace: "nowrap" as const };
 
@@ -109,7 +106,7 @@ export default function Navbar() {
               <ChevronDown size={15} />
             </button>
             <div className="absolute left-0 top-full pt-3 hidden group-hover:block group-focus-within:block">
-              <div className="w-72 rounded-xl overflow-hidden" style={{ backgroundColor: "#FFFFFF", border: "0.5px solid #D3D1C7", boxShadow: "0 8px 24px rgba(0,0,0,0.10)" }}>
+              <div className="w-80 rounded-xl overflow-hidden" style={{ backgroundColor: "#FFFFFF", border: "0.5px solid #D3D1C7", boxShadow: "0 8px 24px rgba(0,0,0,0.10)" }}>
                 {CALCULATEURS.map((c) =>
                   c.href ? (
                     <Link key={c.label} href={c.href} className="block px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors" style={{ color: "#2C2C2A" }}>
@@ -122,6 +119,7 @@ export default function Navbar() {
                     </span>
                   )
                 )}
+                <Link href="/outils" className="block px-4 py-3 text-sm font-bold" style={{ color: "#1D9E75", borderTop: "0.5px solid #D3D1C7" }}>Voir tous les calculateurs</Link>
               </div>
             </div>
           </div>
@@ -213,7 +211,7 @@ export default function Navbar() {
           ))}
 
           <div>
-            <p style={linkStyle} className="py-1">Calculateur Avenlib</p>
+            <Link href="/outils" style={linkStyle} className="py-1 block" onClick={() => setMobileOpen(false)}>Calculateur Avenlib</Link>
             <div className="pl-3 flex flex-col gap-2 mt-1">
               {CALCULATEURS.map((c) =>
                 c.href ? (

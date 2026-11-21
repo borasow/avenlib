@@ -351,6 +351,163 @@ export const ARTICLES: Article[] = [
       { label: "ameli.fr, assurance maladie", url: "https://www.ameli.fr" },
     ],
   },
+  {
+    slug: "acre-2026-reduction-exoneration",
+    titre: "ACRE 2026 : l'exonération de cotisations a été réduite, voici ce qui change",
+    description:
+      "Depuis le 1er juillet 2026, l'ACRE n'exonère plus que 25 % des cotisations sociales pour les nouveaux créateurs. Ce que ça change pour votre budget de démarrage.",
+    categorie: "Actualités",
+    date: "2026-11-21",
+    lecture: "4 min",
+    intro:
+      "Beaucoup de créateurs comptent sur l'ACRE pour alléger leurs premières cotisations. Or l'aide a été sensiblement réduite en 2026. Si vous avez lancé votre activité avant l'été ou si vous préparez votre lancement, l'écart peut changer votre trésorerie de démarrage.",
+    aretenir: [
+      "Pour les créations à partir du 1er juillet 2026, l'ACRE ne réduit plus les cotisations que de 25 %, contre 50 % auparavant.",
+      "L'aide reste limitée dans le temps : elle ne concerne que la première période d'activité.",
+      "Prévoyez des cotisations plus élevées que ce que d'anciens guides en ligne annoncent.",
+    ],
+    sections: [
+      {
+        titre: "Ce qui a changé",
+        paragraphes: [
+          "L'ACRE (aide à la création ou à la reprise d'une entreprise) réduit les cotisations sociales pendant la première période d'activité. Le taux de réduction applicable aux nouveaux créateurs a été ramené à 25 % pour les entreprises créées à partir du 1er juillet 2026, alors qu'il était de 50 % pour les créations précédentes.",
+          "Concrètement, un micro-entrepreneur qui démarre aujourd'hui paie une part plus importante de ses cotisations dès le premier chiffre d'affaires. Les articles et vidéos publiés avant cette date présentent souvent encore l'ancien taux.",
+        ],
+      },
+      {
+        titre: "Pourquoi c'est important pour votre budget",
+        paragraphes: [
+          "Au démarrage, les revenus sont irréguliers et les cotisations sont proportionnelles au chiffre d'affaires. Une réduction deux fois moindre, c'est une trésorerie plus tendue sur les premiers mois, au moment où vous avez le moins de visibilité.",
+        ],
+        liste: [
+          "Recalculez votre revenu net avec les taux de cotisation sans réduction, puis appliquez la réduction réelle",
+          "Gardez une marge pour les cotisations qui tombent après vos premiers encaissements",
+          "Vérifiez la date de début de votre activité, c'est elle qui détermine le taux applicable",
+        ],
+      },
+      {
+        titre: "Ce qu'il faut vérifier dans votre cas",
+        paragraphes: [
+          "Les règles de l'ACRE comportent des conditions d'éligibilité et des durées qui dépendent de votre situation et de la date de création. Le bon réflexe est de confirmer votre taux sur votre espace Urssaf ou sur service-public.fr plutôt que de vous fier à un chiffre trouvé en ligne.",
+          "Dans tous les cas, l'ACRE ne change rien à vos droits sociaux de base : elle réduit ce que vous payez, pas ce que vous êtes couvert.",
+        ],
+      },
+    ],
+    ctaTitre: "Calculez votre revenu net réel",
+    ctaTexte:
+      "Notre calculateur de revenu net applique les taux de cotisation 2026 pour vous montrer ce qui vous reste vraiment. Pour savoir si votre protection tient, faites le bilan Avenlib en 3 minutes, gratuit.",
+    sources: [
+      { label: "service-public.fr, ACRE", url: "https://entreprendre.service-public.fr" },
+      { label: "Urssaf, aide à la création", url: "https://www.urssaf.fr" },
+    ],
+  },
+  {
+    slug: "facture-electronique-independants-2026",
+    titre: "Facture électronique : ce que les indépendants doivent faire dès maintenant",
+    description:
+      "Réception obligatoire des factures électroniques depuis le 1er septembre 2026, émission à partir de septembre 2027 pour les petites entreprises : le calendrier et les bons réflexes.",
+    categorie: "Actualités",
+    date: "2026-11-21",
+    lecture: "5 min",
+    intro:
+      "La facturation électronique est la réforme dont on parle le moins chez les indépendants, alors qu'elle les concerne directement. Le calendrier est échelonné : une première étape est déjà passée, la suivante arrive en 2027.",
+    aretenir: [
+      "Depuis le 1er septembre 2026, toutes les entreprises doivent pouvoir recevoir des factures électroniques.",
+      "L'obligation d'émettre arrive en septembre 2027 pour les micro-entreprises, TPE et PME.",
+      "Les factures passent par une plateforme agréée, pas par un simple PDF envoyé par email.",
+    ],
+    sections: [
+      {
+        titre: "Le calendrier à retenir",
+        paragraphes: [
+          "La réforme se déploie en deux temps. Depuis le 1er septembre 2026, toutes les entreprises assujetties à la TVA doivent être en mesure de recevoir leurs factures sous forme électronique. L'émission obligatoire, elle, est étalée : les plus grandes entreprises d'abord, puis les micro-entreprises, TPE et PME à partir de septembre 2027.",
+          "Même si votre obligation d'émettre n'est pas encore là, vos clients professionnels, eux, doivent déjà pouvoir recevoir et traiter ce type de factures, et pourront vous demander de vous adapter.",
+        ],
+      },
+      {
+        titre: "Ce que ça change concrètement",
+        paragraphes: [
+          "Une facture électronique n'est pas un PDF envoyé par email. Elle transite par une plateforme de dématérialisation partenaire, avec un format structuré, et certaines données sont transmises à l'administration fiscale.",
+        ],
+        liste: [
+          "Choisir une plateforme de facturation compatible, gratuite ou payante selon votre volume",
+          "Vérifier que votre logiciel de facturation actuel sera compatible",
+          "Compléter vos factures avec les mentions obligatoires, dont l'adresse de livraison et la nature de l'opération",
+          "Prévenir vos clients professionnels de la façon dont vous leur enverrez vos factures",
+        ],
+      },
+      {
+        titre: "Qui est concerné",
+        paragraphes: [
+          "Les factures entre entreprises assujetties à la TVA établies en France sont concernées. Les ventes à des particuliers relèvent d'un autre dispositif de transmission de données. Si votre situation est particulière (franchise en base de TVA, activité mixte), vérifiez-la sur le site de l'administration fiscale.",
+        ],
+      },
+      {
+        titre: "Par où commencer",
+        paragraphes: [
+          "Inutile d'attendre 2027. Regardez dès maintenant quel outil vous utilisez pour facturer, et si son éditeur annonce la compatibilité. Si vous travaillez avec de grands comptes, ils auront très probablement déjà besoin de votre adresse de facturation électronique.",
+        ],
+      },
+    ],
+    ctaTitre: "Une charge de plus à anticiper",
+    ctaTexte:
+      "Ce genre de changement pèse sur vos frais de gestion. Calculez votre revenu net avec notre calculateur, puis faites le bilan Avenlib pour vérifier que votre protection suit.",
+    sources: [
+      { label: "economie.gouv.fr, facturation électronique", url: "https://www.economie.gouv.fr/facturation-electronique-entreprises" },
+      { label: "impots.gouv.fr, facturation électronique", url: "https://www.impots.gouv.fr" },
+    ],
+  },
+  {
+    slug: "micro-entrepreneur-2026-plafonds-cotisations",
+    titre: "Micro-entrepreneur 2026 : plafonds, cotisations et ce qui n'a pas bougé",
+    description:
+      "Plafonds de chiffre d'affaires 2026-2028, taux de cotisation par activité (dont 25,6 % en BNC), franchise de TVA : le point sur les chiffres à jour.",
+    categorie: "Actualités",
+    date: "2026-11-21",
+    lecture: "5 min",
+    intro:
+      "Entre les annonces, les projets de loi abandonnés et les anciens articles qui circulent encore, il est difficile de savoir quels chiffres s'appliquent vraiment à un micro-entrepreneur en 2026. Voici les repères à jour, à vérifier dans votre cas.",
+    aretenir: [
+      "Plafonds de chiffre d'affaires : 203 100 € pour la vente, 83 600 € pour les services, sur 2026-2028.",
+      "Taux de cotisation 2026 : 12,3 % (vente), 21,2 % (BIC services), 25,6 % (BNC), 23,2 % (Cipav).",
+      "Le versement libératoire de l'impôt reste optionnel selon votre revenu fiscal de référence.",
+    ],
+    sections: [
+      {
+        titre: "Les plafonds de chiffre d'affaires",
+        paragraphes: [
+          "Pour la période 2026-2028, le plafond du régime micro est de 203 100 € pour les activités de vente et de 83 600 € pour les prestations de services. Si vous les dépassez deux années de suite, vous basculez au régime réel.",
+        ],
+      },
+      {
+        titre: "Les taux de cotisation sociale",
+        paragraphes: [
+          "Les cotisations se calculent en pourcentage du chiffre d'affaires encaissé. En 2026, les taux sont de 12,3 % pour la vente de marchandises, 21,2 % pour les prestations commerciales ou artisanales (BIC), 25,6 % pour les prestations libérales relevant de la SSI (BNC) et 23,2 % pour les professions libérales relevant de la Cipav. S'y ajoute une contribution à la formation professionnelle de 0,1 % à 0,3 % selon l'activité.",
+          "Le taux BNC a augmenté ces dernières années : si vous vous fiez à un chiffre trouvé sur un ancien article, votre net réel sera plus bas que prévu.",
+        ],
+      },
+      {
+        titre: "L'impôt : abattement et versement libératoire",
+        paragraphes: [
+          "Votre revenu imposable est calculé après un abattement forfaitaire de 71 % (vente), 50 % (services BIC) ou 34 % (BNC), avec un minimum de 305 €. Vous pouvez aussi opter, sous condition de revenu, pour le versement libératoire, à 1 %, 1,7 % ou 2,2 % du chiffre d'affaires selon l'activité.",
+        ],
+      },
+      {
+        titre: "Ce qui n'a pas changé",
+        paragraphes: [
+          "Plusieurs annonces de réforme n'ont pas abouti, notamment sur le régime de la franchise en base de TVA : vérifiez le seuil applicable à votre activité sur le site des impôts avant de décider quoi que ce soit, car des informations contradictoires circulent.",
+        ],
+      },
+    ],
+    ctaTitre: "Voyez ce qu'il vous reste vraiment",
+    ctaTexte:
+      "Nos calculateurs gratuits appliquent ces taux 2026 : revenu net, micro ou réel, impôt, retraite. Ensuite, le bilan Avenlib vérifie votre protection en 3 minutes.",
+    sources: [
+      { label: "Urssaf, taux de cotisation micro-entrepreneur", url: "https://www.autoentrepreneur.urssaf.fr" },
+      { label: "service-public.fr, micro-entrepreneur", url: "https://entreprendre.service-public.fr" },
+      { label: "impots.gouv.fr, régime micro", url: "https://www.impots.gouv.fr" },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

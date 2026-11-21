@@ -10,6 +10,8 @@ export default function MatelasCalc() {
   const ok = r.moisTenus >= 6;
   return (
     <Layout
+      slug="matelas-securite"
+      resume={[`Épargne : ${eur(ep)}`, `Charges mensuelles : ${eur(ch)}`, `Tu tiens ${String(r.moisTenus).replace(".", ",")} mois sans revenu`, `Objectif de 6 mois : ${eur(r.cible)}`, `Il te manque : ${eur(r.manque)}`]}
       form={<>
         <Num label="Épargne disponible (€)" hint="Livrets et liquidités mobilisables rapidement." value={eS} onChange={setES} suffix="€" />
         <Num label="Charges mensuelles incompressibles (€)" hint="Loyer, crédits, assurances, cotisations, alimentation." value={cS} onChange={setCS} suffix="€" />

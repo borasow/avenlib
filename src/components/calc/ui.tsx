@@ -47,11 +47,64 @@ export function Check({ label, checked, onChange }: { label: string; checked: bo
   );
 }
 
-export function Layout({ form, result }: { form: ReactNode; result: ReactNode }) {
+export function Layout({ form, result, slug, resume }: { form: ReactNode; result: ReactNode; slug?: string; resume?: string[] }) {
   return (
-    <div className="grid md:grid-cols-2 gap-6 items-start">
-      <div className="rounded-2xl p-6 space-y-5" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>{form}</div>
-      <div className="rounded-2xl p-6 md:sticky md:top-28" style={{ backgroundColor: "#1F4A3F", color: "#FFFFFF" }} aria-live="polite">{result}</div>
+    <div>
+      <div className="grid md:grid-cols-2 gap-6 items-start">
+        <div className="rounded-2xl p-6 space-y-5" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>{form}</div>
+        <div className="rounded-2xl p-6 md:sticky md:top-28" style={{ backgroundColor: "#1F4A3F", color: "#FFFFFF" }} aria-live="polite">{result}</div>
+      </div>
+      {slug && resume && <EmailCapture slug={slug} resume={resume} />}
+    </div>
+  );
+}
+
+export function EmailCapture({ slug, resume }: { slug: string; resume: string[] }) {
+  const [email, setEmail] = useState("");
+  const [news, setNews] = useState(false);
+  const [site, setSite] = useState("");
+  const [etat, setEtat] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
+  const [msg, setMsg] = useState("");
+
+  async function envoyer(e: React.FormEvent) {
+    e.preventDefault();
+    setEtat("envoi");
+    try {
+      const r = await fetch("/api/outils/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, slug, resume, newsletter: news, website: site }),
+      });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) { setMsg(d.error ?? "Une erreur est survenue."); setEtat("erreur"); return; }
+      setEtat("ok");
+    } catch {
+      setMsg("Connexion impossible, réessaie."); setEtat("erreur");
+    }
+  }
+
+  return (
+    <div className="mt-6 rounded-2xl p-6" style={{ backgroundColor: "#E1F5EE", border: "0.5px solid #9FE1CB" }}>
+      {etat === "ok" ? (
+        <p className="text-sm font-semibold" style={{ color: "#085041" }}>C&apos;est envoyé. Regarde ta boîte mail (et les courriers indésirables si tu ne vois rien).</p>
+      ) : (
+        <form onSubmit={envoyer} className="space-y-3">
+          <p className="font-bold" style={{ color: "#085041" }}>Recevoir ce résultat par email</p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input type="email" required placeholder="ton@email.fr" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-1 rounded-lg px-3 py-3 text-base" style={fieldStyle} aria-label="Ton email" />
+            <input type="text" tabIndex={-1} autoComplete="off" value={site} onChange={(e) => setSite(e.target.value)} className="hidden" aria-hidden="true" name="website" />
+            <button type="submit" disabled={etat === "envoi"} className="rounded-lg px-5 py-3 text-sm font-bold disabled:opacity-60" style={{ backgroundColor: "#1D9E75", color: "#FFFFFF" }}>
+              {etat === "envoi" ? "Envoi..." : "Envoyer"}
+            </button>
+          </div>
+          <label className="flex items-start gap-3 text-sm cursor-pointer" style={{ color: "#085041" }}>
+            <input type="checkbox" checked={news} onChange={(e) => setNews(e.target.checked)} className="h-5 w-5 mt-0.5 accent-[#1D9E75]" />
+            <span>Je veux aussi recevoir la newsletter Avenlib, une fois par mois (désabonnement en un clic).</span>
+          </label>
+          <p className="text-xs" style={{ color: "#4B4B47" }}>Ton email sert à t&apos;envoyer ce résultat. Il n&apos;est utilisé pour rien d&apos;autre sans ton accord. <Link href="/mentions-legales" className="underline">En savoir plus</Link></p>
+          {etat === "erreur" && <p className="text-sm font-semibold" style={{ color: "#B3261E" }}>{msg}</p>}
+        </form>
+      )}
     </div>
   );
 }

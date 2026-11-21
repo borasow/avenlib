@@ -14,6 +14,8 @@ export default function ImpotCalc() {
   void bareme;
   return (
     <Layout
+      slug="calcul-impot-revenu"
+      resume={[`Revenu net imposable : ${eur(revenu)}`, `Impôt estimé : ${eur(impot)}`, `Tranche marginale : ${Math.round(tmi * 100)} %`]}
       form={<>
         <Num label="Revenu net imposable du foyer (€/an)" hint="Pour un micro : CA moins abattement. Pour un réel : bénéfice. Après l'abattement de 10 % pour un salaire." value={rS} onChange={setRS} suffix="€" />
         <Check label="En couple (imposition commune)" checked={couple} onChange={setCouple} />

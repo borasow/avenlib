@@ -9,6 +9,8 @@ export default function RetraiteCalc() {
   const r = retraiteSsi(rev, tri, ans);
   return (
     <Layout
+      slug="retraite-independant"
+      resume={[`Pension estimée : ${eur(r.totalMensuel)} par mois (brut)`, `Retraite de base : ${eur(r.base)} par an`, `Retraite complémentaire : ${eur(r.complementaire)} par an`, `Trimestres à ton départ : ${r.trimestres} sur 172`]}
       form={<>
         <Num label="Revenu net annuel moyen (€)" hint="Ton bénéfice. En micro : CA moins abattement (71 %, 50 % ou 34 %)." value={rS} onChange={setRS} suffix="€" />
         <Num label="Trimestres déjà validés" hint="Visibles sur info-retraite.fr." value={tS} onChange={setTS} />

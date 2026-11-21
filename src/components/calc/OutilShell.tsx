@@ -27,7 +27,7 @@ export default function OutilShell({ slug, children, methode }: { slug: string; 
             Calculateur Avenlib · {o.theme}
           </Link>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-5" style={{ color: "#2C2C2A" }}>{o.titre}</h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#6B6B67" }}>{o.accroche} Gratuit, sans inscription.</p>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#6B6B67" }}>{o.accroche} Gratuit.</p>
         </section>
         <section className="max-w-5xl mx-auto px-6 pb-10">{children}</section>
         <section className="max-w-3xl mx-auto px-6 pb-12">

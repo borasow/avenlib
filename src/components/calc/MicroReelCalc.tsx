@@ -14,6 +14,8 @@ export default function MicroReelCalc() {
   const ecart = Math.abs(reel.netApresImpot - micro.netApresImpot);
   return (
     <Layout
+      slug="micro-ou-reel"
+      resume={[`Chiffre d'affaires : ${eur(ca)}`, `Charges : ${eur(charges)}`, `Net annuel en micro : ${eur(micro.netApresImpot)}`, `Net annuel au réel (estimé) : ${eur(reel.netApresImpot)}`, `Régime le plus avantageux : ${gagne === "micro" ? "micro-entreprise" : "régime réel"}, environ ${eur(ecart)} de plus par an`]}
       form={<>
         <Sel label="Ton activité" value={regime} onChange={setRegime} options={(Object.keys(MICRO) as RegimeMicro[]).map((k) => ({ v: k, l: MICRO[k].label }))} />
         <Num label="Chiffre d'affaires annuel (€)" value={caS} onChange={setCaS} suffix="€" />

@@ -13,6 +13,8 @@ export default function TjmCalc() {
   const r = calculerTjm({ netMensuelVoulu: net, chargesMensuelles: ch, regime, congesJours: conges, maladieJours: mal, pctNonFacture: pct });
   return (
     <Layout
+      slug="tjm-freelance"
+      resume={[`TJM minimum : ${eur(r.tjm)}`, `Jours facturés par an : ${r.joursFactures}`, `Chiffre d'affaires nécessaire : ${eur(r.caNecessaire)}`, `Net visé : ${eur(net)} par mois`]}
       form={<>
         <Sel label="Ton activité" value={regime} onChange={setRegime} options={(Object.keys(MICRO) as RegimeMicro[]).map((k) => ({ v: k, l: MICRO[k].label }))} hint="Calcul fait avec les cotisations micro-entrepreneur." />
         <Num label="Revenu net voulu par mois (€)" hint="Après cotisations, avant impôt sur le revenu." value={nS} onChange={setNS} suffix="€" />

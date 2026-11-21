@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { calculerIj, Statut, CARENCE_JOURS } from "@/lib/ij";
+import { EmailCapture } from "@/components/calc/ui";
 
 const fmt = (n: number) => n.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
 const fieldStyle = { border: "2px solid #E8E6DF", backgroundColor: "#FFFFFF", color: "#2C2C2A" };
@@ -21,7 +22,11 @@ export default function Calculateur() {
   });
   const micro = statut !== "reel";
 
+  const resume = r.droit
+    ? [`Indemnité journalière : ${fmt(r.ijJour)} brut`, `Jours indemnisés : ${r.joursIndemnises}`, `Total d'indemnités : ${fmt(r.totalIj)}`, `Charges sur la période : ${fmt(r.chargesPeriode)}`, `${r.ecart >= 0 ? "Marge" : "Manque à gagner"} : ${fmt(Math.abs(r.ecart))}`]
+    : [`Probablement aucune indemnité avec ce revenu`, `Charges à couvrir seul : ${fmt(r.chargesPeriode)}`];
   return (
+    <div>
     <div className="grid md:grid-cols-2 gap-6">
       <div className="rounded-2xl p-6 space-y-5" style={{ backgroundColor: "#FFFFFF", border: "2px solid #E8E6DF" }}>
         <label className="block text-sm font-semibold" style={{ color: "#2C2C2A" }}>
@@ -78,6 +83,8 @@ export default function Calculateur() {
           Faire mon bilan gratuit
         </Link>
       </div>
+    </div>
+    <EmailCapture slug="calcul-indemnites-arret-maladie" resume={resume} />
     </div>
   );
 }

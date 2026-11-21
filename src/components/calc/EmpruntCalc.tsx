@@ -11,6 +11,8 @@ export default function EmpruntCalc() {
   const r = capaciteEmprunt({ revenuMensuel: rev, creditsEnCours: cr, tauxAnnuel: taux, assuranceAnnuelle: 0.34, dureeAns: duree, apport });
   return (
     <Layout
+      slug="capacite-emprunt-independant"
+      resume={[`Capacité d'emprunt : ${eur(r.capital)}`, `Mensualité maximale : ${eur(r.mensualiteMax)}`, `Budget avec apport : ${eur(r.budget)}`, `Coût du crédit : ${eur(r.coutCredit)}`]}
       form={<>
         <Num label="Revenu net mensuel moyen (€)" hint="Moyenne des 3 dernières années : c'est ce que regarde la banque." value={rS} onChange={setRS} suffix="€" />
         <Num label="Crédits en cours (€/mois)" value={cS} onChange={setCS} suffix="€" />

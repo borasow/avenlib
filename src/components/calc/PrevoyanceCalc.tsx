@@ -13,6 +13,8 @@ export default function PrevoyanceCalc() {
   const r = prevoyance(ij.ijJour, ij.droit, besoin, Number(fr));
   return (
     <Layout
+      slug="prevoyance-independant"
+      resume={[`Garantie mensuelle à viser : ${eur(r.manqueMensuel)}`, `Indemnités Sécu estimées : ${eur(r.ijMensuelle)} par mois`, `Tes besoins : ${eur(besoin)} par mois`, `Reste à ta charge pendant la franchise de ${fr} jours : ${eur(r.coutFranchise)}`]}
       form={<>
         <Sel label="Ton statut" value={statut} onChange={setStatut} options={[{ v: "reel", l: "Au réel" }, { v: "micro_bic_service", l: "Micro, services (BIC)" }, { v: "micro_bnc", l: "Micro, libéral (BNC)" }, { v: "micro_bic_vente", l: "Micro, vente" }]} />
         <Num label={statut === "reel" ? "Revenu net annuel moyen (€)" : "Chiffre d'affaires annuel moyen (€)"} value={mS} onChange={setMS} suffix="€" />

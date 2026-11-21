@@ -18,6 +18,8 @@ export default function NetCalc() {
     : netReel({ ca: caN, charges, parts, couple, autresRevenus: autres });
   return (
     <Layout
+      slug="revenu-net-independant"
+      resume={[`Chiffre d'affaires : ${eur(caN)}`, `Cotisations : ${eur(r.cotisations)}`, `Charges : ${eur(charges)}`, `Impôt lié à l'activité : ${eur(r.impot)}`, `Net annuel : ${eur(r.netApresImpot)}`, `Net mensuel : ${eur(r.netMensuel)}`]}
       form={<>
         <Sel label="Ton régime" value={mode} onChange={setMode} options={[{ v: "micro", l: "Micro-entrepreneur" }, { v: "reel", l: "Entreprise individuelle au réel (estimation)" }]} />
         {mode === "micro" && <Sel label="Ton activité" value={regime} onChange={setRegime} options={(Object.keys(MICRO) as RegimeMicro[]).map((k) => ({ v: k, l: MICRO[k].label }))} />}

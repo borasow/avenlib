@@ -159,7 +159,7 @@ export default function Home() {
           <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#1D9E75" }}>Essaye maintenant</p>
-              <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: "#2C2C2A" }}>Des calculateurs gratuits, sans inscription</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: "#2C2C2A" }}>Des calculateurs gratuits</h2>
             </div>
             <Link href="/outils" className="text-sm font-bold flex items-center gap-1" style={{ color: "#1D9E75" }}>
               Voir les {OUTILS.length} calculateurs <ArrowRight size={16} />

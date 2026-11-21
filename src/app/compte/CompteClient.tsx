@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import BilanLink from "@/components/BilanLink";
 import { useRouter } from "next/navigation";
 import { calculerScores, DiagnosticAnswers } from "@/lib/scoring";
-import { ArrowRight, User, RefreshCw, BarChart2 } from "lucide-react";
+import { ArrowRight, User, RefreshCw } from "lucide-react";
+import TableauDeBord from "./TableauDeBord";
 
 const LABELS: Record<string, string> = {
   statut: "Statut juridique",
@@ -16,14 +16,6 @@ const LABELS: Record<string, string> = {
   prevoyance_niveau: "Niveau de prévoyance",
   connaissance: "Connaissance finances",
 };
-
-const NIVEAU_ORDER: Record<string, number> = { urgent: 0, optimiser: 1, ok: 2 };
-
-function getBadge(score: number) {
-  if (score < 40)  return <span style={{ fontSize: "18px", lineHeight: 1 }}>🔴</span>;
-  if (score <= 70) return <span style={{ fontSize: "18px", lineHeight: 1 }}>🟡</span>;
-  return               <span style={{ fontSize: "18px", lineHeight: 1 }}>🟢</span>;
-}
 
 export default function CompteClient() {
   const [profile, setProfile] = useState<{ prenom: string; answers: DiagnosticAnswers } | null>(null);
@@ -84,49 +76,7 @@ export default function CompteClient() {
           </button>
         </div>
 
-        {/* Résumé scores */}
-        <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">
-          <div className="flex items-center gap-2 mb-1">
-            <BarChart2 size={20} style={{ color: "#15805F" }} />
-            <h2 className="font-semibold" style={{ color: "#2C2C2A" }}>
-              Ton tableau de bord
-            </h2>
-          </div>
-          <p style={{ fontSize: "12px", color: "#6B6B67", marginBottom: "16px" }}>
-            🔴 Urgent · 🟡 À optimiser · 🟢 OK
-          </p>
-          <div className="space-y-3">
-            {Object.entries(scores)
-              .sort(([, a], [, b]) => {
-                const diff = NIVEAU_ORDER[a.niveau] - NIVEAU_ORDER[b.niveau];
-                return diff !== 0 ? diff : a.score - b.score;
-              })
-              .map(([key, score]) => (
-              <Link
-                key={key}
-                href={`/resultats/${key}`}
-                className="flex items-center justify-between py-2 hover:opacity-80 transition-opacity group"
-              >
-                <span className="text-sm" style={{ color: "#2C2C2A" }}>
-                  {score.titre}
-                </span>
-                <div className="flex items-center gap-3">
-                  {getBadge(score.score)}
-                  <span className="group-hover:underline" style={{ color: "#2C2C2A", fontSize: "13px", fontWeight: 700 }}>En savoir plus →</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-4 pt-4 border-t border-gray-100">
-            <Link
-              href="/resultats"
-              className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
-              style={{ color: "#15805F" }}
-            >
-              Voir le bilan complet <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
+        <TableauDeBord scores={scores} />
 
         {/* Profil */}
         <div className="bg-white border border-gray-100 rounded-xl p-6 mb-6">

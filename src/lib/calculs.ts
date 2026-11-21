@@ -126,7 +126,7 @@ export function matelas(epargne: number, chargesMensuelles: number, epargneMensu
 }
 
 // ---------- Retraite SSI (artisans, commerçants, libéraux non réglementés) ----------
-export const RETRAITE = { taux: 0.5, trimestresTauxPlein: 172, valeurPointRCI: 1.347, achatPointRCI: 21.726, cotisRCI1: 0.07, cotisRCI2: 0.08 };
+export const RETRAITE = { taux: 0.5, trimestresTauxPlein: 172, valeurPointRCI: 1.347, achatPointRCI: 21.726, cotisRCI1: 0.081, cotisRCI2: 0.091 };
 
 export function retraiteSsi(revenuAnnuel: number, trimestresValides: number, anneesRestantes: number) {
   const revenu = Math.max(0, revenuAnnuel);
